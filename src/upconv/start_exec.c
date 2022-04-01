@@ -20,10 +20,10 @@ int start_exec(int argc,char *argv[],int cpu_pri,HANDLE *ret_hStdOutRead,HANDLE 
 	sa.bInheritHandle = TRUE;
 
 	if (ret_hStdOutRead != NULL) {
-		// Read,Write�p�̃p�C�v���쐬����
+		// Read,Write用のパイプを作成する
 		if (!CreatePipe(&hStdOutReadTmp,&hStdOutWrite,&sa,0)) return -1;
 
-		// �W���G���[�o�͂𕡐�����
+		// 標準エラー出力を複製する
 		if (!DuplicateHandle(GetCurrentProcess(),hStdOutWrite,GetCurrentProcess(),&hStdErrorWrite,0,TRUE,DUPLICATE_SAME_ACCESS)) return -1;
 
 		if (!DuplicateHandle(GetCurrentProcess(),hStdOutReadTmp,GetCurrentProcess(),&hStdOutRead,0,FALSE,DUPLICATE_SAME_ACCESS)) return -1;
@@ -44,7 +44,7 @@ int start_exec(int argc,char *argv[],int cpu_pri,HANDLE *ret_hStdOutRead,HANDLE 
 		si.hStdError  = GetStdHandle(STD_ERROR_HANDLE);
 	}
 
-	// �R�}���h�̑g�ݗ���
+	// コマンドの組み立て
 	cmd[0] = '\0';
 	for (i = 0;i < argc;i++) {
 		if (argv[i][0] != '|') {

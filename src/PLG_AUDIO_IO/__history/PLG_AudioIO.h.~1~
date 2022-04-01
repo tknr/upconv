@@ -42,7 +42,7 @@ typedef struct broadcast_audio_extension {
 	DWORD timeReferenceHigh;		/* First sample count since midnight, high word */
 	WORD version;					/* Version of the BWF; unsigned binary number */
 	BYTE UMID[64];					/* Binary byte 0 of SMPTE UMID */
-	BYTE reserved[190];				/* 190 bytes, reserved for future use, set to gNULLh*/
+	BYTE reserved[190];				/* 190 bytes, reserved for future use, set to â€œNULLâ€*/
 	char codingHistory[1];			/* ASCII : History coding */
 } BROADCAST_EXT;
 #pragma pack(pop)
@@ -127,14 +127,14 @@ typedef struct {
 #define SPEAKER_BACK_RIGHT				(0x20)
 
 /* Return Status */
-#define STATUS_SUCCESS			(0)		/* ³íI—¹ */
-#define STATUS_NOT_IMPLEMENT	(-1)	/* ‚»‚Ì‹@”\‚ÍƒCƒ“ƒvƒŠƒƒ“ƒg‚³‚ê‚Ä‚¢‚È‚¢ */
-#define STATUS_UNKNOWN_FORMAT	(-2)	/* –¢’m‚ÌƒtƒH[ƒ}ƒbƒg */
-#define STATUS_DATA_ERR			(-3)	/* ƒf[ƒ^‚ª‰ó‚ê‚Ä‚¢‚é */
-#define STATUS_MEM_ALLOC_ERR	(-4)	/* ƒƒ‚ƒŠ[‚ªŠm•Ûo—ˆ‚È‚¢ */
-#define STATUS_FILE_READ_ERR	(-5)	/* ƒtƒ@ƒCƒ‹ƒŠ[ƒhƒGƒ‰[ */
-#define STATUS_FILE_WRITE_ERR	(-6)	/* ƒtƒ@ƒCƒ‹ƒ‰ƒCƒgƒGƒ‰[ */
-#define STATUS_PLUGIN_ERR		(-15)	/* “à•”ƒGƒ‰[ */
+#define STATUS_SUCCESS			(0)		/* æ­£å¸¸çµ‚äº† */
+#define STATUS_NOT_IMPLEMENT	(-1)	/* ãã®æ©Ÿèƒ½ã¯ã‚¤ãƒ³ãƒ—ãƒªãƒ¡ãƒ³ãƒˆã•ã‚Œã¦ã„ãªã„ */
+#define STATUS_UNKNOWN_FORMAT	(-2)	/* æœªçŸ¥ã®ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆ */
+#define STATUS_DATA_ERR			(-3)	/* ãƒ‡ãƒ¼ã‚¿ãŒå£Šã‚Œã¦ã„ã‚‹ */
+#define STATUS_MEM_ALLOC_ERR	(-4)	/* ãƒ¡ãƒ¢ãƒªãƒ¼ãŒç¢ºä¿å‡ºæ¥ãªã„ */
+#define STATUS_FILE_READ_ERR	(-5)	/* ãƒ•ã‚¡ã‚¤ãƒ«ãƒªãƒ¼ãƒ‰ã‚¨ãƒ©ãƒ¼ */
+#define STATUS_FILE_WRITE_ERR	(-6)	/* ãƒ•ã‚¡ã‚¤ãƒ«ãƒ©ã‚¤ãƒˆã‚¨ãƒ©ãƒ¼ */
+#define STATUS_PLUGIN_ERR		(-15)	/* å†…éƒ¨ã‚¨ãƒ©ãƒ¼ */
 
 /* Function Prototype */
 int PLG_InfoAudioData(LPSTR filename,SOUNDFMT *pFmt,DWORD *pAudioSize,FILEINFO *pFileinfo);

@@ -1,25 +1,25 @@
 /****************************************************************************/
 /* wav2raw (C) 2011-2019 By 59414d41										*/
-/* wavƒtƒ@ƒCƒ‹‚ğ64bit‚Ìrawƒtƒ@ƒCƒ‹‚Ö•ÏŠ·‚·‚é								*/
-/* rawƒtƒ@ƒCƒ‹‚ğwavƒtƒ@ƒCƒ‹‚Ö•ÏŠ·‚·‚é										*/
-/* dsfƒtƒ@ƒCƒ‹‚ğ64bit‚Ìrawƒtƒ@ƒCƒ‹‚Ö•ÏŠ·‚·‚é								*/
-/* rawƒtƒ@ƒCƒ‹‚ğdsfƒtƒ@ƒCƒ‹‚É‚·‚é											*/
+/* wavãƒ•ã‚¡ã‚¤ãƒ«ã‚’64bitã®rawãƒ•ã‚¡ã‚¤ãƒ«ã¸å¤‰æ›ã™ã‚‹								*/
+/* rawãƒ•ã‚¡ã‚¤ãƒ«ã‚’wavãƒ•ã‚¡ã‚¤ãƒ«ã¸å¤‰æ›ã™ã‚‹										*/
+/* dsfãƒ•ã‚¡ã‚¤ãƒ«ã‚’64bitã®rawãƒ•ã‚¡ã‚¤ãƒ«ã¸å¤‰æ›ã™ã‚‹								*/
+/* rawãƒ•ã‚¡ã‚¤ãƒ«ã‚’dsfãƒ•ã‚¡ã‚¤ãƒ«ã«ã™ã‚‹											*/
 /*																			*/
 /****************************************************************************/
 
 /*--- Log ------------------------------------------------------------------
- * Ver 0.10 <09/07/15> - upconv‚©‚ç•ª—£
- * Ver 0.21 <09/10/26> - ‚¿‚å‚Á‚ÆC³
- * Ver 0.30 <09/11/01> - ƒpƒ‰ƒ[ƒ^ƒtƒ@ƒCƒ‹‚ÌÌ—p
- * Ver 0.31 <09/11/16> - ƒGƒ‰[î•ñ‚ğƒtƒ@ƒCƒ‹‚Öo—Í‚·‚é‚æ‚¤‚É‚µ‚½
- * Ver 0.50 <10/11/02> - ˆ—C³
- * Ver 0.70 <11/07/24> - ƒRƒ“ƒpƒCƒ‰‚ğmingw‚É•ÏX
- *						 ‘å‚«‚Èƒtƒ@ƒCƒ‹‚É‘Î‰
- *						 splitˆ—‚ğ‚â‚ß‚½‚±‚Æ‚É‚æ‚éC³
- * Ver 0.80 <12/02/11> - fileio‚ğg—p‚·‚é‚æ‚¤‚ÉC³
- *						 ƒ}ƒ‹ƒ`ƒ`ƒƒƒ“ƒlƒ‹‚É‘Î‰
- * ver 0.99 <18/10/25> - raw2wav,dsf2raw ‚Æƒ}[ƒW
-   ver 1.20 <19/10/12> - upconv.c ‚©‚çŒÄ‚Ño‚·‚æ‚¤‚ÉC³
+ * Ver 0.10 <09/07/15> - upconvã‹ã‚‰åˆ†é›¢
+ * Ver 0.21 <09/10/26> - ã¡ã‚‡ã£ã¨ä¿®æ­£
+ * Ver 0.30 <09/11/01> - ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ•ã‚¡ã‚¤ãƒ«ã®æ¡ç”¨
+ * Ver 0.31 <09/11/16> - ã‚¨ãƒ©ãƒ¼æƒ…å ±ã‚’ãƒ•ã‚¡ã‚¤ãƒ«ã¸å‡ºåŠ›ã™ã‚‹ã‚ˆã†ã«ã—ãŸ
+ * Ver 0.50 <10/11/02> - å‡¦ç†ä¿®æ­£
+ * Ver 0.70 <11/07/24> - ã‚³ãƒ³ãƒ‘ã‚¤ãƒ©ã‚’mingwã«å¤‰æ›´
+ *						 å¤§ããªãƒ•ã‚¡ã‚¤ãƒ«ã«å¯¾å¿œ
+ *						 splitå‡¦ç†ã‚’ã‚„ã‚ãŸã“ã¨ã«ã‚ˆã‚‹ä¿®æ­£
+ * Ver 0.80 <12/02/11> - fileioã‚’ä½¿ç”¨ã™ã‚‹ã‚ˆã†ã«ä¿®æ­£
+ *						 ãƒãƒ«ãƒãƒãƒ£ãƒ³ãƒãƒ«ã«å¯¾å¿œ
+ * ver 0.99 <18/10/25> - raw2wav,dsf2raw ã¨ãƒãƒ¼ã‚¸
+   ver 1.20 <19/10/12> - upconv.c ã‹ã‚‰å‘¼ã³å‡ºã™ã‚ˆã†ã«ä¿®æ­£
  */
 
 #include <math.h>
@@ -46,7 +46,7 @@
 #define	PRINT_LOG(s)	//
 #endif
 
-// ƒTƒ“ƒvƒ‹‚ğˆ—‚·‚éƒf[ƒ^Œ^
+// ã‚µãƒ³ãƒ—ãƒ«ã‚’å‡¦ç†ã™ã‚‹ãƒ‡ãƒ¼ã‚¿å‹
 #define SSIZE	signed long long int
 #define UI64	unsigned long long int
 
@@ -179,7 +179,7 @@ typedef struct {
 	char	*argv4;
 } PARAM_INFO2;
 
-// BWF ‚Ì link ƒ`ƒƒƒ“ƒN‘Î‰
+// BWF ã® link ãƒãƒ£ãƒ³ã‚¯å¯¾å¿œ
 char link_start[]="<LINK>\r\n";
 char link_file[]=						\
 	"\t<FILE type=\"%s\">\r\n"				\
@@ -189,7 +189,7 @@ char link_file[]=						\
 char link_end[]="</LINK>";
 
 //
-// DSF ƒtƒ@ƒCƒ‹ƒtƒH[ƒ}ƒbƒgd—l‘‚ğQÆ
+// DSF ãƒ•ã‚¡ã‚¤ãƒ«ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆä»•æ§˜æ›¸ã‚’å‚ç…§
 #pragma pack(push, 1)
 typedef struct {
 	char	id[4];
@@ -283,7 +283,7 @@ double normalNoise(void);
 
 //---------------------------------------------------------------------------
 // Function   : main
-// Description: ˆø”‚ğˆ—‚µ•ÏŠ·ŠÖ”‚ğŒÄ‚Ño‚·
+// Description: å¼•æ•°ã‚’å‡¦ç†ã—å¤‰æ›é–¢æ•°ã‚’å‘¼ã³å‡ºã™
 //
 //
 #if 0
@@ -315,7 +315,7 @@ int main(int argc, char *argv[])
 
 //---------------------------------------------------------------------------
 // Function   : to_raw_main
-// Description: upconv ˆ—‚ğ‚·‚é‚½‚ßAraw ƒtƒ@ƒCƒ‹‚Ö•ÏŠ·‚·‚é
+// Description: upconv å‡¦ç†ã‚’ã™ã‚‹ãŸã‚ã€raw ãƒ•ã‚¡ã‚¤ãƒ«ã¸å¤‰æ›ã™ã‚‹
 //
 // argv[1] Input  WAV File
 // argv[2] Output WAV File
@@ -384,14 +384,14 @@ int to_raw_main(int argc, char *argv[])
 			param_info2.hfc = -1;
 			param_info2.enable_hfc = 0;
 
-			// default parameter ƒtƒ@ƒCƒ‹
+			// default parameter ãƒ•ã‚¡ã‚¤ãƒ«
 			fp_param = fopen(argv[3],"r");
 			if (fp_param == NULL) {
 				retCode = STATUS_PARAMETER_ERR;errLine = __LINE__;
 				break;
 			}
 			
-			// ƒpƒ‰ƒ[ƒ^‚Ì“Ç‚İ‚±‚İ
+			// ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®èª­ã¿ã“ã¿
 			if (fgets(work,2047,fp_param) == NULL) {
 				retCode = STATUS_PARAMETER_ERR;errLine = __LINE__;
 				break;
@@ -401,7 +401,7 @@ int to_raw_main(int argc, char *argv[])
 			strcat(pparam," ");
 			if (strlen(argv[4]) >= 1) strcat(pparam,argv[4]);
 
-			// tmpƒtƒ@ƒCƒ‹—p‚Ìì‹ÆƒfƒBƒŒƒNƒgƒŠ
+			// tmpãƒ•ã‚¡ã‚¤ãƒ«ç”¨ã®ä½œæ¥­ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª
 			if (fgets(workpath,_MAX_PATH,fp_param) == NULL) {
 				retCode = STATUS_PARAMETER_ERR;errLine = __LINE__;
 				break;
@@ -476,7 +476,7 @@ int to_raw_main(int argc, char *argv[])
 				param_info2.hfc = -1;
 			}
 
-			// ‰¹ºƒtƒ@ƒCƒ‹î•ñ‚ğæ“¾‚·‚é
+			// éŸ³å£°ãƒ•ã‚¡ã‚¤ãƒ«æƒ…å ±ã‚’å–å¾—ã™ã‚‹
 			retCode = PLG_InfoAudioData(argv[1],&inFmt,&inSample,&fileInfo);
 			if (retCode != STATUS_SUCCESS) {
 				retCode = STATUS_FILE_READ_ERR;errLine = __LINE__;
@@ -537,7 +537,7 @@ int to_raw_main(int argc, char *argv[])
 					retCode = STATUS_FILE_READ_ERR;errLine = __LINE__;
 					break;
 				}
-				// Œ³‚Ì“ü—Íƒtƒ@ƒCƒ‹–¼‚ğ•Û‘¶(Œã‚Åƒƒ^î•ñ‚Ì•œŒ³‚Ég—p‚·‚é)
+				// å…ƒã®å…¥åŠ›ãƒ•ã‚¡ã‚¤ãƒ«åã‚’ä¿å­˜(å¾Œã§ãƒ¡ã‚¿æƒ…å ±ã®å¾©å…ƒæ™‚ã«ä½¿ç”¨ã™ã‚‹)
 				fprintf(fp_param,"%s\n",argv[1]);
 				strcpy(argv[1],dec_wav);
 				fprintf(fp_files,"%s\n",dec_wav);
@@ -545,7 +545,7 @@ int to_raw_main(int argc, char *argv[])
 				fprintf(fp_param,"%s\n",argv[1]);
 			}
 
-			// r1,r2,r3,r4,r5,r6 ƒtƒ@ƒCƒ‹‚Ìo—ÍæƒpƒXƒtƒ@ƒCƒ‹¶¬
+			// r1,r2,r3,r4,r5,r6 ãƒ•ã‚¡ã‚¤ãƒ«ã®å‡ºåŠ›å…ˆãƒ‘ã‚¹ãƒ•ã‚¡ã‚¤ãƒ«ç”Ÿæˆ
 			_splitpath(argv[2],drive,dir,fname,ext);
 			_splitpath(workpath,workdrive,workdir,workfname,workext);
 			if (strlen(workdrive) == 2 && strlen(workdir) >= 1) {
@@ -575,7 +575,7 @@ int to_raw_main(int argc, char *argv[])
 				fprintf(stdout,"[wav2raw]\n");
 				fflush(stdout);
 
-				// “ü—Íƒtƒ@ƒCƒ‹ƒI[ƒvƒ“
+				// å…¥åŠ›ãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ¼ãƒ—ãƒ³
 				PRINT_LOG(argv[1]);
 				fio_open(&fp_r,argv[1],FIO_MODE_R);
 				if (fp_r.error) {
@@ -591,14 +591,14 @@ int to_raw_main(int argc, char *argv[])
 					break;
 				}
 
-				// ƒpƒ‰ƒ[ƒ^[‚Ì’Ç‰Á
+				// ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ¼ã®è¿½åŠ 
 				sprintf(work," -is:%d -iw:%d -ch:%d",inFmt.sample,inFmt.bitsPerSample,inFmt.channel);
 				strcat(argv[4],work);
 
 				max_size = inSample;
 				max_size *= sizeof (SSIZE);
 
-				// o—Íƒtƒ@ƒCƒ‹–¼‚Ìì¬(Left)
+				// å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«åã®ä½œæˆ(Left)
 				_makepath(tmppath,workdrive,workdir,workfname,"r1");
 				fio_open(&fp_w1,tmppath,FIO_MODE_W);
 				if (fp_w1.error) {
@@ -610,7 +610,7 @@ int to_raw_main(int argc, char *argv[])
 				fio_set_memory_limit(&fp_w1,20,fio);
 
 				if (inFmt.channel >= 2) {
-					// o—Íƒtƒ@ƒCƒ‹–¼‚Ìì¬(Right)
+					// å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«åã®ä½œæˆ(Right)
 					_makepath(tmppath,workdrive,workdir,workfname,"r2");
 					fio_open(&fp_w2,tmppath,FIO_MODE_W);
 					if (fp_w2.error) {
@@ -622,7 +622,7 @@ int to_raw_main(int argc, char *argv[])
 					fio_set_memory_limit(&fp_w2,20,fio);
 				}
 				if (inFmt.channel >= 3) {
-					// o—Íƒtƒ@ƒCƒ‹–¼‚Ìì¬(3)
+					// å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«åã®ä½œæˆ(3)
 					_makepath(tmppath,workdrive,workdir,workfname,"r3");
 					fio_open(&fp_w3,tmppath,FIO_MODE_W);
 					if (fp_w3.error) {
@@ -634,7 +634,7 @@ int to_raw_main(int argc, char *argv[])
 					fio_set_memory_limit(&fp_w3,20,fio);
 				}
 				if (inFmt.channel >= 4) {
-					// o—Íƒtƒ@ƒCƒ‹–¼‚Ìì¬(4)
+					// å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«åã®ä½œæˆ(4)
 					_makepath(tmppath,workdrive,workdir,workfname,"r4");
 					fio_open(&fp_w4,tmppath,FIO_MODE_W);
 					if (fp_w4.error) {
@@ -646,7 +646,7 @@ int to_raw_main(int argc, char *argv[])
 					fio_set_memory_limit(&fp_w4,20,fio);
 				}
 				if (inFmt.channel >= 5) {
-					// o—Íƒtƒ@ƒCƒ‹–¼‚Ìì¬(5)
+					// å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«åã®ä½œæˆ(5)
 					_makepath(tmppath,workdrive,workdir,workfname,"r5");
 					fio_open(&fp_w5,tmppath,FIO_MODE_W);
 					if (fp_w5.error) {
@@ -658,9 +658,9 @@ int to_raw_main(int argc, char *argv[])
 					fio_set_memory_limit(&fp_w5,20,fio);
 				}
 				if (inFmt.channel >= 6) {
-					// o—Íƒtƒ@ƒCƒ‹–¼‚Ìì¬(6)
+					// å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«åã®ä½œæˆ(6)
 					_makepath(tmppath,workdrive,workdir,workfname,"r6");
-					// o—Íƒtƒ@ƒCƒ‹ƒI[ƒvƒ“
+					// å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ¼ãƒ—ãƒ³
 					fio_open(&fp_w6,tmppath,FIO_MODE_W);
 					if (fp_w6.error) {
 						retCode = STATUS_FILE_WRITE_ERR;errLine = __LINE__;
@@ -671,7 +671,7 @@ int to_raw_main(int argc, char *argv[])
 					fio_set_memory_limit(&fp_w6,20,fio);
 				}
 				
-				// íœƒtƒ@ƒCƒ‹–¼
+				// å‰Šé™¤ãƒ•ã‚¡ã‚¤ãƒ«å
 				_makepath(tmppath,workdrive,workdir,workfname,"r1.param");
 				fprintf(fp_files,"%s\n",tmppath);
 				_makepath(tmppath,workdrive,workdir,workfname,"r2.param");
@@ -711,7 +711,7 @@ int to_raw_main(int argc, char *argv[])
 				_makepath(tmppath,workdrive,workdir,workfname,"r6.tmp2");
 				fprintf(fp_files,"%s\n",tmppath);
 
-				// “Ç‚İ‚İƒoƒbƒtƒ@ƒTƒCƒYŒvZ
+				// èª­ã¿è¾¼ã¿ãƒãƒƒãƒ•ã‚¡ã‚µã‚¤ã‚ºè¨ˆç®—
 				if (inFmt.bitsPerSample != 20) {
 					rs = (inFmt.bitsPerSample / 8) * inFmt.channel;
 				} else {
@@ -723,7 +723,7 @@ int to_raw_main(int argc, char *argv[])
 					retCode = STATUS_MEM_ALLOC_ERR;errLine = __LINE__;
 					break;
 				}
-				// •ÏŠ·‚Æ‘‚«o‚µ
+				// å¤‰æ›ã¨æ›¸ãå‡ºã—
 
 				err1 = err2 = err3 = err4 = err5 = err6 = 0;
 				per = -1;
@@ -852,7 +852,7 @@ int to_raw_main(int argc, char *argv[])
 					break;
 				}
 				
-				// ‰¹‚ÌÅ‘åƒŒƒxƒ‹‚ğ‹L˜^‚·‚é(1)
+				// éŸ³ã®æœ€å¤§ãƒ¬ãƒ™ãƒ«ã‚’è¨˜éŒ²ã™ã‚‹(1)
 				if (NormInfo.maxR1 < 0) {
 					NormInfo.maxR1 *= -1;
 				}
@@ -874,13 +874,13 @@ int to_raw_main(int argc, char *argv[])
 				}
 				avg <<= 40;
 				persent = (double)max / (double)0x7FFFFFFFFFFFFF;
-				wr = fprintf(fp_param,"r1=%.10lf,%llx\n",persent,avg);	// ‰¹‚ÌƒŒƒxƒ‹(%),‰¹‚Ì•½‹Ï’l
+				wr = fprintf(fp_param,"r1=%.10lf,%llx\n",persent,avg);	// éŸ³ã®ãƒ¬ãƒ™ãƒ«(%),éŸ³ã®å¹³å‡å€¤
 				if (wr == EOF) {
 					retCode = STATUS_FILE_WRITE_ERR;errLine = __LINE__;
 					break;
 				}
 
-				// ‰¹‚ÌÅ‘åƒŒƒxƒ‹‚ğ‹L˜^‚·‚é(2)
+				// éŸ³ã®æœ€å¤§ãƒ¬ãƒ™ãƒ«ã‚’è¨˜éŒ²ã™ã‚‹(2)
 				persent = 1.00;
 				avg = 0;
 				if (inFmt.channel >= 2) {
@@ -911,7 +911,7 @@ int to_raw_main(int argc, char *argv[])
 					retCode = STATUS_FILE_WRITE_ERR;errLine = __LINE__;
 					break;
 				}
-				// ‰¹‚ÌÅ‘åƒŒƒxƒ‹‚ğ‹L˜^‚·‚é(3)
+				// éŸ³ã®æœ€å¤§ãƒ¬ãƒ™ãƒ«ã‚’è¨˜éŒ²ã™ã‚‹(3)
 				persent = 1.00;
 				avg = 0;
 				if (inFmt.channel >= 3) {
@@ -941,7 +941,7 @@ int to_raw_main(int argc, char *argv[])
 					retCode = STATUS_FILE_WRITE_ERR;errLine = __LINE__;
 					break;
 				}
-				// ‰¹‚ÌÅ‘åƒŒƒxƒ‹‚ğ‹L˜^‚·‚é(4)
+				// éŸ³ã®æœ€å¤§ãƒ¬ãƒ™ãƒ«ã‚’è¨˜éŒ²ã™ã‚‹(4)
 				persent = 1.00;
 				avg = 0;
 				if (inFmt.channel >= 4) {
@@ -971,7 +971,7 @@ int to_raw_main(int argc, char *argv[])
 					retCode = STATUS_FILE_WRITE_ERR;errLine = __LINE__;
 					break;
 				}
-				// ‰¹‚ÌÅ‘åƒŒƒxƒ‹‚ğ‹L˜^‚·‚é(5)
+				// éŸ³ã®æœ€å¤§ãƒ¬ãƒ™ãƒ«ã‚’è¨˜éŒ²ã™ã‚‹(5)
 				persent = 1.00;
 				avg = 0;
 				if (inFmt.channel >= 5) {
@@ -1001,7 +1001,7 @@ int to_raw_main(int argc, char *argv[])
 					retCode = STATUS_FILE_WRITE_ERR;errLine = __LINE__;
 					break;
 				}
-				// ‰¹‚ÌÅ‘åƒŒƒxƒ‹‚ğ‹L˜^‚·‚é(6)
+				// éŸ³ã®æœ€å¤§ãƒ¬ãƒ™ãƒ«ã‚’è¨˜éŒ²ã™ã‚‹(6)
 				persent = 1.00;
 				if (inFmt.channel >= 6) {
 					if (NormInfo.maxR6 < 0) {
@@ -1066,14 +1066,14 @@ int to_raw_main(int argc, char *argv[])
 
 //---------------------------------------------------------------------------
 // Function   : nBitTo64S
-// Description: nBit ‚Ìƒf[ƒ^‚ğ64Bit •„†•tƒf[ƒ^‚É•ÏŠ·‚·‚é(“à•”•\Œ»‚Í60Bit)
+// Description: nBit ã®ãƒ‡ãƒ¼ã‚¿ã‚’64Bit ç¬¦å·ä»˜ãƒ‡ãƒ¼ã‚¿ã«å¤‰æ›ã™ã‚‹(å†…éƒ¨è¡¨ç¾ã¯60Bit)
 // ---
-//	nCh		:ƒ`ƒƒƒ“ƒlƒ‹”
-//	ch		:‰¹ºƒf[ƒ^‚Ìƒ`ƒƒƒlƒ‹
-//	bit 	:“ü—Íƒf[ƒ^‚Ìƒrƒbƒg”
-//	in		:“ü—Íƒf[ƒ^‚ÌƒAƒhƒŒƒX
-//	fio 	:o—ÍFIO‚ÌƒAƒhƒŒƒX
-//	nSample :ƒTƒ“ƒvƒ‹”
+//	nCh		:ãƒãƒ£ãƒ³ãƒãƒ«æ•°
+//	ch		:éŸ³å£°ãƒ‡ãƒ¼ã‚¿ã®ãƒãƒ£ãƒãƒ«
+//	bit 	:å…¥åŠ›ãƒ‡ãƒ¼ã‚¿ã®ãƒ“ãƒƒãƒˆæ•°
+//	in		:å…¥åŠ›ãƒ‡ãƒ¼ã‚¿ã®ã‚¢ãƒ‰ãƒ¬ã‚¹
+//	fio 	:å‡ºåŠ›FIOã®ã‚¢ãƒ‰ãƒ¬ã‚¹
+//	nSample :ã‚µãƒ³ãƒ—ãƒ«æ•°
 //
 int nBitTo64S(int nCh,int ch,int bit,void *in,FIO *fio,DWORD nSample)
 {
@@ -1429,7 +1429,7 @@ int nBitTo64S(int nCh,int ch,int bit,void *in,FIO *fio,DWORD nSample)
 
 //---------------------------------------------------------------------------
 // Function   : to_wav_main
-// Description: wav ƒtƒ@ƒCƒ‹‰»ƒƒCƒ“
+// Description: wav ãƒ•ã‚¡ã‚¤ãƒ«åŒ–ãƒ¡ã‚¤ãƒ³
 //
 //
 int to_wav_main(int argc, char *argv[])
@@ -1507,7 +1507,7 @@ int to_wav_main(int argc, char *argv[])
 		arg_encorder[0] = NULL;
 		arg_encorder[1] = NULL;
 		arg_encorder[2] = NULL;
-		// Wave ƒtƒ@ƒCƒ‹‚Ì‚Íˆá‚¤‡”Ô
+		// Wave ãƒ•ã‚¡ã‚¤ãƒ«ã®ã¯é•ã†é †ç•ª
 		p_nx[0]  = &paramInfo.nx1;	// Left
 		p_nx[1]  = &paramInfo.nx2;	// Right
 		p_nx[2]  = &paramInfo.nx3;	// Center
@@ -1551,7 +1551,7 @@ int to_wav_main(int argc, char *argv[])
 			strcat(param," ");
 			if (strlen(argv[4]) >= 1) strcat(param,argv[4]);
 
-			// ƒeƒ“ƒ|ƒ‰ƒŠƒtƒ@ƒCƒ‹‚Ìo—Íæ
+			// ãƒ†ãƒ³ãƒãƒ©ãƒªãƒ•ã‚¡ã‚¤ãƒ«ã®å‡ºåŠ›å…ˆ
 			if (fgets(workpath,_MAX_PATH - 1,fp) == NULL) {
 				retCode = STATUS_FILE_READ_ERR;paramInfo.errLine = __LINE__;
 				break;
@@ -1586,11 +1586,11 @@ int to_wav_main(int argc, char *argv[])
 			strcpy(paramInfo.opt_mp3,"|");
 			strcat(paramInfo.opt_mp3,work);
 
-			// param ƒtƒ@ƒCƒ‹
+			// param ãƒ•ã‚¡ã‚¤ãƒ«
 			PRINT_LOG("before open param");
 			_splitpath(argv[2],drive,dir,fname,ext);
 			_makepath(tmppath,drive,dir,fname,"param");
-			// ƒtƒ@ƒCƒ‹ƒI[ƒvƒ“
+			// ãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ¼ãƒ—ãƒ³
 			fp = fopen(tmppath,"r");
 			if (fp == NULL) {
 				retCode = STATUS_FILE_READ_ERR;paramInfo.errLine = __LINE__;
@@ -1932,7 +1932,7 @@ int to_wav_main(int argc, char *argv[])
 					strcpy(fn[5],"_SR");
 				}
 
-				// r1 r2 r3 r4 r5 r6ƒtƒ@ƒCƒ‹‚ÌƒpƒX¶¬
+				// r1 r2 r3 r4 r5 r6ãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ‘ã‚¹ç”Ÿæˆ
 				_splitpath(argv[2],drive,dir,fname,ext);
 				_splitpath(workpath,workdrive,workdir,workfname,workext);
 				if (strlen(workdrive) == 2 && strlen(workdir) >= 1) {
@@ -2514,7 +2514,7 @@ int to_wav_main(int argc, char *argv[])
 				}
 
 				_makepath(tmppath,workdrive,workdir,workfname,"r1");
-				// ƒtƒ@ƒCƒ‹ƒI[ƒvƒ“
+				// ãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ¼ãƒ—ãƒ³
 				fio_open(&fp_r1,tmppath,FIO_MODE_R);
 				if (fp_r1.error) {
 					retCode = STATUS_FILE_READ_ERR;paramInfo.errLine = __LINE__;
@@ -2522,10 +2522,10 @@ int to_wav_main(int argc, char *argv[])
 				}
 				p_fp1 = &fp_r1;
 				if (paramInfo.ch >= 2) {
-					// R2 ƒtƒ@ƒCƒ‹
+					// R2 ãƒ•ã‚¡ã‚¤ãƒ«
 					_makepath(tmppath,workdrive,workdir,workfname,"r2");
 
-					// ƒtƒ@ƒCƒ‹ƒI[ƒvƒ“
+					// ãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ¼ãƒ—ãƒ³
 					fio_open(&fp_r2,tmppath,FIO_MODE_R);
 					if (fp_r2.error) {
 						retCode = STATUS_FILE_READ_ERR;paramInfo.errLine = __LINE__;
@@ -2534,10 +2534,10 @@ int to_wav_main(int argc, char *argv[])
 					p_fp2 = &fp_r2;
 				}
 				if (paramInfo.ch >= 3 && (paramInfo.chC == 1 || genCh == 0)) {
-					// R3 ƒtƒ@ƒCƒ‹
+					// R3 ãƒ•ã‚¡ã‚¤ãƒ«
 					_makepath(tmppath,workdrive,workdir,workfname,"r3");
 
-					// ƒtƒ@ƒCƒ‹ƒI[ƒvƒ“
+					// ãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ¼ãƒ—ãƒ³
 					fio_open(&fp_r3,tmppath,FIO_MODE_R);
 					if (fp_r3.error) {
 						retCode = STATUS_FILE_READ_ERR;paramInfo.errLine = __LINE__;
@@ -2547,10 +2547,10 @@ int to_wav_main(int argc, char *argv[])
 				}
 
 				if (paramInfo.ch >= 4 && (paramInfo.chS == 1 || genCh == 0)) {
-					// R4 ƒtƒ@ƒCƒ‹
+					// R4 ãƒ•ã‚¡ã‚¤ãƒ«
 					_makepath(tmppath,workdrive,workdir,workfname,"r4");
 
-					// ƒtƒ@ƒCƒ‹ƒI[ƒvƒ“
+					// ãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ¼ãƒ—ãƒ³
 					fio_open(&fp_r4,tmppath,FIO_MODE_R);
 					if (fp_r4.error) {
 						retCode = STATUS_FILE_READ_ERR;paramInfo.errLine = __LINE__;
@@ -2558,10 +2558,10 @@ int to_wav_main(int argc, char *argv[])
 					}
 					p_fp4 = &fp_r4;
 
-					// R5 ƒtƒ@ƒCƒ‹
+					// R5 ãƒ•ã‚¡ã‚¤ãƒ«
 					_makepath(tmppath,workdrive,workdir,workfname,"r5");
 
-					// ƒtƒ@ƒCƒ‹ƒI[ƒvƒ“
+					// ãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ¼ãƒ—ãƒ³
 					fio_open(&fp_r5,tmppath,FIO_MODE_R);
 					if (fp_r5.error) {
 						retCode = STATUS_FILE_READ_ERR;paramInfo.errLine = __LINE__;
@@ -2572,10 +2572,10 @@ int to_wav_main(int argc, char *argv[])
 				}
 
 				if ((paramInfo.ch >= 3 && paramInfo.chLFE == 1) || (paramInfo.ch == 6 && genCh == 0)) {
-					// R6 ƒtƒ@ƒCƒ‹
+					// R6 ãƒ•ã‚¡ã‚¤ãƒ«
 					_makepath(tmppath,workdrive,workdir,workfname,"r6");
 
-					// ƒtƒ@ƒCƒ‹ƒI[ƒvƒ“
+					// ãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ¼ãƒ—ãƒ³
 					fio_open(&fp_r6,tmppath,FIO_MODE_R);
 					if (fp_r6.error) {
 						retCode = STATUS_FILE_READ_ERR;paramInfo.errLine = __LINE__;
@@ -2595,7 +2595,7 @@ int to_wav_main(int argc, char *argv[])
 				fprintf(stdout,"[raw2wav]\n");
 				fflush(stdout);
 				if (paramInfo.split == 0) {
-					// o—Íƒtƒ@ƒCƒ‹
+					// å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«
 					_splitpath(argv[2],drive,dir,fname,ext);
 					if (paramInfo.dsd_fmt == -1) {
 						if (paramInfo.raw) {
@@ -2617,7 +2617,7 @@ int to_wav_main(int argc, char *argv[])
 						strcpy(paramInfo.tofile,fname);
 						strcat(paramInfo.tofile,".dsf");
 					}
-					// ƒtƒ@ƒCƒ‹ƒI[ƒvƒ“
+					// ãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ¼ãƒ—ãƒ³
 					fio_open(&fp_w,tmppath,FIO_MODE_W);
 					if (fp_w.error) {
 						retCode = STATUS_FILE_WRITE_ERR;paramInfo.errLine = __LINE__;
@@ -2655,11 +2655,11 @@ int to_wav_main(int argc, char *argv[])
 							break;
 						}
 						count++;
-						// o—Íƒtƒ@ƒCƒ‹
+						// å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«
 						_splitpath(argv[2],drive,dir,fname,ext);
 						sprintf(fname,"%s_%d.wav",fname,count);
 						_makepath(tmppath,drive,dir,fname,NULL);
-						// ƒtƒ@ƒCƒ‹ƒI[ƒvƒ“
+						// ãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ¼ãƒ—ãƒ³
 						memset(&fp_w,0,sizeof (FIO));
 						fio_open(&fp_w,tmppath,FIO_MODE_W);
 						if (fp_w.error) {
@@ -2671,7 +2671,7 @@ int to_wav_main(int argc, char *argv[])
 						paramInfo.fp_w[0] = &fp_w;
 					}
 				} else {
-					// o—Íƒtƒ@ƒCƒ‹
+					// å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«
 					for (ccc = 0;ccc < paramInfo.ch;ccc++) {
 						_splitpath(argv[2],drive,dir,fname,ext);
 						strcat(fname,fn[ccc]);
@@ -2684,7 +2684,7 @@ int to_wav_main(int argc, char *argv[])
 							strcpy(paramInfo.tofile,fname);
 							strcat(paramInfo.tofile,"wav");
 						}
-						// ƒtƒ@ƒCƒ‹ƒI[ƒvƒ“
+						// ãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ¼ãƒ—ãƒ³
 						fio_open(&fp_ws[ccc],tmppath,FIO_MODE_W);
 						if (fp_ws[ccc].error) {
 							retCode = STATUS_FILE_WRITE_ERR;paramInfo.errLine = __LINE__;
@@ -2711,11 +2711,11 @@ int to_wav_main(int argc, char *argv[])
 						}
 						count++;
 						for (ccc = 0;ccc < paramInfo.ch;ccc++) {
-							// o—Íƒtƒ@ƒCƒ‹
+							// å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«
 							_splitpath(argv[2],drive,dir,fname,ext);
 							sprintf(fname,"%s_%d%s",fname,count,fn[ccc]);
 							_makepath(tmppath,drive,dir,fname,"wav");
-							// ƒtƒ@ƒCƒ‹ƒI[ƒvƒ“
+							// ãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ¼ãƒ—ãƒ³
 							fio_open(&fp_w,tmppath,FIO_MODE_W);
 							if (fp_w.error) {
 								retCode = STATUS_FILE_WRITE_ERR;paramInfo.errLine = __LINE__;
@@ -2785,20 +2785,20 @@ int to_wav_main(int argc, char *argv[])
 
 //---------------------------------------------------------------------------
 // Function   : Normalize
-// Description: ƒm[ƒ}ƒ‰ƒCƒYˆ—
+// Description: ãƒãƒ¼ãƒãƒ©ã‚¤ã‚ºå‡¦ç†
 // ---
-//	pcount	:ƒtƒ@ƒCƒ‹”Ô†‚ÌƒAƒhƒŒƒX
-//	inFmt	:“ü—Íƒtƒ@ƒCƒ‹‰¹ºŒ`®î•ñ
-//	outFmt	:o—Íƒtƒ@ƒCƒ‹‰¹ºŒ`®î•ñ
-//	fp_r1	:‰¹ºƒf[ƒ^‚ÌFIO\‘¢‘Ì
-//	fp_r2	:‰¹ºƒf[ƒ^‚ÌFIO\‘¢‘Ì
-//	fp_r3	:‰¹ºƒf[ƒ^‚ÌFIO\‘¢‘Ì
-//	fp_r4	:‰¹ºƒf[ƒ^‚ÌFIO\‘¢‘Ì
-//	fp_r5	:‰¹ºƒf[ƒ^‚ÌFIO\‘¢‘Ì
-//	fp_r6	:‰¹ºƒf[ƒ^‚ÌFIO\‘¢‘Ì
-//	startSample : ŠJnƒTƒ“ƒvƒ‹
-//	nSample :ˆ—‚ğ‚·‚éƒTƒ“ƒvƒ‹”‚ÌƒAƒhƒŒƒX
-//	param	:ƒpƒ‰ƒ[ƒ^[\‘¢‘Ì
+//	pcount	:ãƒ•ã‚¡ã‚¤ãƒ«ç•ªå·ã®ã‚¢ãƒ‰ãƒ¬ã‚¹
+//	inFmt	:å…¥åŠ›ãƒ•ã‚¡ã‚¤ãƒ«éŸ³å£°å½¢å¼æƒ…å ±
+//	outFmt	:å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«éŸ³å£°å½¢å¼æƒ…å ±
+//	fp_r1	:éŸ³å£°ãƒ‡ãƒ¼ã‚¿ã®FIOæ§‹é€ ä½“
+//	fp_r2	:éŸ³å£°ãƒ‡ãƒ¼ã‚¿ã®FIOæ§‹é€ ä½“
+//	fp_r3	:éŸ³å£°ãƒ‡ãƒ¼ã‚¿ã®FIOæ§‹é€ ä½“
+//	fp_r4	:éŸ³å£°ãƒ‡ãƒ¼ã‚¿ã®FIOæ§‹é€ ä½“
+//	fp_r5	:éŸ³å£°ãƒ‡ãƒ¼ã‚¿ã®FIOæ§‹é€ ä½“
+//	fp_r6	:éŸ³å£°ãƒ‡ãƒ¼ã‚¿ã®FIOæ§‹é€ ä½“
+//	startSample : é–‹å§‹ã‚µãƒ³ãƒ—ãƒ«
+//	nSample :å‡¦ç†ã‚’ã™ã‚‹ã‚µãƒ³ãƒ—ãƒ«æ•°ã®ã‚¢ãƒ‰ãƒ¬ã‚¹
+//	param	:ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ¼æ§‹é€ ä½“
 //
 int Normalize(int *pCount,SOUNDFMT *inFmt,SOUNDFMT *outFmt,FIO *fp_r1,FIO *fp_r2,FIO *fp_r3,FIO *fp_r4,FIO *fp_r5,FIO *fp_r6,DWORD *startSample,DWORD nSample,PARAM_INFO *param)
 {
@@ -2836,7 +2836,7 @@ int Normalize(int *pCount,SOUNDFMT *inFmt,SOUNDFMT *outFmt,FIO *fp_r1,FIO *fp_r2
 
 		retCode1 = retCode2 = retCode3 = retCode4 = retCode5 = retCode6 = 0;
 		retCode = STATUS_SUCCESS;
-		// ƒwƒbƒ_ˆ—
+		// ãƒ˜ãƒƒãƒ€å‡¦ç†
 		if (param->raw == 0) {
 			header = malloc(1 * 1024 * 1024);
 			if (header == NULL) {
@@ -2845,10 +2845,10 @@ int Normalize(int *pCount,SOUNDFMT *inFmt,SOUNDFMT *outFmt,FIO *fp_r1,FIO *fp_r2
 			}
 			if (param->split == 0) {
 				data_size = (param->sampling * (param->bitwidth / 8)) * param->ch;
-				data_size *= 10;	// 10•b
+				data_size *= 10;	// 10ç§’
 			} else {
 				data_size = (param->sampling * (param->bitwidth / 8)) * 1;
-				data_size *= 10;	// 10•b
+				data_size *= 10;	// 10ç§’
 			}
 			buf1 = malloc(data_size);
 			if (buf1 == NULL) {
@@ -2987,7 +2987,7 @@ int Normalize(int *pCount,SOUNDFMT *inFmt,SOUNDFMT *outFmt,FIO *fp_r1,FIO *fp_r2
 			}
 			per = persent;
 
-			// 10•b‚¸‚Âˆ—‚·‚é
+			// 10ç§’ãšã¤å‡¦ç†ã™ã‚‹
 			outSample = param->sampling * 10;
 			if (i + outSample > nSample) {
 				outSample = nSample - i;
@@ -2999,7 +2999,7 @@ int Normalize(int *pCount,SOUNDFMT *inFmt,SOUNDFMT *outFmt,FIO *fp_r1,FIO *fp_r2
 			if (buf5) memset(buf5,0,data_size);
 			if (buf6) memset(buf6,0,data_size);
 
-			// ƒf[ƒ^‡
+			// ãƒ‡ãƒ¼ã‚¿é †
 			// Left,Right,Center,LFE,Back Left,Back Right
 
 			#pragma omp parallel
@@ -3130,7 +3130,7 @@ int Normalize(int *pCount,SOUNDFMT *inFmt,SOUNDFMT *outFmt,FIO *fp_r1,FIO *fp_r2
 			if (param->rf64 == 0) {
 				fio_get_datasize(param->fp_w[0],&file_size);
 				if (file_size > (fio_size)1 * 1024 * 1024 * 1024 && outSample == param->sampling * 10 && (nSample - i) >= param->sampling * 20) {
-					// ƒf[ƒ^ƒTƒCƒY‚ª‘å‚«‚¢‚Ì‚Å•ªŠ„‚·‚é(rf64ˆÈŠO)
+					// ãƒ‡ãƒ¼ã‚¿ã‚µã‚¤ã‚ºãŒå¤§ãã„ã®ã§åˆ†å‰²ã™ã‚‹(rf64ä»¥å¤–)
 					*startSample = i + outSample;
 					div_flag = 1;
 					break;
@@ -3290,7 +3290,7 @@ PRINT_LOG(s);
 				}
 			}
 			if (param->bwf && (div_flag == 1 || *pCount > 1)) {
-				// bwf ‚Ì link ƒ`ƒƒƒ“ƒN
+				// bwf ã® link ãƒãƒ£ãƒ³ã‚¯
 				char *link,*wk_str;
 				long link_size;
 				link = (char *)malloc(strlen(param->tofile) + 128);
@@ -3435,20 +3435,20 @@ PRINT_LOG(s);
 }
 //---------------------------------------------------------------------------
 // Function   : Normalize_Mx
-// Description: ƒm[ƒ}ƒ‰ƒCƒYˆ—
+// Description: ãƒãƒ¼ãƒãƒ©ã‚¤ã‚ºå‡¦ç†
 // ---
-//	nCh		:ƒ`ƒƒƒ“ƒlƒ‹”
-//	ch		:ƒ`ƒƒƒ“ƒlƒ‹‚Ì‰½”Ô–Ú‚ğˆ—‚·‚é‚©‚Ìw’è
-//	bit 	:“ü—Íƒf[ƒ^‚Ìƒrƒbƒg”
-//	fp_r	:‰¹ºƒf[ƒ^‚ÌFIO\‘¢‘Ì
-//	nSample :ˆ—‚ğ‚·‚éƒTƒ“ƒvƒ‹”
-//	buffer	:o—Íæ‚Ìƒoƒbƒtƒ@
+//	nCh		:ãƒãƒ£ãƒ³ãƒãƒ«æ•°
+//	ch		:ãƒãƒ£ãƒ³ãƒãƒ«ã®ä½•ç•ªç›®ã‚’å‡¦ç†ã™ã‚‹ã‹ã®æŒ‡å®š
+//	bit 	:å…¥åŠ›ãƒ‡ãƒ¼ã‚¿ã®ãƒ“ãƒƒãƒˆæ•°
+//	fp_r	:éŸ³å£°ãƒ‡ãƒ¼ã‚¿ã®FIOæ§‹é€ ä½“
+//	nSample :å‡¦ç†ã‚’ã™ã‚‹ã‚µãƒ³ãƒ—ãƒ«æ•°
+//	buffer	:å‡ºåŠ›å…ˆã®ãƒãƒƒãƒ•ã‚¡
 //
 int Normalize_Mx(int nCh,int ch,int bit,FIO *fp_r,DWORD nSample,BYTE *buffer,PARAM_INFO *param)
 {
 	int retCode;
 
-	// ‰¹ºƒf[ƒ^o—Í
+	// éŸ³å£°ãƒ‡ãƒ¼ã‚¿å‡ºåŠ›
 	switch (param->mode) {
 		case 0:
 			retCode = Normalize_M0(nCh,ch,bit,fp_r,nSample,buffer,param);
@@ -3470,14 +3470,14 @@ int Normalize_Mx(int nCh,int ch,int bit,FIO *fp_r,DWORD nSample,BYTE *buffer,PAR
 }
 //---------------------------------------------------------------------------
 // Function   : Normalize
-// Description: ƒm[ƒ}ƒ‰ƒCƒYˆ—(ƒJƒbƒg)
+// Description: ãƒãƒ¼ãƒãƒ©ã‚¤ã‚ºå‡¦ç†(ã‚«ãƒƒãƒˆ)
 // ---
-//	nCh		:ƒ`ƒƒƒ“ƒlƒ‹”
-//	ch		:ƒ`ƒƒƒ“ƒlƒ‹‚Ì‰½”Ô–Ú‚ğˆ—‚·‚é‚©‚Ìw’è
-//	bit 	:“ü—Íƒf[ƒ^‚Ìƒrƒbƒg”
-//	fp_r	:‰¹ºƒf[ƒ^‚ÌFIO\‘¢‘Ì
-//	nSample :ˆ—‚ğ‚·‚éƒTƒ“ƒvƒ‹”
-//	buffer	:o—Íæ‚Ìƒoƒbƒtƒ@
+//	nCh		:ãƒãƒ£ãƒ³ãƒãƒ«æ•°
+//	ch		:ãƒãƒ£ãƒ³ãƒãƒ«ã®ä½•ç•ªç›®ã‚’å‡¦ç†ã™ã‚‹ã‹ã®æŒ‡å®š
+//	bit 	:å…¥åŠ›ãƒ‡ãƒ¼ã‚¿ã®ãƒ“ãƒƒãƒˆæ•°
+//	fp_r	:éŸ³å£°ãƒ‡ãƒ¼ã‚¿ã®FIOæ§‹é€ ä½“
+//	nSample :å‡¦ç†ã‚’ã™ã‚‹ã‚µãƒ³ãƒ—ãƒ«æ•°
+//	buffer	:å‡ºåŠ›å…ˆã®ãƒãƒƒãƒ•ã‚¡
 //
 int Normalize_M0(int nCh,int ch,int bit,FIO *fp_r,DWORD nSample,BYTE *buffer,PARAM_INFO *param)
 {
@@ -3570,14 +3570,14 @@ int Normalize_M0(int nCh,int ch,int bit,FIO *fp_r,DWORD nSample,BYTE *buffer,PAR
 }
 //---------------------------------------------------------------------------
 // Function   : Normalize
-// Description: ƒm[ƒ}ƒ‰ƒCƒYˆ—(ƒfƒBƒU)
+// Description: ãƒãƒ¼ãƒãƒ©ã‚¤ã‚ºå‡¦ç†(ãƒ‡ã‚£ã‚¶)
 // ---
-//	nCh		:ƒ`ƒƒƒ“ƒlƒ‹”
-//	ch		:ƒ`ƒƒƒ“ƒlƒ‹‚Ì‰½”Ô–Ú‚ğˆ—‚·‚é‚©‚Ìw’è
-//	bit 	:“ü—Íƒf[ƒ^‚Ìƒrƒbƒg”
-//	fp_r	:‰¹ºƒf[ƒ^‚ÌFIO\‘¢‘Ì
-//	nSample :ˆ—‚ğ‚·‚éƒTƒ“ƒvƒ‹”
-//	buffer	:o—Íæ‚Ìƒoƒbƒtƒ@
+//	nCh		:ãƒãƒ£ãƒ³ãƒãƒ«æ•°
+//	ch		:ãƒãƒ£ãƒ³ãƒãƒ«ã®ä½•ç•ªç›®ã‚’å‡¦ç†ã™ã‚‹ã‹ã®æŒ‡å®š
+//	bit 	:å…¥åŠ›ãƒ‡ãƒ¼ã‚¿ã®ãƒ“ãƒƒãƒˆæ•°
+//	fp_r	:éŸ³å£°ãƒ‡ãƒ¼ã‚¿ã®FIOæ§‹é€ ä½“
+//	nSample :å‡¦ç†ã‚’ã™ã‚‹ã‚µãƒ³ãƒ—ãƒ«æ•°
+//	buffer	:å‡ºåŠ›å…ˆã®ãƒãƒƒãƒ•ã‚¡
 //
 int Normalize_M1(int nCh,int ch,int bit,FIO *fp_r,DWORD nSample,BYTE *buffer,PARAM_INFO *param)
 {
@@ -3714,14 +3714,14 @@ int Normalize_M1(int nCh,int ch,int bit,FIO *fp_r,DWORD nSample,BYTE *buffer,PAR
 }
 //---------------------------------------------------------------------------
 // Function   : Normalize
-// Description: ƒm[ƒ}ƒ‰ƒCƒYˆ—(Œë·—İÏ)
+// Description: ãƒãƒ¼ãƒãƒ©ã‚¤ã‚ºå‡¦ç†(èª¤å·®ç´¯ç©)
 // ---
-//	nCh		:ƒ`ƒƒƒ“ƒlƒ‹”
-//	ch		:ƒ`ƒƒƒ“ƒlƒ‹‚Ì‰½”Ô–Ú‚ğˆ—‚·‚é‚©‚Ìw’è
-//	bit 	:“ü—Íƒf[ƒ^‚Ìƒrƒbƒg”
-//	fp_r	:‰¹ºƒf[ƒ^‚ÌFIO\‘¢‘Ì
-//	nSample :ˆ—‚ğ‚·‚éƒTƒ“ƒvƒ‹”
-//	buffer	:o—Íæ‚Ìƒoƒbƒtƒ@
+//	nCh		:ãƒãƒ£ãƒ³ãƒãƒ«æ•°
+//	ch		:ãƒãƒ£ãƒ³ãƒãƒ«ã®ä½•ç•ªç›®ã‚’å‡¦ç†ã™ã‚‹ã‹ã®æŒ‡å®š
+//	bit 	:å…¥åŠ›ãƒ‡ãƒ¼ã‚¿ã®ãƒ“ãƒƒãƒˆæ•°
+//	fp_r	:éŸ³å£°ãƒ‡ãƒ¼ã‚¿ã®FIOæ§‹é€ ä½“
+//	nSample :å‡¦ç†ã‚’ã™ã‚‹ã‚µãƒ³ãƒ—ãƒ«æ•°
+//	buffer	:å‡ºåŠ›å…ˆã®ãƒãƒƒãƒ•ã‚¡
 //
 int Normalize_M2(int nCh,int ch,int bit,FIO *fp_r,DWORD nSample,BYTE *buffer,PARAM_INFO *param)
 {
@@ -3820,7 +3820,7 @@ int Normalize_M2(int nCh,int ch,int bit,FIO *fp_r,DWORD nSample,BYTE *buffer,PAR
 
 		noise = normalNoise();
 		if (bit == 16) {
-			// lÌŒÜ“ü
+			// å››æ¨äº”å…¥
 
 			s = CLIP_ADD(s,ROUND_NBIT((64-8)-16));
 			
@@ -3883,10 +3883,10 @@ int Normalize_M2(int nCh,int ch,int bit,FIO *fp_r,DWORD nSample,BYTE *buffer,PAR
 		} else if (bit == 32) {
 			s = CLIP_ADD(s,ROUND_NBIT((64-8)-32));
 
-			// Œë·‚Ì—İÏ
+			// èª¤å·®ã®ç´¯ç©
 			sum += s % 0x1000000;
 
-			// Œë·‚Ì”»’è
+			// èª¤å·®ã®åˆ¤å®š
 			val = sum / 0x1000000;
 			if (ignore_s == 0 && val > 0) {
 				s += 0x1000000;
@@ -3896,9 +3896,9 @@ int Normalize_M2(int nCh,int ch,int bit,FIO *fp_r,DWORD nSample,BYTE *buffer,PAR
 				sum %= 0x1000000;
 			}
 
-			// 2Ÿ Œë·‚Ì—İÏ
+			// 2æ¬¡ èª¤å·®ã®ç´¯ç©
 			sum_2nd += s % 0x1000000;
-			// Œë·‚Ì”»’è
+			// èª¤å·®ã®åˆ¤å®š
 			val = sum_2nd / 0x1000000;
 			if (val > 0) {
 				s += 0x1000000;
@@ -3908,7 +3908,7 @@ int Normalize_M2(int nCh,int ch,int bit,FIO *fp_r,DWORD nSample,BYTE *buffer,PAR
 				sum_2nd %= 0x1000000;
 			}
 
-			// 32bit ‰»‚·‚é
+			// 32bit åŒ–ã™ã‚‹
 			s >>= ((64-8) - 32);
 			if (param->ditherLv > 0) {
 				noise *= (1 << (param->ditherLv - 1));
@@ -3926,10 +3926,10 @@ int Normalize_M2(int nCh,int ch,int bit,FIO *fp_r,DWORD nSample,BYTE *buffer,PAR
 			// 48bit
 			s = CLIP_ADD(s,ROUND_NBIT((64-8)-48));
 
-			// Œë·‚Ì—İÏ
+			// èª¤å·®ã®ç´¯ç©
 			sum += s % 0x10000;
 
-			// Œë·‚Ì”»’è
+			// èª¤å·®ã®åˆ¤å®š
 			val = sum / 0x10000;
 			if (val > 0) {
 				s += 0x10000;
@@ -3939,9 +3939,9 @@ int Normalize_M2(int nCh,int ch,int bit,FIO *fp_r,DWORD nSample,BYTE *buffer,PAR
 				sum %= 0x10000;
 			}
 
-			// 2Ÿ Œë·‚Ì—İÏ
+			// 2æ¬¡ èª¤å·®ã®ç´¯ç©
 			sum_2nd += s % 0x10000;
-			// Œë·‚Ì”»’è
+			// èª¤å·®ã®åˆ¤å®š
 			val = sum_2nd / 0x10000;
 			if (val > 0) {
 				s += 0x10000;
@@ -3951,7 +3951,7 @@ int Normalize_M2(int nCh,int ch,int bit,FIO *fp_r,DWORD nSample,BYTE *buffer,PAR
 				sum_2nd %= 0x10000;
 			}
 
-			// 64bit ‰»‚·‚é
+			// 64bit åŒ–ã™ã‚‹
 			s >>= ((64-8) - 48);
 			if (param->ditherLv > 0) {
 				noise *= (1 << (param->ditherLv - 1));
@@ -4002,14 +4002,14 @@ int Normalize_M2(int nCh,int ch,int bit,FIO *fp_r,DWORD nSample,BYTE *buffer,PAR
 }
 //---------------------------------------------------------------------------
 // Function   : Normalize
-// Description: ƒm[ƒ}ƒ‰ƒCƒYˆ—(Œë·ŠgU)
+// Description: ãƒãƒ¼ãƒãƒ©ã‚¤ã‚ºå‡¦ç†(èª¤å·®æ‹¡æ•£)
 // ---
-//	nCh		:ƒ`ƒƒƒ“ƒlƒ‹”
-//	ch		:ƒ`ƒƒƒ“ƒlƒ‹‚Ì‰½”Ô–Ú‚ğˆ—‚·‚é‚©‚Ìw’è
-//	bit 	:“ü—Íƒf[ƒ^‚Ìƒrƒbƒg”
-//	fp_r	:‰¹ºƒf[ƒ^‚ÌFIO\‘¢‘Ì
-//	nSample :ˆ—‚ğ‚·‚éƒTƒ“ƒvƒ‹”
-//	buffer	:o—Íæ‚Ìƒoƒbƒtƒ@
+//	nCh		:ãƒãƒ£ãƒ³ãƒãƒ«æ•°
+//	ch		:ãƒãƒ£ãƒ³ãƒãƒ«ã®ä½•ç•ªç›®ã‚’å‡¦ç†ã™ã‚‹ã‹ã®æŒ‡å®š
+//	bit 	:å…¥åŠ›ãƒ‡ãƒ¼ã‚¿ã®ãƒ“ãƒƒãƒˆæ•°
+//	fp_r	:éŸ³å£°ãƒ‡ãƒ¼ã‚¿ã®FIOæ§‹é€ ä½“
+//	nSample :å‡¦ç†ã‚’ã™ã‚‹ã‚µãƒ³ãƒ—ãƒ«æ•°
+//	buffer	:å‡ºåŠ›å…ˆã®ãƒãƒƒãƒ•ã‚¡
 //
 int Normalize_M3(int nCh,int ch,int bit,FIO *fp_r,DWORD nSample,BYTE *buffer,PARAM_INFO *param)
 {
@@ -4318,14 +4318,14 @@ int Normalize_M3(int nCh,int ch,int bit,FIO *fp_r,DWORD nSample,BYTE *buffer,PAR
 
 //---------------------------------------------------------------------------
 // Function   : Normalize_DSD
-// Description: DSD—pƒm[ƒ}ƒ‰ƒCƒYˆ—
+// Description: DSDç”¨ãƒãƒ¼ãƒãƒ©ã‚¤ã‚ºå‡¦ç†
 // ---
-//	inFmt	:“ü—Íƒtƒ@ƒCƒ‹‰¹ºŒ`®î•ñ
-//	outFmt	:o—Íƒtƒ@ƒCƒ‹‰¹ºŒ`®î•ñ
-//	fp_r1	:‰¹ºƒf[ƒ^‚ÌFIO\‘¢‘Ì
-//	fp_r2	:‰¹ºƒf[ƒ^‚ÌFIO\‘¢‘Ì
-//	nSample :ˆ—‚ğ‚·‚éƒTƒ“ƒvƒ‹”‚ÌƒAƒhƒŒƒX
-//	param	:ƒpƒ‰ƒ[ƒ^[\‘¢‘Ì
+//	inFmt	:å…¥åŠ›ãƒ•ã‚¡ã‚¤ãƒ«éŸ³å£°å½¢å¼æƒ…å ±
+//	outFmt	:å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«éŸ³å£°å½¢å¼æƒ…å ±
+//	fp_r1	:éŸ³å£°ãƒ‡ãƒ¼ã‚¿ã®FIOæ§‹é€ ä½“
+//	fp_r2	:éŸ³å£°ãƒ‡ãƒ¼ã‚¿ã®FIOæ§‹é€ ä½“
+//	nSample :å‡¦ç†ã‚’ã™ã‚‹ã‚µãƒ³ãƒ—ãƒ«æ•°ã®ã‚¢ãƒ‰ãƒ¬ã‚¹
+//	param	:ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ¼æ§‹é€ ä½“
 //
 int Normalize_DSD(SOUNDFMT *inFmt,SOUNDFMT *outFmt,FIO *fp_r1,FIO *fp_r2,DWORD nSample,PARAM_INFO *param)
 {
@@ -4416,7 +4416,7 @@ int Normalize_DSD(SOUNDFMT *inFmt,SOUNDFMT *outFmt,FIO *fp_r1,FIO *fp_r2,DWORD n
 			}
 			per = persent;
 PRINT_LOG("");
-			// 1•b‚¸‚Âˆ—‚·‚é
+			// 1ç§’ãšã¤å‡¦ç†ã™ã‚‹
 			outSample = 4096 * 8;
 			if (i + outSample > nSample) {
 				outSample = nSample - i;
@@ -4460,7 +4460,7 @@ PRINT_LOG("");
 					q1 = (ss1 >= 0) ? max : min;
 					buf1[j] = q1;
 				}
-				// 2’l‰»
+				// 2å€¤åŒ–
 				nbit2onebit(buf1,buf1_4k,4096 * 8);
 				ws = fio_write(buf1_4k,1,4096,param->fp_w[0]);
 				if (param->fp_w[0]->error || ws != 4096) {
@@ -4521,7 +4521,7 @@ PRINT_LOG("");
 }
 //---------------------------------------------------------------------------
 // Function   : nbit2onebit
-// Description: 1bit‰»
+// Description: 1bitåŒ–
 //
 void nbit2onebit(SSIZE *i_buf,BYTE *o_buf,int size)
 {
@@ -4547,14 +4547,14 @@ void nbit2onebit(SSIZE *i_buf,BYTE *o_buf,int size)
 
 //---------------------------------------------------------------------------
 // Function   : UpdateBext
-// Description: bext ƒ`ƒƒƒ“ƒNXV
+// Description: bext ãƒãƒ£ãƒ³ã‚¯æ›´æ–°
 // ---
-//	bext	:bext\‘¢‘Ì‚Ö‚ÌƒAƒhƒŒƒX
-//	inFmt	:“ü—Íƒtƒ@ƒCƒ‹‰¹ºŒ`®î•ñ
-//	inFmt	:“ü—Íƒtƒ@ƒCƒ‹‰¹ºŒ`®î•ñ
-//	outFmt	:o—Íƒtƒ@ƒCƒ‹‰¹ºŒ`®î•ñ
-//	param	:ƒpƒ‰ƒ[ƒ^[\‘¢‘Ì
-//	bwf_size:bext‚ÌƒoƒCƒg”
+//	bext	:bextæ§‹é€ ä½“ã¸ã®ã‚¢ãƒ‰ãƒ¬ã‚¹
+//	inFmt	:å…¥åŠ›ãƒ•ã‚¡ã‚¤ãƒ«éŸ³å£°å½¢å¼æƒ…å ±
+//	inFmt	:å…¥åŠ›ãƒ•ã‚¡ã‚¤ãƒ«éŸ³å£°å½¢å¼æƒ…å ±
+//	outFmt	:å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«éŸ³å£°å½¢å¼æƒ…å ±
+//	param	:ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ¼æ§‹é€ ä½“
+//	bwf_size:bextã®ãƒã‚¤ãƒˆæ•°
 //
 int UpdateBext(BROADCAST_EXT *bext,SOUNDFMT *inFmt,SOUNDFMT *outFmt,PARAM_INFO *param,long bwf_size)
 {
@@ -4596,7 +4596,7 @@ int UpdateBext(BROADCAST_EXT *bext,SOUNDFMT *inFmt,SOUNDFMT *outFmt,PARAM_INFO *
 
 //---------------------------------------------------------------------------
 // Function   : dsf_main
-// Description: ˆø”‚ğˆ—‚µ•ÏŠ·ŠÖ”‚ğŒÄ‚Ño‚·
+// Description: å¼•æ•°ã‚’å‡¦ç†ã—å¤‰æ›é–¢æ•°ã‚’å‘¼ã³å‡ºã™
 //
 //
 int dsf_main(int argc, char *argv[])
@@ -4632,7 +4632,7 @@ int dsf_main(int argc, char *argv[])
 
 		_splitpath(argv[3],drive,dir,fname,ext);
 		_makepath(tmppath,drive,dir,fname,"param");
-		// ƒtƒ@ƒCƒ‹ƒI[ƒvƒ“
+		// ãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ¼ãƒ—ãƒ³
 		fp = fopen(tmppath,"r");
 		if (fp == NULL) {
 			retCode = STATUS_FILE_READ_ERR;
@@ -4702,20 +4702,20 @@ int dsf_main(int argc, char *argv[])
 
 //---------------------------------------------------------------------------
 // Function   : dsf_encode
-// Description: DSF ƒGƒ“ƒR[ƒhˆ—
+// Description: DSF ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰å‡¦ç†
 // ---
-// WAV ƒtƒ@ƒCƒ‹‚ğ DSF ƒtƒ@ƒCƒ‹‚ÖƒGƒ“ƒR[ƒh‚·‚é
+// WAV ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ DSF ãƒ•ã‚¡ã‚¤ãƒ«ã¸ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰ã™ã‚‹
 //
 void dsf_encode(char *in_file,char *out_file,PARAM_INFO2 *param)
 {
-	// –¢ƒTƒ|[ƒg
+	// æœªã‚µãƒãƒ¼ãƒˆ
 	param->err = 1;param->errLine = __LINE__;
 }
 //---------------------------------------------------------------------------
 // Function   : dsf_decode
-// Description: DSF ƒfƒR[ƒhˆ—
+// Description: DSF ãƒ‡ã‚³ãƒ¼ãƒ‰å‡¦ç†
 // ---
-// DSF ƒtƒ@ƒCƒ‹‚ğ WAV ƒtƒ@ƒCƒ‹‚ÖƒGƒ“ƒR[ƒh‚·‚é
+// DSF ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ WAV ãƒ•ã‚¡ã‚¤ãƒ«ã¸ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰ã™ã‚‹
 //
 void dsf_decode(char *in_file,char *out_file,PARAM_INFO2 *param)
 {
@@ -4869,14 +4869,14 @@ void dsf_decode(char *in_file,char *out_file,PARAM_INFO2 *param)
 
 		_splitpath(out_file,drive,dir,fname,ext);
 		_makepath(tmpfile,drive,dir,fname,"files");
-		// o—Íƒtƒ@ƒCƒ‹ƒI[ƒvƒ“
+		// å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ¼ãƒ—ãƒ³
 		fp_files = fopen(tmpfile,"a");
 		if (fp_files == NULL) {
 			param->err = STATUS_FILE_WRITE_ERR;
 			break;
 		}
 
-		// o—Íƒtƒ@ƒCƒ‹(Left)
+		// å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«(Left)
 		PRINT_LOG(out_file);
 		_splitpath(out_file,drive,dir,fname,ext);
 		_splitpath(param->workpath,workdrive,workdir,workfname,workext);
@@ -4903,7 +4903,7 @@ void dsf_decode(char *in_file,char *out_file,PARAM_INFO2 *param)
 			fio_set_memory_limit(&fp_w1,20,param->fio);
 		}
 		if (param->channel == 2) {
-			// o—Íƒtƒ@ƒCƒ‹(Right)
+			// å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«(Right)
 			_makepath(tmpfile,workdrive,workdir,workfname,"r2.tmp");
 			PRINT_LOG(tmpfile);
 			fprintf(fp_files,"%s\n",tmpfile);
@@ -4919,14 +4919,14 @@ void dsf_decode(char *in_file,char *out_file,PARAM_INFO2 *param)
 			fio_set_memory_limit(&fp_w2,20,param->fio);
 		}
 
-		// 4096 ‚²‚Æ‚ÉƒCƒ“ƒ^[ƒŠ[ƒu‚³‚ê‚Ä‚¢‚éƒuƒƒbƒN‚ğtmpƒtƒ@ƒCƒ‹‚Öo—Í‚·‚é(ƒXƒeƒŒƒI‚Ìê‡)
+		// 4096 ã”ã¨ã«ã‚¤ãƒ³ã‚¿ãƒ¼ãƒªãƒ¼ãƒ–ã•ã‚Œã¦ã„ã‚‹ãƒ–ãƒ­ãƒƒã‚¯ã‚’tmpãƒ•ã‚¡ã‚¤ãƒ«ã¸å‡ºåŠ›ã™ã‚‹(ã‚¹ãƒ†ãƒ¬ã‚ªã®å ´åˆ)
 		deinterleave(dsf_data.chunk_size - 12,&fp_r,&fp_w1,&fp_w2,param);
 		if (param->err) {
 			PRINT_LOG("");
 			break;
 		}
 		fio_close(&fp_r);
-		// “Ç‚İ‚İ‚ÅŠJ‚­
+		// èª­ã¿è¾¼ã¿ã§é–‹ã
 		fio_setmode_r(&fp_w1,&fp_r,NULL);
 		if (fp_w1.error) {
 			PRINT_LOG("");
@@ -4939,7 +4939,7 @@ void dsf_decode(char *in_file,char *out_file,PARAM_INFO2 *param)
 			break;
 		}
 
-		// o—Íƒtƒ@ƒCƒ‹(Left)
+		// å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«(Left)
 		_makepath(tmpfile,workdrive,workdir,workfname,"r1");
 		PRINT_LOG(tmpfile);
 		fprintf(fp_files,"%s\n",tmpfile);
@@ -4968,7 +4968,7 @@ void dsf_decode(char *in_file,char *out_file,PARAM_INFO2 *param)
 		remain /= dsf_fmt.sampling;
 		remain *= sizeof (SSIZE);
 
-		// o—Íƒtƒ@ƒCƒ‹ƒTƒCƒY‚ÌÅ‘å’l‚ğw’è
+		// å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«ã‚µã‚¤ã‚ºã®æœ€å¤§å€¤ã‚’æŒ‡å®š
 		fio_set_maxsize(&fp_w1,remain);
 		fio_set_memory_limit(&fp_w1,20,param->fio);
 
@@ -4988,7 +4988,7 @@ void dsf_decode(char *in_file,char *out_file,PARAM_INFO2 *param)
 		fio_close(&fp_r);
 		fio_close(&fp_w1);
 		if (param->channel == 2) {
-			// “Ç‚İ‚İ‚ÅŠJ‚­
+			// èª­ã¿è¾¼ã¿ã§é–‹ã
 			fio_setmode_r(&fp_w2,&fp_r,NULL);
 			if (fp_w2.error) {
 				PRINT_LOG("");
@@ -5001,7 +5001,7 @@ void dsf_decode(char *in_file,char *out_file,PARAM_INFO2 *param)
 				break;
 			}
 
-			// o—Íƒtƒ@ƒCƒ‹(Right)
+			// å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«(Right)
 			_makepath(tmpfile,workdrive,workdir,workfname,"r2");
 			PRINT_LOG(tmpfile);
 			fprintf(fp_files,"%s\n",tmpfile);
@@ -5016,7 +5016,7 @@ void dsf_decode(char *in_file,char *out_file,PARAM_INFO2 *param)
 			remain /= dsf_fmt.sampling;
 			remain *= sizeof (SSIZE);
 
-			// o—Íƒtƒ@ƒCƒ‹ƒTƒCƒY‚ÌÅ‘å’l‚ğw’è
+			// å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«ã‚µã‚¤ã‚ºã®æœ€å¤§å€¤ã‚’æŒ‡å®š
 			fio_set_maxsize(&fp_w2,remain);
 			fio_set_memory_limit(&fp_w2,20,param->fio);
 
@@ -5034,10 +5034,10 @@ void dsf_decode(char *in_file,char *out_file,PARAM_INFO2 *param)
 			fio_close(&fp_w2);
 		}
 
-		// o—Íƒtƒ@ƒCƒ‹–¼‚Ìì¬
+		// å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«åã®ä½œæˆ
 		_splitpath(out_file,drive,dir,fname,ext);
 		_makepath(tmpfile,drive,dir,fname,"param");
-		// o—Íƒtƒ@ƒCƒ‹ƒI[ƒvƒ“
+		// å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ¼ãƒ—ãƒ³
 		fp = fopen(tmpfile,"a");
 		if (fp == NULL) {
 			param->err = STATUS_FILE_WRITE_ERR;
@@ -5109,12 +5109,12 @@ void dsf_decode(char *in_file,char *out_file,PARAM_INFO2 *param)
 }
 //---------------------------------------------------------------------------
 // Function   : deinterleave
-// Description: 4096‚²‚Æ‚É‹L˜^‚³‚ê‚Ä‚¢‚éƒ`ƒƒƒ“ƒlƒ‹‚²‚Æ‚Ì1ƒuƒƒbƒN‚ğŒ‹‡‚·‚é
+// Description: 4096ã”ã¨ã«è¨˜éŒ²ã•ã‚Œã¦ã„ã‚‹ãƒãƒ£ãƒ³ãƒãƒ«ã”ã¨ã®1ãƒ–ãƒ­ãƒƒã‚¯ã‚’çµåˆã™ã‚‹
 // ---
-//	fp_r		:“ü—Íƒtƒ@ƒCƒ‹—p\‘¢‘Ì
-//	fp_w1		:o—Íƒtƒ@ƒCƒ‹—p\‘¢‘Ì(Left)
-//	fp_w2		:o—Íƒtƒ@ƒCƒ‹—p\‘¢‘Ì(Right)
-//	param		:•ÏŠ·ƒpƒ‰ƒ[ƒ^
+//	fp_r		:å…¥åŠ›ãƒ•ã‚¡ã‚¤ãƒ«ç”¨æ§‹é€ ä½“
+//	fp_w1		:å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«ç”¨æ§‹é€ ä½“(Left)
+//	fp_w2		:å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«ç”¨æ§‹é€ ä½“(Right)
+//	param		:å¤‰æ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿
 //
 void deinterleave(UI64 inByte,FIO *fp_r,FIO *fp_w1,FIO *fp_w2,PARAM_INFO2 *param)
 {
@@ -5170,14 +5170,14 @@ void deinterleave(UI64 inByte,FIO *fp_r,FIO *fp_w1,FIO *fp_w2,PARAM_INFO2 *param
 }
 //---------------------------------------------------------------------------
 // Function   : fftFilter
-// Description: FFT ‚É‚æ‚éƒtƒBƒ‹ƒ^ˆ—
+// Description: FFT ã«ã‚ˆã‚‹ãƒ•ã‚£ãƒ«ã‚¿å‡¦ç†
 // ---
-//	lr			:Left/Right ƒtƒ‰ƒO
-//	inSample	:“ü—Íƒf[ƒ^‚ÌƒTƒ“ƒvƒ‹”(ch–ˆ)
-//	outSample	:o—Íƒf[ƒ^‚ÌƒTƒ“ƒvƒ‹”(ch–ˆ)
-//	fp_r		:“ü—Íƒtƒ@ƒCƒ‹—p\‘¢‘Ì
-//	fp_w		:o—Íƒtƒ@ƒCƒ‹—p\‘¢‘Ì
-//	param		:•ÏŠ·ƒpƒ‰ƒ[ƒ^
+//	lr			:Left/Right ãƒ•ãƒ©ã‚°
+//	inSample	:å…¥åŠ›ãƒ‡ãƒ¼ã‚¿ã®ã‚µãƒ³ãƒ—ãƒ«æ•°(chæ¯)
+//	outSample	:å‡ºåŠ›ãƒ‡ãƒ¼ã‚¿ã®ã‚µãƒ³ãƒ—ãƒ«æ•°(chæ¯)
+//	fp_r		:å…¥åŠ›ãƒ•ã‚¡ã‚¤ãƒ«ç”¨æ§‹é€ ä½“
+//	fp_w		:å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«ç”¨æ§‹é€ ä½“
+//	param		:å¤‰æ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿
 //
 static void fftFilter(int lr,SSIZE inSample,SSIZE outSample,FIO *fp_r,FIO *fp_w,PARAM_INFO2 *param)
 {
@@ -5244,28 +5244,28 @@ static void fftFilter(int lr,SSIZE inSample,SSIZE outSample,FIO *fp_r,FIO *fp_w,
 		ns	   = param->r_cntLv;
 	}
 	
-	// “ü—Í—p(1)
+	// å…¥åŠ›ç”¨(1)
 	mem1 = (SSIZE *)al_malloc(wkMemSize * sizeof (SSIZE));
 	if (mem1 == NULL) {
 		PRINT_LOG("ERROR");
 		param->err = STATUS_MEM_ALLOC_ERR;
 		return;
 	}
-	// o—Í—p(1)
+	// å‡ºåŠ›ç”¨(1)
 	mem2 = (SSIZE *)al_malloc(wkMemSize * sizeof (SSIZE));
 	if (mem2 == NULL) {
 		PRINT_LOG("ERROR");
 		param->err = STATUS_MEM_ALLOC_ERR;
 		return;
 	}
-	// o—Í—p(1)
+	// å‡ºåŠ›ç”¨(1)
 	mem3 = (SSIZE *)al_malloc(wkMemSize * sizeof (SSIZE));
 	if (mem3 == NULL) {
 		PRINT_LOG("ERROR");
 		param->err = STATUS_MEM_ALLOC_ERR;
 		return;
 	}
-	// o—Í—p(1)
+	// å‡ºåŠ›ç”¨(1)
 	mem4 = (SSIZE *)al_malloc(wkMemSize * sizeof (SSIZE));
 	if (mem4 == NULL) {
 		PRINT_LOG("ERROR");
@@ -5273,28 +5273,28 @@ static void fftFilter(int lr,SSIZE inSample,SSIZE outSample,FIO *fp_r,FIO *fp_w,
 		return;
 	}
 #if 0
-	// o—Í—p(2)
+	// å‡ºåŠ›ç”¨(2)
 	mem5 = (SSIZE *)al_malloc(wkMemSize * sizeof (SSIZE));
 	if (mem5 == NULL) {
 		PRINT_LOG("ERROR");
 		param->err = STATUS_MEM_ALLOC_ERR;
 		return;
 	}
-	// o—Í—p(2)
+	// å‡ºåŠ›ç”¨(2)
 	mem6 = (SSIZE *)al_malloc(wkMemSize * sizeof (SSIZE));
 	if (mem6 == NULL) {
 		PRINT_LOG("ERROR");
 		param->err = STATUS_MEM_ALLOC_ERR;
 		return;
 	}
-	// o—Í—p(2)
+	// å‡ºåŠ›ç”¨(2)
 	mem7 = (SSIZE *)al_malloc(wkMemSize * sizeof (SSIZE));
 	if (mem7 == NULL) {
 		PRINT_LOG("ERROR");
 		param->err = STATUS_MEM_ALLOC_ERR;
 		return;
 	}
-	// o—Í—p(3)
+	// å‡ºåŠ›ç”¨(3)
 	mem8 = (SSIZE *)al_malloc(wkMemSize * sizeof (SSIZE));
 	if (mem8 == NULL) {
 		PRINT_LOG("ERROR");
@@ -5354,7 +5354,7 @@ static void fftFilter(int lr,SSIZE inSample,SSIZE outSample,FIO *fp_r,FIO *fp_w,
 	}
 #endif
 
-	// 2822400 ¨ 192000 —p‚Ìƒvƒ‰ƒ“(1)
+	// 2822400 â†’ 192000 ç”¨ã®ãƒ—ãƒ©ãƒ³(1)
 	fftw_p[0] = fftw_plan_dft_1d(fftSizeIn,fftw_io[0],fftw_io[0],FFTW_FORWARD,FFTW_ESTIMATE);
 	if (fftw_p[0] == NULL) {
 		PRINT_LOG("ERROR");
@@ -5367,7 +5367,7 @@ static void fftFilter(int lr,SSIZE inSample,SSIZE outSample,FIO *fp_r,FIO *fp_w,
 		param->err = STATUS_MEM_ALLOC_ERR;
 		return;
 	}
-	// 2822400 ¨ 192000 —p‚Ìƒvƒ‰ƒ“(2)
+	// 2822400 â†’ 192000 ç”¨ã®ãƒ—ãƒ©ãƒ³(2)
 	fftw_p[1] = fftw_plan_dft_1d(fftSizeIn,fftw_io[1],fftw_io[1],FFTW_FORWARD,FFTW_ESTIMATE);
 	if (fftw_p[1] == NULL) {
 		PRINT_LOG("ERROR");
@@ -5380,7 +5380,7 @@ static void fftFilter(int lr,SSIZE inSample,SSIZE outSample,FIO *fp_r,FIO *fp_w,
 		param->err = STATUS_MEM_ALLOC_ERR;
 		return;
 	}
-	// 2822400 ¨ 192000 —p‚Ìƒvƒ‰ƒ“(3)
+	// 2822400 â†’ 192000 ç”¨ã®ãƒ—ãƒ©ãƒ³(3)
 	fftw_p[2] = fftw_plan_dft_1d(fftSizeIn,fftw_io[2],fftw_io[2],FFTW_FORWARD,FFTW_ESTIMATE);
 	if (fftw_p[2] == NULL) {
 		PRINT_LOG("ERROR");
@@ -5394,7 +5394,7 @@ static void fftFilter(int lr,SSIZE inSample,SSIZE outSample,FIO *fp_r,FIO *fp_w,
 		return;
 	}
 #if 0
-	// 2822400 ¨ 192000 —p‚Ìƒvƒ‰ƒ“(4)
+	// 2822400 â†’ 192000 ç”¨ã®ãƒ—ãƒ©ãƒ³(4)
 	fftw_p[3] = fftw_plan_dft_1d(fftSizeIn,fftw_io[3],fftw_io[3],FFTW_FORWARD,FFTW_ESTIMATE);
 	if (fftw_p[3] == NULL) {
 		PRINT_LOG("ERROR");
@@ -5407,7 +5407,7 @@ static void fftFilter(int lr,SSIZE inSample,SSIZE outSample,FIO *fp_r,FIO *fp_w,
 		param->err = STATUS_MEM_ALLOC_ERR;
 		return;
 	}
-	// 2822400 ¨ 192000 —p‚Ìƒvƒ‰ƒ“(5)
+	// 2822400 â†’ 192000 ç”¨ã®ãƒ—ãƒ©ãƒ³(5)
 	fftw_p[4] = fftw_plan_dft_1d(fftSizeIn,fftw_io[4],fftw_io[4],FFTW_FORWARD,FFTW_ESTIMATE);
 	if (fftw_p[4] == NULL) {
 		PRINT_LOG("ERROR");
@@ -5420,7 +5420,7 @@ static void fftFilter(int lr,SSIZE inSample,SSIZE outSample,FIO *fp_r,FIO *fp_w,
 		param->err = STATUS_MEM_ALLOC_ERR;
 		return;
 	}
-	// 2822400 ¨ 192000 —p‚Ìƒvƒ‰ƒ“(6)
+	// 2822400 â†’ 192000 ç”¨ã®ãƒ—ãƒ©ãƒ³(6)
 	fftw_p[5] = fftw_plan_dft_1d(fftSizeIn,fftw_io[5],fftw_io[5],FFTW_FORWARD,FFTW_ESTIMATE);
 	if (fftw_p[5] == NULL) {
 		PRINT_LOG("ERROR");
@@ -5434,7 +5434,7 @@ static void fftFilter(int lr,SSIZE inSample,SSIZE outSample,FIO *fp_r,FIO *fp_w,
 		return;
 	}
 
-	// 192000 ¨ 192000 —p‚Ìƒvƒ‰ƒ“
+	// 192000 â†’ 192000 ç”¨ã®ãƒ—ãƒ©ãƒ³
 	fftw_p[6] = fftw_plan_dft_1d(fftSizeOut,fftw_io[6],fftw_io[6],FFTW_FORWARD,FFTW_ESTIMATE);
 	if (fftw_p[6] == NULL) {
 		PRINT_LOG("ERROR");
@@ -5474,7 +5474,7 @@ static void fftFilter(int lr,SSIZE inSample,SSIZE outSample,FIO *fp_r,FIO *fp_w,
 			per = persent;
 		}
 
-		// “Ç‚İ‚ñ‚¾ƒf[ƒ^‚ğmem1‚É“ü‚ê‚é
+		// èª­ã¿è¾¼ã‚“ã ãƒ‡ãƒ¼ã‚¿ã‚’mem1ã«å…¥ã‚Œã‚‹
 		memset(mem1,0,wkMemSize * sizeof (SSIZE));
 		onebit2nbit(startInSample,wkMemSize,mem1,fp_r,param);
 		if (param->err) {
@@ -5493,7 +5493,7 @@ static void fftFilter(int lr,SSIZE inSample,SSIZE outSample,FIO *fp_r,FIO *fp_w,
 		memset(mem7,0,wkMemSize * sizeof (SSIZE));
 		memset(mem8,0,wkMemSize * sizeof (SSIZE));
 #endif
-		// DSD -> 192000 ‚ÖƒfƒVƒ[ƒVƒ‡ƒ“(1)
+		// DSD -> 192000 ã¸ãƒ‡ã‚·ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³(1)
 		param->lfc = 2;
 		if (param->dsf_mode != 1) {
 			param->hfc = 96000;
@@ -5503,7 +5503,7 @@ static void fftFilter(int lr,SSIZE inSample,SSIZE outSample,FIO *fp_r,FIO *fp_w,
 		param->src_flag = 1;
 
 PRINT_LOG("1");
-		// ƒXƒŒƒbƒh1,2,3‚Ì‘g‚ÆƒXƒŒƒbƒh4,5,6‚Ì‘g‚Åfft‚·‚é
+		// ã‚¹ãƒ¬ãƒƒãƒ‰1,2,3ã®çµ„ã¨ã‚¹ãƒ¬ãƒƒãƒ‰4,5,6ã®çµ„ã§fftã™ã‚‹
 		pIn[0]	= &mem1[((fftSizeIn / 2) * 0)];
 		pOut[0] = &mem2[((fftSizeOut / 2) * 0)];
 		pIn[1]	= &mem1[((fftSizeIn / 2) * 1)];
@@ -5657,7 +5657,7 @@ PRINT_LOG("1");
 		}
 #if 0
 		if (param->dsf_mode != 1) {
-			// DSD 24kz ˆÈã‚Ìƒf[ƒ^ƒJƒbƒg
+			// DSD 24kz ä»¥ä¸Šã®ãƒ‡ãƒ¼ã‚¿ã‚«ãƒƒãƒˆ
 	PRINT_LOG("3");
 			param->lfc = -1;
 			param->hfc = 24000;
@@ -5729,7 +5729,7 @@ PRINT_LOG("1");
 				}
 			}
 
-			// 24kHz ˆÈ‰º‚Ìƒf[ƒ^ƒJƒbƒg
+			// 24kHz ä»¥ä¸‹ã®ãƒ‡ãƒ¼ã‚¿ã‚«ãƒƒãƒˆ
 			param->lfc = 24000;
 			param->hfc = -1;
 			param->src_flag = 2;
@@ -5785,7 +5785,7 @@ PRINT_LOG("1");
 					mem1[i] = mem5[i];
 				}
 			}
-			// 24kHz ˆÈ‰º‚Ìƒf[ƒ^ƒJƒbƒg
+			// 24kHz ä»¥ä¸‹ã®ãƒ‡ãƒ¼ã‚¿ã‚«ãƒƒãƒˆ
 			param->lfc = 24000;
 			param->hfc = -1;
 			param->src_flag = 2;
@@ -5918,9 +5918,9 @@ PRINT_LOG("7");
 }
 //---------------------------------------------------------------------------
 // Function   : fftFilterSub
-// Description: FFT ‚É‚æ‚éƒtƒBƒ‹ƒ^ˆ—(ƒTƒuŠÖ”)
+// Description: FFT ã«ã‚ˆã‚‹ãƒ•ã‚£ãƒ«ã‚¿å‡¦ç†(ã‚µãƒ–é–¢æ•°)
 // ---
-//	param		:•ÏŠ·ƒpƒ‰ƒ[ƒ^
+//	param		:å¤‰æ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿
 //
 static void fftFilterSub(SSIZE *pIn,SSIZE *pOut,fftw_complex *fftw_in,fftw_complex *fftw_out,fftw_plan fftw_p,fftw_plan fftw_ip,PARAM_INFO2 *param,int id)
 {
@@ -5952,7 +5952,7 @@ PRINT_LOG("Start");
 		fftw_out[i][1] = 0;
 	}
 
-	// FFT ‰Šúİ’è
+	// FFT åˆæœŸè¨­å®š
 	copyToFFTW(fftw_in,pIn,fftSizeIn);
 
 	windowFFTW(fftw_in,fftSizeIn);
@@ -5960,7 +5960,7 @@ PRINT_LOG("Start");
 	// FFT
 	fftw_execute(fftw_p);
 
-	// ‚ˆæíœ
+	// é«˜åŸŸå‰Šé™¤
 	if (inSampleR <= outSampleR) {
 		wkSampleR = inSampleR;
 	} else {
@@ -5984,7 +5984,7 @@ PRINT_LOG("Start");
 		}
 	}
 
-	// ”¼•ª‚Ìƒf[ƒ^‚ğ•œŒ³
+	// åŠåˆ†ã®ãƒ‡ãƒ¼ã‚¿ã‚’å¾©å…ƒ
 	for (i = 1;i < fftSizeOut / 2;i++) {
 		fftw_out[fftSizeOut - i][0] = fftw_out[i][0];
 		fftw_out[fftSizeOut - i][1] = fftw_out[i][1] * -1;
@@ -5998,7 +5998,7 @@ PRINT_LOG("Start");
 	// invert FFT
 	fftw_execute(fftw_ip);
 
-	// o—Í
+	// å‡ºåŠ›
 	for (i = 0;i < fftSizeOut;i++) {
 		pOut[i] = (SSIZE)(fftw_in[i][0] / fftSizeOut);
 	}
@@ -6006,13 +6006,13 @@ PRINT_LOG("End");
 }
 //---------------------------------------------------------------------------
 // Function   : onebit2nbit
-// Description: 1bit ƒf[ƒ^‚ğ 64bit ƒf[ƒ^‚Ö•ÏŠ·‚µ‚Ä“Ç‚İ‚Ş
+// Description: 1bit ãƒ‡ãƒ¼ã‚¿ã‚’ 64bit ãƒ‡ãƒ¼ã‚¿ã¸å¤‰æ›ã—ã¦èª­ã¿è¾¼ã‚€
 // ---
-//	offset		:“ü—ÍƒIƒtƒZƒbƒg(ƒTƒ“ƒvƒ‹–ˆ)
-//	n			:ƒTƒ“ƒvƒ‹”
-//	buffer		:ƒf[ƒ^ƒoƒbƒtƒ@
-//	fp_r		:“ü—ÍFIO
-//	param		:•ÏŠ·ƒpƒ‰ƒ[ƒ^
+//	offset		:å…¥åŠ›ã‚ªãƒ•ã‚»ãƒƒãƒˆ(ã‚µãƒ³ãƒ—ãƒ«æ¯)
+//	n			:ã‚µãƒ³ãƒ—ãƒ«æ•°
+//	buffer		:ãƒ‡ãƒ¼ã‚¿ãƒãƒƒãƒ•ã‚¡
+//	fp_r		:å…¥åŠ›FIO
+//	param		:å¤‰æ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿
 //
 void onebit2nbit(SSIZE offset,SSIZE sample,SSIZE *buffer,FIO *fp_r,PARAM_INFO2 *param)
 {
@@ -6036,7 +6036,7 @@ void onebit2nbit(SSIZE offset,SSIZE sample,SSIZE *buffer,FIO *fp_r,PARAM_INFO2 *
 	memset(buffer,0,sample * sizeof (SSIZE));
 	if (offset < 0) {
 		if ((offset * -1) >= sample) {
-			// ƒtƒ@ƒCƒ‹‚©‚ç“Ç‚İ‚Şƒf[ƒ^‚ª‚È‚¢‚Ì‚ÅƒŠƒ^[ƒ“‚·‚é
+			// ãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰èª­ã¿è¾¼ã‚€ãƒ‡ãƒ¼ã‚¿ãŒãªã„ã®ã§ãƒªã‚¿ãƒ¼ãƒ³ã™ã‚‹
 			PRINT_LOG("No Data");
 			return;
 		}
@@ -6066,15 +6066,15 @@ void onebit2nbit(SSIZE offset,SSIZE sample,SSIZE *buffer,FIO *fp_r,PARAM_INFO2 *
 
 	ptr_delay = delay;
 	
-	// delay_buffer ‚É‚Í3’l‚ğg‚¤(1,-1,0)
+	// delay_buffer ã«ã¯3å€¤ã‚’ä½¿ã†(1,-1,0)
 	for (i = 0;i < delay * 2;i++) {
-		delay_buffer[i] = 0;	// –³‰¹
+		delay_buffer[i] = 0;	// ç„¡éŸ³
 	}
 
 	seek_ptr = offset - delay;
 	n_delay = delay;
 	if ((seek_ptr + delay) >= 0) {
-		// delay ƒoƒbƒtƒ@‚ÉˆÈ‘O‚Ì’l‚ğƒZƒbƒg‚·‚é
+		// delay ãƒãƒƒãƒ•ã‚¡ã«ä»¥å‰ã®å€¤ã‚’ã‚»ãƒƒãƒˆã™ã‚‹
 		if (seek_ptr < 0) {
 			n_delay += seek_ptr;
 			seek_ptr = 0;
@@ -6254,13 +6254,13 @@ void onebit2nbit(SSIZE offset,SSIZE sample,SSIZE *buffer,FIO *fp_r,PARAM_INFO2 *
 }
 //---------------------------------------------------------------------------
 // Function   : ana_abe
-// Description: ‚ˆæƒmƒCƒYŒyŒ¸ˆ—
+// Description: é«˜åŸŸãƒã‚¤ã‚ºè»½æ¸›å‡¦ç†
 // ---
-//	start		:ŠJnˆÊ’u
-//	nSample		:ƒTƒ“ƒvƒ‹”
-//	i_buffer	:“ü—Íƒoƒbƒtƒ@
-//	o_buffer	:o—Íƒoƒbƒtƒ@
-//	param		:ƒpƒ‰ƒ[ƒ^[\‘¢‘Ì
+//	start		:é–‹å§‹ä½ç½®
+//	nSample		:ã‚µãƒ³ãƒ—ãƒ«æ•°
+//	i_buffer	:å…¥åŠ›ãƒãƒƒãƒ•ã‚¡
+//	o_buffer	:å‡ºåŠ›ãƒãƒƒãƒ•ã‚¡
+//	param		:ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ¼æ§‹é€ ä½“
 //	
 //
 void ana_abe(SSIZE start,UI64 nSample,SSIZE *i_buffer,SSIZE *o_buffer,PARAM_INFO2 *param)
@@ -6343,7 +6343,7 @@ PRINT_LOG("Start");
 #if 0
 //---------------------------------------------------------------------------
 // Function   : copyToFFTW
-// Description: fftw—p”z—ñ‚É’l‚ğƒRƒs[‚·‚é
+// Description: fftwç”¨é…åˆ—ã«å€¤ã‚’ã‚³ãƒ”ãƒ¼ã™ã‚‹
 // ---
 //	
 //
@@ -6489,7 +6489,7 @@ void copyToFFTW(fftw_complex *fftw,SSIZE *buf,long size)
 }
 //---------------------------------------------------------------------------
 // Function   : windowFFTW
-// Description: FFTW—pWindowŠÖ”
+// Description: FFTWç”¨Windowé–¢æ•°
 // ---
 //	
 //
@@ -6497,7 +6497,7 @@ void windowFFTW(fftw_complex *fftw,long size)
 {
 	long i,j;
 
-	// ƒEƒCƒ“ƒhƒEƒTƒCƒY–ˆ‚É’è”‰»‚·‚é
+	// ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã‚µã‚¤ã‚ºæ¯ã«å®šæ•°åŒ–ã™ã‚‹
 	switch (size) {
 		case (4096 * 1):
 			#pragma omp parallel for
@@ -6751,7 +6751,7 @@ void windowFFTW(fftw_complex *fftw,long size)
 }
 //---------------------------------------------------------------------------
 // Function   : cutFFTW
-// Description: FFTW—pƒJƒbƒgƒIƒtŠÖ”
+// Description: FFTWç”¨ã‚«ãƒƒãƒˆã‚ªãƒ•é–¢æ•°
 // ---
 //	
 //
@@ -6759,7 +6759,7 @@ void cutFFTW(fftw_complex *fftw,long index,long size)
 {
 	long i;
 
-	// 64 ŒÂ‚¸‚Â
+	// 64 å€‹ãšã¤
 	for (i = index;i + 64 < size;i+= 64) {
 		fftw[i + 0][0] = 0;
 		fftw[i + 0][1] = 0;
@@ -6890,7 +6890,7 @@ void cutFFTW(fftw_complex *fftw,long index,long size)
 		fftw[i + 63][0] = 0;
 		fftw[i + 63][1] = 0;
 	}
-	// c‚è
+	// æ®‹ã‚Š
 	for (;i < size;i++) {
 		fftw[i + 0][0] = 0;
 		fftw[i + 0][1] = 0;
@@ -6898,9 +6898,9 @@ void cutFFTW(fftw_complex *fftw,long index,long size)
 }
 //---------------------------------------------------------------------------
 // Function   : al_malloc
-// Description: 16ƒoƒCƒg‹«ŠE‘Î‰mallocŠÖ”
+// Description: 16ãƒã‚¤ãƒˆå¢ƒç•Œå¯¾å¿œmallocé–¢æ•°
 // ---
-// •Ô‚·ƒ|ƒCƒ“ƒ^‚Ì16ƒoƒCƒg‘O‚Émalloc‚ÅŠm•Û‚µ‚½ƒƒ‚ƒŠ—Ìˆæ‚ÌƒAƒhƒŒƒX‚ğ“ü‚ê‚é
+// è¿”ã™ãƒã‚¤ãƒ³ã‚¿ã®16ãƒã‚¤ãƒˆå‰ã«mallocã§ç¢ºä¿ã—ãŸãƒ¡ãƒ¢ãƒªé ˜åŸŸã®ã‚¢ãƒ‰ãƒ¬ã‚¹ã‚’å…¥ã‚Œã‚‹
 //
 void *al_malloc(long size)
 {
@@ -6926,7 +6926,7 @@ void *al_malloc(long size)
 }
 //---------------------------------------------------------------------------
 // Function   : al_free
-// Description: 16ƒoƒCƒg‹«ŠE‘Î‰freeŠÖ”
+// Description: 16ãƒã‚¤ãƒˆå¢ƒç•Œå¯¾å¿œfreeé–¢æ•°
 // ---
 // 
 //

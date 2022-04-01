@@ -48,7 +48,7 @@ typedef struct broadcast_audio_extension {
 	DWORD timeReferenceHigh;		/* First sample count since midnight, high word */
 	WORD version;					/* Version of the BWF; unsigned binary number */
 	BYTE UMID[64];					/* Binary byte 0 of SMPTE UMID */
-	BYTE reserved[190];				/* 190 bytes, reserved for future use, set to ÅgNULLÅh*/
+	BYTE reserved[190];				/* 190 bytes, reserved for future use, set to ‚ÄúNULL‚Äù*/
 	char codingHistory[1];			/* ASCII : History coding */
 } BROADCAST_EXT;
 #pragma pack(pop)

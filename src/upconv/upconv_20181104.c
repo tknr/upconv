@@ -6,45 +6,45 @@
 /****************************************************************************/
 
 /*--- Log ------------------------------------------------------------------
- * Ver 0.10 <07/03/15> - ì¬
- * Ver 0.20 <07/04/19> - DFT ƒo[ƒWƒ‡ƒ“’Ç‰Á
- * Ver 0.30 <08/08/17> - V•û®‚É•ÏX
- * Ver 0.40 <09/02/20> - fftw ƒo[ƒWƒ‡ƒ“‚É•ÏX‚µ‚¢‚Á‚½‚ñFix
- * Ver 0.50 <09/05/18> - ‚ˆæ‚Ì•âŠÔ•û–@‚ğ‚¢‚Á‚½‚ñFix
- * Ver 0.60 <09/06/02> - BCB6‚ÆVC6‚É‘Î‰
- * Ver 0.61 <09/06/06> - ƒƒ‚ƒŠƒ}ƒbƒvƒhƒtƒ@ƒCƒ‹‚ğg—p‚µ‚È‚¢‚æ‚¤‚É‚µ‚½
- * Ver 0.70 <09/06/28> - ˆ—•û–@‚ğ•ÏX
- * Ver 0.80 <09/07/10> - hfa2 ‚Ìˆ—‚ğ‰ü—Ç‚µƒ}ƒ‹ƒ`ƒRƒA‚É‘Î‰‚·‚é‚½‚ß‚Éˆ—‚ğ•ª—£
- * Ver 0.90 <09/09/24> - ƒƒ‚ƒŠg—p—ÊíŒ¸
- * Ver 0.91 <09/09/27> - ƒ_ƒEƒ“ƒTƒ“ƒvƒŠƒ“ƒO‚ÌƒoƒOC³Aƒm[ƒ}ƒ‰ƒCƒY‚ÌƒoƒOC³
- * Ver 0.92 <09/09/29> - hfa2‚Ì•âŠÔ•û–@‚ğ•ÏX
- * Ver 0.93 <09/10/06> - hfa2‚Ì•âŠÔˆ—‚ğ•ÏX
- * Ver 0.94 <09/11/01> - hfa3’Ç‰ÁAƒoƒOC³Aƒpƒ‰ƒ[ƒ^ƒtƒ@ƒCƒ‹‚ÌÌ—p
- * Ver 0.95 <09/11/11> - hfa3‚ÉƒmƒCƒY‚Æ‚ÌƒuƒŒƒ“ƒh‹ï‡‚ğw’è‰Â”\‚É‚µ‚½
- * Ver 0.96 <09/11/15> - hfa•âŠÔ‚Ìü”g”“Á«‚ğC³
- * Ver 0.97 <09/11/22> - ƒrƒbƒgŠg’£ˆ—’Ç‰ÁAhfa•âŠÔ‚Ìü”g”“Á«‚ğw’è‰Â”\‚É‚µ‚½
- * Ver 0.98 <10/01/11> - ƒfƒGƒ“ƒtƒ@ƒVƒX‚É‘Î‰
- * Ver 0.99 <10/03/14> - hfa3‚Ì•âŠÔ•û–@‚ğ•ÏX
- * Ver 1.00 <10/03/14> - GCC(MinGW)‚É‘Î‰
- * Ver 1.01 <10/04/11> - OpenMP‚É‘Î‰
- * Ver 1.02 <10/07/26> - ƒXƒs[ƒJ[‚²‚Æ‚Ì’²®‹@”\’Ç‰Á
- * Ver 1.03 <10/09/14> - hfc auto‚É‘Î‰
- * Ver 1.04 <10/11/02> - ƒXƒs[ƒJ[‚²‚Æ‚Ì’²®‹@”\ƒoƒOC³
- * Ver 1.05 <10/12/27> - ƒCƒRƒ‰ƒCƒU‹@”\C³
- * Ver 1.06 <11/01/07> - lfa ‘Î‰Aƒ\[ƒXƒR[ƒh‚Ì®—
- * Ver 1.07 <11/10/01> - ƒeƒ“ƒ|ƒ‰ƒŠƒtƒ@ƒCƒ‹‘Î‰
- * Ver 1.08 <12/02/28> - fio ‘Î‰
- * Ver 1.09 <13/04/27> - hfa3‚Ì•âŠÔ•û–@•ÏX
- * Ver 1.10 <18/10/06> - ƒTƒ“ƒvƒŠƒ“ƒOƒŒ[ƒg’Ç‰Á
+ * Ver 0.10 <07/03/15> - ä½œæˆ
+ * Ver 0.20 <07/04/19> - DFT ãƒãƒ¼ã‚¸ãƒ§ãƒ³è¿½åŠ 
+ * Ver 0.30 <08/08/17> - æ–°æ–¹å¼ã«å¤‰æ›´
+ * Ver 0.40 <09/02/20> - fftw ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã«å¤‰æ›´ã—ã„ã£ãŸã‚“Fix
+ * Ver 0.50 <09/05/18> - é«˜åŸŸã®è£œé–“æ–¹æ³•ã‚’ã„ã£ãŸã‚“Fix
+ * Ver 0.60 <09/06/02> - BCB6ã¨VC6ã«å¯¾å¿œ
+ * Ver 0.61 <09/06/06> - ãƒ¡ãƒ¢ãƒªãƒãƒƒãƒ—ãƒ‰ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä½¿ç”¨ã—ãªã„ã‚ˆã†ã«ã—ãŸ
+ * Ver 0.70 <09/06/28> - å‡¦ç†æ–¹æ³•ã‚’å¤‰æ›´
+ * Ver 0.80 <09/07/10> - hfa2 ã®å‡¦ç†ã‚’æ”¹è‰¯ã—ãƒãƒ«ãƒã‚³ã‚¢ã«å¯¾å¿œã™ã‚‹ãŸã‚ã«å‡¦ç†ã‚’åˆ†é›¢
+ * Ver 0.90 <09/09/24> - ãƒ¡ãƒ¢ãƒªä½¿ç”¨é‡å‰Šæ¸›
+ * Ver 0.91 <09/09/27> - ãƒ€ã‚¦ãƒ³ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°æ™‚ã®ãƒã‚°ä¿®æ­£ã€ãƒãƒ¼ãƒãƒ©ã‚¤ã‚ºæ™‚ã®ãƒã‚°ä¿®æ­£
+ * Ver 0.92 <09/09/29> - hfa2ã®è£œé–“æ–¹æ³•ã‚’å¤‰æ›´
+ * Ver 0.93 <09/10/06> - hfa2ã®è£œé–“å‡¦ç†ã‚’å¤‰æ›´
+ * Ver 0.94 <09/11/01> - hfa3è¿½åŠ ã€ãƒã‚°ä¿®æ­£ã€ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ•ã‚¡ã‚¤ãƒ«ã®æ¡ç”¨
+ * Ver 0.95 <09/11/11> - hfa3ã«ãƒã‚¤ã‚ºã¨ã®ãƒ–ãƒ¬ãƒ³ãƒ‰å…·åˆã‚’æŒ‡å®šå¯èƒ½ã«ã—ãŸ
+ * Ver 0.96 <09/11/15> - hfaè£œé–“æ™‚ã®å‘¨æ³¢æ•°ç‰¹æ€§ã‚’ä¿®æ­£
+ * Ver 0.97 <09/11/22> - ãƒ“ãƒƒãƒˆæ‹¡å¼µå‡¦ç†è¿½åŠ ã€hfaè£œé–“æ™‚ã®å‘¨æ³¢æ•°ç‰¹æ€§ã‚’æŒ‡å®šå¯èƒ½ã«ã—ãŸ
+ * Ver 0.98 <10/01/11> - ãƒ‡ã‚¨ãƒ³ãƒ•ã‚¡ã‚·ã‚¹ã«å¯¾å¿œ
+ * Ver 0.99 <10/03/14> - hfa3ã®è£œé–“æ–¹æ³•ã‚’å¤‰æ›´
+ * Ver 1.00 <10/03/14> - GCC(MinGW)ã«å¯¾å¿œ
+ * Ver 1.01 <10/04/11> - OpenMPã«å¯¾å¿œ
+ * Ver 1.02 <10/07/26> - ã‚¹ãƒ”ãƒ¼ã‚«ãƒ¼ã”ã¨ã®èª¿æ•´æ©Ÿèƒ½è¿½åŠ 
+ * Ver 1.03 <10/09/14> - hfc autoã«å¯¾å¿œ
+ * Ver 1.04 <10/11/02> - ã‚¹ãƒ”ãƒ¼ã‚«ãƒ¼ã”ã¨ã®èª¿æ•´æ©Ÿèƒ½ãƒã‚°ä¿®æ­£
+ * Ver 1.05 <10/12/27> - ã‚¤ã‚³ãƒ©ã‚¤ã‚¶æ©Ÿèƒ½ä¿®æ­£
+ * Ver 1.06 <11/01/07> - lfa å¯¾å¿œã€ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ã®æ•´ç†
+ * Ver 1.07 <11/10/01> - ãƒ†ãƒ³ãƒãƒ©ãƒªãƒ•ã‚¡ã‚¤ãƒ«å¯¾å¿œ
+ * Ver 1.08 <12/02/28> - fio å¯¾å¿œ
+ * Ver 1.09 <13/04/27> - hfa3ã®è£œé–“æ–¹æ³•å¤‰æ›´
+ * Ver 1.10 <18/10/06> - ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ãƒ¬ãƒ¼ãƒˆè¿½åŠ 
  */
 
 #define STR_COPYRIGHT	"upconv.exe (c) 2013 Ver 1.10 By 59414d41\n\n"
 #define STR_USAGE		"upconv.exe paramfile outfile\n"
 
-#define STATUS_SUCCESS			(0)		/* ³íI—¹ */
-#define STATUS_MEM_ALLOC_ERR	(-4)	/* ƒƒ‚ƒŠ[Šm•ÛƒGƒ‰[ */
-#define STATUS_FILE_READ_ERR	(-5)	/* ƒtƒ@ƒCƒ‹ƒŠ[ƒhƒGƒ‰[ */
-#define STATUS_FILE_WRITE_ERR	(-6)	/* ƒtƒ@ƒCƒ‹ƒ‰ƒCƒgƒGƒ‰[ */
+#define STATUS_SUCCESS			(0)		/* æ­£å¸¸çµ‚äº† */
+#define STATUS_MEM_ALLOC_ERR	(-4)	/* ãƒ¡ãƒ¢ãƒªãƒ¼ç¢ºä¿ã‚¨ãƒ©ãƒ¼ */
+#define STATUS_FILE_READ_ERR	(-5)	/* ãƒ•ã‚¡ã‚¤ãƒ«ãƒªãƒ¼ãƒ‰ã‚¨ãƒ©ãƒ¼ */
+#define STATUS_FILE_WRITE_ERR	(-6)	/* ãƒ•ã‚¡ã‚¤ãƒ«ãƒ©ã‚¤ãƒˆã‚¨ãƒ©ãƒ¼ */
 
 #if 0
 #define	PRINT_LOG(s)	do {																	\
@@ -85,13 +85,13 @@
 #define FALSE		(0)
 #endif
 
-// Å‘åƒTƒ“ƒvƒŠƒ“ƒO”
+// æœ€å¤§ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°æ•°
 #define MAX_SAMPLE_N	(1536000*2)
 
-// ƒTƒ“ƒvƒ‹‚ğˆ—‚·‚éƒf[ƒ^Œ^
+// ã‚µãƒ³ãƒ—ãƒ«ã‚’å‡¦ç†ã™ã‚‹ãƒ‡ãƒ¼ã‚¿å‹
 #define SSIZE	signed long long int
 
-// ƒm[ƒ}ƒ‰ƒCƒYî•ñ
+// ãƒãƒ¼ãƒãƒ©ã‚¤ã‚ºæƒ…å ±
 typedef struct {
 	SSIZE	min;
 	SSIZE	max;
@@ -219,7 +219,7 @@ void *al_free(void *ptr);
 
 //---------------------------------------------------------------------------
 // Function   : main
-// Description: ˆø”‚ğˆ—‚µ•ÏŠ·ŠÖ”‚ğŒÄ‚Ño‚·
+// Description: å¼•æ•°ã‚’å‡¦ç†ã—å¤‰æ›é–¢æ•°ã‚’å‘¼ã³å‡ºã™
 //
 //
 int main(int argc, char *argv[])
@@ -297,7 +297,7 @@ int main(int argc, char *argv[])
 		param.Adjust_enable = 0;
 		paramFlag = 0;
 		if (argc == 3) {
-			// r1 ƒtƒ@ƒCƒ‹‚©‚ğƒ`ƒFƒbƒN‚·‚é(sp_ana)
+			// r1 ãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚’ãƒã‚§ãƒƒã‚¯ã™ã‚‹(sp_ana)
 			_splitpath(argv[2],drive,dir,fname,ext);
 			if (strcmp(ext,".r1") == 0) {
 				param.r1_flag = 1;
@@ -319,7 +319,7 @@ int main(int argc, char *argv[])
 				fclose(fp);
 			}
 
-			// sp_ana ƒpƒX
+			// sp_ana ãƒ‘ã‚¹
 			_splitpath(argv[0],drive,dir,fname,ext);
 			_makepath(tmppath,drive,dir,"adj","dat");
 			param.sp_path = malloc(strlen(tmppath) + 1);
@@ -337,7 +337,7 @@ int main(int argc, char *argv[])
 				fclose(fp);
 			}
 
-			// GenNoise —p‚Ìƒf[ƒ^ƒpƒX
+			// GenNoise ç”¨ã®ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¹
 			_splitpath(argv[0],drive,dir,fname,ext);
 			_makepath(tmppath,drive,dir,"nd","dat");
 			param.nd_path = malloc(strlen(tmppath) + 1);
@@ -345,7 +345,7 @@ int main(int argc, char *argv[])
 				strcpy(param.nd_path,tmppath);
 			}
 
-			// ƒrƒbƒgŠg’£ƒe[ƒuƒ‹
+			// ãƒ“ãƒƒãƒˆæ‹¡å¼µãƒ†ãƒ¼ãƒ–ãƒ«
 			_splitpath(argv[0],drive,dir,fname,ext);
 			_makepath(tmppath,drive,dir,"bit_extend_table","");
 			
@@ -362,7 +362,7 @@ int main(int argc, char *argv[])
 			_splitpath(argv[1],drive,dir,fname,ext);
 			_makepath(tmppath,drive,dir,fname,"files");
 			for (i = 0;i < 10;i++) {
-				// ƒtƒ@ƒCƒ‹ƒI[ƒvƒ“
+				// ãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ¼ãƒ—ãƒ³
 				fp_files = fopen(tmppath,"a");
 				if (fp_files != NULL) {
 					strcpy(tmppath,argv[2]);
@@ -384,10 +384,10 @@ int main(int argc, char *argv[])
 				break;
 			}
 
-			// param ƒtƒ@ƒCƒ‹
+			// param ãƒ•ã‚¡ã‚¤ãƒ«
 			_splitpath(argv[1],drive,dir,fname,ext);
 			_makepath(tmppath,drive,dir,fname,"param");
-			// ƒtƒ@ƒCƒ‹ƒI[ƒvƒ“
+			// ãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ¼ãƒ—ãƒ³
 			fp = fopen(tmppath,"r");
 			if (fp == NULL) {
 				param.err = STATUS_FILE_READ_ERR;param.errLine = __LINE__;
@@ -602,7 +602,7 @@ int main(int argc, char *argv[])
 					param.ana = 1;
 				}
 				if (strcmp(p1,"-spAna") == 0) {
-					// 192khz ŒÅ’è‚Å‰ğÍ
+					// 192khz å›ºå®šã§è§£æ
 					param.sp_ana = 1;
 				}
 				if (sscanf(p1,"-fio:%ld",&temp) == 1) {
@@ -738,14 +738,14 @@ int main(int argc, char *argv[])
 }
 //---------------------------------------------------------------------------
 // Function   : SamplingRateConvert
-// Description: ƒTƒ“ƒvƒŠƒ“ƒOƒŒ[ƒg•ÏŠ·ˆ—‚ğ‚·‚é
+// Description: ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ãƒ¬ãƒ¼ãƒˆå¤‰æ›å‡¦ç†ã‚’ã™ã‚‹
 // ---
-//	rawFile	: RAWƒf[ƒ^ƒtƒ@ƒCƒ‹–¼
-//	param	: •ÏŠ·ƒpƒ‰ƒ[ƒ^\‘¢‘Ì
+//	rawFile	: RAWãƒ‡ãƒ¼ã‚¿ãƒ•ã‚¡ã‚¤ãƒ«å
+//	param	: å¤‰æ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿æ§‹é€ ä½“
 //
 void SamplingRateConvert(char *rawFile,PARAM_INFO *param)
 /*
- *	ƒTƒ“ƒvƒŠƒ“ƒOƒŒ[ƒg•ÏŠ·
+ *	ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ãƒ¬ãƒ¼ãƒˆå¤‰æ›
  */
 {
 	char outFile[_MAX_PATH];
@@ -773,7 +773,7 @@ void SamplingRateConvert(char *rawFile,PARAM_INFO *param)
 	memset(&fp_w,0,sizeof (FIO));
 
 	do {
-		// ƒeƒ“ƒ|ƒ‰ƒŠƒtƒ@ƒCƒ‹–¼‚Ìì¬
+		// ãƒ†ãƒ³ãƒãƒ©ãƒªãƒ•ã‚¡ã‚¤ãƒ«åã®ä½œæˆ
 		if (strlen(param->tempPath) > 0) {
 			_splitpath(rawFile,drive,dir,fname,ext);
 			strcpy(dir,"\\");
@@ -785,7 +785,7 @@ void SamplingRateConvert(char *rawFile,PARAM_INFO *param)
 		strcpy(tmpFile,outFile);
 		strcat(tmpFile,"2");
 		
-		// ƒŠ[ƒhê—pƒtƒ@ƒCƒ‹ƒI[ƒvƒ“ŠÖ”(ƒoƒbƒtƒ@ƒŠƒ“ƒO‹@”\•t)
+		// ãƒªãƒ¼ãƒ‰å°‚ç”¨ãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ¼ãƒ—ãƒ³é–¢æ•°(ãƒãƒƒãƒ•ã‚¡ãƒªãƒ³ã‚°æ©Ÿèƒ½ä»˜)
 		fio_open(&fp_r,rawFile,FIO_MODE_R);
 		if (fp_r.error) {
 			param->err = STATUS_FILE_READ_ERR;
@@ -793,25 +793,25 @@ void SamplingRateConvert(char *rawFile,PARAM_INFO *param)
 		}
 
 		if (param->overSamp == 2) {
-			// 2”{‚ÌƒTƒ“ƒvƒŠƒ“ƒOƒŒ[ƒg‚ÅŒvZ‚µŒã‚Åƒ_ƒEƒ“ƒTƒ“ƒvƒ‹‚·‚éB
+			// 2å€ã®ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ãƒ¬ãƒ¼ãƒˆã§è¨ˆç®—ã—å¾Œã§ãƒ€ã‚¦ãƒ³ã‚µãƒ³ãƒ—ãƒ«ã™ã‚‹ã€‚
 			svOutSampleR = param->outSampleR;
 			param->outSampleR *= 2;
 		} else if (param->overSamp == 6) {
-			// 768000*2‚ÌƒTƒ“ƒvƒŠƒ“ƒOƒŒ[ƒg‚ÅŒvZ‚µŒã‚Åƒ_ƒEƒ“ƒTƒ“ƒvƒ‹‚·‚éB
+			// 768000*2ã®ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ãƒ¬ãƒ¼ãƒˆã§è¨ˆç®—ã—å¾Œã§ãƒ€ã‚¦ãƒ³ã‚µãƒ³ãƒ—ãƒ«ã™ã‚‹ã€‚
 			svOutSampleR = param->outSampleR;
 			param->outSampleR = 768000 * 2;
 		}
 
 		outSample = 0;
 		
-		// ƒtƒ@ƒCƒ‹ƒTƒCƒYæ“¾
+		// ãƒ•ã‚¡ã‚¤ãƒ«ã‚µã‚¤ã‚ºå–å¾—
 		fio_get_filesize(&fp_r,&size);
 		if (fp_r.error) {
 			param->err = STATUS_FILE_READ_ERR;
 			break;
 		}
 		
-		// o—ÍƒTƒ“ƒvƒ‹”‚ğŒvZ‚·‚éB
+		// å‡ºåŠ›ã‚µãƒ³ãƒ—ãƒ«æ•°ã‚’è¨ˆç®—ã™ã‚‹ã€‚
 		inSample = (DWORD)(size / sizeof (SSIZE));
 		dd = inSample;
 		dd /= param->inSampleR;
@@ -823,12 +823,12 @@ void SamplingRateConvert(char *rawFile,PARAM_INFO *param)
 			break;
 		}
 
-		// —Êq‰»ƒrƒbƒgŠg’£ˆ—
+		// é‡å­åŒ–ãƒ“ãƒƒãƒˆæ‹¡å¼µå‡¦ç†
 		if (param->adjBE != 0) {
 			fprintf(stdout,"ABE\n");
 			fflush(stdout);
 
-			// o—Í—p‚Éƒtƒ@ƒCƒ‹ƒI[ƒvƒ“
+			// å‡ºåŠ›ç”¨ã«ãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ¼ãƒ—ãƒ³
 			fio_open(&fp_w,outFile,FIO_MODE_W);
 			if (fp_w.error) {
 				PRINT_LOG("ERROR");
@@ -875,12 +875,12 @@ void SamplingRateConvert(char *rawFile,PARAM_INFO *param)
 			break;
 		}
 
-		// ƒtƒ@ƒCƒ‹‚Éo—Í‚·‚éƒTƒCƒY‚ğ§ŒÀ‚·‚é(outSample”)
+		// ãƒ•ã‚¡ã‚¤ãƒ«ã«å‡ºåŠ›ã™ã‚‹ã‚µã‚¤ã‚ºã‚’åˆ¶é™ã™ã‚‹(outSampleæ•°)
 		fio_set_maxsize(&fp_w,(fio_size)outSample * sizeof (SSIZE));
 		fio_set_memory_limit(&fp_w,param->fio,25);
 
-		// ‰¹—Ê’²¸Aƒpƒ[’²¸—p‚Ì fft
-		// eq,lfc,hfc “™‚Í‚µ‚È‚¢
+		// éŸ³é‡èª¿æŸ»ã€ãƒ‘ãƒ¯ãƒ¼èª¿æŸ»ç”¨ã® fft
+		// eq,lfc,hfc ç­‰ã¯ã—ãªã„
 		param->eq_pw = malloc(768000 * 2 * 2 * sizeof (double));
 		if (param->eq_pw != NULL) {
 			for (i = 0;i < 768000 * 2 * 2;i++) {
@@ -936,7 +936,7 @@ void SamplingRateConvert(char *rawFile,PARAM_INFO *param)
 			if (i > 0) {
 				p2_avg /= i;
 			}
-			// 4kHz ` 5kHz ‚ÌŠÔ‚Ìpower‚Æ8kHz`9kHz‚Ìpower‚ğ”ä‚×A‚‰¹‚ª‘å‚«‚¢ê‡‚Í’²®—p‚Ìƒf[ƒ^‚ğ¶¬‚·‚éB
+			// 4kHz ã€œ 5kHz ã®é–“ã®powerã¨8kHzã€œ9kHzã®powerã‚’æ¯”ã¹ã€é«˜éŸ³ãŒå¤§ãã„å ´åˆã¯èª¿æ•´ç”¨ã®ãƒ‡ãƒ¼ã‚¿ã‚’ç”Ÿæˆã™ã‚‹ã€‚
 			p1_per = p2_avg / p1_avg;
 			if (p1_per > 0.6) {
 				p1_per = ((double)0.25 / p1_per);
@@ -966,7 +966,7 @@ void SamplingRateConvert(char *rawFile,PARAM_INFO *param)
 
 		PRINT_LOG("3");
 
-		// ‰¹—Ê’²¸
+		// éŸ³é‡èª¿æŸ»
 		fio_flush(&fp_w);
 		merageTempFile(' ',1,&fp_w,NULL,NULL,outSample,param);
 		if (param->err) {
@@ -978,12 +978,12 @@ void SamplingRateConvert(char *rawFile,PARAM_INFO *param)
 
 		PRINT_LOG("4");
 
-		// hfc auto —pƒpƒ‰ƒ[ƒ^[İ’è(hfc)
+		// hfc auto ç”¨ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ¼è¨­å®š(hfc)
 		if (param->hfc_auto == 1) {
 			anaHFC_AutoParam(param);
 		}
 
-		// lfa —pƒpƒ‰ƒ[ƒ^[ì¬(lfa_eq)
+		// lfa ç”¨ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ¼ä½œæˆ(lfa_eq)
 		if (param->lfa != 0) {
 			anaLfaParam(param);
 		}
@@ -994,7 +994,7 @@ void SamplingRateConvert(char *rawFile,PARAM_INFO *param)
 			param->err = STATUS_FILE_WRITE_ERR;
 			break;
 		}
-		// ƒtƒ@ƒCƒ‹‚Éo—Í‚·‚éƒTƒCƒY‚ğ§ŒÀ‚·‚é(outSample”)
+		// ãƒ•ã‚¡ã‚¤ãƒ«ã«å‡ºåŠ›ã™ã‚‹ã‚µã‚¤ã‚ºã‚’åˆ¶é™ã™ã‚‹(outSampleæ•°)
 		fio_set_maxsize(&fp_w,(fio_size)outSample * sizeof (SSIZE));
 		fio_set_memory_limit(&fp_w,param->fio,25);
 
@@ -1017,7 +1017,7 @@ void SamplingRateConvert(char *rawFile,PARAM_INFO *param)
 		}
 		
 
-		// ¶¬‚µ‚½ƒf[ƒ^‚ğ“Ç‚İ‚İ—p‚Éİ’è‚·‚éB
+		// ç”Ÿæˆã—ãŸãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã¿ç”¨ã«è¨­å®šã™ã‚‹ã€‚
 		fio_setmode_r(&fp_w,&fp_r,rawFile);
 		if (fp_w.error) {
 			PRINT_LOG("ERROR");
@@ -1040,13 +1040,13 @@ void SamplingRateConvert(char *rawFile,PARAM_INFO *param)
 		}
 		param->hiEQAdjust = 0;
 
-		// ƒXƒs[ƒJ[—pü”g”‰ğÍ
+		// ã‚¹ãƒ”ãƒ¼ã‚«ãƒ¼ç”¨å‘¨æ³¢æ•°è§£æ
 		if (param->sp_ana == 1) {
 			spAnalyze(outSample,&fp_r,param);
 		}
 
 		//
-		// ƒmƒCƒYƒJƒbƒg
+		// ãƒã‚¤ã‚ºã‚«ãƒƒãƒˆ
 		if (param->nr != -1) {
 			fprintf(stdout,"NR\n");
 			fflush(stdout);
@@ -1075,7 +1075,7 @@ void SamplingRateConvert(char *rawFile,PARAM_INFO *param)
 					param->err = STATUS_FILE_WRITE_ERR;
 					break;
 				}
-				// ƒtƒ@ƒCƒ‹‚Éo—Í‚·‚éƒTƒCƒY‚ğ§ŒÀ‚·‚é(outSample”)
+				// ãƒ•ã‚¡ã‚¤ãƒ«ã«å‡ºåŠ›ã™ã‚‹ã‚µã‚¤ã‚ºã‚’åˆ¶é™ã™ã‚‹(outSampleæ•°)
 				fio_set_maxsize(&fp_w,(fio_size)outSample * sizeof (SSIZE));
 				fio_set_memory_limit(&fp_w,param->fio,25);
 
@@ -1127,7 +1127,7 @@ void SamplingRateConvert(char *rawFile,PARAM_INFO *param)
 					param->err = STATUS_FILE_WRITE_ERR;
 					break;
 				}
-				// ƒtƒ@ƒCƒ‹‚Éo—Í‚·‚éƒTƒCƒY‚ğ§ŒÀ‚·‚é(outSample”)
+				// ãƒ•ã‚¡ã‚¤ãƒ«ã«å‡ºåŠ›ã™ã‚‹ã‚µã‚¤ã‚ºã‚’åˆ¶é™ã™ã‚‹(outSampleæ•°)
 				fio_set_maxsize(&fp_w,(fio_size)outSample * sizeof (SSIZE));
 				fio_set_memory_limit(&fp_w,param->fio,25);
 
@@ -1163,7 +1163,7 @@ void SamplingRateConvert(char *rawFile,PARAM_INFO *param)
 		}
 
 		//
-		// ‚ˆæ•âŠÔˆ—
+		// é«˜åŸŸè£œé–“å‡¦ç†
 		if (param->hfa != 0) {
 			fflush(stdout);
 			if (param->hfc != -1) {
@@ -1191,7 +1191,7 @@ void SamplingRateConvert(char *rawFile,PARAM_INFO *param)
 					param->err = STATUS_FILE_WRITE_ERR;
 					break;
 				}
-				// ƒtƒ@ƒCƒ‹‚Éo—Í‚·‚éƒTƒCƒY‚ğ§ŒÀ‚·‚é(outSample”)
+				// ãƒ•ã‚¡ã‚¤ãƒ«ã«å‡ºåŠ›ã™ã‚‹ã‚µã‚¤ã‚ºã‚’åˆ¶é™ã™ã‚‹(outSampleæ•°)
 				fio_set_maxsize(&fp_w,(fio_size)outSample * sizeof (SSIZE));
 				fio_set_memory_limit(&fp_w,param->fio,25);
 
@@ -1219,7 +1219,7 @@ void SamplingRateConvert(char *rawFile,PARAM_INFO *param)
 					param->err = STATUS_FILE_WRITE_ERR;
 					break;
 				}
-				// ƒtƒ@ƒCƒ‹‚Éo—Í‚·‚éƒTƒCƒY‚ğ§ŒÀ‚·‚é(outSample”)
+				// ãƒ•ã‚¡ã‚¤ãƒ«ã«å‡ºåŠ›ã™ã‚‹ã‚µã‚¤ã‚ºã‚’åˆ¶é™ã™ã‚‹(outSampleæ•°)
 				fio_set_maxsize(&fp_w,(fio_size)outSample * sizeof (SSIZE));
 				fio_set_memory_limit(&fp_w,param->fio,25);
 
@@ -1247,7 +1247,7 @@ void SamplingRateConvert(char *rawFile,PARAM_INFO *param)
 					param->err = STATUS_FILE_WRITE_ERR;
 					break;
 				}
-				// ƒtƒ@ƒCƒ‹‚Éo—Í‚·‚éƒTƒCƒY‚ğ§ŒÀ‚·‚é(outSample”)
+				// ãƒ•ã‚¡ã‚¤ãƒ«ã«å‡ºåŠ›ã™ã‚‹ã‚µã‚¤ã‚ºã‚’åˆ¶é™ã™ã‚‹(outSampleæ•°)
 				fio_set_maxsize(&fp_w,(fio_size)outSample * sizeof (SSIZE));
 				fio_set_memory_limit(&fp_w,param->fio,25);
 
@@ -1289,7 +1289,7 @@ void SamplingRateConvert(char *rawFile,PARAM_INFO *param)
 					param->err = STATUS_FILE_WRITE_ERR;
 					break;
 				}
-				// ƒtƒ@ƒCƒ‹‚Éo—Í‚·‚éƒTƒCƒY‚ğ§ŒÀ‚·‚é(outSample”)
+				// ãƒ•ã‚¡ã‚¤ãƒ«ã«å‡ºåŠ›ã™ã‚‹ã‚µã‚¤ã‚ºã‚’åˆ¶é™ã™ã‚‹(outSampleæ•°)
 				fio_set_maxsize(&fp_w,(fio_size)outSample * sizeof (SSIZE));
 				fio_set_memory_limit(&fp_w,param->fio,25);
 
@@ -1326,7 +1326,7 @@ void SamplingRateConvert(char *rawFile,PARAM_INFO *param)
 				param->err = STATUS_FILE_WRITE_ERR;
 				break;
 			}
-			// ƒtƒ@ƒCƒ‹‚Éo—Í‚·‚éƒTƒCƒY‚ğ§ŒÀ‚·‚é(outSample”)
+			// ãƒ•ã‚¡ã‚¤ãƒ«ã«å‡ºåŠ›ã™ã‚‹ã‚µã‚¤ã‚ºã‚’åˆ¶é™ã™ã‚‹(outSampleæ•°)
 			fio_set_maxsize(&fp_w,(fio_size)outSample * sizeof (SSIZE));
 			fio_set_memory_limit(&fp_w,param->fio,25);
 
@@ -1362,7 +1362,7 @@ void SamplingRateConvert(char *rawFile,PARAM_INFO *param)
 
 		}
 
-		// ƒI[ƒo[ƒTƒ“ƒvƒŠƒ“ƒO—p‚Ìƒ_ƒEƒ“ƒTƒ“ƒvƒ‹ˆ—
+		// ã‚ªãƒ¼ãƒãƒ¼ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ç”¨ã®ãƒ€ã‚¦ãƒ³ã‚µãƒ³ãƒ—ãƒ«å‡¦ç†
 		if (param->overSamp != 0) {
 			DWORD wkSample;
 			memset(&NormInfo,0,sizeof (NORM_INFO));
@@ -1386,7 +1386,7 @@ void SamplingRateConvert(char *rawFile,PARAM_INFO *param)
 			dd *= param->outSampleR;
 			wkSample = (DWORD)dd;
 
-			// ƒtƒ@ƒCƒ‹‚Éo—Í‚·‚éƒTƒCƒY‚ğ§ŒÀ‚·‚é(outSample”)
+			// ãƒ•ã‚¡ã‚¤ãƒ«ã«å‡ºåŠ›ã™ã‚‹ã‚µã‚¤ã‚ºã‚’åˆ¶é™ã™ã‚‹(outSampleæ•°)
 			fio_set_maxsize(&fp_w,(fio_size)wkSample * sizeof (SSIZE));
 
 			param->disEq = 1;
@@ -1421,19 +1421,19 @@ void SamplingRateConvert(char *rawFile,PARAM_INFO *param)
 		}
 		fio_close(&fp_r);
 		//
-		// I‚í‚è
+		// çµ‚ã‚ã‚Š
 	} while (0);
 }
 
 //---------------------------------------------------------------------------
 // Function   : fftFilter
-// Description: FFT ‚É‚æ‚éƒtƒBƒ‹ƒ^ˆ—
+// Description: FFT ã«ã‚ˆã‚‹ãƒ•ã‚£ãƒ«ã‚¿å‡¦ç†
 // ---
-//	inBuffer	:“ü—Íƒf[ƒ^ƒoƒbƒtƒ@
-//	inSample	:“ü—Íƒf[ƒ^‚ÌƒTƒ“ƒvƒ‹”(ch–ˆ)
-//	fp_r		:“ü—Íƒtƒ@ƒCƒ‹—p\‘¢‘Ì
-//	fp_w		:ƒeƒ“ƒ|ƒ‰ƒŠƒtƒ@ƒCƒ‹—p\‘¢‘Ì
-//	param		:•ÏŠ·ƒpƒ‰ƒ[ƒ^
+//	inBuffer	:å…¥åŠ›ãƒ‡ãƒ¼ã‚¿ãƒãƒƒãƒ•ã‚¡
+//	inSample	:å…¥åŠ›ãƒ‡ãƒ¼ã‚¿ã®ã‚µãƒ³ãƒ—ãƒ«æ•°(chæ¯)
+//	fp_r		:å…¥åŠ›ãƒ•ã‚¡ã‚¤ãƒ«ç”¨æ§‹é€ ä½“
+//	fp_w		:ãƒ†ãƒ³ãƒãƒ©ãƒªãƒ•ã‚¡ã‚¤ãƒ«ç”¨æ§‹é€ ä½“
+//	param		:å¤‰æ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿
 //
 void fftFilter(DWORD inSample,DWORD outSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 {
@@ -1481,7 +1481,7 @@ void fftFilter(DWORD inSample,DWORD outSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *pa
 PRINT_LOG("a");
 
 membyte = 0;
-	// “ü—Í—p
+	// å…¥åŠ›ç”¨
 	mem1 = (SSIZE *)al_malloc(wkMemSize * sizeof (SSIZE));
 	if (mem1 == NULL) {
 		PRINT_LOG("ERROR");
@@ -1489,7 +1489,7 @@ membyte = 0;
 		return;
 	}
 membyte += wkMemSize * sizeof (SSIZE);
-	// o—Í—p
+	// å‡ºåŠ›ç”¨
 	mem2 = (SSIZE *)al_malloc(wkMemSize * sizeof (SSIZE));
 	if (mem2 == NULL) {
 		PRINT_LOG("ERROR");
@@ -1497,7 +1497,7 @@ membyte += wkMemSize * sizeof (SSIZE);
 		return;
 	}
 membyte += wkMemSize * sizeof (SSIZE);
-	// ƒ[ƒN—p(•ÊƒXƒŒƒbƒh—p)
+	// ãƒ¯ãƒ¼ã‚¯ç”¨(åˆ¥ã‚¹ãƒ¬ãƒƒãƒ‰ç”¨)
 	mem3 = (SSIZE *)al_malloc(wkMemSize * sizeof (SSIZE));
 	if (mem3 == NULL) {
 		PRINT_LOG("ERROR");
@@ -1660,7 +1660,7 @@ membyte += wkMemSize * sizeof (fftw_complex);
 
 		PRINT_LOG("c");
 
-		// ‰¹‚ÌƒŒƒxƒ‹‚ğ’²¸‚µ‚Ä‚¨‚­
+		// éŸ³ã®ãƒ¬ãƒ™ãƒ«ã‚’èª¿æŸ»ã—ã¦ãŠã
 		if (param->pwAdj) {
 			level = 0;
 			for (i = fftSizeIn / 2,j = 0,n = 0;n < fftSizeIn;i++,j++,n++) {
@@ -1708,7 +1708,7 @@ membyte += wkMemSize * sizeof (fftw_complex);
 				}
 			}
 		} else {
-			// ƒI[ƒo[ƒTƒ“ƒvƒŠƒ“ƒO(1536000)‚Ì‚Æ‚«‚Íƒƒ‚ƒŠÁ”ï‚ª‘å‚«‚¢‚Ì‚Åfft—pƒƒ‚ƒŠ‚Í1‚Â‚¾‚¯Šm•Û‚µA•À—ñˆ—‚Í‚µ‚È‚¢
+			// ã‚ªãƒ¼ãƒãƒ¼ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°(1536000)ã®ã¨ãã¯ãƒ¡ãƒ¢ãƒªæ¶ˆè²»ãŒå¤§ãã„ã®ã§fftç”¨ãƒ¡ãƒ¢ãƒªã¯1ã¤ã ã‘ç¢ºä¿ã—ã€ä¸¦åˆ—å‡¦ç†ã¯ã—ãªã„
 
 			// 1
 			fftFilterSub(pIn[0],pOut[0],fftw_in[0],fftw_out[0],fftw_p[0],fftw_ip[0],param,0);
@@ -1724,7 +1724,7 @@ membyte += wkMemSize * sizeof (fftw_complex);
 		PRINT_LOG("e");
 
 		if (startInSample + fftSizeIn / 2 >= 0) {
-			// ‰¹‚ÌƒŒƒxƒ‹‚ğ’²®‚·‚é
+			// éŸ³ã®ãƒ¬ãƒ™ãƒ«ã‚’èª¿æ•´ã™ã‚‹
 			if (param->pwAdj) {
 				level2 = 0;
 				for (i = fftSizeOut / 2,j = 0,n = 0;n < fftSizeOut;i++,j++,n++) {
@@ -1798,9 +1798,9 @@ membyte += wkMemSize * sizeof (fftw_complex);
 }
 //---------------------------------------------------------------------------
 // Function   : fftFilterSub
-// Description: FFT ‚É‚æ‚éƒtƒBƒ‹ƒ^ˆ—(ƒTƒuŠÖ”)
+// Description: FFT ã«ã‚ˆã‚‹ãƒ•ã‚£ãƒ«ã‚¿å‡¦ç†(ã‚µãƒ–é–¢æ•°)
 // ---
-//	param		:•ÏŠ·ƒpƒ‰ƒ[ƒ^
+//	param		:å¤‰æ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿
 //
 void fftFilterSub(SSIZE *pIn,SSIZE *pOut,fftw_complex *fftw_in,fftw_complex *fftw_out,fftw_plan fftw_p,fftw_plan fftw_ip,PARAM_INFO *param,int id)
 {
@@ -1830,7 +1830,7 @@ void fftFilterSub(SSIZE *pIn,SSIZE *pOut,fftw_complex *fftw_in,fftw_complex *fft
 		validIndex = ((double)(fftSizeOut * 2) / param->outSampleR) * (inSampleR / 2);
 	}
 
-	// FFT ‰Šúİ’è
+	// FFT åˆæœŸè¨­å®š
 	copyToFFTW(fftw_in,pIn,fftSizeIn);
 
 	windowFFTW(fftw_in,fftSizeIn);
@@ -1892,7 +1892,7 @@ void fftFilterSub(SSIZE *pIn,SSIZE *pOut,fftw_complex *fftw_in,fftw_complex *fft
 		}
 	}
 
-	// ‚ˆæíœ
+	// é«˜åŸŸå‰Šé™¤
 	if (inSampleR <= outSampleR) {
 		wkSampleR = inSampleR;
 	} else {
@@ -1914,7 +1914,7 @@ void fftFilterSub(SSIZE *pIn,SSIZE *pOut,fftw_complex *fftw_in,fftw_complex *fft
 
 	PRINT_LOG("dd");
 
-	// ü”g”•â³—pƒf[ƒ^ì¬
+	// å‘¨æ³¢æ•°è£œæ­£ç”¨ãƒ‡ãƒ¼ã‚¿ä½œæˆ
 	if (param->disEq == 1 && id == 1) {
 		for (i = 1;i < validIndex;i++) {
 			p = (fftw_out[i][0] * fftw_out[i][0]) + (fftw_out[i][1] * fftw_out[i][1]);
@@ -1931,7 +1931,7 @@ void fftFilterSub(SSIZE *pIn,SSIZE *pOut,fftw_complex *fftw_in,fftw_complex *fft
 
 	PRINT_LOG("ee");
 	if (param->disEq == 0) {
-		// ƒnƒCƒpƒXƒfƒBƒU‚ÌƒJƒbƒg
+		// ãƒã‚¤ãƒ‘ã‚¹ãƒ‡ã‚£ã‚¶ã®ã‚«ãƒƒãƒˆ
 #if 0
 		if (param->hiDither != 0) {
 			index15k = ((double)(outSampleR * 2) / outSampleR) * 14000;
@@ -1973,7 +1973,7 @@ void fftFilterSub(SSIZE *pIn,SSIZE *pOut,fftw_complex *fftw_in,fftw_complex *fft
 			}
 		}
 
-		// lfa (’áˆæ’²®)
+		// lfa (ä½åŸŸèª¿æ•´)
 		if (param->lfa == 1) {
 			for (i = 1;i < validIndex;i++) {
 				if (param->lfa_eq[i] != 0) {
@@ -1987,7 +1987,7 @@ void fftFilterSub(SSIZE *pIn,SSIZE *pOut,fftw_complex *fftw_in,fftw_complex *fft
 			adjPinkFilter(4,fftSizeOut,fftw_out,param);
 		}
 
-		// ƒXƒs[ƒJ[‚²‚Æ‚Ì’²®
+		// ã‚¹ãƒ”ãƒ¼ã‚«ãƒ¼ã”ã¨ã®èª¿æ•´
 		if (param->ana == 1 && param->sp_ana == 0) {
 			for (i = 1;i < validIndex;i++) {
 				h = ((double)param->outSampleR / fftSizeOut) * i;
@@ -1998,7 +1998,7 @@ void fftFilterSub(SSIZE *pIn,SSIZE *pOut,fftw_complex *fftw_in,fftw_complex *fft
 			}
 		}
 
-		// ƒCƒRƒ‰ƒCƒU
+		// ã‚¤ã‚³ãƒ©ã‚¤ã‚¶
 		if (param->eq_flag == 1) {
 			for (i = 1;i < validIndex;i++) {
 				h = ((double)param->outSampleR / fftSizeOut) * i;
@@ -2013,12 +2013,12 @@ void fftFilterSub(SSIZE *pIn,SSIZE *pOut,fftw_complex *fftw_in,fftw_complex *fft
 
 	PRINT_LOG("ff");
 
-	// ƒJƒbƒgƒIƒt(hfc)
+	// ã‚«ãƒƒãƒˆã‚ªãƒ•(hfc)
 	cutOff = ((double)fftSizeOut / outSampleR) * hfc;
 	cutFFTW(fftw_out,cutOff,fftSizeOut);
 
 	if (param->disEq == 0 && lfc != -1) {
-		// ƒJƒbƒgƒIƒt(lfc)
+		// ã‚«ãƒƒãƒˆã‚ªãƒ•(lfc)
 		cutOff = ((double)fftSizeOut / outSampleR) * lfc;
 		for (i = 1;i < cutOff;i++) {
 			fftw_out[i][0] = 0;
@@ -2026,7 +2026,7 @@ void fftFilterSub(SSIZE *pIn,SSIZE *pOut,fftw_complex *fftw_in,fftw_complex *fft
 		}
 	}
 
-	// ”¼•ª‚Ìƒf[ƒ^‚ğ•œŒ³
+	// åŠåˆ†ã®ãƒ‡ãƒ¼ã‚¿ã‚’å¾©å…ƒ
 	for (i = 1;i < fftSizeOut / 2;i++) {
 		fftw_out[fftSizeOut - i][0] = fftw_out[i][0];
 		fftw_out[fftSizeOut - i][1] = fftw_out[i][1] * -1;
@@ -2037,16 +2037,16 @@ void fftFilterSub(SSIZE *pIn,SSIZE *pOut,fftw_complex *fftw_in,fftw_complex *fft
 	// invert FFT
 	fftw_execute(fftw_ip);
 
-	// o—Í
+	// å‡ºåŠ›
 	for (i = 0;i < fftSizeOut;i++) {
 		pOut[i] = (SSIZE)(fftw_in[i][0] / fftSizeOut);
 	}
 }
 //---------------------------------------------------------------------------
 // Function   : anaLfaParam
-// Description: LFA ƒpƒ‰ƒ[ƒ^[ì¬
+// Description: LFA ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ¼ä½œæˆ
 // ---
-//	param		:•ÏŠ·ƒpƒ‰ƒ[ƒ^
+//	param		:å¤‰æ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿
 //
 void anaLfaParam(PARAM_INFO *param)
 {
@@ -2066,7 +2066,7 @@ void anaLfaParam(PARAM_INFO *param)
 	}
 
 #if 0
-	// 20Hz ‚²‚Æ‚Ì•½‹Ï‚ğ‚Æ‚é
+	// 20Hz ã”ã¨ã®å¹³å‡ã‚’ã¨ã‚‹
 	width_l = ((double)fftSizeOut / param->outSampleR) * 20;
 	for (index_l = 0;index_l + width_l < validIndex;index_l += width_l) {
 		pw = 0;
@@ -2081,7 +2081,7 @@ void anaLfaParam(PARAM_INFO *param)
 		}
 	}
 
-	// 20Hz ‚©‚ç 30Hz ‚Ì’²®
+	// 20Hz ã‹ã‚‰ 30Hz ã®èª¿æ•´
 	index_l = ((double)fftSizeOut / param->outSampleR) * 15;
 	index_h = ((double)fftSizeOut / param->outSampleR) * 30;
 	index_b = ((double)fftSizeOut / param->outSampleR) * 150;
@@ -2091,7 +2091,7 @@ void anaLfaParam(PARAM_INFO *param)
 			param->lfa_eq[i] *= 1.05;
 		}
 	}
-	// 30Hz ‚©‚ç 40Hz ‚Ì’²®
+	// 30Hz ã‹ã‚‰ 40Hz ã®èª¿æ•´
 	index_l = ((double)fftSizeOut / param->outSampleR) * 30;
 	index_h = ((double)fftSizeOut / param->outSampleR) * 40;
 	index_b = ((double)fftSizeOut / param->outSampleR) * 150;
@@ -2101,7 +2101,7 @@ void anaLfaParam(PARAM_INFO *param)
 			param->lfa_eq[i] *= 1.07;
 		}
 	}
-	// 40Hz ‚©‚ç 50Hz ‚Ì’²®
+	// 40Hz ã‹ã‚‰ 50Hz ã®èª¿æ•´
 	index_l = ((double)fftSizeOut / param->outSampleR) * 40;
 	index_h = ((double)fftSizeOut / param->outSampleR) * 50;
 	index_b = ((double)fftSizeOut / param->outSampleR) * 150;
@@ -2111,7 +2111,7 @@ void anaLfaParam(PARAM_INFO *param)
 			param->lfa_eq[i] *= 1.09;
 		}
 	}
-	// 50Hz ‚©‚ç 60Hz ‚Ì’²®
+	// 50Hz ã‹ã‚‰ 60Hz ã®èª¿æ•´
 	index_l = ((double)fftSizeOut / param->outSampleR) * 50;
 	index_h = ((double)fftSizeOut / param->outSampleR) * 60;
 	index_b = ((double)fftSizeOut / param->outSampleR) * 150;
@@ -2121,7 +2121,7 @@ void anaLfaParam(PARAM_INFO *param)
 			param->lfa_eq[i] *= 1.11;
 		}
 	}
-	// 60Hz ‚©‚ç 80Hz ‚Ì’²®
+	// 60Hz ã‹ã‚‰ 80Hz ã®èª¿æ•´
 	index_l = ((double)fftSizeOut / param->outSampleR) * 60;
 	index_h = ((double)fftSizeOut / param->outSampleR) * 80;
 	index_b = ((double)fftSizeOut / param->outSampleR) * 150;
@@ -2131,7 +2131,7 @@ void anaLfaParam(PARAM_INFO *param)
 			param->lfa_eq[i] *= 1.09;
 		}
 	}
-	// 80Hz ‚©‚ç 100Hz ‚Ì’²®
+	// 80Hz ã‹ã‚‰ 100Hz ã®èª¿æ•´
 	index_l = ((double)fftSizeOut / param->outSampleR) * 80;
 	index_h = ((double)fftSizeOut / param->outSampleR) * 100;
 	index_b = ((double)fftSizeOut / param->outSampleR) * 150;
@@ -2141,7 +2141,7 @@ void anaLfaParam(PARAM_INFO *param)
 			param->lfa_eq[i] *= 1.07;
 		}
 	}
-	// 100Hz ‚©‚ç 120Hz ‚Ì’²®
+	// 100Hz ã‹ã‚‰ 120Hz ã®èª¿æ•´
 	index_l = ((double)fftSizeOut / param->outSampleR) * 100;
 	index_h = ((double)fftSizeOut / param->outSampleR) * 120;
 	index_b = ((double)fftSizeOut / param->outSampleR) * 150;
@@ -2151,7 +2151,7 @@ void anaLfaParam(PARAM_INFO *param)
 			param->lfa_eq[i] *= 1.05;
 		}
 	}
-	// 120Hz ‚©‚ç 150Hz ‚Ì’²®
+	// 120Hz ã‹ã‚‰ 150Hz ã®èª¿æ•´
 	index_l = ((double)fftSizeOut / param->outSampleR) * 120;
 	index_h = ((double)fftSizeOut / param->outSampleR) * 150;
 	index_b = ((double)fftSizeOut / param->outSampleR) * 150;
@@ -2165,7 +2165,7 @@ void anaLfaParam(PARAM_INFO *param)
 		param->lfa_eq[i] = 0;
 	}
 
-	// 10Hz ‚©‚ç 20Hz ‚Ì’²®
+	// 10Hz ã‹ã‚‰ 20Hz ã®èª¿æ•´
 	index_l = ((double)fftSizeOut / param->outSampleR) * 0;
 	index_h = ((double)fftSizeOut / param->outSampleR) * 20;
 	div = index_h - index_l;
@@ -2184,7 +2184,7 @@ void anaLfaParam(PARAM_INFO *param)
 		param->lfa_eq[i] = 0;
 	}
 #else
-	// 10Hz ‚²‚Æ‚Ì•½‹Ï‚ğ‚Æ‚é
+	// 10Hz ã”ã¨ã®å¹³å‡ã‚’ã¨ã‚‹
 	width_l = ((double)fftSizeOut / param->outSampleR) * 10;
 	for (index_l = 0;index_l + width_l < validIndex;index_l += width_l) {
 		pw = 0;
@@ -2198,14 +2198,14 @@ void anaLfaParam(PARAM_INFO *param)
 			param->lfa_eq[i] = pw;
 		}
 	}
-	// 0Hz ‚©‚ç 10Hz
+	// 0Hz ã‹ã‚‰ 10Hz
 	index_l = ((double)fftSizeOut / param->outSampleR) * 0;
 	index_h = ((double)fftSizeOut / param->outSampleR) * 10;
 	for (i = index_l;i < index_h;i++) {
 		param->lfa_eq[i] = 0;
 	}
 
-	// 10Hz ‚©‚ç 20Hz ‚Ì’²®
+	// 10Hz ã‹ã‚‰ 20Hz ã®èª¿æ•´
 	index_l = ((double)fftSizeOut / param->outSampleR) * 10;
 	index_h = ((double)fftSizeOut / param->outSampleR) * 20;
 	index_b = ((double)fftSizeOut / param->outSampleR) * 50;
@@ -2215,7 +2215,7 @@ void anaLfaParam(PARAM_INFO *param)
 			param->lfa_eq[i] *= 0.80;
 		}
 	}
-	// 20Hz ‚©‚ç 30Hz ‚Ì’²®
+	// 20Hz ã‹ã‚‰ 30Hz ã®èª¿æ•´
 	index_l = ((double)fftSizeOut / param->outSampleR) * 20;
 	index_h = ((double)fftSizeOut / param->outSampleR) * 30;
 	index_b = ((double)fftSizeOut / param->outSampleR) * 50;
@@ -2225,7 +2225,7 @@ void anaLfaParam(PARAM_INFO *param)
 			param->lfa_eq[i] *= 0.90;
 		}
 	}
-	// 30Hz ‚©‚ç 40Hz ‚Ì’²®
+	// 30Hz ã‹ã‚‰ 40Hz ã®èª¿æ•´
 	index_l = ((double)fftSizeOut / param->outSampleR) * 30;
 	index_h = ((double)fftSizeOut / param->outSampleR) * 40;
 	index_b = ((double)fftSizeOut / param->outSampleR) * 55;
@@ -2235,55 +2235,55 @@ void anaLfaParam(PARAM_INFO *param)
 			param->lfa_eq[i] *= 0.97;
 		}
 	}
-	// 40Hz ‚©‚ç 50Hz ‚Ì’²®
+	// 40Hz ã‹ã‚‰ 50Hz ã®èª¿æ•´
 	index_l = ((double)fftSizeOut / param->outSampleR) * 40;
 	index_h = ((double)fftSizeOut / param->outSampleR) * 50;
 	for (i = index_l;i < index_h;i++) {
 		param->lfa_eq[i] = 1.50;
 	}
-	// 50Hz ‚©‚ç 60Hz ‚Ì’²®
+	// 50Hz ã‹ã‚‰ 60Hz ã®èª¿æ•´
 	index_l = ((double)fftSizeOut / param->outSampleR) * 50;
 	index_h = ((double)fftSizeOut / param->outSampleR) * 60;
 	for (i = index_l;i < index_h;i++) {
 		param->lfa_eq[i] = 1.45;
 	}
-	// 60Hz ‚©‚ç 70Hz ‚Ì’²®
+	// 60Hz ã‹ã‚‰ 70Hz ã®èª¿æ•´
 	index_l = ((double)fftSizeOut / param->outSampleR) * 60;
 	index_h = ((double)fftSizeOut / param->outSampleR) * 70;
 	for (i = index_l;i < index_h;i++) {
 		param->lfa_eq[i] = 1.40;
 	}
-	// 70Hz ‚©‚ç 80Hz ‚Ì’²®
+	// 70Hz ã‹ã‚‰ 80Hz ã®èª¿æ•´
 	index_l = ((double)fftSizeOut / param->outSampleR) * 70;
 	index_h = ((double)fftSizeOut / param->outSampleR) * 80;
 	for (i = index_l;i < index_h;i++) {
 		param->lfa_eq[i] = 1.40;
 	}
-	// 80Hz ‚©‚ç 90Hz ‚Ì’²®
+	// 80Hz ã‹ã‚‰ 90Hz ã®èª¿æ•´
 	index_l = ((double)fftSizeOut / param->outSampleR) * 80;
 	index_h = ((double)fftSizeOut / param->outSampleR) * 90;
 	for (i = index_l;i < index_h;i++) {
 		param->lfa_eq[i] = 1.40;
 	}
-	// 90Hz ‚©‚ç 100Hz ‚Ì’²®
+	// 90Hz ã‹ã‚‰ 100Hz ã®èª¿æ•´
 	index_l = ((double)fftSizeOut / param->outSampleR) * 90;
 	index_h = ((double)fftSizeOut / param->outSampleR) * 100;
 	for (i = index_l;i < index_h;i++) {
 		param->lfa_eq[i] = 1.40;
 	}
-	// 100Hz ‚©‚ç 110Hz ‚Ì’²®
+	// 100Hz ã‹ã‚‰ 110Hz ã®èª¿æ•´
 	index_l = ((double)fftSizeOut / param->outSampleR) * 100;
 	index_h = ((double)fftSizeOut / param->outSampleR) * 110;
 	for (i = index_l;i < index_h;i++) {
 		param->lfa_eq[i] = 1.40;
 	}
-	// 110Hz ‚©‚ç 120Hz ‚Ì’²®
+	// 110Hz ã‹ã‚‰ 120Hz ã®èª¿æ•´
 	index_l = ((double)fftSizeOut / param->outSampleR) * 110;
 	index_h = ((double)fftSizeOut / param->outSampleR) * 120;
 	for (i = index_l;i < index_h;i++) {
 		param->lfa_eq[i] = 1.30;
 	}
-	// 120Hz ‚©‚ç 150Hz ‚Ì’²®
+	// 120Hz ã‹ã‚‰ 150Hz ã®èª¿æ•´
 	index_l = ((double)fftSizeOut / param->outSampleR) * 120;
 	index_h = ((double)fftSizeOut / param->outSampleR) * 150;
 	for (i = index_l;i < index_h;i++) {
@@ -2296,9 +2296,9 @@ void anaLfaParam(PARAM_INFO *param)
 }
 //---------------------------------------------------------------------------
 // Function   : anaHFC_autoParam
-// Description: HFC Auto ƒpƒ‰ƒ[ƒ^[ì¬
+// Description: HFC Auto ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ¼ä½œæˆ
 // ---
-//	param		:•ÏŠ·ƒpƒ‰ƒ[ƒ^
+//	param		:å¤‰æ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿
 //
 void anaHFC_AutoParam(PARAM_INFO *param)
 {
@@ -2327,7 +2327,7 @@ void anaHFC_AutoParam(PARAM_INFO *param)
 		}
 	}
 
-	// 200Hz ‚²‚Æ‚Ì•½‹Ï‚ğ‚Æ‚é
+	// 200Hz ã”ã¨ã®å¹³å‡ã‚’ã¨ã‚‹
 	width = ((double)fftSizeOut / param->outSampleR) * 200;
 	for (index = 0;index + width < validIndex;index += width) {
 		p = 0;
@@ -2370,12 +2370,12 @@ void anaHFC_AutoParam(PARAM_INFO *param)
 
 //---------------------------------------------------------------------------
 // Function   : adjBitExtension
-// Description: ƒrƒbƒg•ª‰ğ”\‚ğ‚‚ß‚éˆ—
+// Description: ãƒ“ãƒƒãƒˆåˆ†è§£èƒ½ã‚’é«˜ã‚ã‚‹å‡¦ç†
 // ---
-//	inSample 	:ˆ—‚·‚éƒTƒ“ƒvƒ‹”
-//	fp			:“ü—Íƒtƒ@ƒCƒ‹
-//	tmpFp		:o—Íƒtƒ@ƒCƒ‹
-//	param		:•ÏŠ·ƒpƒ‰ƒ[ƒ^
+//	inSample 	:å‡¦ç†ã™ã‚‹ã‚µãƒ³ãƒ—ãƒ«æ•°
+//	fp			:å…¥åŠ›ãƒ•ã‚¡ã‚¤ãƒ«
+//	tmpFp		:å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«
+//	param		:å¤‰æ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿
 //
 void adjBitExtension(DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 {
@@ -2504,7 +2504,7 @@ void adjBitExtension(DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 			nSample = fftSize * 2;
 		}
 		
-		// ‰¹‚ÌƒŒƒxƒ‹‚ğ’²¸‚µ‚Ä‚¨‚­
+		// éŸ³ã®ãƒ¬ãƒ™ãƒ«ã‚’èª¿æŸ»ã—ã¦ãŠã
 		if (param->abeNX) {
 			level = 0;
 			for (i = fftSize / 2,j = 0,n = 0;n < fftSize;i++,j++,n++) {
@@ -2518,10 +2518,10 @@ void adjBitExtension(DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 			}
 		}
 		if (param->abeFnLevel > 0) {
-			// ƒfƒBƒUƒLƒƒƒ“ƒZƒ‰
+			// ãƒ‡ã‚£ã‚¶ã‚­ãƒ£ãƒ³ã‚»ãƒ©
 			pIn  = (SSIZE *)mem1;
 			pOut = (SSIZE *)mem1;
-			// ‚Q’l•½‹Ï
+			// ï¼’å€¤å¹³å‡
 			for (i = 0;i + 2 < nSample;i++) {
 				d1 = pIn[i + 0];
 				d2 = pIn[i + 1];
@@ -2561,7 +2561,7 @@ void adjBitExtension(DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 				}
 			}
 			if (param->abeFnLevel > 1) {
-				// 3’l•½‹Ï
+				// 3å€¤å¹³å‡
 				for (i = nSample - 1;i + 1 > 0;i--) {
 					d1 = pIn[i - 0];
 					d2 = pIn[i - 1];
@@ -2603,7 +2603,7 @@ void adjBitExtension(DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 				}
 			}
 			if (param->abeFnLevel > 3) {
-				// 3’l•½‹Ï
+				// 3å€¤å¹³å‡
 				for (i = 0;i + 1 < nSample;i++) {
 					d1 = pIn[i + 0];
 					d2 = pIn[i + 1];
@@ -2647,7 +2647,7 @@ void adjBitExtension(DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 		}
 
 		if (param->smLowData > 0) {
-			// 2’l“¯’l‚Å‚»‚Ì¶‰E—×‚ªˆÙ‚È‚é’l‚Ì’²®
+			// 2å€¤åŒå€¤ã§ãã®å·¦å³éš£ãŒç•°ãªã‚‹å€¤ã®èª¿æ•´
 			pIn  = (SSIZE *)mem1;
 			pOut = (SSIZE *)mem1;
 			for (i = 0;i + 3 < nSample;i++) {
@@ -2680,7 +2680,7 @@ void adjBitExtension(DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 					}
 				}
 			}
-			// 2’l“¯’l‚Å‚»‚Ì¶‰E—×‚ªˆÙ‚È‚é’l‚Ì’²®(‹t‡)
+			// 2å€¤åŒå€¤ã§ãã®å·¦å³éš£ãŒç•°ãªã‚‹å€¤ã®èª¿æ•´(é€†é †)
 			pIn  = (SSIZE *)mem1;
 			pOut = (SSIZE *)mem1;
 			for (i = nSample - 1;i > 2;i--) {
@@ -2713,7 +2713,7 @@ void adjBitExtension(DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 					}
 				}
 			}
-			// R‚â’J‚ÌŒ`‚Ì”gŒ`’²®
+			// å±±ã‚„è°·ã®å½¢ã®æ³¢å½¢èª¿æ•´
 			pIn  = (SSIZE *)mem1;
 			pOut = (SSIZE *)mem1;
 			for (i = 0;i + 2 < nSample;i++) {
@@ -2727,16 +2727,16 @@ void adjBitExtension(DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 				dd2 >>= (56 - param->iw);
 				dd3 >>= (56 - param->iw);
 				if (d1 < d2 && d2 > d3 && (dd2 - dd1) <= 2 && (dd2 - dd3) <= 2) {
-					// R
+					// å±±
 					sm_avg = (((d1 + d3) / 2) + d2) / 2;
 					pOut[i + 1] = sm_avg;
 				} else if (d1 > d2 && d2 < d3 && (dd1 - dd2) <= 2 && (dd3 - dd2) <= 2) {
-					// ’J
+					// è°·
 					sm_avg = (((d1 + d3) / 2) + d2) / 2;
 					pOut[i + 1] = sm_avg;
 				}
 			}
-			// R‚â’J‚ÌŒ`‚Ì”gŒ`’²®(‹t‡)
+			// å±±ã‚„è°·ã®å½¢ã®æ³¢å½¢èª¿æ•´(é€†é †)
 			pIn  = (SSIZE *)mem1;
 			pOut = (SSIZE *)mem1;
 			for (i = nSample - 1;i > 1;i--) {
@@ -2750,16 +2750,16 @@ void adjBitExtension(DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 				dd2 >>= (56 - param->iw);
 				dd3 >>= (56 - param->iw);
 				if (d1 < d2 && d2 > d3 && (dd2 - dd1) <= 2 && (dd2 - dd3) <= 2) {
-					// R
+					// å±±
 					sm_avg = (((d1 + d3) / 2) + d2) / 2;
 					pOut[i + 1] = sm_avg;
 				} else if (d1 > d2 && d2 < d3 && (dd1 - dd2) <= 2 && (dd3 - dd2) <= 2) {
-					// ’J
+					// è°·
 					sm_avg = (((d1 + d3) / 2) + d2) / 2;
 					pOut[i + 1] = sm_avg;
 				}
 			}
-			// “¯’lˆÈŠO‚ÌˆÚ“®•½‹Ï
+			// åŒå€¤ä»¥å¤–ã®ç§»å‹•å¹³å‡
 			pIn  = (SSIZE *)mem1;
 			pOut = (SSIZE *)mem1;
 			for (i = 0;i + 2 < nSample;i++) {
@@ -2793,7 +2793,7 @@ void adjBitExtension(DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 					pOut[i + 1] = sm_avg;
 				}
 			}
-			// “¯’lˆÈŠO‚ÌˆÚ“®•½‹Ï(‹t‡)
+			// åŒå€¤ä»¥å¤–ã®ç§»å‹•å¹³å‡(é€†é †)
 			pIn  = (SSIZE *)mem1;
 			pOut = (SSIZE *)mem1;
 			for (i = nSample - 1;i > 1;i--) {
@@ -2829,16 +2829,16 @@ void adjBitExtension(DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 			}
 		}
 #if 1
-		// “K‰Œ^ƒtƒBƒ‹ƒ^[ˆ—
-		// “¯’l‚ª‘±‚­ê‡‚É“¯’l‚ÌŒÂ”‚É‰‚¶‚½fft‚Å‚ˆæƒJƒbƒgƒtƒBƒ‹ƒ^[‚ğ‚·‚éB
-		// ƒtƒBƒ‹ƒ^[Œã‚Í”gŒ`‚ª‚È‚ß‚ç‚©‚É‚È‚é‚æ‚¤‚É§Œä‚·‚éB
+		// é©å¿œå‹ãƒ•ã‚£ãƒ«ã‚¿ãƒ¼å‡¦ç†
+		// åŒå€¤ãŒç¶šãå ´åˆã«åŒå€¤ã®å€‹æ•°ã«å¿œã˜ãŸfftã§é«˜åŸŸã‚«ãƒƒãƒˆãƒ•ã‚£ãƒ«ã‚¿ãƒ¼ã‚’ã™ã‚‹ã€‚
+		// ãƒ•ã‚£ãƒ«ã‚¿ãƒ¼å¾Œã¯æ³¢å½¢ãŒãªã‚ã‚‰ã‹ã«ãªã‚‹ã‚ˆã†ã«åˆ¶å¾¡ã™ã‚‹ã€‚
 		memset(mem2,0,wkMemSize * sizeof (SSIZE));
 		memset(mem3,0,wkMemSize * sizeof (SSIZE));
 		memset(mem4,0,wkMemSize * sizeof (SSIZE));
 		if (param->adaptiveFilder == 1) {
-			pIn = mem1;							// “ü—Í”gŒ`
-			pOut = mem2;						// “¯’lŒÂ”
-			// mem2‚É“¯’l‚ª‘±‚­ê‡‚É“¯’l‚ÌŒÂ”‚ğ‹L˜^‚µ‚Ä‚¢‚­B
+			pIn = mem1;							// å…¥åŠ›æ³¢å½¢
+			pOut = mem2;						// åŒå€¤å€‹æ•°
+			// mem2ã«åŒå€¤ãŒç¶šãå ´åˆã«åŒå€¤ã®å€‹æ•°ã‚’è¨˜éŒ²ã—ã¦ã„ãã€‚
 			for (i = 0,j = 1,cnt = 1;j < nSample;j++) {
 				d1 = pIn[i] >> (56 - param->iw);
 				d2 = pIn[j] >> (56 - param->iw);
@@ -2857,7 +2857,7 @@ void adjBitExtension(DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 					pOut[i] = 0;
 				}
 			}
-			// “¯’l‚ª3‚ÂˆÈã‘±‚­‚à‚Ì‚É‘Î‚µ‚ÄAfft ‚ğ‚©‚¯‚é
+			// åŒå€¤ãŒ3ã¤ä»¥ä¸Šç¶šãã‚‚ã®ã«å¯¾ã—ã¦ã€fft ã‚’ã‹ã‘ã‚‹
 			do {
 				pIn = mem1;
 				pIn2 = mem2;
@@ -2873,17 +2873,17 @@ void adjBitExtension(DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 					break;
 				}
 				for (n = 0;n < 3;n++) {
-					// FFT ‰Šúİ’è
+					// FFT åˆæœŸè¨­å®š
 					copyToFFTW(fftw_in,&pIn[((fftSize / 2) * n)],fftSize);
 					
-					// ‘‹ŠÖ”
+					// çª“é–¢æ•°
 					windowFFTW(fftw_in,fftSize);
 
 					// FFT
 					fftw_execute(fftw_p);
 
 					if (param->beInfo.cutOff[cnt] > 0) {
-						// ‚ˆæíœ
+						// é«˜åŸŸå‰Šé™¤
 						hfc = inSampleR / param->beInfo.cutOff[cnt];
 						cutOff = ((double)fftSize / inSampleR) * hfc;
 						for (i = cutOff;i < fftSize;i++) {
@@ -2891,7 +2891,7 @@ void adjBitExtension(DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 							fftw_out[i][1] = 0;
 						}
 					}
-					// ”¼•ª‚Ìƒf[ƒ^‚ğ•œŒ³
+					// åŠåˆ†ã®ãƒ‡ãƒ¼ã‚¿ã‚’å¾©å…ƒ
 					//#pragma omp parallel for
 					for (i = 1;i < fftSize / 2;i++) {
 						fftw_out[fftSize - i][0] = fftw_out[i][0];
@@ -2901,7 +2901,7 @@ void adjBitExtension(DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 					// invert FFT
 					fftw_execute(fftw_ip);
 
-					// o—Í
+					// å‡ºåŠ›
 					pOut = (SSIZE *)&mem3[((fftSize / 2) * n)];
 					//#pragma omp parallel for
 					for (i = 0;i < fftSize;i++) {
@@ -2937,21 +2937,21 @@ void adjBitExtension(DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 		}
 #endif
 		if (param->cutLowData && shresh > 0) {
-			// è‡’l‚æ‚è’á‚¢ƒpƒ[‚Ì‰¹‚Ííœ‚·‚é
+			// é–¾å€¤ã‚ˆã‚Šä½ã„ãƒ‘ãƒ¯ãƒ¼ã®éŸ³ã¯å‰Šé™¤ã™ã‚‹
 			pIn = mem1;
 			pOut = mem3;
 			memset(mem3,0,wkMemSize * sizeof (SSIZE));
 			for (n = 0;n < 3;n++) {
-				// FFT ‰Šúİ’è
+				// FFT åˆæœŸè¨­å®š
 				copyToFFTW(fftw_in,&pIn[((fftSize / 2) * n)],fftSize);
 
-				// ‘‹ŠÖ”
+				// çª“é–¢æ•°
 				windowFFTW(fftw_in,fftSize);
 
 				// FFT
 				fftw_execute(fftw_p);
 
-				// íœ
+				// å‰Šé™¤
 				for (i = 1;i < fftSize / 2;i++) {
 					power = (fftw_out[i][0] * fftw_out[i][0]) + (fftw_out[i][1] * fftw_out[i][1]);
 					if (power > 0) {
@@ -2963,7 +2963,7 @@ void adjBitExtension(DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 					}
 				}
 
-				// ”¼•ª‚Ìƒf[ƒ^‚ğ•œŒ³
+				// åŠåˆ†ã®ãƒ‡ãƒ¼ã‚¿ã‚’å¾©å…ƒ
 				#pragma omp parallel for
 				for (i = 1;i < fftSize / 2;i++) {
 					fftw_out[fftSize - i][0] = fftw_out[i][0];
@@ -2973,7 +2973,7 @@ void adjBitExtension(DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 				// invert FFT
 				fftw_execute(fftw_ip);
 
-				// o—Í
+				// å‡ºåŠ›
 				pOut = (SSIZE *)mem3;
 				pOut = &pOut[(fftSize / 2) * n];
 				#pragma omp parallel for
@@ -2985,8 +2985,8 @@ void adjBitExtension(DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 		}
 
 #if 1
-		// ”gŒ`‚Ì’²®ˆ—
-		// ã‚ª‚è‚âA‰º‚ª‚è‚Ì”gŒ`‚Ì—Êq‰»Œë·‚ğ­‚È‚­‚·‚é
+		// æ³¢å½¢ã®èª¿æ•´å‡¦ç†
+		// ä¸ŠãŒã‚Šã‚„ã€ä¸‹ãŒã‚Šã®æ³¢å½¢ã®é‡å­åŒ–èª¤å·®ã‚’å°‘ãªãã™ã‚‹
 		pIn  = (SSIZE *)mem1;
 		pOut = (SSIZE *)mem1;
 		for (i = 4;i + 3 < nSample;) {
@@ -3001,7 +3001,7 @@ void adjBitExtension(DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 			d8 = pIn[i + 3];
 			if ((d2 < d3 && d3 <= d4 && d4 < d5 && d5 <= d6 && d6 < d7) ||
 						(d2 <= d3 && d3 < d4 && d4 <= d5 && d5 < d6 && d6 <= d7)) {
-				// ã‚ª‚è”gŒ`
+				// ä¸ŠãŒã‚Šæ³¢å½¢
 				samp[1] = pIn[i - 2] - pIn[i - 3];
 				samp[2] = pIn[i - 1] - pIn[i - 2];
 				samp[3] = pIn[i] - pIn[i - 1];
@@ -3032,7 +3032,7 @@ void adjBitExtension(DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 
 			} else if ((d2 > d3 && d3 >= d4 && d4 > d5 && d5 >= d6 && d6 > d7) ||
 						(d2 >= d3 && d3 > d4 && d4 >= d5 && d5 > d6 && d6 >= d7)) {
-				// ‰º‚ª‚è”gŒ`
+				// ä¸‹ãŒã‚Šæ³¢å½¢
 				samp[1] = pIn[i - 2] - pIn[i - 3];
 				samp[2] = pIn[i - 1] - pIn[i - 2];
 				samp[3] = pIn[i] - pIn[i - 1];
@@ -3067,7 +3067,7 @@ void adjBitExtension(DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 
 		if (startInSample + (fftSize / 2) >= 0) {
 #if 0
-			// ‰¹‚ÌƒŒƒxƒ‹‚É•Ï‰»‚ª‚È‚¢‚©’²¸
+			// éŸ³ã®ãƒ¬ãƒ™ãƒ«ã«å¤‰åŒ–ãŒãªã„ã‹èª¿æŸ»
 			if (param->abeNX == 1) {
 				level2 = 0;
 				for (i = fftSize / 2,j = 0,n = 0;n < fftSize;i++,j++,n++) {
@@ -3119,13 +3119,13 @@ void adjBitExtension(DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 }
 //---------------------------------------------------------------------------
 // Function   : genNoise
-// Description: ¸‚í‚ê‚½‚ˆæ‚ÌÄŒ»ˆ—(³‹K•ª•z‚ÌƒmƒCƒY•t‰Á)
+// Description: å¤±ã‚ã‚ŒãŸé«˜åŸŸã®å†ç¾å‡¦ç†(æ­£è¦åˆ†å¸ƒã®ãƒã‚¤ã‚ºä»˜åŠ )
 // ---
-//	hfc		 	:‚ˆæ‚ÌƒJƒbƒgƒIƒtü”g”(‚±‚Ìü”g”ˆÈã‚Ì—Ìˆæ‚Éƒf[ƒ^‚ğ’Ç‰Á‚·‚é)
-//	inSample 	:ˆ—‚·‚éƒTƒ“ƒvƒ‹”(ch–ˆ)
-//	fp_r		:“ü—Íƒtƒ@ƒCƒ‹
-//	fp_w		:o—Íƒtƒ@ƒCƒ‹
-//	param		:•ÏŠ·ƒpƒ‰ƒ[ƒ^
+//	hfc		 	:é«˜åŸŸã®ã‚«ãƒƒãƒˆã‚ªãƒ•å‘¨æ³¢æ•°(ã“ã®å‘¨æ³¢æ•°ä»¥ä¸Šã®é ˜åŸŸã«ãƒ‡ãƒ¼ã‚¿ã‚’è¿½åŠ ã™ã‚‹)
+//	inSample 	:å‡¦ç†ã™ã‚‹ã‚µãƒ³ãƒ—ãƒ«æ•°(chæ¯)
+//	fp_r		:å…¥åŠ›ãƒ•ã‚¡ã‚¤ãƒ«
+//	fp_w		:å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«
+//	param		:å¤‰æ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿
 //
 void genNoise(long hfc,DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 {
@@ -3146,10 +3146,10 @@ void genNoise(long hfc,DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 	fftw_plan fftw_p[2],fftw_ip[2],fftw_p2;
 	double hfaNB;
 	
-//	// ƒmƒCƒY¶¬—pƒf[ƒ^‚Ì“Ç‚İ‚İ
+//	// ãƒã‚¤ã‚ºç”Ÿæˆç”¨ãƒ‡ãƒ¼ã‚¿ã®èª­ã¿è¾¼ã¿
 //	fpNoise = fopen(param->nd_path,"rb");
 //	if (fpNoise == NULL) {
-//		// ƒf[ƒ^‚ª‚È‚¯‚ê‚Îì¬‚·‚é
+//		// ãƒ‡ãƒ¼ã‚¿ãŒãªã‘ã‚Œã°ä½œæˆã™ã‚‹
 //		fpNoise = fopen(param->nd_path,"wb");
 //		if (fpNoise) {
 //			for (i = 0;i < (long)(MAX_SAMPLE_N) * 60;i++) {
@@ -3253,7 +3253,7 @@ void genNoise(long hfc,DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 		memset(mem1,0,wkMemSize);
 		memset(mem3,0,wkMemSize);
 
-		// mem2 ‚É‚Í³‹K•ª•z‚ÌƒmƒCƒY‚ğŠi”[‚·‚é
+		// mem2 ã«ã¯æ­£è¦åˆ†å¸ƒã®ãƒã‚¤ã‚ºã‚’æ ¼ç´ã™ã‚‹
 		pIn2 = (SSIZE *)mem2;
 		#pragma omp parallel for
 		for (i = 0;i < fftSize * 2;i++) {
@@ -3298,14 +3298,14 @@ void genNoise(long hfc,DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 		for (n = 0;n < 3;n++) {
 			lowIndex = ((double)fftSize / outSampleR) * (hfc - 2000);
 			highIndex = ((double)fftSize / outSampleR) * hfc;
-			// FFT ‰Šúİ’è
+			// FFT åˆæœŸè¨­å®š
 			copyToFFTW(fftw_in[0],&pIn[((fftSize / 2) * n)],fftSize);
 			windowFFTW(fftw_in[0],fftSize);
 
 			// FFT
 			fftw_execute(fftw_p[0]);
 
-			// Œ³M†‚Ì‚ˆæ‚Ìƒpƒ[‚ğ’²‚×‚é
+			// å…ƒä¿¡å·ã®é«˜åŸŸã®ãƒ‘ãƒ¯ãƒ¼ã‚’èª¿ã¹ã‚‹
 			refPw = 0;
 			for (i = lowIndex,nn = 0;i < highIndex;i++,nn++) {
 				p = fftw_out[0][i][0] * fftw_out[0][i][0] + fftw_out[0][i][1] * fftw_out[0][i][1];
@@ -3318,16 +3318,16 @@ void genNoise(long hfc,DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 				refPw /= nn;
 			}
 
-			// •t‰Á‚·‚éM†
+			// ä»˜åŠ ã™ã‚‹ä¿¡å·
 			copyToFFTW(fftw_in[1],&pIn2[((fftSize / 2) * n)],fftSize);
 			windowFFTW(fftw_in[1],fftSize);
 
 			// FFT
 			fftw_execute(fftw_p[1]);
-			// 1/f M†‚É‚·‚é
+			// 1/f ä¿¡å·ã«ã™ã‚‹
 			adjPinkFilter(1,fftSize,fftw_out[1],param);
 
-			// •t‰Á‚·‚éM†‚Ìƒpƒ[‚ğ’²‚×‚é
+			// ä»˜åŠ ã™ã‚‹ä¿¡å·ã®ãƒ‘ãƒ¯ãƒ¼ã‚’èª¿ã¹ã‚‹
 			noisePw = 0;
 			lowIndex = ((double)fftSize / outSampleR) * hfc;
 			highIndex = ((double)fftSize / outSampleR) * (hfc + 2000);
@@ -3355,25 +3355,25 @@ void genNoise(long hfc,DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 
 			if (param->hfa != 1 && param->hfaNB > 0) {
 				hfaNB = param->hfaNB / 100.0;
-				// hfa1 M†
+				// hfa1 ä¿¡å·
 				for (i = highIndex;i < fftSize / 2;i++) {
 					fftw_out[1][i][0] *= hfaNB;
 					fftw_out[1][i][1] *= hfaNB;
 				}
 				hfaNB = 1.0 - hfaNB;
-				// hfa2 M†
+				// hfa2 ä¿¡å·
 				for (i = highIndex;i < fftSize / 2;i++) {
 					fftw_out[0][i][0] *= hfaNB;
 					fftw_out[0][i][1] *= hfaNB;
 				}
-				// ‡¬
+				// åˆæˆ
 				for (i = highIndex;i < fftSize / 2;i++) {
 					fftw_out[1][i][0] += fftw_out[0][i][0];
 					fftw_out[1][i][1] += fftw_out[0][i][1];
 				}
 			}
 
-			// ’áˆæƒJƒbƒg
+			// ä½åŸŸã‚«ãƒƒãƒˆ
 			highIndex = ((double)fftSize / outSampleR) * hfc;
 
 			#pragma omp parallel for
@@ -3382,13 +3382,13 @@ void genNoise(long hfc,DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 				fftw_out[1][i][1] = 0;
 			}
 
-			// ”¼•ª‚Ìƒf[ƒ^‚ğ•œŒ³
+			// åŠåˆ†ã®ãƒ‡ãƒ¼ã‚¿ã‚’å¾©å…ƒ
 			#pragma omp parallel for
 			for (i = 1;i < fftSize / 2;i++) {
 				fftw_out[1][fftSize - i][0] = fftw_out[1][i][0];
 				fftw_out[1][fftSize - i][1] = fftw_out[1][i][1] * -1;
 			}
-			// ’¼—¬•”•ªœ‹
+			// ç›´æµéƒ¨åˆ†é™¤å»
 			fftw_out[1][0][0] = 0;
 			fftw_out[1][0][1] = 0;
 
@@ -3412,12 +3412,12 @@ void genNoise(long hfc,DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 			pOut = (SSIZE *)mem3;
 			pOut = pOut + (fftSize / 2);
 			for (i = 0;i < 100;i++) {
-				// Œ³M†‚É‰¹‚ª‚ ‚é‚©‚ğ’²‚×‚é
+				// å…ƒä¿¡å·ã«éŸ³ãŒã‚ã‚‹ã‹ã‚’èª¿ã¹ã‚‹
 				for (j = 0;j < fftSize / 100;j++) {
 					fftw_in2[j][0] = pIn[j];
 					fftw_in2[j][1] = 0;
 				}
-				// ‘‹ŠÖ”
+				// çª“é–¢æ•°
 				for (j = 0;j < ((fftSize / 100) - 1) / 2;j++) {
 					fftw_in2[j][0] = fftw_in2[j][0] * (2.0 * j / ((double)fftSize / 100));
 				}
@@ -3428,7 +3428,7 @@ void genNoise(long hfc,DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 				// FFT
 				fftw_execute(fftw_p2);
 
-				// Œ³M†‚Ì‚ˆæ‚Ìƒpƒ[‚ğ’²‚×‚é
+				// å…ƒä¿¡å·ã®é«˜åŸŸã®ãƒ‘ãƒ¯ãƒ¼ã‚’èª¿ã¹ã‚‹
 				refPw = 0;
 				lowIndex = (((double)fftSize / 100) / outSampleR) * (hfc - 2000);
 				highIndex = (((double)fftSize / 100) / outSampleR) * hfc;
@@ -3442,12 +3442,12 @@ void genNoise(long hfc,DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 				if (nn > 0) {
 					refPw /= nn;
 				}
-				// •t‰ÁM†‚Ì‚ˆæ‚Ìƒpƒ[‚ğ’²‚×‚é
+				// ä»˜åŠ ä¿¡å·ã®é«˜åŸŸã®ãƒ‘ãƒ¯ãƒ¼ã‚’èª¿ã¹ã‚‹
 				for (j = 0;j < fftSize / 100;j++) {
 					fftw_in2[j][0] = pOut[j];
 					fftw_in2[j][1] = 0;
 				}
-				// ‘‹ŠÖ”
+				// çª“é–¢æ•°
 				for (j = 0;j < ((fftSize / 100) - 1) / 2;j++) {
 					fftw_in2[j][0] = fftw_in2[j][0] * (2.0 * j / ((double)fftSize / 100));
 				}
@@ -3489,16 +3489,16 @@ void genNoise(long hfc,DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 				pIn  += fftSize / 100;
 				pOut += fftSize / 100;
 			}
-			// Ä‚Ñ’áˆæƒJƒbƒgˆ—‚ğ‚·‚é
+			// å†ã³ä½åŸŸã‚«ãƒƒãƒˆå‡¦ç†ã‚’ã™ã‚‹
 			pIn = (SSIZE *)mem1;
 			pOut = (SSIZE *)mem3;
 			for (n = 0;n < 3;n++) {
-				// FFT ‰Šúİ’è
+				// FFT åˆæœŸè¨­å®š
 				for (i = 0;i < fftSize;i++) {
 					fftw_in[1][i][0] = pOut[((fftSize / 2) * n) + i];
 				   	fftw_in[1][i][1] = 0;
 				}
-				// ‘‹ŠÖ”
+				// çª“é–¢æ•°
 				for (i = 0;i < (fftSize - 1) / 2;i++) {
 					fftw_in[1][i][0] = fftw_in[1][i][0] * (2.0 * i / (double)fftSize);
 				}
@@ -3511,26 +3511,26 @@ void genNoise(long hfc,DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 
 				highIndex = ((double)fftSize / outSampleR) * (hfc - 1000);
 
-				// ’áˆæƒJƒbƒg
+				// ä½åŸŸã‚«ãƒƒãƒˆ
 				for (i = 1;i < highIndex;i++) {
 					fftw_out[1][i][0] = 0;
 					fftw_out[1][i][1] = 0;
 				}
 
-				// ”¼•ª‚Ìƒf[ƒ^‚ğ•œŒ³
+				// åŠåˆ†ã®ãƒ‡ãƒ¼ã‚¿ã‚’å¾©å…ƒ
 				for (i = 1;i < fftSize / 2;i++) {
 					fftw_out[1][fftSize - i][0] = fftw_out[1][i][0];
 					fftw_out[1][fftSize - i][1] = fftw_out[1][i][1] * -1;
 				}
 
-				// ’¼—¬•”•ªœ‹
+				// ç›´æµéƒ¨åˆ†é™¤å»
 				fftw_out[1][0][0] = 0;
 				fftw_out[1][0][1] = 0;
 
 				// invert FFT
 				fftw_execute(fftw_ip[1]);
 
-				// o—Í
+				// å‡ºåŠ›
 				for (i = 0;i < fftSize;i++) {
 					pOut[((fftSize / 2) * n) + i] += fftw_in[1][i][0] / fftSize;
 				}
@@ -3565,13 +3565,13 @@ void genNoise(long hfc,DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 }
 //---------------------------------------------------------------------------
 // Function   : genOverTone
-// Description: ¸‚í‚ê‚½‚ˆæ‚ÌÄŒ»ˆ—(”{‰¹‰ğÍ)
+// Description: å¤±ã‚ã‚ŒãŸé«˜åŸŸã®å†ç¾å‡¦ç†(å€éŸ³è§£æ)
 // ---
-//	hfc		 	:‚ˆæ‚ÌƒJƒbƒgƒIƒtü”g”(‚±‚Ìü”g”ˆÈã‚Ì—Ìˆæ‚Éƒf[ƒ^‚ğ’Ç‰Á‚·‚é)
-//	inSample 	:ˆ—‚·‚éƒTƒ“ƒvƒ‹”(ch–ˆ)
-//	fp_r		:“ü—Íƒtƒ@ƒCƒ‹
-//	fp_w		:o—Íƒtƒ@ƒCƒ‹
-//	param		:•ÏŠ·ƒpƒ‰ƒ[ƒ^
+//	hfc		 	:é«˜åŸŸã®ã‚«ãƒƒãƒˆã‚ªãƒ•å‘¨æ³¢æ•°(ã“ã®å‘¨æ³¢æ•°ä»¥ä¸Šã®é ˜åŸŸã«ãƒ‡ãƒ¼ã‚¿ã‚’è¿½åŠ ã™ã‚‹)
+//	inSample 	:å‡¦ç†ã™ã‚‹ã‚µãƒ³ãƒ—ãƒ«æ•°(chæ¯)
+//	fp_r		:å…¥åŠ›ãƒ•ã‚¡ã‚¤ãƒ«
+//	fp_w		:å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«
+//	param		:å¤‰æ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿
 //
 void genOverTone(long hfc,DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 {
@@ -3885,7 +3885,7 @@ param->hfa3_max = 0;
 
 		if (startInSample + fftSize / 2 >= 0) {
 			SSIZE *pIn2,*pOut2;
-			// ƒŒƒxƒ‹’²®
+			// ãƒ¬ãƒ™ãƒ«èª¿æ•´
 			pIn2  = (SSIZE *)mem1;
 			pOut2 = (SSIZE *)mem2;
 			pIn2  += (fftSize / 2);
@@ -3896,7 +3896,7 @@ param->hfa3_max = 0;
 					fftw_in2[j][1] = 0;
 				}
 				pIn2 += fftSize / 12;
-				// ‘‹ŠÖ”
+				// çª“é–¢æ•°
 				for (j = 0;j < ((fftSize / 12) - 1) / 2;j++) {
 					fftw_in2[j][0] = fftw_in2[j][0] * (2.0 * j / ((double)fftSize / 12));
 				}
@@ -3907,7 +3907,7 @@ param->hfa3_max = 0;
 				// FFT
 				fftw_execute(fftw_p2);
 
-				// Œ³M†‚Ì‚ˆæ‚Ìƒpƒ[‚ğ’²‚×‚é
+				// å…ƒä¿¡å·ã®é«˜åŸŸã®ãƒ‘ãƒ¯ãƒ¼ã‚’èª¿ã¹ã‚‹
 				refPw = 0;
 				lowIndex = (((double)fftSize / 12) / outSampleR) * (hfc - 2000);
 				highIndex = (((double)fftSize / 12) / outSampleR) * hfc;
@@ -3935,12 +3935,12 @@ param->hfa3_max = 0;
 					refPw /= j;
 				}
 
-				// •t‰ÁM†‚Ì‚ˆæ‚Ìƒpƒ[‚ğ’²‚×‚é
+				// ä»˜åŠ ä¿¡å·ã®é«˜åŸŸã®ãƒ‘ãƒ¯ãƒ¼ã‚’èª¿ã¹ã‚‹
 				for (j = 0;j < fftSize / 12;j++) {
 					fftw_in2[j][0] = pOut2[j];
 					fftw_in2[j][1] = 0;
 				}
-				// ‘‹ŠÖ”
+				// çª“é–¢æ•°
 				for (j = 0;j < ((fftSize / 12) - 1) / 2;j++) {
 					fftw_in2[j][0] = fftw_in2[j][0] * (2.0 * j / ((double)fftSize / 12));
 				}
@@ -3990,7 +3990,7 @@ param->hfa3_max = 0;
 			}
 
 #if 1
-			// ƒpƒ‹ƒXœ‹
+			// ãƒ‘ãƒ«ã‚¹é™¤å»
 			pIn2  = (SSIZE *)mem2;
 			for (i = 1;i + 1 < fftSize;i++) {
 				p1 = pIn2[i - 1];
@@ -4055,17 +4055,17 @@ param->hfa3_max = 0;
 
 //---------------------------------------------------------------------------
 // Function   : genOverToneSub
-// Description: ¸‚í‚ê‚½‚ˆæ‚ÌÄŒ»ˆ—‚ÌƒTƒuŠÖ”(”{‰¹‰ğÍ)
+// Description: å¤±ã‚ã‚ŒãŸé«˜åŸŸã®å†ç¾å‡¦ç†ã®ã‚µãƒ–é–¢æ•°(å€éŸ³è§£æ)
 // ---
-//	hfc		 	:‚ˆæ‚ÌƒJƒbƒgƒIƒtü”g”(‚±‚Ìü”g”ˆÈã‚Ì—Ìˆæ‚Éƒf[ƒ^‚ğ’Ç‰Á‚·‚é)
-//	pIn			:“ü—Íƒoƒbƒtƒ@
-//	pOut		:o—Íƒoƒbƒtƒ@
-//	fftw_in		:FFTW “ü—Í
-//	fftw_out	:FFTW o—Í
-//	fftw_p		:FFTW ƒvƒ‰ƒ“
-//	fftw_ip		:FFTW ƒvƒ‰ƒ“
-//	ovInfo		:‚ˆæ¶¬—p\‘¢‘Ì
-//	param		:•ÏŠ·ƒpƒ‰ƒ[ƒ^
+//	hfc		 	:é«˜åŸŸã®ã‚«ãƒƒãƒˆã‚ªãƒ•å‘¨æ³¢æ•°(ã“ã®å‘¨æ³¢æ•°ä»¥ä¸Šã®é ˜åŸŸã«ãƒ‡ãƒ¼ã‚¿ã‚’è¿½åŠ ã™ã‚‹)
+//	pIn			:å…¥åŠ›ãƒãƒƒãƒ•ã‚¡
+//	pOut		:å‡ºåŠ›ãƒãƒƒãƒ•ã‚¡
+//	fftw_in		:FFTW å…¥åŠ›
+//	fftw_out	:FFTW å‡ºåŠ›
+//	fftw_p		:FFTW ãƒ—ãƒ©ãƒ³
+//	fftw_ip		:FFTW ãƒ—ãƒ©ãƒ³
+//	ovInfo		:é«˜åŸŸç”Ÿæˆç”¨æ§‹é€ ä½“
+//	param		:å¤‰æ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿
 //
 void genOverToneSub(long hfc,SSIZE *pIn,SSIZE *pOut,fftw_complex *fftw_in,fftw_complex *fftw_out,fftw_plan fftw_p,fftw_plan fftw_ip,OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 {
@@ -4100,16 +4100,16 @@ void genOverToneSub(long hfc,SSIZE *pIn,SSIZE *pOut,fftw_complex *fftw_in,fftw_c
 	}
 
 //fftSize = 4096;
-	// FFT ‰Šúİ’è
+	// FFT åˆæœŸè¨­å®š
 	copyToFFTW(fftw_in,pIn,fftSize);
 
-	// ‘‹ŠÖ”
+	// çª“é–¢æ•°
 	windowFFTW(fftw_in,fftSize);
 
 	// FFT
 	fftw_execute(fftw_p);
 
-	// Œ³M†‚Ì‚ˆæ‚Ìƒpƒ[‚ğ’²‚×‚é
+	// å…ƒä¿¡å·ã®é«˜åŸŸã®ãƒ‘ãƒ¯ãƒ¼ã‚’èª¿ã¹ã‚‹
 	memset(ovInfo->pw_cnt,0,65536*2 * sizeof (int));
 	refPw = 0;
 	lowIndex = ((double)fftSize / outSampleR) * (hfc - 2000);
@@ -4155,7 +4155,7 @@ void genOverToneSub(long hfc,SSIZE *pIn,SSIZE *pOut,fftw_complex *fftw_in,fftw_c
 	}
 
 	//
-	// ”{‰¹‰ğÍ
+	// å€éŸ³è§£æ
 	memset(ovInfo->power,0,65536*2 * sizeof (double));
 	memset(ovInfo->phase,0,65536*2 * sizeof (double));
 	memset(ovInfo->pw,0,65536*2 * sizeof (double));
@@ -4220,7 +4220,7 @@ if (ovInfo->log) {
 	}
 
 	//
-	// M†¶¬
+	// ä¿¡å·ç”Ÿæˆ
 	for (i = 1;i < fftSize / 2;i++) {
 		if (ovInfo->pw[i] > 0) {
 			d = ovInfo->phase[i];
@@ -4244,7 +4244,7 @@ if (ovInfo->log) {
 				j = ovInfo->do2Idx[d];
 			}
 			if (j < fftSize / 2) {
-				// ˆÊ‘Š‚ªˆê’v
+				// ä½ç›¸ãŒä¸€è‡´
 				fftw_out[i][0] = ovInfo->phaseX[j];
 				fftw_out[i][1] = ovInfo->phaseY[j];
 				ovInfo->do2Idx[d] = j;
@@ -4302,7 +4302,7 @@ if (ovInfo->log) {
 		ovTonePw = 1;
 	}
 	if (overToneNotFound == 0) {
-		// •t‰Á‚·‚éM†‚Ìƒpƒ[‚ğ’²‚×‚é
+		// ä»˜åŠ ã™ã‚‹ä¿¡å·ã®ãƒ‘ãƒ¯ãƒ¼ã‚’èª¿ã¹ã‚‹
 #if 0
 		ovTonePw = 0;
 		for (i = lowIndex,nn = 0;i < highIndex;i++,nn++) {
@@ -4331,25 +4331,25 @@ if (ovInfo->log) {
 		lowIndex = ((double)fftSize / outSampleR) * (hfc - 2000);
 		highIndex = ((double)fftSize / outSampleR) * hfc;
 
-		// ’áˆæƒJƒbƒg
+		// ä½åŸŸã‚«ãƒƒãƒˆ
 		for (i = 1;i <= highIndex;i++) {
 			fftw_out[i][0] = 0;
 			fftw_out[i][1] = 0;
 		}
-		// ”¼•ª‚Ìƒf[ƒ^‚ğ•œŒ³
+		// åŠåˆ†ã®ãƒ‡ãƒ¼ã‚¿ã‚’å¾©å…ƒ
 		for (i = 1;i < fftSize / 2;i++) {
 			fftw_out[fftSize - i][0] = fftw_out[i][0];
 			fftw_out[fftSize - i][1] = fftw_out[i][1] * -1;
 		}
 
-		// ’¼—¬¬•ª‚ğíœ
+		// ç›´æµæˆåˆ†ã‚’å‰Šé™¤
 		fftw_out[0][0] = 0;
 		fftw_out[0][1] = 0;
 
 		// invert FFT
 		fftw_execute(fftw_ip);
 
-		// ‘‹ŠÖ”
+		// çª“é–¢æ•°
 		for (i = 0;i < (fftSize - 1) / 2;i++) {
 			fftw_in[i][0] = fftw_in[i][0] * (2.0 * i / (double)fftSize);
 		}
@@ -4357,12 +4357,12 @@ if (ovInfo->log) {
 			fftw_in[i][0] = fftw_in[i][0] * (2.0 - 2.0 * i / (double)fftSize);
 		}
 	} else {
-		// –³‰¹¶¬
+		// ç„¡éŸ³ç”Ÿæˆ
 		for (i = 0;i < fftSize;i++) {
 			fftw_in[i][0] = 0;
 		}
 	}
-	// o—Í
+	// å‡ºåŠ›
 	for (i = 0;i < fftSize;i++) {
 		pOut[i] += (fftw_in[i][0] / fftSize);
 	}
@@ -4370,11 +4370,11 @@ if (ovInfo->log) {
 
 //---------------------------------------------------------------------------
 // Function   : anaOverToneHFA2
-// Description: ”{‰¹‰ğÍ
-//				window•‚²‚Æ‚Épower‚Ì•½‹Ï’l‚ğ‚Æ‚èpower‚ª‘å‚«‚¢‚à‚Ì‚ğ’Šo‚·‚é
+// Description: å€éŸ³è§£æ
+//				windowå¹…ã”ã¨ã«powerã®å¹³å‡å€¤ã‚’ã¨ã‚ŠpowerãŒå¤§ãã„ã‚‚ã®ã‚’æŠ½å‡ºã™ã‚‹
 // ---
-//	ovInfo :”{‰¹¶¬—p\‘¢‘Ì
-//	param  :ƒpƒ‰ƒ[ƒ^
+//	ovInfo :å€éŸ³ç”Ÿæˆç”¨æ§‹é€ ä½“
+//	param  :ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿
 //
 void anaOverToneHFA2(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 {
@@ -4394,7 +4394,7 @@ void anaOverToneHFA2(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 	long skipCnt;
 	nSample = ovInfo->nSample;
 	//
-	// ŒvZ‘ÎÛ‚ÌƒCƒ“ƒfƒbƒNƒX‚ğ‹‚ß‚é
+	// è¨ˆç®—å¯¾è±¡ã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã‚’æ±‚ã‚ã‚‹
 	for (i = 1;i < ovInfo->nSample;i++) {
 		ovInfo->pw[i] = 0;
 	}
@@ -4405,7 +4405,7 @@ void anaOverToneHFA2(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 		lowHz = ovInfo->validSamplingRate - wid;
 	}
 	if (lowHz < 4000) {
-		// ‚ˆæ‚Ìî•ñ‚ª‚È‚¢‚Ì‚Å‰ğÍ‚µ‚È‚¢
+		// é«˜åŸŸã®æƒ…å ±ãŒãªã„ã®ã§è§£æã—ãªã„
 		return;
 	}
 
@@ -4417,7 +4417,7 @@ void anaOverToneHFA2(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 		swidth = 1;
 	}
 
-	// ƒpƒ[‚Ì•½‹Ï‚ğŒvZ‚·‚é
+	// ãƒ‘ãƒ¯ãƒ¼ã®å¹³å‡ã‚’è¨ˆç®—ã™ã‚‹
 	//
 	avg = 0;
 	for (i = lowIndex,n = 0;i < highIndex;i++) {
@@ -4430,7 +4430,7 @@ void anaOverToneHFA2(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 	avgLine = avg;
 	ofs = lowIndex;
 	//
-	// power‚ª‹­‚¢‚à‚Ì‚ğÌ—p‚·‚é(sig1)
+	// powerãŒå¼·ã„ã‚‚ã®ã‚’æ¡ç”¨ã™ã‚‹(sig1)
 	if (param->sig1Enb == 1) {
 		window = swidth;
 		maxOfs = ofs;
@@ -4480,7 +4480,7 @@ void anaOverToneHFA2(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 	}
 
 	//
-	// windowŠÔŠu‚Ì‘OŒã‚Ìpower‚Ì·‚Ì—İÏ‚ª­‚È‚¢‚à‚Ì‚ğÌ—p‚·‚é(sig2)
+	// windowé–“éš”ã®å‰å¾Œã®powerã®å·®ã®ç´¯ç©ãŒå°‘ãªã„ã‚‚ã®ã‚’æ¡ç”¨ã™ã‚‹(sig2)
 	if (param->sig2Enb == 1) {
 		for (ofs = lowIndex;ofs < lowIndex + width;ofs++) {
 			maxAvg = -1;
@@ -4548,7 +4548,7 @@ void anaOverToneHFA2(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 		}
 	}
 }
-#if 1	// 0.7 ‚Ì HFA3
+#if 1	// 0.7 ã® HFA3
 void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 {
 	DWORD ofs,window,width,swidth;
@@ -4566,7 +4566,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 	long skipCnt;
 	double tbl_hfaDiffMin[5] = {0.84,1.04,1.24,1.74,2.14};
 
-	// —\‘ª‚Æ‚ÌÅ¬ƒpƒ‰ƒ[ƒ^•Û‘¶
+	// äºˆæ¸¬ã¨ã®æœ€å°ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ä¿å­˜
 	int minWin;
 	int minType;
 	int max_i;
@@ -4588,7 +4588,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 	nSample = ovInfo->nSample;
 
 	//
-	// ‰Šú‰»
+	// åˆæœŸåŒ–
 	for (i = 1;i < ovInfo->nSample;i++) {
 		ovInfo->pw[i] = 0;
 		ovInfo->diff[i] = -1;
@@ -4612,7 +4612,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 	}
 #endif
 	if (ovInfo->validSamplingRate < 8000) {
-		// ‚ˆæ‚Ìî•ñ‚ª‚È‚¢‚Ì‚Å‰ğÍ‚µ‚È‚¢
+		// é«˜åŸŸã®æƒ…å ±ãŒãªã„ã®ã§è§£æã—ãªã„
 		return;
 	}
 
@@ -4651,7 +4651,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 	avgLine = avg;
 
 	if (param->sig2Enb == 1) {
-		// ‘OŒã‚Ìwindow‚ÅU•‚Ì·‚ª­‚È‚¢‰¹º‚Ì•âŠÔ
+		// å‰å¾Œã®windowã§æŒ¯å¹…ã®å·®ãŒå°‘ãªã„éŸ³å£°ã®è£œé–“
 		window = width;
 		minWin = window;
 		minType = 0;
@@ -4677,14 +4677,14 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					continue;
 				}
 
-				// ƒXƒyƒNƒgƒ‹¬•ª‚Ì‘JˆÚ‚ğ’²‚×‚é
+				// ã‚¹ãƒšã‚¯ãƒˆãƒ«æˆåˆ†ã®é·ç§»ã‚’èª¿ã¹ã‚‹
 				diff0 = diff1 = diff2 = diff3 = diff4 = diff5 = diffP = 0;
 				baseOfs = ofs - ((ofs / window) * window);
 				if (baseOfs == 0) {
 					baseOfs = window;
 				}
-				n = 1;		// Šï”‹ô””{‚·‚×‚Ä‚É”{‰¹‚ª‚ ‚é
-				odd = 1;	// Šï””{‚Ì‚İ”{‰¹‚ª‚ ‚é
+				n = 1;		// å¥‡æ•°å¶æ•°å€ã™ã¹ã¦ã«å€éŸ³ãŒã‚ã‚‹
+				odd = 1;	// å¥‡æ•°å€ã®ã¿å€éŸ³ãŒã‚ã‚‹
 				refPw[0] = -1;
 				refPw[1] = -1;
 				refPw[2] = -1;
@@ -4712,14 +4712,14 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						refPw[4] = ovInfo->power[i];
 						refPw[5] = ovInfo->power[i] * (odd * odd * odd);
 					}
-					// •½‹Ï‚æ‚è‘å‚«‚¢‰¹º‚©A¬‚³‚¢‰¹º‚©
+					// å¹³å‡ã‚ˆã‚Šå¤§ãã„éŸ³å£°ã‹ã€å°ã•ã„éŸ³å£°ã‹
 					if (ovInfo->power[i] > ovInfo->base[i]) {
 						ovInfo->sign[baseOfs]++;
 					} else if (ovInfo->power[i] < ovInfo->base[i]) {
 						ovInfo->sign[baseOfs]--;
 					}
 					
-					// ‘OŒã‚Ìƒpƒ[‚Ì·‚ÌŒvZ
+					// å‰å¾Œã®ãƒ‘ãƒ¯ãƒ¼ã®å·®ã®è¨ˆç®—
 					if (i - window >= ofs) {
 						if (ovInfo->power[i - window] >= ovInfo->power[i]) {
 							diff = ovInfo->power[i - window] - ovInfo->power[i];
@@ -4740,7 +4740,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						avgPwNX3++;
 					}
 					
-					// 1/f(U•‚ª1/f‚É‚È‚Á‚Ä‚¢‚é‚à‚Ì)
+					// 1/f(æŒ¯å¹…ãŒ1/fã«ãªã£ã¦ã„ã‚‹ã‚‚ã®)
 					diff = refPw[0] / hz;
 					if (diff >= ovInfo->power[i]) {
 						diff = diff - ovInfo->power[i];
@@ -4749,7 +4749,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					}
 					diff0 += diff;
 
-					// ‹˜”g(n‚Ì‹t”‚Å¬‚³‚­‚È‚é)
+					// é‹¸æ³¢(nã®é€†æ•°ã§å°ã•ããªã‚‹)
 					diff = refPw[1] / n;
 					if (diff >= ovInfo->power[i]) {
 						diff = diff - ovInfo->power[i];
@@ -4758,7 +4758,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					}
 					diff1 += diff;
 
-					// ’ZŒ`”g(Šï””{‰¹,n‚Ì‹t”‚Å¬‚³‚­‚È‚é)
+					// çŸ­å½¢æ³¢(å¥‡æ•°å€éŸ³,nã®é€†æ•°ã§å°ã•ããªã‚‹)
 					diff = refPw[2] / odd;
 					if (diff >= ovInfo->power[i]) {
 						diff = diff - ovInfo->power[i];
@@ -4767,7 +4767,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					}
 					diff2 += diff;
 
-					// OŠp”g(Šï””{‰¹,n^2‚Ì‹t”‚Å¬‚³‚­‚È‚é)
+					// ä¸‰è§’æ³¢(å¥‡æ•°å€éŸ³,n^2ã®é€†æ•°ã§å°ã•ããªã‚‹)
 					diff = refPw[3] / (odd * odd);
 					if (diff >= ovInfo->power[i]) {
 						diff = diff - ovInfo->power[i];
@@ -4776,7 +4776,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					}
 					diff3 += diff;
 
-					// ƒpƒ‹ƒX(n”Ô–Ú‚Ì”{‰¹‚Å‚àƒpƒ[‚Í“¯‚¶)
+					// ãƒ‘ãƒ«ã‚¹(nç•ªç›®ã®å€éŸ³ã§ã‚‚ãƒ‘ãƒ¯ãƒ¼ã¯åŒã˜)
 					diff = refPw[4];
 					if (diff >= ovInfo->power[i]) {
 						diff = diff - ovInfo->power[i];
@@ -4785,7 +4785,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					}
 					diff4 += diff;
 
-					// ‚»‚Ì‘¼(‚à‚Á‚Æƒpƒ[‚ª¬‚³‚­‚È‚éƒpƒ^[ƒ“)
+					// ãã®ä»–(ã‚‚ã£ã¨ãƒ‘ãƒ¯ãƒ¼ãŒå°ã•ããªã‚‹ãƒ‘ã‚¿ãƒ¼ãƒ³)
 					diff = refPw[5] / (odd * odd * odd);
 					if (diff >= ovInfo->power[i]) {
 						diff = diff - ovInfo->power[i];
@@ -4863,7 +4863,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 				}
 			}
 
-			// ˆê”Ô—\‘ªŒë·‚ª­‚È‚©‚Á‚½‚à‚Ì‚ğÌ—p‚·‚éB
+			// ä¸€ç•ªäºˆæ¸¬èª¤å·®ãŒå°‘ãªã‹ã£ãŸã‚‚ã®ã‚’æ¡ç”¨ã™ã‚‹ã€‚
 
 			baseOfs = ofs - ((ofs / minWin) * minWin);
 			if (baseOfs == 0) {
@@ -4871,7 +4871,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 			}
 
 			pha = ovInfo->phase[baseOfs];
-			n = 1;		// Šï”‹ô””{‚·‚×‚Ä‚É”{‰¹‚ª‚ ‚é
+			n = 1;		// å¥‡æ•°å¶æ•°å€ã™ã¹ã¦ã«å€éŸ³ãŒã‚ã‚‹
 			odd = 1;
 			refPw[0] = -1;
 			refPw[4] = -1;
@@ -4896,7 +4896,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 				}
 
 				if (minType == 0) {
-					// 1/f(U•‚ª1/f‚É‚È‚Á‚Ä‚¢‚é‚à‚Ì)
+					// 1/f(æŒ¯å¹…ãŒ1/fã«ãªã£ã¦ã„ã‚‹ã‚‚ã®)
 					tmpPw = refPw[0] / hz;
 					phaRand = 1;
 					pha += param->sig2Phase;
@@ -4933,7 +4933,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						}
 					}
 				} else if (minType == 1) {
-					// 1/f(U•‚ª1/f‚É‚È‚Á‚Ä‚¢‚é‚à‚Ì)
+					// 1/f(æŒ¯å¹…ãŒ1/fã«ãªã£ã¦ã„ã‚‹ã‚‚ã®)
 					tmpPw = refPw[1] / n;
 					phaRand = 1;
 					pha += param->sig2Phase;
@@ -4969,7 +4969,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						}
 					}
 				} else if (minType == 2) {
-					// ’ZŒ`”g(Šï””{‰¹,n‚Ì‹t”‚Å¬‚³‚­‚È‚é)
+					// çŸ­å½¢æ³¢(å¥‡æ•°å€éŸ³,nã®é€†æ•°ã§å°ã•ããªã‚‹)
 					tmpPw = refPw[2] / odd;
 					phaRand = 1;
 					pha = ovInfo->phase[max_i];
@@ -5009,7 +5009,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						}
 					}
 				} else if (minType == 3) {
-					// OŠp”g(Šï””{‰¹,n^2‚Ì‹t”‚Å¬‚³‚­‚È‚é)
+					// ä¸‰è§’æ³¢(å¥‡æ•°å€éŸ³,n^2ã®é€†æ•°ã§å°ã•ããªã‚‹)
 					tmpPw = refPw[3] / (odd * odd);
 					phaRand = 1;
 //					pha = ovInfo->phase[max_i];
@@ -5050,7 +5050,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						}
 					}
 				} else if (minType == 4) {
-					// ƒpƒ‹ƒX(n”Ô–Ú‚Ì”{‰¹‚Å‚àƒpƒ[‚Í“¯‚¶)
+					// ãƒ‘ãƒ«ã‚¹(nç•ªç›®ã®å€éŸ³ã§ã‚‚ãƒ‘ãƒ¯ãƒ¼ã¯åŒã˜)
 					tmpPw = refPw[4];
 					phaRand = rand() * 6;
 					phaRand -= 3;
@@ -5087,7 +5087,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						}
 					}
 				} else if (minType == 5) {
-					// OŠp”g(Šï””{‰¹,n^2‚Ì‹t”‚Å¬‚³‚­‚È‚é)
+					// ä¸‰è§’æ³¢(å¥‡æ•°å€éŸ³,n^2ã®é€†æ•°ã§å°ã•ããªã‚‹)
 					tmpPw = refPw[3] / (odd * odd * odd);
 					phaRand = 1;
 //					pha = ovInfo->phase[max_i];
@@ -5130,7 +5130,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 
 #if 1
 	if (param->sig1Enb == 1) {
-		// power‚ª‹­‚¢‚à‚Ì—Dæ‚Å•âŠÔ‚·‚é
+		// powerãŒå¼·ã„ã‚‚ã®å„ªå…ˆã§è£œé–“ã™ã‚‹
 		lowHz	= 9500;
 		wid		= 2500;
 		if (lowHz + wid  >= ovInfo->validSamplingRate) {
@@ -5185,13 +5185,13 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					continue;
 				}
 				//step = 1;
-				// ƒXƒyƒNƒgƒ‹¬•ª‚Ì‘JˆÚ‚ğ’²‚×‚é
+				// ã‚¹ãƒšã‚¯ãƒˆãƒ«æˆåˆ†ã®é·ç§»ã‚’èª¿ã¹ã‚‹
 				diff0 = 0;
 				baseOfs = ofs - ((ofs / window) * window);
 				if (baseOfs == 0) {
 					baseOfs = window;
 				}
-				n = 1;		// Šï”‹ô””{‚·‚×‚Ä‚É”{‰¹‚ª‚ ‚é
+				n = 1;		// å¥‡æ•°å¶æ•°å€ã™ã¹ã¦ã«å€éŸ³ãŒã‚ã‚‹
 				refPw[0] = -1;
 				avgPw  = 0;
 				avgPw2 = 0;
@@ -5206,7 +5206,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						continue;
 					}
 
-					// •½‹Ï‚æ‚è‘å‚«‚¢‰¹º‚©A¬‚³‚¢‰¹º‚©
+					// å¹³å‡ã‚ˆã‚Šå¤§ãã„éŸ³å£°ã‹ã€å°ã•ã„éŸ³å£°ã‹
 					if (ovInfo->power[i] > ovInfo->base[i]) {
 						ovInfo->sign[baseOfs]++;
 					} else if (ovInfo->power[i] < ovInfo->base[i]) {
@@ -5249,7 +5249,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 				}
 			}
 
-			// ˆê”Ô—İÏ‚Ìƒpƒ[‚ª‹­‚¢‚à‚Ì‚ğÌ—p‚·‚éB
+			// ä¸€ç•ªç´¯ç©ã®ãƒ‘ãƒ¯ãƒ¼ãŒå¼·ã„ã‚‚ã®ã‚’æ¡ç”¨ã™ã‚‹ã€‚
 
 			baseOfs = ofs - ((ofs / minWin) * minWin);
 			if (baseOfs == 0) {
@@ -5257,7 +5257,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 			}
 
 			pha = ovInfo->phase[baseOfs];
-			n = 1;		// Šï”‹ô””{‚·‚×‚Ä‚É”{‰¹‚ª‚ ‚é
+			n = 1;		// å¥‡æ•°å¶æ•°å€ã™ã¹ã¦ã«å€éŸ³ãŒã‚ã‚‹
 			odd = 1;
 			refPw[0] = -1;
 			if (minWin == swidth || minWin == width - 1) {
@@ -5274,7 +5274,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					pha = ovInfo->phase[max_i];
 				}
 
-				// 1/f(U•‚ª1/f‚É‚È‚Á‚Ä‚¢‚é‚à‚Ì)
+				// 1/f(æŒ¯å¹…ãŒ1/fã«ãªã£ã¦ã„ã‚‹ã‚‚ã®)
 				tmpPw = refPw[0] / hz;
 				phaRand = 1;
 				pha += param->sig1Phase;
@@ -5296,7 +5296,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 
 	if (param->sig3Enb == 1) {
 //	if (0) {
-		// power‚ªã‚¢‚à‚Ì‚ğ•âŠÔ‚·‚é
+		// powerãŒå¼±ã„ã‚‚ã®ã‚’è£œé–“ã™ã‚‹
 		lowHz	= 8000;
 		wid		= 4000;
 		if (lowHz + wid  >= ovInfo->validSamplingRate) {
@@ -5340,13 +5340,13 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					continue;
 				}
 				step = 1;
-				// ƒXƒyƒNƒgƒ‹¬•ª‚Ì‘JˆÚ‚ğ’²‚×‚é
+				// ã‚¹ãƒšã‚¯ãƒˆãƒ«æˆåˆ†ã®é·ç§»ã‚’èª¿ã¹ã‚‹
 				diff0 = 0;
 				baseOfs = ofs - ((ofs / window) * window);
 				if (baseOfs == 0) {
 					baseOfs = window;
 				}
-				n = 1;		// Šï”‹ô””{‚·‚×‚Ä‚É”{‰¹‚ª‚ ‚é
+				n = 1;		// å¥‡æ•°å¶æ•°å€ã™ã¹ã¦ã«å€éŸ³ãŒã‚ã‚‹
 				refPw[0] = -1;
 				avgPw  = 0;
 				avgPw2 = 0;
@@ -5360,7 +5360,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					if (hz < lowHz) {
 						continue;
 					}
-					// •½‹Ï‚æ‚è‘å‚«‚¢‰¹º‚©A¬‚³‚¢‰¹º‚©
+					// å¹³å‡ã‚ˆã‚Šå¤§ãã„éŸ³å£°ã‹ã€å°ã•ã„éŸ³å£°ã‹
 					if (ovInfo->power[i] > ovInfo->base[i]) {
 						ovInfo->sign[baseOfs]++;
 					} else if (ovInfo->power[i] < ovInfo->base[i]) {
@@ -5386,7 +5386,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 				}
 			}
 
-			// ˆê”Ô—İÏ‚Ìƒpƒ[‚ªã‚¢‚à‚Ì‚ğÌ—p‚·‚éB
+			// ä¸€ç•ªç´¯ç©ã®ãƒ‘ãƒ¯ãƒ¼ãŒå¼±ã„ã‚‚ã®ã‚’æ¡ç”¨ã™ã‚‹ã€‚
 
 			baseOfs = ofs - ((ofs / minWin) * minWin);
 			if (baseOfs == 0) {
@@ -5394,7 +5394,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 			}
 
 			pha = ovInfo->phase[baseOfs];
-			n = 1;		// Šï”‹ô””{‚·‚×‚Ä‚É”{‰¹‚ª‚ ‚é
+			n = 1;		// å¥‡æ•°å¶æ•°å€ã™ã¹ã¦ã«å€éŸ³ãŒã‚ã‚‹
 			odd = 1;
 			refPw[0] = -1;
 			if (minWin == swidth || minWin == width - 1) {
@@ -5411,7 +5411,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					pha = ovInfo->phase[max_i];
 				}
 
-				// 1/f(U•‚ª1/f‚É‚È‚Á‚Ä‚¢‚é‚à‚Ì)
+				// 1/f(æŒ¯å¹…ãŒ1/fã«ãªã£ã¦ã„ã‚‹ã‚‚ã®)
 				tmpPw = refPw[0] / hz;
 				phaRand = 1;
 				pha += param->sig3Phase;
@@ -5450,7 +5450,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 			swidth = 1;
 		}
 
-		// ‘OŒã‚Ìwindow‚ÅU•‚Ì·‚ª­‚È‚¢‰¹º‚Ì•âŠÔ
+		// å‰å¾Œã®windowã§æŒ¯å¹…ã®å·®ãŒå°‘ãªã„éŸ³å£°ã®è£œé–“
 		window = width;
 		minWin = window;
 		minType = 0;
@@ -5473,14 +5473,14 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					continue;
 				}
 
-				// ƒXƒyƒNƒgƒ‹¬•ª‚Ì‘JˆÚ‚ğ’²‚×‚é
+				// ã‚¹ãƒšã‚¯ãƒˆãƒ«æˆåˆ†ã®é·ç§»ã‚’èª¿ã¹ã‚‹
 				diff0 = diff1 = diff2 = diff3 = diff4 = diff5 = diffP = 0;
 				baseOfs = ofs - ((ofs / window) * window);
 				if (baseOfs == 0) {
 					baseOfs = window;
 				}
-				n = 1;		// Šï”‹ô””{‚·‚×‚Ä‚É”{‰¹‚ª‚ ‚é
-				odd = 1;	// Šï””{‚Ì‚İ”{‰¹‚ª‚ ‚é
+				n = 1;		// å¥‡æ•°å¶æ•°å€ã™ã¹ã¦ã«å€éŸ³ãŒã‚ã‚‹
+				odd = 1;	// å¥‡æ•°å€ã®ã¿å€éŸ³ãŒã‚ã‚‹
 				refPw[0] = -1;
 				refPw[1] = -1;
 				refPw[2] = -1;
@@ -5507,7 +5507,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						refPw[4] = ovInfo->power[i];
 						refPw[5] = ovInfo->power[i] * (odd * odd * odd);
 					}
-					// ‘OŒã‚Ìƒpƒ[‚Ì·‚ÌŒvZ
+					// å‰å¾Œã®ãƒ‘ãƒ¯ãƒ¼ã®å·®ã®è¨ˆç®—
 					if (i - window >= ofs) {
 						if (ovInfo->power[i - window] >= ovInfo->power[i]) {
 							diff = ovInfo->power[i - window] - ovInfo->power[i];
@@ -5528,7 +5528,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						avgPwNX3++;
 					}
 					
-					// 1/f(U•‚ª1/f‚É‚È‚Á‚Ä‚¢‚é‚à‚Ì)
+					// 1/f(æŒ¯å¹…ãŒ1/fã«ãªã£ã¦ã„ã‚‹ã‚‚ã®)
 					diff = refPw[0] / hz;
 					if (diff >= ovInfo->power[i]) {
 						diff = diff - ovInfo->power[i];
@@ -5537,7 +5537,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					}
 					diff0 += diff;
 
-					// ‹˜”g(n‚Ì‹t”‚Å¬‚³‚­‚È‚é)
+					// é‹¸æ³¢(nã®é€†æ•°ã§å°ã•ããªã‚‹)
 					diff = refPw[1] / n;
 					if (diff >= ovInfo->power[i]) {
 						diff = diff - ovInfo->power[i];
@@ -5546,7 +5546,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					}
 					diff1 += diff;
 
-					// ’ZŒ`”g(Šï””{‰¹,n‚Ì‹t”‚Å¬‚³‚­‚È‚é)
+					// çŸ­å½¢æ³¢(å¥‡æ•°å€éŸ³,nã®é€†æ•°ã§å°ã•ããªã‚‹)
 					diff = refPw[2] / odd;
 					if (diff >= ovInfo->power[i]) {
 						diff = diff - ovInfo->power[i];
@@ -5555,7 +5555,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					}
 					diff2 += diff;
 
-					// OŠp”g(Šï””{‰¹,n^2‚Ì‹t”‚Å¬‚³‚­‚È‚é)
+					// ä¸‰è§’æ³¢(å¥‡æ•°å€éŸ³,n^2ã®é€†æ•°ã§å°ã•ããªã‚‹)
 					diff = refPw[3] / (odd * odd);
 					if (diff >= ovInfo->power[i]) {
 						diff = diff - ovInfo->power[i];
@@ -5564,7 +5564,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					}
 					diff3 += diff;
 
-					// ƒpƒ‹ƒX(n”Ô–Ú‚Ì”{‰¹‚Å‚àƒpƒ[‚Í“¯‚¶)
+					// ãƒ‘ãƒ«ã‚¹(nç•ªç›®ã®å€éŸ³ã§ã‚‚ãƒ‘ãƒ¯ãƒ¼ã¯åŒã˜)
 					diff = refPw[4];
 					if (diff >= ovInfo->power[i]) {
 						diff = diff - ovInfo->power[i];
@@ -5573,7 +5573,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					}
 					diff4 += diff;
 
-					// ‚»‚Ì‘¼(‚à‚Á‚Æƒpƒ[‚ª¬‚³‚­‚È‚éƒpƒ^[ƒ“)
+					// ãã®ä»–(ã‚‚ã£ã¨ãƒ‘ãƒ¯ãƒ¼ãŒå°ã•ããªã‚‹ãƒ‘ã‚¿ãƒ¼ãƒ³)
 					diff = refPw[5] / (odd * odd * odd);
 					if (diff >= ovInfo->power[i]) {
 						diff = diff - ovInfo->power[i];
@@ -5642,7 +5642,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 				}
 			}
 
-			// ˆê”Ô—\‘ªŒë·‚ª­‚È‚©‚Á‚½‚à‚Ì‚ğÌ—p‚·‚éB
+			// ä¸€ç•ªäºˆæ¸¬èª¤å·®ãŒå°‘ãªã‹ã£ãŸã‚‚ã®ã‚’æ¡ç”¨ã™ã‚‹ã€‚
 
 			baseOfs = ofs - ((ofs / minWin) * minWin);
 			if (baseOfs == 0) {
@@ -5650,7 +5650,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 			}
 
 			pha = ovInfo->phase[baseOfs];
-			n = 1;		// Šï”‹ô””{‚·‚×‚Ä‚É”{‰¹‚ª‚ ‚é
+			n = 1;		// å¥‡æ•°å¶æ•°å€ã™ã¹ã¦ã«å€éŸ³ãŒã‚ã‚‹
 			odd = 1;
 			refPw[0] = -1;
 			refPw[4] = -1;
@@ -5675,7 +5675,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 				}
 
 				if (minType == 0) {
-					// 1/f(U•‚ª1/f‚É‚È‚Á‚Ä‚¢‚é‚à‚Ì)
+					// 1/f(æŒ¯å¹…ãŒ1/fã«ãªã£ã¦ã„ã‚‹ã‚‚ã®)
 					tmpPw = refPw[0] / hz;
 					phaRand = 1;
 					pha += param->sig2Phase;
@@ -5692,7 +5692,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						ovInfo->diff[i] = minDiff;
 					}
 				} else if (minType == 1) {
-					// 1/f(U•‚ª1/f‚É‚È‚Á‚Ä‚¢‚é‚à‚Ì)
+					// 1/f(æŒ¯å¹…ãŒ1/fã«ãªã£ã¦ã„ã‚‹ã‚‚ã®)
 					tmpPw = refPw[1] / n;
 					phaRand = 1;
 					pha += param->sig2Phase;
@@ -5708,7 +5708,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						ovInfo->diff[i] = minDiff;
 					}
 				} else if (minType == 2) {
-					// ’ZŒ`”g(Šï””{‰¹,n‚Ì‹t”‚Å¬‚³‚­‚È‚é)
+					// çŸ­å½¢æ³¢(å¥‡æ•°å€éŸ³,nã®é€†æ•°ã§å°ã•ããªã‚‹)
 					tmpPw = refPw[2] / odd;
 					phaRand = 1;
 					pha = ovInfo->phase[max_i];
@@ -5728,7 +5728,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						ovInfo->diff[i] = minDiff;
 					}
 				} else if (minType == 3) {
-					// OŠp”g(Šï””{‰¹,n^2‚Ì‹t”‚Å¬‚³‚­‚È‚é)
+					// ä¸‰è§’æ³¢(å¥‡æ•°å€éŸ³,n^2ã®é€†æ•°ã§å°ã•ããªã‚‹)
 					tmpPw = refPw[3] / (odd * odd);
 					phaRand = 1;
 //					pha = ovInfo->phase[max_i];
@@ -5749,7 +5749,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						ovInfo->diff[i] = minDiff;
 					}
 				} else if (minType == 4) {
-					// ƒpƒ‹ƒX(n”Ô–Ú‚Ì”{‰¹‚Å‚àƒpƒ[‚Í“¯‚¶)
+					// ãƒ‘ãƒ«ã‚¹(nç•ªç›®ã®å€éŸ³ã§ã‚‚ãƒ‘ãƒ¯ãƒ¼ã¯åŒã˜)
 					tmpPw = refPw[4];
 					phaRand = rand() * 6;
 					phaRand -= 3;
@@ -5766,7 +5766,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						ovInfo->diff[i] = minDiff;
 					}
 				} else if (minType == 5) {
-					// OŠp”g(Šï””{‰¹,n^2‚Ì‹t”‚Å¬‚³‚­‚È‚é)
+					// ä¸‰è§’æ³¢(å¥‡æ•°å€éŸ³,n^2ã®é€†æ•°ã§å°ã•ããªã‚‹)
 					tmpPw = refPw[3] / (odd * odd * odd);
 					phaRand = 1;
 //					pha = ovInfo->phase[max_i];
@@ -5821,7 +5821,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 
 #if 0
 	//
-	// ˆÊ‘Š‚Ì’²®
+	// ä½ç›¸ã®èª¿æ•´
 	for (i = 1;i < validIndex;i++) {
 		ovInfo->diff[i] = -1;
 	}
@@ -5843,7 +5843,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 			if (param->hfaFast && (skipCnt % 8) != 0) {
 				continue;
 			}
-			// ˆÊ‘Š‚ğ’²‚×‚é
+			// ä½ç›¸ã‚’èª¿ã¹ã‚‹
 			diffP = 0;
 			baseOfs = ofs - ((ofs / window) * window);
 			if (baseOfs == 0) {
@@ -5860,7 +5860,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 				if (refPw[0] == -1) {
 					refPw[0] = ovInfo->phase[i];
 				}
-				// ‘OŒã‚ÌˆÊ‘Š‚Ì·‚ÌŒvZ
+				// å‰å¾Œã®ä½ç›¸ã®å·®ã®è¨ˆç®—
 				if (i - window >= ofs) {
 					if (refPw[0] <= ovInfo->phase[i]) {
 						diff = ovInfo->phase[i] - refPw[0];
@@ -5882,7 +5882,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 			}
 		}
 
-		// ˆê”Ô—\‘ªŒë·‚ª­‚È‚©‚Á‚½‚à‚Ì‚ğÌ—p‚·‚éB
+		// ä¸€ç•ªäºˆæ¸¬èª¤å·®ãŒå°‘ãªã‹ã£ãŸã‚‚ã®ã‚’æ¡ç”¨ã™ã‚‹ã€‚
 
 		baseOfs = ofs - ((ofs / minWin) * minWin);
 		if (baseOfs == 0) {
@@ -5890,7 +5890,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 		}
 
 		pha = ovInfo->phase[baseOfs];
-		n = 1;		// Šï”‹ô””{‚·‚×‚Ä‚É”{‰¹‚ª‚ ‚é
+		n = 1;		// å¥‡æ•°å¶æ•°å€ã™ã¹ã¦ã«å€éŸ³ãŒã‚ã‚‹
 
 		refPw[0] = -1;
 
@@ -5920,7 +5920,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 		}
 	}
 #endif
-	// •âŠÔ‚³‚ê‚Ä‚¢‚È‚¢‰ÓŠ‚Ì‘Î‰
+	// è£œé–“ã•ã‚Œã¦ã„ãªã„ç®‡æ‰€ã®å¯¾å¿œ
 	for (i = baseOfs;i + 1< nSample;i++) {
 		hz = ((ovInfo->samplingRate / 2) / (double)ovInfo->nSample) * i;
 		if (hz < lowHz) {
@@ -6011,7 +6011,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 		}
 	}
 	if (param->sig3Phase >= -6 || param->sig3Phase <= 6) {
-		// ˆÊ‘Š‚ÌC³
+		// ä½ç›¸ã®ä¿®æ­£
 		window = width;
 		for (ofs = lowIndex;ofs < lowIndex + window;ofs++) {
 			minDiff = -1;
@@ -6031,13 +6031,13 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					continue;
 				}
 
-				// ƒXƒyƒNƒgƒ‹¬•ª‚Ì‘JˆÚ‚ğ’²‚×‚é
+				// ã‚¹ãƒšã‚¯ãƒˆãƒ«æˆåˆ†ã®é·ç§»ã‚’èª¿ã¹ã‚‹
 				diff0 = 0;
 				baseOfs = ofs - ((ofs / window) * window);
 				if (baseOfs == 0) {
 					baseOfs = window;
 				}
-				n = 1;		// Šï”‹ô””{‚·‚×‚Ä‚É”{‰¹‚ª‚ ‚é
+				n = 1;		// å¥‡æ•°å¶æ•°å€ã™ã¹ã¦ã«å€éŸ³ãŒã‚ã‚‹
 				refPw[0] = -1;
 				for (i = baseOfs,nn = 0;i < highIndex; i+= window,n++) {
 					hz = ((ovInfo->samplingRate / 2) / (double)ovInfo->nSample) * i;
@@ -6070,7 +6070,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 				}
 			}
 
-			// ˆê”Ô—\‘ªŒë·‚ª­‚È‚©‚Á‚½‚à‚Ì‚ğÌ—p‚·‚éB
+			// ä¸€ç•ªäºˆæ¸¬èª¤å·®ãŒå°‘ãªã‹ã£ãŸã‚‚ã®ã‚’æ¡ç”¨ã™ã‚‹ã€‚
 
 			baseOfs = ofs - ((ofs / minWin) * minWin);
 			if (baseOfs == 0) {
@@ -6078,7 +6078,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 			}
 
 			pha = ovInfo->phase[baseOfs];
-			n = 1;		// Šï”‹ô””{‚·‚×‚Ä‚É”{‰¹‚ª‚ ‚é
+			n = 1;		// å¥‡æ•°å¶æ•°å€ã™ã¹ã¦ã«å€éŸ³ãŒã‚ã‚‹
 
 			refPw[0] = -1;
 			if (minWin == swidth || minWin == width - 1) {
@@ -6170,7 +6170,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 
 #if 1
 	if (param->hfaWide) {
-		// ‰ğÍî•ñ‚ğ•½‹Ï‰»‚µA‹}Œƒ‚È•Ï‰»‚ğ—}‚¦‚é
+		// è§£ææƒ…å ±ã‚’å¹³å‡åŒ–ã—ã€æ€¥æ¿€ãªå¤‰åŒ–ã‚’æŠ‘ãˆã‚‹
 		for (i = baseOfs;i + 1< nSample;i++) {
 			hz = ((ovInfo->samplingRate / 2) / (double)ovInfo->nSample) * i;
 			if (hz < lowHz) {
@@ -6192,7 +6192,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 #endif
 	if (1) {
 		double nx;
-		// •t‰Á‚µ‚½Lˆæ‚Å‹­‚·‚¬‚é‚à‚Ì‚ª‚ ‚ê‚Îã‚ß‚éB
+		// ä»˜åŠ ã—ãŸåºƒåŸŸã§å¼·ã™ãã‚‹ã‚‚ã®ãŒã‚ã‚Œã°å¼±ã‚ã‚‹ã€‚
 		lowIndex  = ((double)ovInfo->nSample / (ovInfo->samplingRate / 2)) * ovInfo->validSamplingRate;
 		highIndex = nSample;
 		swidth	  = ((double)ovInfo->nSample / (ovInfo->samplingRate / 2)) * 5000;
@@ -6249,7 +6249,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 	double maxPwAvg;
 	long skipCnt;
 
-	// —\‘ª‚Æ‚ÌÅ¬ƒpƒ‰ƒ[ƒ^•Û‘¶
+	// äºˆæ¸¬ã¨ã®æœ€å°ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ä¿å­˜
 	int minWin;
 	int minType;
 	int max_i;
@@ -6276,7 +6276,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 	nSample = ovInfo->nSample;
 
 	//
-	// ‰Šú‰»
+	// åˆæœŸåŒ–
 	for (i = 1;i < ovInfo->nSample;i++) {
 		ovInfo->pw[i] = 0;
 		ovInfo->diff[i] = -1;
@@ -6309,7 +6309,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 	}
 
 	if (lowHz < 4000) {
-		// ‚ˆæ‚Ìî•ñ‚ª‚È‚¢‚Ì‚Å‰ğÍ‚µ‚È‚¢
+		// é«˜åŸŸã®æƒ…å ±ãŒãªã„ã®ã§è§£æã—ãªã„
 		return;
 	}
 
@@ -6337,7 +6337,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 	avgLine = avg;
 
 	if (param->sig2Enb == 1) {
-		// ‘OŒã‚Ìwindow‚ÅU•‚Ì·‚ª­‚È‚¢‰¹º‚Ì•âŠÔ
+		// å‰å¾Œã®windowã§æŒ¯å¹…ã®å·®ãŒå°‘ãªã„éŸ³å£°ã®è£œé–“
 		window = width;
 		minWin = window;
 		minType = 0;
@@ -6359,14 +6359,14 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					continue;
 				}
 
-				// ƒXƒyƒNƒgƒ‹¬•ª‚Ì‘JˆÚ‚ğ’²‚×‚é
+				// ã‚¹ãƒšã‚¯ãƒˆãƒ«æˆåˆ†ã®é·ç§»ã‚’èª¿ã¹ã‚‹
 				diff0 = diff1 = diff2 = diff3 = diff4 = diff5 = diffP = 0;
 				baseOfs = ofs - ((ofs / window) * window);
 				if (baseOfs == 0) {
 					baseOfs = window;
 				}
-				n = 1;		// Šï”‹ô””{‚·‚×‚Ä‚É”{‰¹‚ª‚ ‚é
-				odd = 1;	// Šï””{‚Ì‚İ”{‰¹‚ª‚ ‚é
+				n = 1;		// å¥‡æ•°å¶æ•°å€ã™ã¹ã¦ã«å€éŸ³ãŒã‚ã‚‹
+				odd = 1;	// å¥‡æ•°å€ã®ã¿å€éŸ³ãŒã‚ã‚‹
 				refPw[0] = -1;
 				refPw[1] = -1;
 				refPw[2] = -1;
@@ -6393,7 +6393,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						refPw[4] = ovInfo->power[i];
 						refPw[5] = ovInfo->power[i] * (odd * odd * odd);
 					}
-					// ‘OŒã‚Ìƒpƒ[‚Ì·‚ÌŒvZ
+					// å‰å¾Œã®ãƒ‘ãƒ¯ãƒ¼ã®å·®ã®è¨ˆç®—
 					if (i - window >= ofs) {
 						if (ovInfo->power[i - window] >= ovInfo->power[i]) {
 							diff = ovInfo->power[i - window] - ovInfo->power[i];
@@ -6414,7 +6414,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						avgPwNX3++;
 					}
 					
-					// 1/f(U•‚ª1/f‚É‚È‚Á‚Ä‚¢‚é‚à‚Ì)
+					// 1/f(æŒ¯å¹…ãŒ1/fã«ãªã£ã¦ã„ã‚‹ã‚‚ã®)
 					diff = refPw[0] / hz;
 					if (diff >= ovInfo->power[i]) {
 						diff = diff - ovInfo->power[i];
@@ -6423,7 +6423,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					}
 					diff0 += diff;
 
-					// ‹˜”g(n‚Ì‹t”‚Å¬‚³‚­‚È‚é)
+					// é‹¸æ³¢(nã®é€†æ•°ã§å°ã•ããªã‚‹)
 					diff = refPw[1] / n;
 					if (diff >= ovInfo->power[i]) {
 						diff = diff - ovInfo->power[i];
@@ -6432,7 +6432,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					}
 					diff1 += diff;
 
-					// ’ZŒ`”g(Šï””{‰¹,n‚Ì‹t”‚Å¬‚³‚­‚È‚é)
+					// çŸ­å½¢æ³¢(å¥‡æ•°å€éŸ³,nã®é€†æ•°ã§å°ã•ããªã‚‹)
 					diff = refPw[2] / odd;
 					if (diff >= ovInfo->power[i]) {
 						diff = diff - ovInfo->power[i];
@@ -6441,7 +6441,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					}
 					diff2 += diff;
 
-					// OŠp”g(Šï””{‰¹,n^2‚Ì‹t”‚Å¬‚³‚­‚È‚é)
+					// ä¸‰è§’æ³¢(å¥‡æ•°å€éŸ³,n^2ã®é€†æ•°ã§å°ã•ããªã‚‹)
 					diff = refPw[3] / (odd * odd);
 					if (diff >= ovInfo->power[i]) {
 						diff = diff - ovInfo->power[i];
@@ -6450,7 +6450,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					}
 					diff3 += diff;
 
-					// ƒpƒ‹ƒX(n”Ô–Ú‚Ì”{‰¹‚Å‚àƒpƒ[‚Í“¯‚¶)
+					// ãƒ‘ãƒ«ã‚¹(nç•ªç›®ã®å€éŸ³ã§ã‚‚ãƒ‘ãƒ¯ãƒ¼ã¯åŒã˜)
 					diff = refPw[4];
 					if (diff >= ovInfo->power[i]) {
 						diff = diff - ovInfo->power[i];
@@ -6459,7 +6459,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					}
 					diff4 += diff;
 
-					// ‚»‚Ì‘¼(‚à‚Á‚Æƒpƒ[‚ª¬‚³‚­‚È‚éƒpƒ^[ƒ“)
+					// ãã®ä»–(ã‚‚ã£ã¨ãƒ‘ãƒ¯ãƒ¼ãŒå°ã•ããªã‚‹ãƒ‘ã‚¿ãƒ¼ãƒ³)
 					diff = refPw[5] / (odd * odd * odd);
 					if (diff >= ovInfo->power[i]) {
 						diff = diff - ovInfo->power[i];
@@ -6521,7 +6521,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 				}
 			}
 
-			// ˆê”Ô—\‘ªŒë·‚ª­‚È‚©‚Á‚½‚à‚Ì‚ğÌ—p‚·‚éB
+			// ä¸€ç•ªäºˆæ¸¬èª¤å·®ãŒå°‘ãªã‹ã£ãŸã‚‚ã®ã‚’æ¡ç”¨ã™ã‚‹ã€‚
 
 			baseOfs = ofs - ((ofs / minWin) * minWin);
 			if (baseOfs == 0) {
@@ -6529,7 +6529,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 			}
 
 			pha = ovInfo->phase[baseOfs];
-			n = 1;		// Šï”‹ô””{‚·‚×‚Ä‚É”{‰¹‚ª‚ ‚é
+			n = 1;		// å¥‡æ•°å¶æ•°å€ã™ã¹ã¦ã«å€éŸ³ãŒã‚ã‚‹
 			odd = 1;
 			refPw[0] = -1;
 			refPw[4] = -1;
@@ -6553,7 +6553,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 				}
 
 				if (minType == 0) {
-					// 1/f(U•‚ª1/f‚É‚È‚Á‚Ä‚¢‚é‚à‚Ì)
+					// 1/f(æŒ¯å¹…ãŒ1/fã«ãªã£ã¦ã„ã‚‹ã‚‚ã®)
 					tmpPw = refPw[0] / hz;
 					phaRand = 1;
 					pha += param->sig2Phase;
@@ -6580,7 +6580,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						}
 					}
 				} else if (minType == 1) {
-					// 1/f(U•‚ª1/f‚É‚È‚Á‚Ä‚¢‚é‚à‚Ì)
+					// 1/f(æŒ¯å¹…ãŒ1/fã«ãªã£ã¦ã„ã‚‹ã‚‚ã®)
 					tmpPw = refPw[1] / n;
 					phaRand = 1;
 					pha = ovInfo->phase[max_i];
@@ -6608,7 +6608,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						}
 					}
 				} else if (minType == 2) {
-					// ’ZŒ`”g(Šï””{‰¹,n‚Ì‹t”‚Å¬‚³‚­‚È‚é)
+					// çŸ­å½¢æ³¢(å¥‡æ•°å€éŸ³,nã®é€†æ•°ã§å°ã•ããªã‚‹)
 					tmpPw = refPw[2] / odd;
 					phaRand = 1;
 					pha = ovInfo->phase[max_i];
@@ -6639,7 +6639,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						}
 					}
 				} else if (minType == 3) {
-					// OŠp”g(Šï””{‰¹,n^2‚Ì‹t”‚Å¬‚³‚­‚È‚é)
+					// ä¸‰è§’æ³¢(å¥‡æ•°å€éŸ³,n^2ã®é€†æ•°ã§å°ã•ããªã‚‹)
 					tmpPw = refPw[3] / (odd * odd);
 					phaRand = 1;
 //					pha = ovInfo->phase[max_i];
@@ -6670,7 +6670,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						}
 					}
 				} else if (minType == 4) {
-					// ƒpƒ‹ƒX(n”Ô–Ú‚Ì”{‰¹‚Å‚àƒpƒ[‚Í“¯‚¶)
+					// ãƒ‘ãƒ«ã‚¹(nç•ªç›®ã®å€éŸ³ã§ã‚‚ãƒ‘ãƒ¯ãƒ¼ã¯åŒã˜)
 					tmpPw = refPw[4];
 					phaRand = rand() * 6;
 					phaRand -= 3;
@@ -6698,7 +6698,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						}
 					}
 				} else if (minType == 5) {
-					// OŠp”g(Šï””{‰¹,n^2‚Ì‹t”‚Å¬‚³‚­‚È‚é)
+					// ä¸‰è§’æ³¢(å¥‡æ•°å€éŸ³,n^2ã®é€†æ•°ã§å°ã•ããªã‚‹)
 					tmpPw = refPw[3] / (odd * odd * odd);
 					phaRand = 1;
 //					pha = ovInfo->phase[max_i];
@@ -6747,7 +6747,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 
 #if 0
 	if (param->sig3Enb == 1 && (param->sig3Phase < -6 || param->sig3Phase > 6)) {
-		// ˆÊ‘Š‚ÌC³
+		// ä½ç›¸ã®ä¿®æ­£
 		window = width;
 		for (ofs = lowIndex;ofs < lowIndex + window;ofs++) {
 			minDiff = -1;
@@ -6767,13 +6767,13 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					continue;
 				}
 
-				// ƒXƒyƒNƒgƒ‹¬•ª‚Ì‘JˆÚ‚ğ’²‚×‚é
+				// ã‚¹ãƒšã‚¯ãƒˆãƒ«æˆåˆ†ã®é·ç§»ã‚’èª¿ã¹ã‚‹
 				diff0 = 0;
 				baseOfs = ofs - ((ofs / window) * window);
 				if (baseOfs == 0) {
 					baseOfs = window;
 				}
-				n = 1;		// Šï”‹ô””{‚·‚×‚Ä‚É”{‰¹‚ª‚ ‚é
+				n = 1;		// å¥‡æ•°å¶æ•°å€ã™ã¹ã¦ã«å€éŸ³ãŒã‚ã‚‹
 				refPw[0] = -1;
 				for (i = baseOfs,nn = 0;i < highIndex; i+= window,n++) {
 					hz = ((ovInfo->samplingRate / 2) / (double)ovInfo->nSample) * i;
@@ -6806,7 +6806,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 				}
 			}
 
-			// ˆê”Ô—\‘ªŒë·‚ª­‚È‚©‚Á‚½‚à‚Ì‚ğÌ—p‚·‚éB
+			// ä¸€ç•ªäºˆæ¸¬èª¤å·®ãŒå°‘ãªã‹ã£ãŸã‚‚ã®ã‚’æ¡ç”¨ã™ã‚‹ã€‚
 
 			baseOfs = ofs - ((ofs / minWin) * minWin);
 			if (baseOfs == 0) {
@@ -6814,7 +6814,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 			}
 
 			pha = ovInfo->phase[baseOfs];
-			n = 1;		// Šï”‹ô””{‚·‚×‚Ä‚É”{‰¹‚ª‚ ‚é
+			n = 1;		// å¥‡æ•°å¶æ•°å€ã™ã¹ã¦ã«å€éŸ³ãŒã‚ã‚‹
 
 			refPw[0] = -1;
 			if (minWin == swidth || minWin == width - 1) {
@@ -6849,7 +6849,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 	}
 #endif
 	if (param->sig1Enb == 1) {
-		// power‚ª‹­‚¢‚à‚Ì—Dæ‚Å•âŠÔ‚·‚é
+		// powerãŒå¼·ã„ã‚‚ã®å„ªå…ˆã§è£œé–“ã™ã‚‹
 
 		areaAvg = 0;
 		for (i = lowIndex,n = 0;n < width;i++,n++) {
@@ -6881,13 +6881,13 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 				if (param->hfaFast && (skipCnt % 8) != 0) {
 					continue;
 				}
-				// ƒXƒyƒNƒgƒ‹¬•ª‚Ì‘JˆÚ‚ğ’²‚×‚é
+				// ã‚¹ãƒšã‚¯ãƒˆãƒ«æˆåˆ†ã®é·ç§»ã‚’èª¿ã¹ã‚‹
 				diff0 = 0;
 				baseOfs = ofs - ((ofs / window) * window);
 				if (baseOfs == 0) {
 					baseOfs = window;
 				}
-				n = 1;		// Šï”‹ô””{‚·‚×‚Ä‚É”{‰¹‚ª‚ ‚é
+				n = 1;		// å¥‡æ•°å¶æ•°å€ã™ã¹ã¦ã«å€éŸ³ãŒã‚ã‚‹
 				refPw[0] = -1;
 				avgPw  = 0;
 				avgPw2 = 0;
@@ -6938,7 +6938,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 				}
 			}
 
-			// ˆê”Ô—İÏ‚Ìƒpƒ[‚ª‹­‚¢‚à‚Ì‚ğÌ—p‚·‚éB
+			// ä¸€ç•ªç´¯ç©ã®ãƒ‘ãƒ¯ãƒ¼ãŒå¼·ã„ã‚‚ã®ã‚’æ¡ç”¨ã™ã‚‹ã€‚
 
 			baseOfs = ofs - ((ofs / minWin) * minWin);
 			if (baseOfs == 0) {
@@ -6946,7 +6946,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 			}
 
 			pha = ovInfo->phase[baseOfs];
-			n = 1;		// Šï”‹ô””{‚·‚×‚Ä‚É”{‰¹‚ª‚ ‚é
+			n = 1;		// å¥‡æ•°å¶æ•°å€ã™ã¹ã¦ã«å€éŸ³ãŒã‚ã‚‹
 
 			refPw[0] = -1;
 			if (minWin == swidth || minWin == width - 1) {
@@ -6963,7 +6963,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					pha = ovInfo->phase[max_i];
 				}
 
-				// 1/f(U•‚ª1/f‚É‚È‚Á‚Ä‚¢‚é‚à‚Ì)
+				// 1/f(æŒ¯å¹…ãŒ1/fã«ãªã£ã¦ã„ã‚‹ã‚‚ã®)
 				tmpPw = refPw[0] / hz;
 				phaRand = 1;
 				pha += param->sig1Phase;
@@ -6998,7 +6998,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 //	}
 
 	if (param->sig3Enb == 1) {
-		// power‚ªã‚¢‚à‚Ì‚Æ•âŠÔ’l‚ª‚È‚¢‚à‚Ì‚ğ•âŠÔ‚·‚é
+		// powerãŒå¼±ã„ã‚‚ã®ã¨è£œé–“å€¤ãŒãªã„ã‚‚ã®ã‚’è£œé–“ã™ã‚‹
 
 		window = width;
 		for (ofs = lowIndex;ofs < lowIndex + window;ofs++) {
@@ -7018,13 +7018,13 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 				if (param->hfaFast && (skipCnt % 8) != 0) {
 					continue;
 				}
-				// ƒXƒyƒNƒgƒ‹¬•ª‚Ì‘JˆÚ‚ğ’²‚×‚é
+				// ã‚¹ãƒšã‚¯ãƒˆãƒ«æˆåˆ†ã®é·ç§»ã‚’èª¿ã¹ã‚‹
 				diff0 = 0;
 				baseOfs = ofs - ((ofs / window) * window);
 				if (baseOfs == 0) {
 					baseOfs = window;
 				}
-				n = 1;		// Šï”‹ô””{‚·‚×‚Ä‚É”{‰¹‚ª‚ ‚é
+				n = 1;		// å¥‡æ•°å¶æ•°å€ã™ã¹ã¦ã«å€éŸ³ãŒã‚ã‚‹
 				refPw[0] = -1;
 				avgPw  = 0;
 				avgPw2 = 0;
@@ -7057,7 +7057,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 				}
 			}
 
-			// ˆê”Ô—İÏ‚Ìƒpƒ[‚ªã‚¢‚à‚Ì‚ğÌ—p‚·‚éB
+			// ä¸€ç•ªç´¯ç©ã®ãƒ‘ãƒ¯ãƒ¼ãŒå¼±ã„ã‚‚ã®ã‚’æ¡ç”¨ã™ã‚‹ã€‚
 
 			baseOfs = ofs - ((ofs / minWin) * minWin);
 			if (baseOfs == 0) {
@@ -7065,7 +7065,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 			}
 
 			pha = ovInfo->phase[baseOfs];
-			n = 1;		// Šï”‹ô””{‚·‚×‚Ä‚É”{‰¹‚ª‚ ‚é
+			n = 1;		// å¥‡æ•°å¶æ•°å€ã™ã¹ã¦ã«å€éŸ³ãŒã‚ã‚‹
 			odd = 1;
 			refPw[0] = -1;
 			if (minWin == swidth || minWin == width - 1) {
@@ -7082,7 +7082,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					pha = ovInfo->phase[max_i];
 				}
 
-				// 1/f(U•‚ª1/f‚É‚È‚Á‚Ä‚¢‚é‚à‚Ì)
+				// 1/f(æŒ¯å¹…ãŒ1/fã«ãªã£ã¦ã„ã‚‹ã‚‚ã®)
 				tmpPw = refPw[0] / hz;
 				phaRand = 1;
 				pha += param->sig3Phase;
@@ -7101,7 +7101,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 		}
 	}
 
-	// •âŠÔ‚³‚ê‚Ä‚¢‚È‚¢‰ÓŠ‚Ì‘Î‰
+	// è£œé–“ã•ã‚Œã¦ã„ãªã„ç®‡æ‰€ã®å¯¾å¿œ
 	for (i = baseOfs;i + 1< nSample;i++) {
 		hz = ((ovInfo->samplingRate / 2) / (double)ovInfo->nSample) * i;
 		if (hz < lowHz) {
@@ -7159,7 +7159,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 		}
 	}
 	if (param->sig3Phase >= -6 || param->sig3Phase <= 6) {
-		// ˆÊ‘Š‚ÌC³
+		// ä½ç›¸ã®ä¿®æ­£
 		window = width;
 		for (ofs = lowIndex;ofs < lowIndex + window;ofs++) {
 			minDiff = -1;
@@ -7179,13 +7179,13 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					continue;
 				}
 
-				// ƒXƒyƒNƒgƒ‹¬•ª‚Ì‘JˆÚ‚ğ’²‚×‚é
+				// ã‚¹ãƒšã‚¯ãƒˆãƒ«æˆåˆ†ã®é·ç§»ã‚’èª¿ã¹ã‚‹
 				diff0 = 0;
 				baseOfs = ofs - ((ofs / window) * window);
 				if (baseOfs == 0) {
 					baseOfs = window;
 				}
-				n = 1;		// Šï”‹ô””{‚·‚×‚Ä‚É”{‰¹‚ª‚ ‚é
+				n = 1;		// å¥‡æ•°å¶æ•°å€ã™ã¹ã¦ã«å€éŸ³ãŒã‚ã‚‹
 				refPw[0] = -1;
 				for (i = baseOfs,nn = 0;i < highIndex; i+= window,n++) {
 					hz = ((ovInfo->samplingRate / 2) / (double)ovInfo->nSample) * i;
@@ -7218,7 +7218,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 				}
 			}
 
-			// ˆê”Ô—\‘ªŒë·‚ª­‚È‚©‚Á‚½‚à‚Ì‚ğÌ—p‚·‚éB
+			// ä¸€ç•ªäºˆæ¸¬èª¤å·®ãŒå°‘ãªã‹ã£ãŸã‚‚ã®ã‚’æ¡ç”¨ã™ã‚‹ã€‚
 
 			baseOfs = ofs - ((ofs / minWin) * minWin);
 			if (baseOfs == 0) {
@@ -7226,7 +7226,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 			}
 
 			pha = ovInfo->phase[baseOfs];
-			n = 1;		// Šï”‹ô””{‚·‚×‚Ä‚É”{‰¹‚ª‚ ‚é
+			n = 1;		// å¥‡æ•°å¶æ•°å€ã™ã¹ã¦ã«å€éŸ³ãŒã‚ã‚‹
 
 			refPw[0] = -1;
 			if (minWin == swidth || minWin == width - 1) {
@@ -7305,7 +7305,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 
 #if 1
 	if (param->hfaWide) {
-		// ‰ğÍî•ñ‚ğ•½‹Ï‰»‚µA‹}Œƒ‚È•Ï‰»‚ğ—}‚¦‚é
+		// è§£ææƒ…å ±ã‚’å¹³å‡åŒ–ã—ã€æ€¥æ¿€ãªå¤‰åŒ–ã‚’æŠ‘ãˆã‚‹
 		for (i = baseOfs;i + 1< nSample;i++) {
 			hz = ((ovInfo->samplingRate / 2) / (double)ovInfo->nSample) * i;
 			if (hz < lowHz) {
@@ -7343,13 +7343,13 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 #endif
 //---------------------------------------------------------------------------
 // Function   : noiseCut
-// Description: ƒmƒCƒYƒJƒbƒgˆ—
+// Description: ãƒã‚¤ã‚ºã‚«ãƒƒãƒˆå‡¦ç†
 // ---
-//	nfs		 	:ƒmƒCƒYƒJƒbƒgƒIƒtü”g”(‚±‚Ìü”g”ˆÈã‚Ì—Ìˆæ‚ÌƒmƒCƒY‚ğƒJƒbƒg‚·‚é)
-//	inSample 	:ˆ—‚·‚éƒTƒ“ƒvƒ‹”(ch–ˆ)
-//	fp_r		:“ü—Íƒtƒ@ƒCƒ‹
-//	fp_w		:o—Íƒtƒ@ƒCƒ‹
-//	param		:•ÏŠ·ƒpƒ‰ƒ[ƒ^
+//	nfs		 	:ãƒã‚¤ã‚ºã‚«ãƒƒãƒˆã‚ªãƒ•å‘¨æ³¢æ•°(ã“ã®å‘¨æ³¢æ•°ä»¥ä¸Šã®é ˜åŸŸã®ãƒã‚¤ã‚ºã‚’ã‚«ãƒƒãƒˆã™ã‚‹)
+//	inSample 	:å‡¦ç†ã™ã‚‹ã‚µãƒ³ãƒ—ãƒ«æ•°(chæ¯)
+//	fp_r		:å…¥åŠ›ãƒ•ã‚¡ã‚¤ãƒ«
+//	fp_w		:å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«
+//	param		:å¤‰æ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿
 //
 void noiseCut(long nfs,DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 {
@@ -7503,12 +7503,12 @@ void noiseCut(long nfs,DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 
 		pIn = (SSIZE *)mem1;
 		for (n = 0;n < 12;n++) {
-			// FFT ‰Šúİ’è
+			// FFT åˆæœŸè¨­å®š
 			for (i = 0;i < fftSize;i++) {
 				fftw_in[i][0] = pIn[((fftSize / 2) * n) + i];
 				fftw_in[i][1] = 0;
 			}
-			// ‘‹ŠÖ”
+			// çª“é–¢æ•°
 			for (i = 0;i < (fftSize - 1) / 2;i++) {
 				fftw_in[i][0] = fftw_in[i][0] * (2.0 * i / (double)fftSize);
 			}
@@ -7519,7 +7519,7 @@ void noiseCut(long nfs,DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 			// FFT
 			fftw_execute(fftw_p);
 
-			// Œ³M†‚Ìƒpƒ[‚ğ—İÏ‚·‚é
+			// å…ƒä¿¡å·ã®ãƒ‘ãƒ¯ãƒ¼ã‚’ç´¯ç©ã™ã‚‹
 			for (i = 1;i < fftSize / 2;i++) {
 				p = fftw_out[i][0] * fftw_out[i][0] + fftw_out[i][1] * fftw_out[i][1];
 				if (p != 0) {
@@ -7532,7 +7532,7 @@ void noiseCut(long nfs,DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 			pw[i] /= 12;
 		}
 		for (i = 0,h = 0;h < hfc - 1000;i++,h += 1000) {
-			// 1khz ”ÍˆÍ‚Ìƒpƒ[‚ğ’²‚×‚é
+			// 1khz ç¯„å›²ã®ãƒ‘ãƒ¯ãƒ¼ã‚’èª¿ã¹ã‚‹
 			lowIndex  = ((double)fftSize / outSampleR) * h;
 			highIndex = ((double)fftSize / outSampleR) * (h + 1000);
 			refPw[i] = 0;
@@ -7544,12 +7544,12 @@ void noiseCut(long nfs,DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 			}
 		}
 		for (n = 0;n < 3;n++) {
-			// FFT ‰Šúİ’è
+			// FFT åˆæœŸè¨­å®š
 			for (i = 0;i < fftSize;i++) {
 				fftw_in[i][0] = pIn[((fftSize / 2) * n) + i];
 				fftw_in[i][1] = 0;
 			}
-			// ‘‹ŠÖ”
+			// çª“é–¢æ•°
 			for (i = 0;i < (fftSize - 1) / 2;i++) {
 				fftw_in[i][0] = fftw_in[i][0] * (2.0 * i / (double)fftSize);
 			}
@@ -7559,7 +7559,7 @@ void noiseCut(long nfs,DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 
 			// FFT
 			fftw_execute(fftw_p);
-			// è‡’l‚æ‚è‘å‚«‚¢‰¹‚ÍƒJƒbƒg‚·‚é
+			// é–¾å€¤ã‚ˆã‚Šå¤§ãã„éŸ³ã¯ã‚«ãƒƒãƒˆã™ã‚‹
 			for (i = 1;i < fftSize / 2;i++) {
 				hz = ((double)outSampleR / fftSize) * i;
 				if (hz >= 100 && hz >= param->nr) {
@@ -7577,7 +7577,7 @@ void noiseCut(long nfs,DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 				}
 			}
 
-			// ”¼•ª‚Ìƒf[ƒ^‚ğ•œŒ³
+			// åŠåˆ†ã®ãƒ‡ãƒ¼ã‚¿ã‚’å¾©å…ƒ
 			for (i = 1;i < fftSize / 2;i++) {
 				fftw_out[fftSize - i][0] = fftw_out[i][0];
 				fftw_out[fftSize - i][1] = fftw_out[i][1] * -1;
@@ -7586,7 +7586,7 @@ void noiseCut(long nfs,DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 			// invert FFT
 			fftw_execute(fftw_ip);
 
-			// o—Í
+			// å‡ºåŠ›
 			pOut = (SSIZE *)mem2;
 			for (i = 0;i < fftSize;i++) {
 				pOut[((fftSize / 2) * n) + i] += fftw_in[i][0] / fftSize;
@@ -7608,14 +7608,14 @@ void noiseCut(long nfs,DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 }
 //---------------------------------------------------------------------------
 // Function   : bpFilter
-// Description: w’èü”g”‚ğƒJƒbƒg‚·‚é
+// Description: æŒ‡å®šå‘¨æ³¢æ•°ã‚’ã‚«ãƒƒãƒˆã™ã‚‹
 // ---
-//	lfc		 	:’áˆæ‚ÌƒJƒbƒgƒIƒtü”g”(‚±‚Ìü”g”ˆÈ‰º‚Ì—Ìˆæ‚ğƒJƒbƒg‚·‚é)
-//	hfc		 	:‚ˆæ‚ÌƒJƒbƒgƒIƒtü”g”(‚±‚Ìü”g”ˆÈã‚Ì—Ìˆæ‚ğƒJƒbƒg‚·‚é)
-//	inSample 	:ˆ—‚·‚éƒTƒ“ƒvƒ‹”(ch–ˆ)
-//	fp_r		:“ü—Íƒtƒ@ƒCƒ‹
-//	fp_w		:o—Íƒtƒ@ƒCƒ‹
-//	param		:•ÏŠ·ƒpƒ‰ƒ[ƒ^
+//	lfc		 	:ä½åŸŸã®ã‚«ãƒƒãƒˆã‚ªãƒ•å‘¨æ³¢æ•°(ã“ã®å‘¨æ³¢æ•°ä»¥ä¸‹ã®é ˜åŸŸã‚’ã‚«ãƒƒãƒˆã™ã‚‹)
+//	hfc		 	:é«˜åŸŸã®ã‚«ãƒƒãƒˆã‚ªãƒ•å‘¨æ³¢æ•°(ã“ã®å‘¨æ³¢æ•°ä»¥ä¸Šã®é ˜åŸŸã‚’ã‚«ãƒƒãƒˆã™ã‚‹)
+//	inSample 	:å‡¦ç†ã™ã‚‹ã‚µãƒ³ãƒ—ãƒ«æ•°(chæ¯)
+//	fp_r		:å…¥åŠ›ãƒ•ã‚¡ã‚¤ãƒ«
+//	fp_w		:å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«
+//	param		:å¤‰æ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿
 //
 int bpFilter(long lfc,long hfc,DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 {
@@ -7820,9 +7820,9 @@ int bpFilter(long lfc,long hfc,DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *pa
 }
 //---------------------------------------------------------------------------
 // Function   : bpFilterSub
-// Description: w’èü”g”‚ğƒJƒbƒg‚·‚é
+// Description: æŒ‡å®šå‘¨æ³¢æ•°ã‚’ã‚«ãƒƒãƒˆã™ã‚‹
 // ---
-//	param		:•ÏŠ·ƒpƒ‰ƒ[ƒ^
+//	param		:å¤‰æ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿
 //
 void bpFilterSub(SSIZE *pIn,SSIZE *pOut,fftw_complex *fftw_in,fftw_complex *fftw_out,fftw_plan fftw_p,fftw_plan fftw_ip,long lfc,long hfc,PARAM_INFO *param)
 {
@@ -7834,20 +7834,20 @@ void bpFilterSub(SSIZE *pIn,SSIZE *pOut,fftw_complex *fftw_in,fftw_complex *fftw
 	fftSize = param->outSampleR * 2;
 	outSampleR = param->outSampleR;
 	
-	// FFT ‰Šúİ’è
+	// FFT åˆæœŸè¨­å®š
 	copyToFFTW(fftw_in,pIn,fftSize);
 
-	// ‘‹ŠÖ”
+	// çª“é–¢æ•°
 	windowFFTW(fftw_in,fftSize);
 
 	// FFT
 	fftw_execute(fftw_p);
 
-	// Œ³M†‚Ì‚ˆæ‚Ìƒpƒ[‚ğ’²‚×‚é
+	// å…ƒä¿¡å·ã®é«˜åŸŸã®ãƒ‘ãƒ¯ãƒ¼ã‚’èª¿ã¹ã‚‹
 	if (lfc != -1) {
 		lowIndex = ((double)fftSize / outSampleR) * (lfc);
 		
-		// ’áˆæƒJƒbƒg
+		// ä½åŸŸã‚«ãƒƒãƒˆ
 		for (i = 1;i < lowIndex;i++) {
 			fftw_out[i][0] = 0;
 			fftw_out[i][1] = 0;
@@ -7860,7 +7860,7 @@ void bpFilterSub(SSIZE *pIn,SSIZE *pOut,fftw_complex *fftw_in,fftw_complex *fftw
 			fftw_out[i][1] = 0;
 		}
 	}
-	// ”¼•ª‚Ìƒf[ƒ^‚ğ•œŒ³
+	// åŠåˆ†ã®ãƒ‡ãƒ¼ã‚¿ã‚’å¾©å…ƒ
 	for (i = 1;i < fftSize / 2;i++) {
 		fftw_out[fftSize - i][0] = fftw_out[i][0];
 		fftw_out[fftSize - i][1] = fftw_out[i][1] * -1;
@@ -7869,18 +7869,18 @@ void bpFilterSub(SSIZE *pIn,SSIZE *pOut,fftw_complex *fftw_in,fftw_complex *fftw
 	// invert FFT
 	fftw_execute(fftw_ip);
 
-	// o—Í
+	// å‡ºåŠ›
 	for (i = 0;i < fftSize;i++) {
 		pOut[i] += fftw_in[i][0] / fftSize;
 	}
 }
 //---------------------------------------------------------------------------
 // Function   : spAnalyze
-// Description: ƒXƒs[ƒJ[‚Ìü”g”“Á«‚É‰‚¶‚Ä’²®’lƒpƒ‰ƒ[ƒ^[‚ğo—Í‚·‚é
+// Description: ã‚¹ãƒ”ãƒ¼ã‚«ãƒ¼ã®å‘¨æ³¢æ•°ç‰¹æ€§ã«å¿œã˜ã¦èª¿æ•´å€¤ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ¼ã‚’å‡ºåŠ›ã™ã‚‹
 // ---
-//	inSample 	:ˆ—‚·‚éƒTƒ“ƒvƒ‹”(ch–ˆ)
-//	fp_r		:“ü—Íƒtƒ@ƒCƒ‹
-//	param		:•ÏŠ·ƒpƒ‰ƒ[ƒ^
+//	inSample 	:å‡¦ç†ã™ã‚‹ã‚µãƒ³ãƒ—ãƒ«æ•°(chæ¯)
+//	fp_r		:å…¥åŠ›ãƒ•ã‚¡ã‚¤ãƒ«
+//	param		:å¤‰æ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿
 //
 void spAnalyze(DWORD inSample,FIO *fp_r,PARAM_INFO *param)
 {
@@ -8002,10 +8002,10 @@ void spAnalyze(DWORD inSample,FIO *fp_r,PARAM_INFO *param)
 
 		pIn = (SSIZE *)mem1;
 		for (n = 0;n < 3;n++) {
-			// FFT ‰Šúİ’è
+			// FFT åˆæœŸè¨­å®š
 			copyToFFTW(fftw_in,&pIn[((fftSize / 2) * n)],fftSize);
 
-			// ‘‹ŠÖ”
+			// çª“é–¢æ•°
 			windowFFTW(fftw_in,fftSize);
 
 			// FFT
@@ -8018,7 +8018,7 @@ void spAnalyze(DWORD inSample,FIO *fp_r,PARAM_INFO *param)
 				}
 			}
 			
-			// 128 ƒTƒCƒY‚ÌˆÚ“®•½‹Ï
+			// 128 ã‚µã‚¤ã‚ºã®ç§»å‹•å¹³å‡
 			for (i = 1;i + 128 < validIndex;i++) {
 				p = 0;
 				for (n = 0;n < 128;n++) {
@@ -8105,12 +8105,12 @@ void spAnalyze(DWORD inSample,FIO *fp_r,PARAM_INFO *param)
 
 //---------------------------------------------------------------------------
 // Function   : outTempFile
-// Description: ƒf[ƒ^‚ğƒeƒ“ƒ|ƒ‰ƒŠƒtƒ@ƒCƒ‹‚Öo—Í‚·‚é
+// Description: ãƒ‡ãƒ¼ã‚¿ã‚’ãƒ†ãƒ³ãƒãƒ©ãƒªãƒ•ã‚¡ã‚¤ãƒ«ã¸å‡ºåŠ›ã™ã‚‹
 // ---
-//	fp_w	:o—Íƒtƒ@ƒCƒ‹
-//	in		:ƒf[ƒ^‚ÌƒAƒhƒŒƒX
-//	size	:ƒf[ƒ^[”
-//	param	:ƒpƒ‰ƒ[ƒ^[
+//	fp_w	:å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«
+//	in		:ãƒ‡ãƒ¼ã‚¿ã®ã‚¢ãƒ‰ãƒ¬ã‚¹
+//	size	:ãƒ‡ãƒ¼ã‚¿ãƒ¼æ•°
+//	param	:ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ¼
 //
 void outTempFile(FIO *fp_w,void *in,DWORD size,PARAM_INFO *param)
 {
@@ -8123,11 +8123,11 @@ void outTempFile(FIO *fp_w,void *in,DWORD size,PARAM_INFO *param)
 }
 //---------------------------------------------------------------------------
 // Function   : normalNoise
-// Description: ³‹K—”¶¬
+// Description: æ­£è¦ä¹±æ•°ç”Ÿæˆ
 //
 double normalNoise(void)
 /*
- * ³‹K—”
+ * æ­£è¦ä¹±æ•°
  */
 {
 	double x1,x2;
@@ -8139,12 +8139,12 @@ double normalNoise(void)
 }
 //---------------------------------------------------------------------------
 // Function   : adjPinkFilter
-// Description: 1/f “Á«‚É‚·‚éƒtƒBƒ‹ƒ^[
+// Description: 1/f ç‰¹æ€§ã«ã™ã‚‹ãƒ•ã‚£ãƒ«ã‚¿ãƒ¼
 // ---
-//	mode	  :ƒ‚[ƒh(0,1,2,3)
-//	fftSizeOut:FFT”
-//	fftw_out2 :FFTW OUT •Ï”
-//	param	  :•ÏŠ·ƒpƒ‰ƒ[ƒ^
+//	mode	  :ãƒ¢ãƒ¼ãƒ‰(0,1,2,3)
+//	fftSizeOut:FFTæ•°
+//	fftw_out2 :FFTW OUT å¤‰æ•°
+//	param	  :å¤‰æ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿
 //
 void adjPinkFilter(int mode,long fftSizeOut,fftw_complex *fftw_out2,PARAM_INFO *param)
 {
@@ -8195,7 +8195,7 @@ void adjPinkFilter(int mode,long fftSizeOut,fftw_complex *fftw_out2,PARAM_INFO *
 	}
 
 	if (mode == 1) {
-		// 1/f “Á«‚É‚·‚éƒtƒBƒ‹ƒ^[(hfa1)
+		// 1/f ç‰¹æ€§ã«ã™ã‚‹ãƒ•ã‚£ãƒ«ã‚¿ãƒ¼(hfa1)
 		for (i = 1;i < fftSizeOut / 2;i++) {
 			hz = (((double)(outSampleR / 2)) / (fftSizeOut / 2)) * i;
 			if (hz > 0) {
@@ -8205,7 +8205,7 @@ void adjPinkFilter(int mode,long fftSizeOut,fftw_complex *fftw_out2,PARAM_INFO *
 		}
 	}
 	if (mode != 3) {
-		// hfa1Ahfa2Ahfa3—p‚Ì‚ˆæ•âŠÔ‚Ìü”g”’²®
+		// hfa1ã€hfa2ã€hfa3ç”¨ã®é«˜åŸŸè£œé–“æ™‚ã®å‘¨æ³¢æ•°èª¿æ•´
 		if (param->hfa != 0 && param->hfc >= 8000 && param->hfc <= 23000) {
 //			if (param->hfc > 13000) {
 				startIdx = ((double)fftSizeOut / outSampleR) * 13000;
@@ -8446,7 +8446,7 @@ void adjPinkFilter(int mode,long fftSizeOut,fftw_complex *fftw_out2,PARAM_INFO *
 		}
 
 		if (mode == 2) {
-			// “Æ©‚Ìƒ[ƒpƒXƒtƒBƒ‹ƒ^[
+			// ç‹¬è‡ªã®ãƒ­ãƒ¼ãƒ‘ã‚¹ãƒ•ã‚£ãƒ«ã‚¿ãƒ¼
 			cutOff = 40000;
 			if (param->lpf > 1 && cutOff > param->lpf) {
 				cutOff = param->lpf;
@@ -8473,7 +8473,7 @@ void adjPinkFilter(int mode,long fftSizeOut,fftw_complex *fftw_out2,PARAM_INFO *
 			}
 		}
 	} else {
-		// ƒfƒGƒ“ƒtƒ@ƒVƒX—p‚Ìˆ—
+		// ãƒ‡ã‚¨ãƒ³ãƒ•ã‚¡ã‚·ã‚¹ç”¨ã®å‡¦ç†
 		if (param->deEmphasis == 1) {
 			startIdx = ((double)fftSizeOut / outSampleR) * 3180;
 			endIdx	 = ((double)fftSizeOut / outSampleR) * 10600;
@@ -8514,15 +8514,15 @@ void adjPinkFilter(int mode,long fftSizeOut,fftw_complex *fftw_out2,PARAM_INFO *
 }
 //---------------------------------------------------------------------------
 // Function   : merageTempFile
-// Description: o—ÍŒ‹‰Ê‚Ìƒtƒ@ƒCƒ‹‚ğƒ}[ƒW‚·‚é
+// Description: å‡ºåŠ›çµæœã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ãƒãƒ¼ã‚¸ã™ã‚‹
 // ---
-//	type	 :ƒ}[ƒW‚Ìí—Ş
-//	normFlag :ƒm[ƒ}ƒ‰ƒCƒY—p•Ï”XVƒtƒ‰ƒO
-//	fp_r 	 :“ü—Íƒtƒ@ƒCƒ‹1
-//	fp_r2	 :“ü—Íƒtƒ@ƒCƒ‹2
-//	fp_w	 :o—Íƒtƒ@ƒCƒ‹
-//	inSample :ƒTƒ“ƒvƒ‹”
-//	param	 :ƒpƒ‰ƒ[ƒ^[
+//	type	 :ãƒãƒ¼ã‚¸ã®ç¨®é¡
+//	normFlag :ãƒãƒ¼ãƒãƒ©ã‚¤ã‚ºç”¨å¤‰æ•°æ›´æ–°ãƒ•ãƒ©ã‚°
+//	fp_r 	 :å…¥åŠ›ãƒ•ã‚¡ã‚¤ãƒ«1
+//	fp_r2	 :å…¥åŠ›ãƒ•ã‚¡ã‚¤ãƒ«2
+//	fp_w	 :å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«
+//	inSample :ã‚µãƒ³ãƒ—ãƒ«æ•°
+//	param	 :ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ¼
 //
 void merageTempFile(char type,int normFlag,FIO *fp_r,FIO *fp_r2,FIO *fp_w,DWORD inSample,PARAM_INFO *param)
 {
@@ -8686,7 +8686,7 @@ void merageTempFile(char type,int normFlag,FIO *fp_r,FIO *fp_r2,FIO *fp_w,DWORD 
 
 	if (param->err) {
 		param->err = STATUS_FILE_READ_ERR;
-		// ƒGƒ‰[I—¹
+		// ã‚¨ãƒ©ãƒ¼çµ‚äº†
 		return;
 	}
 	
@@ -8713,7 +8713,7 @@ void merageTempFile(char type,int normFlag,FIO *fp_r,FIO *fp_r2,FIO *fp_w,DWORD 
 }
 //---------------------------------------------------------------------------
 // Function   : copyToFFTW
-// Description: fftw—p”z—ñ‚É’l‚ğƒRƒs[‚·‚é
+// Description: fftwç”¨é…åˆ—ã«å€¤ã‚’ã‚³ãƒ”ãƒ¼ã™ã‚‹
 // ---
 //	
 //
@@ -8859,7 +8859,7 @@ void copyToFFTW(fftw_complex *fftw,SSIZE *buf,long size)
 }
 //---------------------------------------------------------------------------
 // Function   : windowFFTW
-// Description: FFTW—pWindowŠÖ”
+// Description: FFTWç”¨Windowé–¢æ•°
 // ---
 //	
 //
@@ -8867,7 +8867,7 @@ void windowFFTW(fftw_complex *fftw,long size)
 {
 	long i;
 
-	// ƒEƒCƒ“ƒhƒEƒTƒCƒY–ˆ‚É’è”‰»‚·‚é
+	// ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã‚µã‚¤ã‚ºæ¯ã«å®šæ•°åŒ–ã™ã‚‹
 	switch (size) {
 		case (4096 * 1):
 			#pragma omp parallel for
@@ -9092,7 +9092,7 @@ void windowFFTW(fftw_complex *fftw,long size)
 }
 //---------------------------------------------------------------------------
 // Function   : cutFFTW
-// Description: FFTW—pƒJƒbƒgƒIƒtŠÖ”
+// Description: FFTWç”¨ã‚«ãƒƒãƒˆã‚ªãƒ•é–¢æ•°
 // ---
 //	
 //
@@ -9100,7 +9100,7 @@ void cutFFTW(fftw_complex *fftw,long index,long size)
 {
 	long i;
 
-	// 64 ŒÂ‚¸‚Â
+	// 64 å€‹ãšã¤
 	for (i = index;i + 64 < size;i+= 64) {
 		fftw[i + 0][0] = 0;
 		fftw[i + 0][1] = 0;
@@ -9231,7 +9231,7 @@ void cutFFTW(fftw_complex *fftw,long index,long size)
 		fftw[i + 63][0] = 0;
 		fftw[i + 63][1] = 0;
 	}
-	// c‚è
+	// æ®‹ã‚Š
 	for (;i < size;i++) {
 		fftw[i + 0][0] = 0;
 		fftw[i + 0][1] = 0;
@@ -9239,9 +9239,9 @@ void cutFFTW(fftw_complex *fftw,long index,long size)
 }
 //---------------------------------------------------------------------------
 // Function   : al_malloc
-// Description: 16ƒoƒCƒg‹«ŠE‘Î‰mallocŠÖ”
+// Description: 16ãƒã‚¤ãƒˆå¢ƒç•Œå¯¾å¿œmallocé–¢æ•°
 // ---
-// •Ô‚·ƒ|ƒCƒ“ƒ^‚Ì16ƒoƒCƒg‘O‚Émalloc‚ÅŠm•Û‚µ‚½ƒƒ‚ƒŠ—Ìˆæ‚ÌƒAƒhƒŒƒX‚ğ“ü‚ê‚é
+// è¿”ã™ãƒã‚¤ãƒ³ã‚¿ã®16ãƒã‚¤ãƒˆå‰ã«mallocã§ç¢ºä¿ã—ãŸãƒ¡ãƒ¢ãƒªé ˜åŸŸã®ã‚¢ãƒ‰ãƒ¬ã‚¹ã‚’å…¥ã‚Œã‚‹
 //
 void *al_malloc(long size)
 {
@@ -9267,7 +9267,7 @@ void *al_malloc(long size)
 }
 //---------------------------------------------------------------------------
 // Function   : al_free
-// Description: 16ƒoƒCƒg‹«ŠE‘Î‰freeŠÖ”
+// Description: 16ãƒã‚¤ãƒˆå¢ƒç•Œå¯¾å¿œfreeé–¢æ•°
 // ---
 // 
 //

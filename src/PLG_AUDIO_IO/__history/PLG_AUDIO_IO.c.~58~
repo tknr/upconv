@@ -6,16 +6,16 @@
 /** ************************************************************************* */
 
 /* --- Log -------------------------------------------------------------------
- * Ver 0.10 <09/06/02> - VC6—p‚ÌDLL‚Æ‚µ‚Äì¬
- * Ver 0.50 <10/10/23> - MP3,FLAC,WAVPACKƒtƒ@ƒCƒ‹‘Î‰(î•ñæ“¾‚Ì‚İ‘Î‰)
- *					   - BWF ‘Î‰(•Û‘¶‚Ì‚İ)
- *					   - RF64 ‘Î‰(•Û‘¶‚Ì‚İ)
- * Ver 0.60 <10/11/25> - Multi Channel ‘Î‰
- * Ver 0.61 <10/12/30> - Extensible ‘Î‰
- * Ver 0.70 <11/07/24> - API‚ğ®—
- * Ver 0.80 <12/02/11> - DLL ‚ğ‚â‚ß‚ÄAŠeƒvƒƒOƒ‰ƒ€‚ÖƒŠƒ“ƒN‚·‚é‚æ‚¤‚ÉC³
- *						 mmsystem‚ğg—p‚µ‚È‚¢‚æ‚¤‚ÉC³
- *						 RF64 ƒtƒ@ƒCƒ‹‚Ì“Ç‚İ‚İ‚É‘Î‰
+ * Ver 0.10 <09/06/02> - VC6ç”¨ã®DLLã¨ã—ã¦ä½œæˆ
+ * Ver 0.50 <10/10/23> - MP3,FLAC,WAVPACKãƒ•ã‚¡ã‚¤ãƒ«å¯¾å¿œ(æƒ…å ±å–å¾—ã®ã¿å¯¾å¿œ)
+ *					   - BWF å¯¾å¿œ(ä¿å­˜ã®ã¿)
+ *					   - RF64 å¯¾å¿œ(ä¿å­˜ã®ã¿)
+ * Ver 0.60 <10/11/25> - Multi Channel å¯¾å¿œ
+ * Ver 0.61 <10/12/30> - Extensible å¯¾å¿œ
+ * Ver 0.70 <11/07/24> - APIã‚’æ•´ç†
+ * Ver 0.80 <12/02/11> - DLL ã‚’ã‚„ã‚ã¦ã€å„ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã¸ãƒªãƒ³ã‚¯ã™ã‚‹ã‚ˆã†ã«ä¿®æ­£
+ *						 mmsystemã‚’ä½¿ç”¨ã—ãªã„ã‚ˆã†ã«ä¿®æ­£
+ *						 RF64 ãƒ•ã‚¡ã‚¤ãƒ«ã®èª­ã¿è¾¼ã¿ã«å¯¾å¿œ
  */
 
 // ---------------------------------------------------------------------------
@@ -59,7 +59,7 @@ unsigned char tempBuffer[1 * 1024 * 1024L];
 #define FALSE	(0)
 #endif
 
-// Wav ƒtƒ@ƒCƒ‹
+// Wav ãƒ•ã‚¡ã‚¤ãƒ«
 #pragma pack(push, 1)
 typedef struct {
 	char id[4];
@@ -105,12 +105,12 @@ typedef struct {
 }META_LIST;
 #pragma pack(pop)
 
-// ƒTƒ“ƒvƒ‹‚ğˆ—‚·‚éƒf[ƒ^Œ^
+// ã‚µãƒ³ãƒ—ãƒ«ã‚’å‡¦ç†ã™ã‚‹ãƒ‡ãƒ¼ã‚¿å‹
 #define SSIZE	signed __int64
 #define UI64	unsigned __int64
 
 //
-// DSF ƒtƒ@ƒCƒ‹ƒtƒH[ƒ}ƒbƒgd—l‘‚ğQÆ
+// DSF ãƒ•ã‚¡ã‚¤ãƒ«ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆä»•æ§˜æ›¸ã‚’å‚ç…§
 #pragma pack(push, 1)
 typedef struct {
 	char id[4];
@@ -151,7 +151,7 @@ static int fseek_local(FILE * fp, __int64 offset, int origin);
 
 int infoWavFile(char *filename, SOUNDFMT *pFmt, DWORD *pInSample,FILEINFO *pFileinfo)
 /*
- * WavFile ‚Ìî•ñæ“¾(2GˆÈ‰º‚Ìwavƒtƒ@ƒCƒ‹‚Ì‚İ‘Î‰)
+ * WavFile ã®æƒ…å ±å–å¾—(2Gä»¥ä¸‹ã®wavãƒ•ã‚¡ã‚¤ãƒ«ã®ã¿å¯¾å¿œ)
  */ 
 {
 	WAVE_HEADER *wh;
@@ -197,7 +197,7 @@ int infoWavFile(char *filename, SOUNDFMT *pFmt, DWORD *pInSample,FILEINFO *pFile
 			break;
 		}
 
-		// fmt ƒ`ƒƒƒ“ƒN‚ÌƒT[ƒ`
+		// fmt ãƒãƒ£ãƒ³ã‚¯ã®ã‚µãƒ¼ãƒ
 		if (findWavChunk(fp, "fmt ", &chunkSize)) {
 			fmt_chunk = 1;
 			rs = fread(&wfex, 1, sizeof(WFEX), fp);
@@ -265,7 +265,7 @@ int infoWavFile(char *filename, SOUNDFMT *pFmt, DWORD *pInSample,FILEINFO *pFile
 
 int infoRF64File(char *filename, SOUNDFMT *pFmt, DWORD *pInSample,FILEINFO *pFileinfo)
 /*
- * RF64ƒtƒ@ƒCƒ‹‚Ìî•ñæ“¾
+ * RF64ãƒ•ã‚¡ã‚¤ãƒ«ã®æƒ…å ±å–å¾—
  */
 {
 	WAVE_HEADER *wh;
@@ -304,7 +304,7 @@ int infoRF64File(char *filename, SOUNDFMT *pFmt, DWORD *pInSample,FILEINFO *pFil
 		if (wh->size != 0xFFFFFFFF) {
 			break;
 		}
-		// ds64 ƒ`ƒƒƒ“ƒN‚ÌƒT[ƒ`
+		// ds64 ãƒãƒ£ãƒ³ã‚¯ã®ã‚µãƒ¼ãƒ
 		if (findWavChunk(fp, "ds64", &chunkSize)) {
 			if (fseek_local(fp, -8, SEEK_CUR)) {
 				break;
@@ -328,7 +328,7 @@ int infoRF64File(char *filename, SOUNDFMT *pFmt, DWORD *pInSample,FILEINFO *pFil
 				pFileinfo->dataSize = pcmSize;
 			}
 		}
-		// fmt ƒ`ƒƒƒ“ƒN‚ÌƒT[ƒ`
+		// fmt ãƒãƒ£ãƒ³ã‚¯ã®ã‚µãƒ¼ãƒ
 		if (findWavChunk(fp, "fmt ", &chunkSize)) {
 			if (fseek_local(fp, -8, SEEK_CUR)) {
 				break;
@@ -376,7 +376,7 @@ int infoRF64File(char *filename, SOUNDFMT *pFmt, DWORD *pInSample,FILEINFO *pFil
 				PRINT_LOG(ppp);
 			}
 			if (*pInSample > 0) {
-				// ƒTƒ“ƒvƒ‹”‚ğ32bit‚É§ŒÀ‚·‚é(–{ƒ\ƒtƒg‚Ìd—l)
+				// ã‚µãƒ³ãƒ—ãƒ«æ•°ã‚’32bitã«åˆ¶é™ã™ã‚‹(æœ¬ã‚½ãƒ•ãƒˆã®ä»•æ§˜)
 				fileIsRF64 = TRUE;
 			}
 			fclose(fp);
@@ -399,7 +399,7 @@ int infoRF64File(char *filename, SOUNDFMT *pFmt, DWORD *pInSample,FILEINFO *pFil
 int infoMP3File(char *filename, SOUNDFMT *pFmt, DWORD *pInSample,
 	FILEINFO *pFileinfo)
 /*
- * MP3 File‚Ìî•ñæ“¾
+ * MP3 Fileã®æƒ…å ±å–å¾—
  */ {
 	FILE *fp;
 	long rs;
@@ -470,7 +470,7 @@ int infoMP3File(char *filename, SOUNDFMT *pFmt, DWORD *pInSample,
 
 int infoFlacFile(char *filename, SOUNDFMT *pFmt, DWORD *pInSample,FILEINFO *pFileinfo)
 /*
- * Flac File‚Ìî•ñæ“¾
+ * Flac Fileã®æƒ…å ±å–å¾—
  */ {
 	FILE *fp;
 	long rs;
@@ -535,7 +535,7 @@ int infoFlacFile(char *filename, SOUNDFMT *pFmt, DWORD *pInSample,FILEINFO *pFil
 int infoWavPackFile(char *filename, SOUNDFMT *pFmt, DWORD *pInSample,
 	FILEINFO *pFileinfo)
 /*
- * WavPack File ‚Ìî•ñæ“¾
+ * WavPack File ã®æƒ…å ±å–å¾—
  */ {
 	FILE *fp;
 	long rs;
@@ -594,7 +594,7 @@ int infoWavPackFile(char *filename, SOUNDFMT *pFmt, DWORD *pInSample,
 int infoDsfFile(char *filename, SOUNDFMT *pFmt, DWORD *pInSample,
 	FILEINFO *pFileinfo)
 /*
- * DSF File ‚Ìî•ñæ“¾
+ * DSF File ã®æƒ…å ±å–å¾—
  */ {
 	FILE *fp;
 	long rs;
@@ -696,24 +696,24 @@ int infoDsfFile(char *filename, SOUNDFMT *pFmt, DWORD *pInSample,
 // ---------------------------------------------------------------------------
 /*
  * Function    : PLG_InfoAudioData
- * Description : Wave ƒtƒ@ƒCƒ‹‚Ìî•ñ‚ğ“¾‚é
- *				 ƒTƒ|[ƒg‚·‚éƒtƒH[ƒ}ƒbƒg‚Í16,20,24,32(float),64(float) ‚Ìƒtƒ@ƒCƒ‹(‚»‚êˆÈŠO‚ÍƒTƒ|[ƒg‚µ‚È‚¢)
- *				 RF64ƒtƒ@ƒCƒ‹
- *				 MP3ƒtƒ@ƒCƒ‹
- *				 Flacƒtƒ@ƒCƒ‹
- *				 Wavpackƒtƒ@ƒCƒ‹
- *				 DSDƒtƒ@ƒCƒ‹
+ * Description : Wave ãƒ•ã‚¡ã‚¤ãƒ«ã®æƒ…å ±ã‚’å¾—ã‚‹
+ *				 ã‚µãƒãƒ¼ãƒˆã™ã‚‹ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã¯16,20,24,32(float),64(float) ã®ãƒ•ã‚¡ã‚¤ãƒ«(ãã‚Œä»¥å¤–ã¯ã‚µãƒãƒ¼ãƒˆã—ãªã„)
+ *				 RF64ãƒ•ã‚¡ã‚¤ãƒ«
+ *				 MP3ãƒ•ã‚¡ã‚¤ãƒ«
+ *				 Flacãƒ•ã‚¡ã‚¤ãƒ«
+ *				 Wavpackãƒ•ã‚¡ã‚¤ãƒ«
+ *				 DSDãƒ•ã‚¡ã‚¤ãƒ«
  * ---
- *	filename   : ƒtƒ@ƒCƒ‹–¼
- *	pFmt	   : ‰¹ºƒtƒ@ƒCƒ‹î•ñ‚ğŠi”[‚·‚é\‘¢‘Ì‚Ìƒ|ƒCƒ“ƒ^
- *	pInSample  : 1Ch ‚ ‚½‚è‚ÌƒTƒ“ƒvƒ‹”‚ğŠi”[‚·‚é•Ï”‚Ìƒ|ƒCƒ“ƒ^
- *	pFileinfo  : ‹Èî•ñ‚ğŠi”[‚·‚é\‘¢‘Ì‚Ìƒ|ƒCƒ“ƒ^
+ *	filename   : ãƒ•ã‚¡ã‚¤ãƒ«å
+ *	pFmt	   : éŸ³å£°ãƒ•ã‚¡ã‚¤ãƒ«æƒ…å ±ã‚’æ ¼ç´ã™ã‚‹æ§‹é€ ä½“ã®ãƒã‚¤ãƒ³ã‚¿
+ *	pInSample  : 1Ch ã‚ãŸã‚Šã®ã‚µãƒ³ãƒ—ãƒ«æ•°ã‚’æ ¼ç´ã™ã‚‹å¤‰æ•°ã®ãƒã‚¤ãƒ³ã‚¿
+ *	pFileinfo  : æ›²æƒ…å ±ã‚’æ ¼ç´ã™ã‚‹æ§‹é€ ä½“ã®ãƒã‚¤ãƒ³ã‚¿
  *
  */
 int PLG_InfoAudioData(char *filename, SOUNDFMT *pFmt, DWORD *pInSample,
 	FILEINFO *pFileinfo)
 /*
- * Audio Data ‚Ìî•ñæ“¾
+ * Audio Data ã®æƒ…å ±å–å¾—
  */ {
 	int fd;
 	struct stat st;
@@ -771,18 +771,18 @@ int PLG_InfoAudioData(char *filename, SOUNDFMT *pFmt, DWORD *pInSample,
 // ---------------------------------------------------------------------------
 /*
  * Function    : PLG_MakeHeaderWAV
- * Description : Wav ƒtƒ@ƒCƒ‹‚Ìƒwƒbƒ_‚ğì¬‚·‚é
+ * Description : Wav ãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ˜ãƒƒãƒ€ã‚’ä½œæˆã™ã‚‹
  * ---
- *	pInFmt		: Wave ƒtƒ@ƒCƒ‹î•ñ‚ğŠi”[‚·‚é\‘¢‘Ì‚Ìƒ|ƒCƒ“ƒ^(Œ³)
- *	pOutFmt 	: Wave ƒtƒ@ƒCƒ‹î•ñ‚ğŠi”[‚·‚é\‘¢‘Ì‚Ìƒ|ƒCƒ“ƒ^(æ)
- *	buffer 		: ì¬‚µ‚½ƒwƒbƒ_‚ğŠi”[‚·‚éƒoƒbƒtƒ@
- *	size		: buffer‚ÌƒTƒCƒY
+ *	pInFmt		: Wave ãƒ•ã‚¡ã‚¤ãƒ«æƒ…å ±ã‚’æ ¼ç´ã™ã‚‹æ§‹é€ ä½“ã®ãƒã‚¤ãƒ³ã‚¿(å…ƒ)
+ *	pOutFmt 	: Wave ãƒ•ã‚¡ã‚¤ãƒ«æƒ…å ±ã‚’æ ¼ç´ã™ã‚‹æ§‹é€ ä½“ã®ãƒã‚¤ãƒ³ã‚¿(å…ˆ)
+ *	buffer 		: ä½œæˆã—ãŸãƒ˜ãƒƒãƒ€ã‚’æ ¼ç´ã™ã‚‹ãƒãƒƒãƒ•ã‚¡
+ *	size		: bufferã®ã‚µã‚¤ã‚º
  *
  */
 int PLG_MakeHeaderWAV(SOUNDFMT *pInFmt, SOUNDFMT *pOutFmt, char *buffer,
 	long size, long *header_size)
 /*
- * Wav ƒwƒbƒ_ì¬
+ * Wav ãƒ˜ãƒƒãƒ€ä½œæˆ
  */ {
 	int retValue;
 	char subTypePCM[16] = {0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x10, 0x00, 0x80, 0x00, 0x00, 0xaa,0x00, 0x38, 0x9b, 0x71};
@@ -883,17 +883,17 @@ int PLG_MakeHeaderWAV(SOUNDFMT *pInFmt, SOUNDFMT *pOutFmt, char *buffer,
 // ---------------------------------------------------------------------------
 /*
  * Function    : PLG_UpdateHeaderWAV
- * Description : Wav ƒtƒ@ƒCƒ‹‚Ìƒwƒbƒ_‚ğXV‚·‚é
+ * Description : Wav ãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ˜ãƒƒãƒ€ã‚’æ›´æ–°ã™ã‚‹
  * ---
- *	filesize	: ƒtƒ@ƒCƒ‹ƒTƒCƒY
- *	datasize	: ‰¹ºƒf[ƒ^ƒTƒCƒY
- *	buffer 		: ì¬‚µ‚½ƒwƒbƒ_‚ğŠi”[‚·‚éƒoƒbƒtƒ@
- *	header_size	: buffer‚ÌƒTƒCƒY
+ *	filesize	: ãƒ•ã‚¡ã‚¤ãƒ«ã‚µã‚¤ã‚º
+ *	datasize	: éŸ³å£°ãƒ‡ãƒ¼ã‚¿ã‚µã‚¤ã‚º
+ *	buffer 		: ä½œæˆã—ãŸãƒ˜ãƒƒãƒ€ã‚’æ ¼ç´ã™ã‚‹ãƒãƒƒãƒ•ã‚¡
+ *	header_size	: bufferã®ã‚µã‚¤ã‚º
  *
  */
 int PLG_UpdateHeaderWAV(SOUNDFMT *pOutFmt, __int64 filesize, __int64 datasize,char *buffer, long header_size)
 /*
- * Wav ƒwƒbƒ_XV
+ * Wav ãƒ˜ãƒƒãƒ€æ›´æ–°
  */
 {
 	int retValue;
@@ -935,17 +935,17 @@ int PLG_UpdateHeaderWAV(SOUNDFMT *pOutFmt, __int64 filesize, __int64 datasize,ch
 // ---------------------------------------------------------------------------
 /*
  * Function    : PLG_MakeHeaderRF64
- * Description : RF64 ƒtƒ@ƒCƒ‹‚Ìƒwƒbƒ_‚ğì¬‚·‚é
+ * Description : RF64 ãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ˜ãƒƒãƒ€ã‚’ä½œæˆã™ã‚‹
  * ---
- *	pInFmt		: Wave ƒtƒ@ƒCƒ‹î•ñ‚ğŠi”[‚·‚é\‘¢‘Ì‚Ìƒ|ƒCƒ“ƒ^(Œ³)
- *	pOutFmt 	: Wave ƒtƒ@ƒCƒ‹î•ñ‚ğŠi”[‚·‚é\‘¢‘Ì‚Ìƒ|ƒCƒ“ƒ^(æ)
- *	buffer 		: ì¬‚µ‚½ƒwƒbƒ_‚ğŠi”[‚·‚éƒoƒbƒtƒ@
- *	size		: buffer‚ÌƒTƒCƒY
+ *	pInFmt		: Wave ãƒ•ã‚¡ã‚¤ãƒ«æƒ…å ±ã‚’æ ¼ç´ã™ã‚‹æ§‹é€ ä½“ã®ãƒã‚¤ãƒ³ã‚¿(å…ƒ)
+ *	pOutFmt 	: Wave ãƒ•ã‚¡ã‚¤ãƒ«æƒ…å ±ã‚’æ ¼ç´ã™ã‚‹æ§‹é€ ä½“ã®ãƒã‚¤ãƒ³ã‚¿(å…ˆ)
+ *	buffer 		: ä½œæˆã—ãŸãƒ˜ãƒƒãƒ€ã‚’æ ¼ç´ã™ã‚‹ãƒãƒƒãƒ•ã‚¡
+ *	size		: bufferã®ã‚µã‚¤ã‚º
  *
  */
 int PLG_MakeHeaderRF64(SOUNDFMT *pInFmt, SOUNDFMT *pOutFmt, char *buffer,long size, long *header_size)
 /*
- * Wav ƒwƒbƒ_ì¬
+ * Wav ãƒ˜ãƒƒãƒ€ä½œæˆ
  */
 {
 	int retValue;
@@ -1025,17 +1025,17 @@ int PLG_MakeHeaderRF64(SOUNDFMT *pInFmt, SOUNDFMT *pOutFmt, char *buffer,long si
 // ---------------------------------------------------------------------------
 /*
  * Function    : PLG_UpdateHeaderRF64
- * Description : Wav ƒtƒ@ƒCƒ‹‚Ìƒwƒbƒ_‚ğXV‚·‚é
+ * Description : Wav ãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ˜ãƒƒãƒ€ã‚’æ›´æ–°ã™ã‚‹
  * ---
- *	filesize	: ƒtƒ@ƒCƒ‹ƒTƒCƒY
- *	datasize	: ‰¹ºƒf[ƒ^ƒTƒCƒY
- *	buffer 		: ì¬‚µ‚½ƒwƒbƒ_‚ğŠi”[‚·‚éƒoƒbƒtƒ@
- *	header_size	: buffer‚ÌƒTƒCƒY
+ *	filesize	: ãƒ•ã‚¡ã‚¤ãƒ«ã‚µã‚¤ã‚º
+ *	datasize	: éŸ³å£°ãƒ‡ãƒ¼ã‚¿ã‚µã‚¤ã‚º
+ *	buffer 		: ä½œæˆã—ãŸãƒ˜ãƒƒãƒ€ã‚’æ ¼ç´ã™ã‚‹ãƒãƒƒãƒ•ã‚¡
+ *	header_size	: bufferã®ã‚µã‚¤ã‚º
  *
  */
 int PLG_UpdateHeaderRF64(SOUNDFMT *pOutFmt, __int64 filesize, __int64 datasize,char *buffer, long header_size)
 /*
- * Wav ƒwƒbƒ_XV
+ * Wav ãƒ˜ãƒƒãƒ€æ›´æ–°
  */
 {
 	int retValue;
@@ -1078,19 +1078,19 @@ int PLG_UpdateHeaderRF64(SOUNDFMT *pOutFmt, __int64 filesize, __int64 datasize,c
 // ---------------------------------------------------------------------------
 /*
  * Function    : PLG_MakeHeaderDSD
- * Description : Dsd ƒtƒ@ƒCƒ‹‚Ìƒwƒbƒ_‚ğì¬‚·‚é
+ * Description : Dsd ãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ˜ãƒƒãƒ€ã‚’ä½œæˆã™ã‚‹
  * ---
- *	pInFmt		: DSD ƒtƒ@ƒCƒ‹î•ñ‚ğŠi”[‚·‚é\‘¢‘Ì‚Ìƒ|ƒCƒ“ƒ^(Œ³)
- *	pOutFmt 	: DSD ƒtƒ@ƒCƒ‹î•ñ‚ğŠi”[‚·‚é\‘¢‘Ì‚Ìƒ|ƒCƒ“ƒ^(æ)
- *	buffer 		: ì¬‚µ‚½ƒwƒbƒ_‚ğŠi”[‚·‚éƒoƒbƒtƒ@
- *	size		: buffer‚ÌƒTƒCƒY
+ *	pInFmt		: DSD ãƒ•ã‚¡ã‚¤ãƒ«æƒ…å ±ã‚’æ ¼ç´ã™ã‚‹æ§‹é€ ä½“ã®ãƒã‚¤ãƒ³ã‚¿(å…ƒ)
+ *	pOutFmt 	: DSD ãƒ•ã‚¡ã‚¤ãƒ«æƒ…å ±ã‚’æ ¼ç´ã™ã‚‹æ§‹é€ ä½“ã®ãƒã‚¤ãƒ³ã‚¿(å…ˆ)
+ *	buffer 		: ä½œæˆã—ãŸãƒ˜ãƒƒãƒ€ã‚’æ ¼ç´ã™ã‚‹ãƒãƒƒãƒ•ã‚¡
+ *	size		: bufferã®ã‚µã‚¤ã‚º
  *
  */
 int PLG_MakeHeaderDSD(SOUNDFMT *pInFmt, SOUNDFMT *pOutFmt, char *buffer,
 	long size, long *header_size)
 {
 /*
- * DSF File ‚Ìî•ñæ“¾
+ * DSF File ã®æƒ…å ±å–å¾—
  */ {
 	int retValue;
 	DSF *dsf;
@@ -1147,17 +1147,17 @@ int PLG_MakeHeaderDSD(SOUNDFMT *pInFmt, SOUNDFMT *pOutFmt, char *buffer,
 // ---------------------------------------------------------------------------
 /*
  * Function    : PLG_UpdateHeaderDSD
- * Description : Wav ƒtƒ@ƒCƒ‹‚Ìƒwƒbƒ_‚ğXV‚·‚é
+ * Description : Wav ãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ˜ãƒƒãƒ€ã‚’æ›´æ–°ã™ã‚‹
  * ---
- *	filesize	: ƒtƒ@ƒCƒ‹ƒTƒCƒY
- *	datasize	: ‰¹ºƒf[ƒ^ƒTƒCƒY
- *	buffer 		: ì¬‚µ‚½ƒwƒbƒ_‚ğŠi”[‚·‚éƒoƒbƒtƒ@
- *	header_size	: buffer‚ÌƒTƒCƒY
+ *	filesize	: ãƒ•ã‚¡ã‚¤ãƒ«ã‚µã‚¤ã‚º
+ *	datasize	: éŸ³å£°ãƒ‡ãƒ¼ã‚¿ã‚µã‚¤ã‚º
+ *	buffer 		: ä½œæˆã—ãŸãƒ˜ãƒƒãƒ€ã‚’æ ¼ç´ã™ã‚‹ãƒãƒƒãƒ•ã‚¡
+ *	header_size	: bufferã®ã‚µã‚¤ã‚º
  *
  */
 int PLG_UpdateHeaderDSD(SOUNDFMT *pOutFmt, __int64 filesize, __int64 datasize,char *buffer, long header_size)
 /*
- * DSF ƒwƒbƒ_XV
+ * DSF ãƒ˜ãƒƒãƒ€æ›´æ–°
  */
 {
 	int retValue;
@@ -1200,12 +1200,12 @@ int PLG_UpdateHeaderDSD(SOUNDFMT *pOutFmt, __int64 filesize, __int64 datasize,ch
 // ---------------------------------------------------------------------------
 /*
  * Function    : PLG_GetExtraChunk
- * Description : Wav ƒtƒ@ƒCƒ‹‚Ìfmt,dataˆÈŠO‚Ìƒ`ƒƒƒ“ƒN‚ğæ“¾‚·‚é
+ * Description : Wav ãƒ•ã‚¡ã‚¤ãƒ«ã®fmt,dataä»¥å¤–ã®ãƒãƒ£ãƒ³ã‚¯ã‚’å–å¾—ã™ã‚‹
  * ---
- *	filesize	: ƒtƒ@ƒCƒ‹ƒTƒCƒY
- *	datasize	: ‰¹ºƒf[ƒ^ƒTƒCƒY
- *	buffer 		: ì¬‚µ‚½ƒwƒbƒ_‚ğŠi”[‚·‚éƒoƒbƒtƒ@
- *	header_size	: buffer‚ÌƒTƒCƒY
+ *	filesize	: ãƒ•ã‚¡ã‚¤ãƒ«ã‚µã‚¤ã‚º
+ *	datasize	: éŸ³å£°ãƒ‡ãƒ¼ã‚¿ã‚µã‚¤ã‚º
+ *	buffer 		: ä½œæˆã—ãŸãƒ˜ãƒƒãƒ€ã‚’æ ¼ç´ã™ã‚‹ãƒãƒƒãƒ•ã‚¡
+ *	header_size	: bufferã®ã‚µã‚¤ã‚º
  *
  */
 int PLG_GetExtraChunk(char *filename, int nChunk, char **infoChunk,long *infoSize)
@@ -1244,13 +1244,13 @@ int PLG_GetExtraChunk(char *filename, int nChunk, char **infoChunk,long *infoSiz
 			if (fp == NULL) {
 				break;
 			}
-			// ƒwƒbƒ_“Ç‚İ‚İ
+			// ãƒ˜ãƒƒãƒ€èª­ã¿è¾¼ã¿
 			rs = fread(wh, 1, 12, fp);
 			if (rs != 12) {
 				break;
 			}
 			seekPtr = 12;
-			// w’èƒ`ƒƒƒ“ƒN‚Ü‚ÅƒXƒLƒbƒv
+			// æŒ‡å®šãƒãƒ£ãƒ³ã‚¯ã¾ã§ã‚¹ã‚­ãƒƒãƒ—
 			next = 0;
 			for (i = 0; i < nChunk; ) {
 				err = 0;
@@ -1337,7 +1337,7 @@ int PLG_GetExtraChunk(char *filename, int nChunk, char **infoChunk,long *infoSiz
 				if (fseek_local(fp, seekPtr, SEEK_SET)) {
 					break;
 				}
-				// ƒwƒbƒ_“Ç‚İ‚İ
+				// ãƒ˜ãƒƒãƒ€èª­ã¿è¾¼ã¿
 				rs = fread(header, 1, 4, fp);
 				if (rs != 4) {
 					break;
@@ -1462,7 +1462,7 @@ int PLG_GetExtraChunk(char *filename, int nChunk, char **infoChunk,long *infoSiz
 						}
 					}
 					if (i == ovcom_count) {
-						// ƒTƒCƒYŒvZ
+						// ã‚µã‚¤ã‚ºè¨ˆç®—
 						wk_long = 0;
 						if (meta_list.s_isrc > 0) {
 							wk_long += meta_list.s_isrc + 8;
@@ -1650,16 +1650,16 @@ int PLG_GetExtraChunk(char *filename, int nChunk, char **infoChunk,long *infoSiz
 // ---------------------------------------------------------------------------
 /*
  * Function    : PLG_GetChunkInfo
- * Description : Wave ƒtƒ@ƒCƒ‹‚ÌChunkî•ñ‚ğ•Ô‚·
+ * Description : Wave ãƒ•ã‚¡ã‚¤ãƒ«ã®Chunkæƒ…å ±ã‚’è¿”ã™
  * ---
- *	filename   : ƒtƒ@ƒCƒ‹–¼
- *	info	   : î•ñ‚ğŠi”[‚·‚éƒoƒbƒtƒ@
- *	infoSize   : info ‚ÌƒoƒCƒg”
+ *	filename   : ãƒ•ã‚¡ã‚¤ãƒ«å
+ *	info	   : æƒ…å ±ã‚’æ ¼ç´ã™ã‚‹ãƒãƒƒãƒ•ã‚¡
+ *	infoSize   : info ã®ãƒã‚¤ãƒˆæ•°
  *
  */
 int PLG_GetChunkInfo(char *filename, char *info, int infoSize)
 /*
- * ƒ`ƒƒƒ“ƒNî•ñ‚Ìæ“¾
+ * ãƒãƒ£ãƒ³ã‚¯æƒ…å ±ã®å–å¾—
  */
 {
 	FILE *fp;
@@ -2127,7 +2127,7 @@ int PLG_GetChunkInfo(char *filename, char *info, int infoSize)
 				if (fseek_local(fp, seekPtr, SEEK_SET)) {
 					break;
 				}
-				// ƒwƒbƒ_“Ç‚İ‚İ
+				// ãƒ˜ãƒƒãƒ€èª­ã¿è¾¼ã¿
 				rs = fread(header, 1, 4, fp);
 				if (rs != 4) {
 					break;
@@ -2464,7 +2464,7 @@ int findWavChunk(FILE * fp, char*id, long*size)
 			break;
 		}
 		seekPtr = 12;
-		// w’èƒ`ƒƒƒ“ƒN‚ÌƒT[ƒ`
+		// æŒ‡å®šãƒãƒ£ãƒ³ã‚¯ã®ã‚µãƒ¼ãƒ
 		for (; ; ) {
 			if (fseek_local(fp, seekPtr, SEEK_SET)) {
 				break;
@@ -2479,7 +2479,7 @@ int findWavChunk(FILE * fp, char*id, long*size)
 				break;
 			}
 			if (wh->size & 1) {
-				// Šï”‚È‚ç00‚ÌƒpƒfƒBƒ“ƒO‚ª‚ ‚é
+				// å¥‡æ•°ãªã‚‰00ã®ãƒ‘ãƒ‡ã‚£ãƒ³ã‚°ãŒã‚ã‚‹
 				seekPtr += wh->size + 9;
 			} else {
 				seekPtr += wh->size + 8;

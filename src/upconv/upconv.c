@@ -6,59 +6,59 @@
 /****************************************************************************/
 
 /*--- Log ------------------------------------------------------------------
- * Ver 0.10 <07/03/15> - �쐬
- * Ver 0.20 <07/04/19> - DFT �o�[�W�����ǉ�
- * Ver 0.30 <08/08/17> - �V�����ɕύX
- * Ver 0.40 <09/02/20> - fftw �o�[�W�����ɕύX����������Fix
- * Ver 0.50 <09/05/18> - ����̕�ԕ��@����������Fix
- * Ver 0.60 <09/06/02> - BCB6��VC6�ɑΉ�
- * Ver 0.61 <09/06/06> - �������}�b�v�h�t�@�C�����g�p���Ȃ��悤�ɂ���
- * Ver 0.70 <09/06/28> - �������@��ύX
- * Ver 0.80 <09/07/10> - hfa2 �̏��������ǂ��}���`�R�A�ɑΉ����邽�߂ɏ����𕪗�
- * Ver 0.90 <09/09/24> - �������g�p�ʍ팸
- * Ver 0.91 <09/09/27> - �_�E���T���v�����O���̃o�O�C���A�m�[�}���C�Y���̃o�O�C��
- * Ver 0.92 <09/09/29> - hfa2�̕�ԕ��@��ύX
- * Ver 0.93 <09/10/06> - hfa2�̕�ԏ�����ύX
- * Ver 0.94 <09/11/01> - hfa3�ǉ��A�o�O�C���A�p�����[�^�t�@�C���̗̍p
- * Ver 0.95 <09/11/11> - hfa3�Ƀm�C�Y�Ƃ̃u�����h����w��\�ɂ���
- * Ver 0.96 <09/11/15> - hfa��Ԏ��̎��g���������C��
- * Ver 0.97 <09/11/22> - �r�b�g�g�������ǉ��Ahfa��Ԏ��̎��g���������w��\�ɂ���
- * Ver 0.98 <10/01/11> - �f�G���t�@�V�X�ɑΉ�
- * Ver 0.99 <10/03/14> - hfa3�̕�ԕ��@��ύX
- * Ver 1.00 <10/03/14> - GCC(MinGW)�ɑΉ�
- * Ver 1.01 <10/04/11> - OpenMP�ɑΉ�
- * Ver 1.02 <10/07/26> - �X�s�[�J�[���Ƃ̒����@�\�ǉ�
- * Ver 1.03 <10/09/14> - hfc auto�ɑΉ�
- * Ver 1.04 <10/11/02> - �X�s�[�J�[���Ƃ̒����@�\�o�O�C��
- * Ver 1.05 <10/12/27> - �C�R���C�U�@�\�C��
- * Ver 1.06 <11/01/07> - lfa �Ή��A�\�[�X�R�[�h�̐���
- * Ver 1.07 <11/10/01> - �e���|�����t�@�C���Ή�
- * Ver 1.08 <12/02/28> - fio �Ή�
- * Ver 1.09 <13/04/27> - hfa3�̕�ԕ��@�ύX
- * Ver 1.10 <18/10/06> - �T���v�����O���[�g�ǉ�
- * Ver 1.20 <19/10/12> - ���낢��ȉ���
+ * Ver 0.10 <07/03/15> - 作成
+ * Ver 0.20 <07/04/19> - DFT バージョン追加
+ * Ver 0.30 <08/08/17> - 新方式に変更
+ * Ver 0.40 <09/02/20> - fftw バージョンに変更しいったんFix
+ * Ver 0.50 <09/05/18> - 高域の補間方法をいったんFix
+ * Ver 0.60 <09/06/02> - BCB6とVC6に対応
+ * Ver 0.61 <09/06/06> - メモリマップドファイルを使用しないようにした
+ * Ver 0.70 <09/06/28> - 処理方法を変更
+ * Ver 0.80 <09/07/10> - hfa2 の処理を改良しマルチコアに対応するために処理を分離
+ * Ver 0.90 <09/09/24> - メモリ使用量削減
+ * Ver 0.91 <09/09/27> - ダウンサンプリング時のバグ修正、ノーマライズ時のバグ修正
+ * Ver 0.92 <09/09/29> - hfa2の補間方法を変更
+ * Ver 0.93 <09/10/06> - hfa2の補間処理を変更
+ * Ver 0.94 <09/11/01> - hfa3追加、バグ修正、パラメータファイルの採用
+ * Ver 0.95 <09/11/11> - hfa3にノイズとのブレンド具合を指定可能にした
+ * Ver 0.96 <09/11/15> - hfa補間時の周波数特性を修正
+ * Ver 0.97 <09/11/22> - ビット拡張処理追加、hfa補間時の周波数特性を指定可能にした
+ * Ver 0.98 <10/01/11> - デエンファシスに対応
+ * Ver 0.99 <10/03/14> - hfa3の補間方法を変更
+ * Ver 1.00 <10/03/14> - GCC(MinGW)に対応
+ * Ver 1.01 <10/04/11> - OpenMPに対応
+ * Ver 1.02 <10/07/26> - スピーカーごとの調整機能追加
+ * Ver 1.03 <10/09/14> - hfc autoに対応
+ * Ver 1.04 <10/11/02> - スピーカーごとの調整機能バグ修正
+ * Ver 1.05 <10/12/27> - イコライザ機能修正
+ * Ver 1.06 <11/01/07> - lfa 対応、ソースコードの整理
+ * Ver 1.07 <11/10/01> - テンポラリファイル対応
+ * Ver 1.08 <12/02/28> - fio 対応
+ * Ver 1.09 <13/04/27> - hfa3の補間方法変更
+ * Ver 1.10 <18/10/06> - サンプリングレート追加
+ * Ver 1.20 <19/10/12> - いろいろな改良
  */
 
-// [�d�l]
-// upconv.exe ���̓t�@�C���� �o�̓t�@�C���� �f�t�H���g�p�����[�^�t�@�C���� �p�����[�^�[
+// [仕様]
+// upconv.exe 入力ファイル名 出力ファイル名 デフォルトパラメータファイル名 パラメーター
 //
-// [��Ɨp�t�@�C��]
-// �� �o�̓t�@�C����.param
-// 1�s�ڂ͌���wav�t�@�C�� or ����mp3�t�@�C�� or flac�t�@�C�� or wavpack�t�@�C���̖��O
-// �m�[�}���C�Y�p���ʃf�[�^(Ch1)
-// �m�[�}���C�Y�p���ʃf�[�^(Ch2)
+// [作業用ファイル]
+// ◇ 出力ファイル名.param
+// 1行目は元のwavファイル or 元のmp3ファイル or flacファイル or wavpackファイルの名前
+// ノーマライズ用音量データ(Ch1)
+// ノーマライズ用音量データ(Ch2)
 // ...
 
-// �� �o�̓t�@�C����.files
-// ��Ɨp�ɍ쐬�����t�@�C����
+// ◇ 出力ファイル名.files
+// 作業用に作成したファイル名
 // ...
 
-// �� �o�̓t�@�C����.r1
-// �ϊ�����1Ch���̃f�[�^(64bit,�L��60bit��raw�f�[�^)
+// ◇ 出力ファイル名.r1
+// 変換中の1Ch分のデータ(64bit,有効60bitのrawデータ)
 // ...
 
-// ���o�̓t�@�C����.r1.param
-// 1Ch���̕ϊ���f�[�^�̃m�[�}���C�Y�p���ʃf�[�^
+// ◇出力ファイル名.r1.param
+// 1Ch分の変換後データのノーマライズ用音量データ
 
 #define STR_COPYRIGHT	"upconv.exe (c) 2019 Ver 1.20 By 59414d41\n\n"
 #define STR_USAGE		"upconv.exe in-file out-file def_paramfile parameter\n"
@@ -93,10 +93,10 @@
 #include <omp.h>
 #endif
 
-// �ő�T���v�����O��
+// 最大サンプリング数
 #define MAX_SAMPLE_N	(1536000*2)
 
-// �m�[�}���C�Y���
+// ノーマライズ情報
 typedef struct {
 	SSIZE	min;
 	SSIZE	max;
@@ -237,7 +237,7 @@ static int chkAbort(PARAM_INFO *param,int percent,int diff);
 
 //---------------------------------------------------------------------------
 // Function   : upconv_main
-// Description: upconv ���C���֐�
+// Description: upconv メイン関数
 //
 //
 int main(int argc, char *argv[])
@@ -323,7 +323,7 @@ int main(int argc, char *argv[])
 		param.sig2Phase = -1;
 		param.sig3Phase = -3;
 		param.hfaNB = 0;
-		param.upconv   = 0;	// upconv �g�p�t���O
+		param.upconv   = 0;	// upconv 使用フラグ
 		param.channel_count = 0;
 		param.mc_flag = 0;
 		param.abort_percent = 0;
@@ -334,14 +334,14 @@ int main(int argc, char *argv[])
 		sprintf(work,"argc:%d,argv:[%s,%s,%s,%s,%s]",argc,argv[0],argv[1],argv[2],argv[3],argv[4]);
 		PRINT_LOG(work);
 		if (argc == 5) {
-			// default parameter �t�@�C��
+			// default parameter ファイル
 			fp = fopen(argv[3],"r");
 			if (fp == NULL) {
 				retCode = STATUS_PARAMETER_ERR;param.errLine = __LINE__;
 				break;
 			}
 			
-			// �p�����[�^�̓ǂ݂���
+			// パラメータの読みこみ
 			if (fgets(work,2047,fp) == NULL) {
 				retCode = STATUS_PARAMETER_ERR;param.errLine = __LINE__;
 				break;
@@ -351,7 +351,7 @@ int main(int argc, char *argv[])
 			strcat(pparam," ");
 			if (strlen(argv[4]) >= 1) strcat(pparam,argv[4]);
 
-			// tmp�t�@�C���p�̍�ƃf�B���N�g��
+			// tmpファイル用の作業ディレクトリ
 			if (fgets(workpath,_MAX_PATH,fp) == NULL) {
 				retCode = STATUS_PARAMETER_ERR;param.errLine = __LINE__;
 				break;
@@ -553,7 +553,7 @@ int main(int argc, char *argv[])
 					param.ana = 1;
 				}
 				if (strcmp(p1,"-spAna") == 0) {
-					// 192khz �Œ�ŉ��
+					// 192khz 固定で解析
 					param.sp_ana = 1;
 				}
 #endif
@@ -618,7 +618,7 @@ int main(int argc, char *argv[])
 				int retStatus;
 				char *arg[5];
 				char buffer[2048];
-				// wav2raw �ϊ�����
+				// wav2raw 変換処理
 				paramFlag = 0x07;
 				arg[0] = strdup(argv[0]);
 				arg[1] = malloc(4096);if (arg[1] != NULL) strcpy(arg[1],argv[1]);
@@ -647,7 +647,7 @@ int main(int argc, char *argv[])
 				}
 
 				for (ip = 0;ip < param.channel_count;ip++) {
-					// �q�v���Z�X
+					// 子プロセス
 					char param4[4096];
 					char s[20];
 					sprintf(s," -upconv:%d",ip + 1);
@@ -732,12 +732,12 @@ int main(int argc, char *argv[])
 				}
 				
 			} else {
-				// r1 �t�@�C�������`�F�b�N����(sp_ana)
+				// r1 ファイルかをチェックする(sp_ana)
 				if (param.upconv == 1) {
 					param.r1_flag = 1;
 				}
 
-				// GenNoise �p�̃f�[�^�p�X
+				// GenNoise 用のデータパス
 				_splitpath(argv[0],drive,dir,fname,ext);
 				_makepath(tmppath,drive,dir,"nd","dat");
 				param.nd_path = malloc(strlen(tmppath) + 1);
@@ -745,7 +745,7 @@ int main(int argc, char *argv[])
 					strcpy(param.nd_path,tmppath);
 				}
 
-				// �r�b�g�g���e�[�u��
+				// ビット拡張テーブル
 				_splitpath(argv[0],drive,dir,fname,ext);
 				_makepath(tmppath,drive,dir,"bit_extend_table","");
 				
@@ -816,7 +816,7 @@ int main(int argc, char *argv[])
 					rn_fname = argv[2];
 				}
 
-				// ���̓t�@�C�����̐���
+				// 入力ファイル名の生成
 				_splitpath(rn_fname,drive,dir,fname,ext);
 				sprintf(ext,"r%d",param.upconv);
 				_makepath(rn_fname,drive,dir,fname,ext);
@@ -922,14 +922,14 @@ int is_ext_audiofile(char *filename,char *ext)
 
 //---------------------------------------------------------------------------
 // Function   : SamplingRateConvert
-// Description: �T���v�����O���[�g�ϊ�����������
+// Description: サンプリングレート変換処理をする
 // ---
-//	rawFile	: RAW�f�[�^�t�@�C����
-//	param	: �ϊ��p�����[�^�\����
+//	rawFile	: RAWデータファイル名
+//	param	: 変換パラメータ構造体
 //
 void SamplingRateConvert(char *rawFile,PARAM_INFO *param)
 /*
- *	�T���v�����O���[�g�ϊ�
+ *	サンプリングレート変換
  */
 {
 	char outFile[_MAX_PATH];
@@ -980,7 +980,7 @@ void SamplingRateConvert(char *rawFile,PARAM_INFO *param)
 			break;
 		}
 
-		// �e���|�����t�@�C�����̍쐬
+		// テンポラリファイル名の作成
 //		if (strlen(param->tempPath) > 0) {
 //			_splitpath(rawFile,drive,dir,fname,ext);
 //			strcpy(dir,"\\");
@@ -992,7 +992,7 @@ void SamplingRateConvert(char *rawFile,PARAM_INFO *param)
 		strcpy(tmpFile,outFile);
 		strcat(tmpFile,"2");
 		
-		// ���[�h��p�t�@�C���I�[�v���֐�(�o�b�t�@�����O�@�\�t)
+		// リード専用ファイルオープン関数(バッファリング機能付)
 		fio_open(&fp_r,rawFile,FIO_MODE_R);
 		if (fp_r.error) {
 			param->err = STATUS_FILE_READ_ERR;
@@ -1001,12 +1001,12 @@ void SamplingRateConvert(char *rawFile,PARAM_INFO *param)
 
 		if (param->dsd_fmt == -1) {
 			if (param->overSamp == 1) {
-				// 2�{�̃T���v�����O���[�g�Ōv�Z����Ń_�E���T���v������B
+				// 2倍のサンプリングレートで計算し後でダウンサンプルする。
 				svOutSampleR = fftParam.outSampleR;
 				fftParam.outSampleR *= 2;
 				param->outSampleR *= 2;
 			} else if (param->overSamp == 2) {
-				// 768000*2�̃T���v�����O���[�g�Ōv�Z����Ń_�E���T���v������B
+				// 768000*2のサンプリングレートで計算し後でダウンサンプルする。
 				svOutSampleR = fftParam.outSampleR;
 				fftParam.outSampleR = 384000;
 				param->outSampleR   = 384000;
@@ -1015,7 +1015,7 @@ void SamplingRateConvert(char *rawFile,PARAM_INFO *param)
 				fftParam.outSampleR = 1536000;
 				param->outSampleR   = 1536000;
 			} else if (param->overSamp == 4) {
-				// 768000*2�̃T���v�����O���[�g�Ōv�Z����Ń_�E���T���v������B
+				// 768000*2のサンプリングレートで計算し後でダウンサンプルする。
 				svOutSampleR = fftParam.outSampleR;
 				fftParam.outSampleR = 2822400;
 				param->outSampleR   = 2822400;
@@ -1023,14 +1023,14 @@ void SamplingRateConvert(char *rawFile,PARAM_INFO *param)
 		}
 		outSample = 0;
 		
-		// �t�@�C���T�C�Y�擾
+		// ファイルサイズ取得
 		fio_get_filesize(&fp_r,&size);
 		if (fp_r.error) {
 			param->err = STATUS_FILE_READ_ERR;
 			break;
 		}
 		
-		// �o�̓T���v�������v�Z����B
+		// 出力サンプル数を計算する。
 		inSample = (SSIZE)(size / sizeof (SSIZE));
 		dd = inSample;
 		dd *= fftParam.outSampleR;
@@ -1042,11 +1042,11 @@ void SamplingRateConvert(char *rawFile,PARAM_INFO *param)
 			break;
 		}
 
-		// �ʎq���r�b�g�g������
+		// 量子化ビット拡張処理
 		if (param->abe != 0) {
 			fprintf(stdout,"[ABE]\n");
 			fflush(stdout);
-			// �o�͗p�Ƀt�@�C���I�[�v��
+			// 出力用にファイルオープン
 			fio_open(&fp_w,outFile,FIO_MODE_W);
 			if (fp_w.error) {
 				param->err = STATUS_FILE_WRITE_ERR;
@@ -1085,7 +1085,7 @@ void SamplingRateConvert(char *rawFile,PARAM_INFO *param)
 			break;
 		}
 
-		// �t�@�C���ɏo�͂���T�C�Y�𐧌�����(outSample��)
+		// ファイルに出力するサイズを制限する(outSample数)
 		fio_set_maxsize(&fp_w,(fio_size)outSample * sizeof (SSIZE));
 		fio_set_memory_limit(&fp_w,20,param->fio);
 
@@ -1172,7 +1172,7 @@ char sssss[256];
 					p2_avg /= n;
 				}
 
-				// 4kHz �` 5kHz �̊Ԃ�power��8kHz�`9kHz��power���ׁA�������傫���ꍇ�͒����p�̃f�[�^�𐶐�����B
+				// 4kHz 〜 5kHz の間のpowerと8kHz〜9kHzのpowerを比べ、高音が大きい場合は調整用のデータを生成する。
 				p1_per = p2_avg / p1_avg;
 				if (p1_per > 0.53) {
 					p1_index   = 6000;
@@ -1194,7 +1194,7 @@ char sssss[256];
 			}
 		}
 
-		// ���ʒ���
+		// 音量調査
 		fio_flush(&fp_w);
 		merageTempFile(' ',1,&fp_w,NULL,NULL,outSample,param);
 		if (param->err) {
@@ -1203,12 +1203,12 @@ char sssss[256];
 
 		fio_close(&fp_w);
 
-		// hfc auto �p�p�����[�^�[�ݒ�(hfc)
+		// hfc auto 用パラメーター設定(hfc)
 		if (param->hfc_auto == 1) {
 			anaHFC_AutoParam(&fftParam);
 			param->hfc = fftParam.hfc;
 		}
-		// lfa �p�p�����[�^�[�쐬(lfa_eq)
+		// lfa 用パラメーター作成(lfa_eq)
 		if (param->low_adjust != 0) {
 			anaLFA_Param(&fftParam);
 		}
@@ -1218,7 +1218,7 @@ char sssss[256];
 			param->err = STATUS_FILE_WRITE_ERR;
 			break;
 		}
-		// �t�@�C���ɏo�͂���T�C�Y�𐧌�����(outSample��)
+		// ファイルに出力するサイズを制限する(outSample数)
 		fio_set_maxsize(&fp_w,(fio_size)outSample * sizeof (SSIZE));
 		fio_set_memory_limit(&fp_w,20,param->fio);
 
@@ -1237,7 +1237,7 @@ char sssss[256];
 		}
 		
 
-		// ���������f�[�^��ǂݍ��ݗp�ɐݒ肷��B
+		// 生成したデータを読み込み用に設定する。
 		fio_setmode_r(&fp_w,&fp_r,rawFile);
 		if (fp_w.error) {
 			param->err = STATUS_FILE_WRITE_ERR;
@@ -1261,13 +1261,13 @@ char sssss[256];
 //			free(param->eq_pw);
 //		}
 
-		// �X�s�[�J�[�p���g�����
+		// スピーカー用周波数解析
 //		if (param->sp_ana == 1) {
 //			spAnalyze(outSample,&fp_r,param);
 //		}
 
 		//
-		// �m�C�Y�J�b�g
+		// ノイズカット
 		if (param->nr != -1) {
 			fprintf(stdout,"[NR]\n");
 			fflush(stdout);
@@ -1295,7 +1295,7 @@ char sssss[256];
 					param->err = STATUS_FILE_WRITE_ERR;
 					break;
 				}
-				// �t�@�C���ɏo�͂���T�C�Y�𐧌�����(outSample��)
+				// ファイルに出力するサイズを制限する(outSample数)
 				fio_set_maxsize(&fp_w,(fio_size)outSample * sizeof (SSIZE));
 				fio_set_memory_limit(&fp_w,20,param->fio);
 
@@ -1344,7 +1344,7 @@ char sssss[256];
 					param->err = STATUS_FILE_WRITE_ERR;
 					break;
 				}
-				// �t�@�C���ɏo�͂���T�C�Y�𐧌�����(outSample��)
+				// ファイルに出力するサイズを制限する(outSample数)
 				fio_set_maxsize(&fp_w,(fio_size)outSample * sizeof (SSIZE));
 				fio_set_memory_limit(&fp_w,20,param->fio);
 
@@ -1375,7 +1375,7 @@ char sssss[256];
 		}
 
 		//
-		// �����ԏ���
+		// 高域補間処理
 		if (param->hfa != 0) {
 			fflush(stdout);
 
@@ -1397,7 +1397,7 @@ char sssss[256];
 					param->err = STATUS_FILE_WRITE_ERR;
 					break;
 				}
-				// �t�@�C���ɏo�͂���T�C�Y�𐧌�����(outSample��)
+				// ファイルに出力するサイズを制限する(outSample数)
 				fio_set_maxsize(&fp_w,(fio_size)outSample * sizeof (SSIZE));
 				fio_set_memory_limit(&fp_w,20,param->fio);
 
@@ -1425,7 +1425,7 @@ char sssss[256];
 					param->err = STATUS_FILE_WRITE_ERR;
 					break;
 				}
-				// �t�@�C���ɏo�͂���T�C�Y�𐧌�����(outSample��)
+				// ファイルに出力するサイズを制限する(outSample数)
 				fio_set_maxsize(&fp_w,(fio_size)outSample * sizeof (SSIZE));
 				fio_set_memory_limit(&fp_w,20,param->fio);
 
@@ -1453,7 +1453,7 @@ char sssss[256];
 					param->err = STATUS_FILE_WRITE_ERR;
 					break;
 				}
-				// �t�@�C���ɏo�͂���T�C�Y�𐧌�����(outSample��)
+				// ファイルに出力するサイズを制限する(outSample数)
 				fio_set_maxsize(&fp_w,(fio_size)outSample * sizeof (SSIZE));
 				fio_set_memory_limit(&fp_w,20,param->fio);
 
@@ -1489,7 +1489,7 @@ char sssss[256];
 					param->err = STATUS_FILE_WRITE_ERR;
 					break;
 				}
-				// �t�@�C���ɏo�͂���T�C�Y�𐧌�����(outSample��)
+				// ファイルに出力するサイズを制限する(outSample数)
 				fio_set_maxsize(&fp_w,(fio_size)outSample * sizeof (SSIZE));
 				fio_set_memory_limit(&fp_w,20,param->fio);
 
@@ -1521,7 +1521,7 @@ char sssss[256];
 				param->err = STATUS_FILE_WRITE_ERR;
 				break;
 			}
-			// �t�@�C���ɏo�͂���T�C�Y�𐧌�����(outSample��)
+			// ファイルに出力するサイズを制限する(outSample数)
 			fio_set_maxsize(&fp_w,(fio_size)outSample * sizeof (SSIZE));
 			fio_set_memory_limit(&fp_w,20,param->fio);
 
@@ -1554,7 +1554,7 @@ char sssss[256];
 
 		}
 
-		// �I�[�o�[�T���v�����O�p�̃_�E���T���v������
+		// オーバーサンプリング用のダウンサンプル処理
 		if (param->dsd_fmt == -1 && param->overSamp != 0) {
 			char sssss[128];
 			SSIZE wkSample;
@@ -1581,7 +1581,7 @@ char sssss[256];
 			dd *= param->outSampleR;
 			dd /= param->inSampleR;
 			wkSample = (SSIZE)dd;
-			// �t�@�C���ɏo�͂���T�C�Y�𐧌�����(outSample��)
+			// ファイルに出力するサイズを制限する(outSample数)
 			fio_set_maxsize(&fp_w,(fio_size)wkSample * sizeof (SSIZE));
 
 			fftParam.disable_eq = 1;
@@ -1645,7 +1645,7 @@ char sssss[256];
 			dd *= param->outSampleR;
 			dd /= param->inSampleR;
 			wkSample = (SSIZE)dd;
-			// �t�@�C���ɏo�͂���T�C�Y�𐧌�����(outSample��)
+			// ファイルに出力するサイズを制限する(outSample数)
 			fio_set_maxsize(&fp_w,(fio_size)wkSample * sizeof (SSIZE));
 
 			fftParam.disable_eq = 1;
@@ -1674,15 +1674,15 @@ char sssss[256];
 		}
 		fio_close(&fp_r);
 		//
-		// �I���
+		// 終わり
 	} while (0);
 }
 
 //---------------------------------------------------------------------------
 // Function   : anaLfaParam
-// Description: LFA �p�����[�^�[�쐬
+// Description: LFA パラメーター作成
 // ---
-//	param		:�ϊ��p�����[�^
+//	param		:変換パラメータ
 //
 void anaLFA_Param(FFT_PARAM *param)
 {
@@ -1715,9 +1715,9 @@ void anaLFA_Param(FFT_PARAM *param)
 }
 //---------------------------------------------------------------------------
 // Function   : anaHFC_autoParam
-// Description: HFC Auto �p�����[�^�[�쐬
+// Description: HFC Auto パラメーター作成
 // ---
-//	param		:�ϊ��p�����[�^
+//	param		:変換パラメータ
 //
 void anaHFC_AutoParam(FFT_PARAM *param)
 {
@@ -1730,7 +1730,7 @@ void anaHFC_AutoParam(FFT_PARAM *param)
 		pw[i]  = 0;
 	}
 
-	// 200Hz ���Ƃ̕��ς��Ƃ�
+	// 200Hz ごとの平均をとる
 	for (index = 1;index + 100 < 192000;index += 100) {
 		p = 0;
 		for (i = index,n = 0;n < 100;n++,i++) {
@@ -1768,12 +1768,12 @@ void anaHFC_AutoParam(FFT_PARAM *param)
 
 //---------------------------------------------------------------------------
 // Function   : adjBitExtension
-// Description: �r�b�g����\�����߂鏈��
+// Description: ビット分解能を高める処理
 // ---
-//	inSample 	:��������T���v����
-//	fp			:���̓t�@�C��
-//	tmpFp		:�o�̓t�@�C��
-//	param		:�ϊ��p�����[�^
+//	inSample 	:処理するサンプル数
+//	fp			:入力ファイル
+//	tmpFp		:出力ファイル
+//	param		:変換パラメータ
 //
 void adjBitExtension(SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 {
@@ -1904,7 +1904,7 @@ void adjBitExtension(SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 			nSample = fftSize * 2;
 		}
 		
-		// ���̃��x���𒲍����Ă���
+		// 音のレベルを調査しておく
 		if (param->abeNX) {
 			level = 0;
 			for (i = fftSize / 2,j = 0,n = 0;n < fftSize;i++,j++,n++) {
@@ -1919,10 +1919,10 @@ void adjBitExtension(SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 		}
 #if 1
 		if (param->abeFnLevel > 0) {
-			// �f�B�U�L�����Z��
+			// ディザキャンセラ
 			pIn  = (SSIZE *)mem1;
 			pOut = (SSIZE *)mem1;
-			// �Q�l����
+			// ２値平均
 			for (i = 0;i + 2 < nSample;i++) {
 				d1 = pIn[i + 0];
 				d2 = pIn[i + 1];
@@ -1962,7 +1962,7 @@ void adjBitExtension(SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 				}
 			}
 			if (param->abeFnLevel > 1) {
-				// 3�l����
+				// 3値平均
 				for (i = nSample - 1;i + 1 > 0;i--) {
 					d1 = pIn[i - 0];
 					d2 = pIn[i - 1];
@@ -2004,7 +2004,7 @@ void adjBitExtension(SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 				}
 			}
 			if (param->abeFnLevel > 3) {
-				// 3�l����
+				// 3値平均
 				for (i = 0;i + 1 < nSample;i++) {
 					d1 = pIn[i + 0];
 					d2 = pIn[i + 1];
@@ -2049,7 +2049,7 @@ void adjBitExtension(SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 #endif
 #if 1
 		if (param->smLowData > 0) {
-			// 2�l���l�ł��̍��E�ׂ��قȂ�l�̒���
+			// 2値同値でその左右隣が異なる値の調整
 			pIn  = (SSIZE *)mem1;
 			pOut = (SSIZE *)mem1;
 			for (i = 0;i + 3 < nSample;i++) {
@@ -2082,7 +2082,7 @@ void adjBitExtension(SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 					}
 				}
 			}
-			// 2�l���l�ł��̍��E�ׂ��قȂ�l�̒���(�t��)
+			// 2値同値でその左右隣が異なる値の調整(逆順)
 			pIn  = (SSIZE *)mem1;
 			pOut = (SSIZE *)mem1;
 			for (i = nSample - 1;i > 2;i--) {
@@ -2115,7 +2115,7 @@ void adjBitExtension(SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 					}
 				}
 			}
-			// �R��J�̌`�̔g�`����
+			// 山や谷の形の波形調整
 			pIn  = (SSIZE *)mem1;
 			pOut = (SSIZE *)mem1;
 			for (i = 0;i + 2 < nSample;i++) {
@@ -2129,16 +2129,16 @@ void adjBitExtension(SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 				dd2 >>= (56 - param->iw);
 				dd3 >>= (56 - param->iw);
 				if (d1 < d2 && d2 > d3 && (dd2 - dd1) <= 2 && (dd2 - dd3) <= 2) {
-					// �R
+					// 山
 					sm_avg = (((d1 + d3) / 2) + d2) / 2;
 					pOut[i + 1] = sm_avg;
 				} else if (d1 > d2 && d2 < d3 && (dd1 - dd2) <= 2 && (dd3 - dd2) <= 2) {
-					// �J
+					// 谷
 					sm_avg = (((d1 + d3) / 2) + d2) / 2;
 					pOut[i + 1] = sm_avg;
 				}
 			}
-			// �R��J�̌`�̔g�`����(�t��)
+			// 山や谷の形の波形調整(逆順)
 			pIn  = (SSIZE *)mem1;
 			pOut = (SSIZE *)mem1;
 			for (i = nSample - 1;i > 1;i--) {
@@ -2152,16 +2152,16 @@ void adjBitExtension(SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 				dd2 >>= (56 - param->iw);
 				dd3 >>= (56 - param->iw);
 				if (d1 < d2 && d2 > d3 && (dd2 - dd1) <= 2 && (dd2 - dd3) <= 2) {
-					// �R
+					// 山
 					sm_avg = (((d1 + d3) / 2) + d2) / 2;
 					pOut[i + 1] = sm_avg;
 				} else if (d1 > d2 && d2 < d3 && (dd1 - dd2) <= 2 && (dd3 - dd2) <= 2) {
-					// �J
+					// 谷
 					sm_avg = (((d1 + d3) / 2) + d2) / 2;
 					pOut[i + 1] = sm_avg;
 				}
 			}
-			// ���l�ȊO�̈ړ�����
+			// 同値以外の移動平均
 			pIn  = (SSIZE *)mem1;
 			pOut = (SSIZE *)mem1;
 			for (i = 0;i + 2 < nSample;i++) {
@@ -2195,7 +2195,7 @@ void adjBitExtension(SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 					pOut[i + 1] = sm_avg;
 				}
 			}
-			// ���l�ȊO�̈ړ�����(�t��)
+			// 同値以外の移動平均(逆順)
 			pIn  = (SSIZE *)mem1;
 			pOut = (SSIZE *)mem1;
 			for (i = nSample - 1;i > 1;i--) {
@@ -2232,16 +2232,16 @@ void adjBitExtension(SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 		}
 #endif
 #if 1
-		// �K���^�t�B���^�[����
-		// ���l�������ꍇ�ɓ��l�̌��ɉ�����fft�ō���J�b�g�t�B���^�[������B
-		// �t�B���^�[��͔g�`���Ȃ߂炩�ɂȂ�悤�ɐ��䂷��B
+		// 適応型フィルター処理
+		// 同値が続く場合に同値の個数に応じたfftで高域カットフィルターをする。
+		// フィルター後は波形がなめらかになるように制御する。
 		memset(mem2,0,wkMemSize * sizeof (SSIZE));
 		memset(mem3,0,wkMemSize * sizeof (SSIZE));
 		memset(mem4,0,wkMemSize * sizeof (SSIZE));
 		if (param->adaptiveFilder == 1) {
-			pIn = mem1;							// ���͔g�`
-			pOut = mem2;						// ���l��
-			// mem2�ɓ��l�������ꍇ�ɓ��l�̌����L�^���Ă����B
+			pIn = mem1;							// 入力波形
+			pOut = mem2;						// 同値個数
+			// mem2に同値が続く場合に同値の個数を記録していく。
 			for (i = 0,j = 1,cnt = 1;j < nSample;j++) {
 				d1 = pIn[i] >> (56 - param->iw);
 				d2 = pIn[j] >> (56 - param->iw);
@@ -2260,7 +2260,7 @@ void adjBitExtension(SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 					pOut[i] = 0;
 				}
 			}
-			// ���l��3�ȏ㑱�����̂ɑ΂��āAfft ��������
+			// 同値が3つ以上続くものに対して、fft をかける
 			do {
 				pIn = mem1;
 				pIn2 = mem2;
@@ -2276,17 +2276,17 @@ void adjBitExtension(SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 					break;
 				}
 				for (n = 0;n < 3;n++) {
-					// FFT �����ݒ�
+					// FFT 初期設定
 					copyToFFTW(fftw_in,&pIn[((fftSize / 2) * n)],fftSize);
 					
-					// ���֐�
+					// 窓関数
 					windowFFTW(fftw_in,fftSize);
 
 					// FFT
 					fftw_execute(fftw_p);
 
 					if (param->beInfo.cutOff[cnt] > 0) {
-						// ����폜
+						// 高域削除
 						hfc = inSampleR / param->beInfo.cutOff[cnt];
 						cutOff = ((double)fftSize / inSampleR) * hfc;
 						for (i = cutOff;i < fftSize;i++) {
@@ -2294,7 +2294,7 @@ void adjBitExtension(SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 							fftw_out[i][1] = 0;
 						}
 					}
-					// �����̃f�[�^�𕜌�
+					// 半分のデータを復元
 					//#pragma omp parallel for
 					for (i = 1;i < fftSize / 2;i++) {
 						fftw_out[fftSize - i][0] = fftw_out[i][0];
@@ -2304,7 +2304,7 @@ void adjBitExtension(SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 					// invert FFT
 					fftw_execute(fftw_ip);
 
-					// �o��
+					// 出力
 					pOut = (SSIZE *)&mem3[((fftSize / 2) * n)];
 					//#pragma omp parallel for
 					for (i = 0;i < fftSize;i++) {
@@ -2340,21 +2340,21 @@ void adjBitExtension(SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 		}
 #endif
 		if (param->cutLowData && shresh > 0) {
-			// 臒l���Ⴂ�p���[�̉��͍폜����
+			// 閾値より低いパワーの音は削除する
 			pIn = mem1;
 			pOut = mem3;
 			memset(mem3,0,wkMemSize * sizeof (SSIZE));
 			for (n = 0;n < 3;n++) {
-				// FFT �����ݒ�
+				// FFT 初期設定
 				copyToFFTW(fftw_in,&pIn[((fftSize / 2) * n)],fftSize);
 
-				// ���֐�
+				// 窓関数
 				windowFFTW(fftw_in,fftSize);
 
 				// FFT
 				fftw_execute(fftw_p);
 
-				// �폜
+				// 削除
 				for (i = 1;i < fftSize / 2;i++) {
 					power = (fftw_out[i][0] * fftw_out[i][0]) + (fftw_out[i][1] * fftw_out[i][1]);
 					if (power > 0) {
@@ -2366,7 +2366,7 @@ void adjBitExtension(SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 					}
 				}
 
-				// �����̃f�[�^�𕜌�
+				// 半分のデータを復元
 				#pragma omp parallel for
 				for (i = 1;i < fftSize / 2;i++) {
 					fftw_out[fftSize - i][0] = fftw_out[i][0];
@@ -2376,7 +2376,7 @@ void adjBitExtension(SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 				// invert FFT
 				fftw_execute(fftw_ip);
 
-				// �o��
+				// 出力
 				pOut = (SSIZE *)mem3;
 				pOut = &pOut[(fftSize / 2) * n];
 				#pragma omp parallel for
@@ -2388,8 +2388,8 @@ void adjBitExtension(SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 		}
 
 #if 1
-		// �g�`�̒�������
-		// �オ���A������̔g�`�̗ʎq���덷�����Ȃ�����
+		// 波形の調整処理
+		// 上がりや、下がりの波形の量子化誤差を少なくする
 		pIn  = (SSIZE *)mem1;
 		pOut = (SSIZE *)mem1;
 		for (i = 4;i + 3 < nSample;) {
@@ -2404,7 +2404,7 @@ void adjBitExtension(SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 			d8 = pIn[i + 3];
 			if ((d2 < d3 && d3 <= d4 && d4 < d5 && d5 <= d6 && d6 < d7) ||
 						(d2 <= d3 && d3 < d4 && d4 <= d5 && d5 < d6 && d6 <= d7)) {
-				// �オ��g�`
+				// 上がり波形
 				samp[1] = pIn[i - 2] - pIn[i - 3];
 				samp[2] = pIn[i - 1] - pIn[i - 2];
 				samp[3] = pIn[i] - pIn[i - 1];
@@ -2435,7 +2435,7 @@ void adjBitExtension(SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 
 			} else if ((d2 > d3 && d3 >= d4 && d4 > d5 && d5 >= d6 && d6 > d7) ||
 						(d2 >= d3 && d3 > d4 && d4 >= d5 && d5 > d6 && d6 >= d7)) {
-				// ������g�`
+				// 下がり波形
 				samp[1] = pIn[i - 2] - pIn[i - 3];
 				samp[2] = pIn[i - 1] - pIn[i - 2];
 				samp[3] = pIn[i] - pIn[i - 1];
@@ -2470,7 +2470,7 @@ void adjBitExtension(SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 
 		if (startInSample + (fftSize / 2) >= 0) {
 #if 0
-			// ���̃��x���ɕω����Ȃ�������
+			// 音のレベルに変化がないか調査
 			if (param->abeNX == 1) {
 				level2 = 0;
 				for (i = fftSize / 2,j = 0,n = 0;n < fftSize;i++,j++,n++) {
@@ -2522,13 +2522,13 @@ void adjBitExtension(SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 }
 //---------------------------------------------------------------------------
 // Function   : genNoise
-// Description: ����ꂽ����̍Č�����(���K���z�̃m�C�Y�t��)
+// Description: 失われた高域の再現処理(正規分布のノイズ付加)
 // ---
-//	hfc		 	:����̃J�b�g�I�t���g��(���̎��g���ȏ�̗̈�Ƀf�[�^��ǉ�����)
-//	inSample 	:��������T���v����(ch��)
-//	fp_r		:���̓t�@�C��
-//	fp_w		:�o�̓t�@�C��
-//	param		:�ϊ��p�����[�^
+//	hfc		 	:高域のカットオフ周波数(この周波数以上の領域にデータを追加する)
+//	inSample 	:処理するサンプル数(ch毎)
+//	fp_r		:入力ファイル
+//	fp_w		:出力ファイル
+//	param		:変換パラメータ
 //
 void genNoise(long hfc,SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 {
@@ -2549,10 +2549,10 @@ void genNoise(long hfc,SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 	fftw_plan fftw_p[2],fftw_ip[2],fftw_p2;
 	double hfaNB;
 	
-//	// �m�C�Y�����p�f�[�^�̓ǂݍ���
+//	// ノイズ生成用データの読み込み
 //	fpNoise = fopen(param->nd_path,"rb");
 //	if (fpNoise == NULL) {
-//		// �f�[�^���Ȃ���΍쐬����
+//		// データがなければ作成する
 //		fpNoise = fopen(param->nd_path,"wb");
 //		if (fpNoise) {
 //			for (i = 0;i < (long)(MAX_SAMPLE_N) * 60;i++) {
@@ -2658,7 +2658,7 @@ void genNoise(long hfc,SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 		memset(mem1,0,wkMemSize);
 		memset(mem3,0,wkMemSize);
 
-		// mem2 �ɂ͐��K���z�̃m�C�Y���i�[����
+		// mem2 には正規分布のノイズを格納する
 		pIn2 = (SSIZE *)mem2;
 		#pragma omp parallel for
 		for (i = 0;i < fftSize * 2;i++) {
@@ -2703,14 +2703,14 @@ void genNoise(long hfc,SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 		for (n = 0;n < 3;n++) {
 			lowIndex = ((double)fftSize / outSampleR) * (hfc - 2000);
 			highIndex = ((double)fftSize / outSampleR) * hfc;
-			// FFT �����ݒ�
+			// FFT 初期設定
 			copyToFFTW(fftw_in[0],&pIn[((fftSize / 2) * n)],fftSize);
 			windowFFTW(fftw_in[0],fftSize);
 
 			// FFT
 			fftw_execute(fftw_p[0]);
 
-			// ���M���̍���̃p���[�𒲂ׂ�
+			// 元信号の高域のパワーを調べる
 			refPw = 0;
 			for (i = lowIndex,nn = 0;i < highIndex;i++,nn++) {
 				p = fftw_out[0][i][0] * fftw_out[0][i][0] + fftw_out[0][i][1] * fftw_out[0][i][1];
@@ -2723,16 +2723,16 @@ void genNoise(long hfc,SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 				refPw /= nn;
 			}
 
-			// �t������M��
+			// 付加する信号
 			copyToFFTW(fftw_in[1],&pIn2[((fftSize / 2) * n)],fftSize);
 			windowFFTW(fftw_in[1],fftSize);
 
 			// FFT
 			fftw_execute(fftw_p[1]);
-			// 1/f �M���ɂ���
+			// 1/f 信号にする
 			adjPinkFilter(1,fftSize,fftw_out[1],param);
 
-			// �t������M���̃p���[�𒲂ׂ�
+			// 付加する信号のパワーを調べる
 			noisePw = 0;
 			lowIndex = ((double)fftSize / outSampleR) * hfc;
 			highIndex = ((double)fftSize / outSampleR) * (hfc + 2000);
@@ -2760,25 +2760,25 @@ void genNoise(long hfc,SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 
 			if (param->hfa != 1 && param->hfaNB > 0) {
 				hfaNB = param->hfaNB / 100.0;
-				// hfa1 �M��
+				// hfa1 信号
 				for (i = highIndex;i < fftSize / 2;i++) {
 					fftw_out[1][i][0] *= hfaNB;
 					fftw_out[1][i][1] *= hfaNB;
 				}
 				hfaNB = 1.0 - hfaNB;
-				// hfa2 �M��
+				// hfa2 信号
 				for (i = highIndex;i < fftSize / 2;i++) {
 					fftw_out[0][i][0] *= hfaNB;
 					fftw_out[0][i][1] *= hfaNB;
 				}
-				// ����
+				// 合成
 				for (i = highIndex;i < fftSize / 2;i++) {
 					fftw_out[1][i][0] += fftw_out[0][i][0];
 					fftw_out[1][i][1] += fftw_out[0][i][1];
 				}
 			}
 
-			// ���J�b�g
+			// 低域カット
 			highIndex = ((double)fftSize / outSampleR) * hfc;
 
 			#pragma omp parallel for
@@ -2787,13 +2787,13 @@ void genNoise(long hfc,SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 				fftw_out[1][i][1] = 0;
 			}
 
-			// �����̃f�[�^�𕜌�
+			// 半分のデータを復元
 			#pragma omp parallel for
 			for (i = 1;i < fftSize / 2;i++) {
 				fftw_out[1][fftSize - i][0] = fftw_out[1][i][0];
 				fftw_out[1][fftSize - i][1] = fftw_out[1][i][1] * -1;
 			}
-			// ������������
+			// 直流部分除去
 			fftw_out[1][0][0] = 0;
 			fftw_out[1][0][1] = 0;
 
@@ -2817,12 +2817,12 @@ void genNoise(long hfc,SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 			pOut = (SSIZE *)mem3;
 			pOut = pOut + (fftSize / 2);
 			for (i = 0;i < 100;i++) {
-				// ���M���ɉ������邩�𒲂ׂ�
+				// 元信号に音があるかを調べる
 				for (j = 0;j < fftSize / 100;j++) {
 					fftw_in2[j][0] = pIn[j];
 					fftw_in2[j][1] = 0;
 				}
-				// ���֐�
+				// 窓関数
 				for (j = 0;j < ((fftSize / 100) - 1) / 2;j++) {
 					fftw_in2[j][0] = fftw_in2[j][0] * (2.0 * j / ((double)fftSize / 100));
 				}
@@ -2833,7 +2833,7 @@ void genNoise(long hfc,SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 				// FFT
 				fftw_execute(fftw_p2);
 
-				// ���M���̍���̃p���[�𒲂ׂ�
+				// 元信号の高域のパワーを調べる
 				refPw = 0;
 				lowIndex = (((double)fftSize / 100) / outSampleR) * (hfc - 2000);
 				highIndex = (((double)fftSize / 100) / outSampleR) * hfc;
@@ -2847,12 +2847,12 @@ void genNoise(long hfc,SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 				if (nn > 0) {
 					refPw /= nn;
 				}
-				// �t���M���̍���̃p���[�𒲂ׂ�
+				// 付加信号の高域のパワーを調べる
 				for (j = 0;j < fftSize / 100;j++) {
 					fftw_in2[j][0] = pOut[j];
 					fftw_in2[j][1] = 0;
 				}
-				// ���֐�
+				// 窓関数
 				for (j = 0;j < ((fftSize / 100) - 1) / 2;j++) {
 					fftw_in2[j][0] = fftw_in2[j][0] * (2.0 * j / ((double)fftSize / 100));
 				}
@@ -2894,16 +2894,16 @@ void genNoise(long hfc,SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 				pIn  += fftSize / 100;
 				pOut += fftSize / 100;
 			}
-			// �Ăђ��J�b�g����������
+			// 再び低域カット処理をする
 			pIn = (SSIZE *)mem1;
 			pOut = (SSIZE *)mem3;
 			for (n = 0;n < 3;n++) {
-				// FFT �����ݒ�
+				// FFT 初期設定
 				for (i = 0;i < fftSize;i++) {
 					fftw_in[1][i][0] = pOut[((fftSize / 2) * n) + i];
 				   	fftw_in[1][i][1] = 0;
 				}
-				// ���֐�
+				// 窓関数
 				for (i = 0;i < (fftSize - 1) / 2;i++) {
 					fftw_in[1][i][0] = fftw_in[1][i][0] * (2.0 * i / (double)fftSize);
 				}
@@ -2916,26 +2916,26 @@ void genNoise(long hfc,SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 
 				highIndex = ((double)fftSize / outSampleR) * (hfc - 1000);
 
-				// ���J�b�g
+				// 低域カット
 				for (i = 1;i < highIndex;i++) {
 					fftw_out[1][i][0] = 0;
 					fftw_out[1][i][1] = 0;
 				}
 
-				// �����̃f�[�^�𕜌�
+				// 半分のデータを復元
 				for (i = 1;i < fftSize / 2;i++) {
 					fftw_out[1][fftSize - i][0] = fftw_out[1][i][0];
 					fftw_out[1][fftSize - i][1] = fftw_out[1][i][1] * -1;
 				}
 
-				// ������������
+				// 直流部分除去
 				fftw_out[1][0][0] = 0;
 				fftw_out[1][0][1] = 0;
 
 				// invert FFT
 				fftw_execute(fftw_ip[1]);
 
-				// �o��
+				// 出力
 				for (i = 0;i < fftSize;i++) {
 					pOut[((fftSize / 2) * n) + i] += fftw_in[1][i][0] / fftSize;
 				}
@@ -2970,13 +2970,13 @@ void genNoise(long hfc,SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 }
 //---------------------------------------------------------------------------
 // Function   : genOverTone
-// Description: ����ꂽ����̍Č�����(�{�����)
+// Description: 失われた高域の再現処理(倍音解析)
 // ---
-//	hfc		 	:����̃J�b�g�I�t���g��(���̎��g���ȏ�̗̈�Ƀf�[�^��ǉ�����)
-//	inSample 	:��������T���v����(ch��)
-//	fp_r		:���̓t�@�C��
-//	fp_w		:�o�̓t�@�C��
-//	param		:�ϊ��p�����[�^
+//	hfc		 	:高域のカットオフ周波数(この周波数以上の領域にデータを追加する)
+//	inSample 	:処理するサンプル数(ch毎)
+//	fp_r		:入力ファイル
+//	fp_w		:出力ファイル
+//	param		:変換パラメータ
 //
 void genOverTone(long hfc,SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param,FFT_PARAM *fft_param)
 {
@@ -3304,7 +3304,7 @@ param->hfa3_max = 0;
 
 		if (startInSample + fftSize / 2 >= 0) {
 			SSIZE *pIn2,*pOut2;
-			// ���x������
+			// レベル調整
 			pIn2  = (SSIZE *)mem1;
 			pOut2 = (SSIZE *)mem2;
 			pIn2  += (fftSize / 2);
@@ -3315,7 +3315,7 @@ param->hfa3_max = 0;
 					fftw_in2[j][1] = 0;
 				}
 				pIn2 += fftSize / 12;
-				// ���֐�
+				// 窓関数
 				for (j = 0;j < ((fftSize / 12) - 1) / 2;j++) {
 					fftw_in2[j][0] = fftw_in2[j][0] * (2.0 * j / ((double)fftSize / 12));
 				}
@@ -3326,7 +3326,7 @@ param->hfa3_max = 0;
 				// FFT
 				fftw_execute(fftw_p2);
 
-				// ���M���̍���̃p���[�𒲂ׂ�
+				// 元信号の高域のパワーを調べる
 				refPw = 0;
 				lowIndex = (((double)fftSize / 12) / outSampleR) * (hfc - 2000);
 				highIndex = (((double)fftSize / 12) / outSampleR) * hfc;
@@ -3354,12 +3354,12 @@ param->hfa3_max = 0;
 					refPw /= j;
 				}
 
-				// �t���M���̍���̃p���[�𒲂ׂ�
+				// 付加信号の高域のパワーを調べる
 				for (j = 0;j < fftSize / 12;j++) {
 					fftw_in2[j][0] = pOut2[j];
 					fftw_in2[j][1] = 0;
 				}
-				// ���֐�
+				// 窓関数
 				for (j = 0;j < ((fftSize / 12) - 1) / 2;j++) {
 					fftw_in2[j][0] = fftw_in2[j][0] * (2.0 * j / ((double)fftSize / 12));
 				}
@@ -3409,7 +3409,7 @@ param->hfa3_max = 0;
 			}
 
 #if 1
-			// �p���X����
+			// パルス除去
 			pIn2  = (SSIZE *)mem2;
 			for (i = 1;i + 1 < fftSize;i++) {
 				p1 = pIn2[i - 1];
@@ -3474,17 +3474,17 @@ param->hfa3_max = 0;
 
 //---------------------------------------------------------------------------
 // Function   : genOverToneSub
-// Description: ����ꂽ����̍Č������̃T�u�֐�(�{�����)
+// Description: 失われた高域の再現処理のサブ関数(倍音解析)
 // ---
-//	hfc		 	:����̃J�b�g�I�t���g��(���̎��g���ȏ�̗̈�Ƀf�[�^��ǉ�����)
-//	pIn			:���̓o�b�t�@
-//	pOut		:�o�̓o�b�t�@
-//	fftw_in		:FFTW ����
-//	fftw_out	:FFTW �o��
-//	fftw_p		:FFTW �v����
-//	fftw_ip		:FFTW �v����
-//	ovInfo		:���搶���p�\����
-//	param		:�ϊ��p�����[�^
+//	hfc		 	:高域のカットオフ周波数(この周波数以上の領域にデータを追加する)
+//	pIn			:入力バッファ
+//	pOut		:出力バッファ
+//	fftw_in		:FFTW 入力
+//	fftw_out	:FFTW 出力
+//	fftw_p		:FFTW プラン
+//	fftw_ip		:FFTW プラン
+//	ovInfo		:高域生成用構造体
+//	param		:変換パラメータ
 //
 void genOverToneSub(long hfc,SSIZE *pIn,SSIZE *pOut,fftw_complex *fftw_in,fftw_complex *fftw_out,fftw_plan fftw_p,fftw_plan fftw_ip,OVERTONE_INFO *ovInfo,PARAM_INFO *param,FFT_PARAM *fft_param)
 {
@@ -3535,16 +3535,16 @@ void genOverToneSub(long hfc,SSIZE *pIn,SSIZE *pOut,fftw_complex *fftw_in,fftw_c
 
 
 //fftSize = 4096;
-	// FFT �����ݒ�
+	// FFT 初期設定
 	copyToFFTW(fftw_in,pIn,fftSize);
 
-	// ���֐�
+	// 窓関数
 	windowFFTW(fftw_in,fftSize);
 
 	// FFT
 	fftw_execute(fftw_p);
 
-	// ���M���̍���̃p���[�𒲂ׂ�
+	// 元信号の高域のパワーを調べる
 	memset(ovInfo->pw_cnt,0,65536*2 * sizeof (int));
 	refPw = 0;
 	lowIndex = ((double)fftSize / outSampleR) * (hfc - 2000);
@@ -3590,7 +3590,7 @@ void genOverToneSub(long hfc,SSIZE *pIn,SSIZE *pOut,fftw_complex *fftw_in,fftw_c
 	}
 
 	//
-	// �{�����
+	// 倍音解析
 	memset(ovInfo->power,0,65536*2 * sizeof (double));
 	memset(ovInfo->phase,0,65536*2 * sizeof (double));
 	memset(ovInfo->pw,0,65536*2 * sizeof (double));
@@ -3655,7 +3655,7 @@ if (ovInfo->log) {
 	}
 
 	//
-	// �M������
+	// 信号生成
 	for (i = 1;i < fftSize / 2;i++) {
 		if (ovInfo->pw[i] > 0) {
 			d = ovInfo->phase[i];
@@ -3679,7 +3679,7 @@ if (ovInfo->log) {
 				j = ovInfo->do2Idx[d];
 			}
 			if (j < fftSize / 2) {
-				// �ʑ�����v
+				// 位相が一致
 				fftw_out[i][0] = ovInfo->phaseX[j];
 				fftw_out[i][1] = ovInfo->phaseY[j];
 				ovInfo->do2Idx[d] = j;
@@ -3737,7 +3737,7 @@ if (ovInfo->log) {
 		ovTonePw = 1;
 	}
 	if (overToneNotFound == 0) {
-		// �t������M���̃p���[�𒲂ׂ�
+		// 付加する信号のパワーを調べる
 #if 0
 		ovTonePw = 0;
 		for (i = lowIndex,nn = 0;i < highIndex;i++,nn++) {
@@ -3766,25 +3766,25 @@ if (ovInfo->log) {
 		lowIndex = ((double)fftSize / outSampleR) * (hfc - 2000);
 		highIndex = ((double)fftSize / outSampleR) * hfc;
 
-		// ���J�b�g
+		// 低域カット
 		for (i = 1;i <= highIndex;i++) {
 			fftw_out[i][0] = 0;
 			fftw_out[i][1] = 0;
 		}
-		// �����̃f�[�^�𕜌�
+		// 半分のデータを復元
 		for (i = 1;i < fftSize / 2;i++) {
 			fftw_out[fftSize - i][0] = fftw_out[i][0];
 			fftw_out[fftSize - i][1] = fftw_out[i][1] * -1;
 		}
 
-		// �����������폜
+		// 直流成分を削除
 		fftw_out[0][0] = 0;
 		fftw_out[0][1] = 0;
 
 		// invert FFT
 		fftw_execute(fftw_ip);
 
-		// ���֐�
+		// 窓関数
 		for (i = 0;i < (fftSize - 1) / 2;i++) {
 			fftw_in[i][0] = fftw_in[i][0] * (2.0 * i / (double)fftSize);
 		}
@@ -3792,12 +3792,12 @@ if (ovInfo->log) {
 			fftw_in[i][0] = fftw_in[i][0] * (2.0 - 2.0 * i / (double)fftSize);
 		}
 	} else {
-		// ��������
+		// 無音生成
 		for (i = 0;i < fftSize;i++) {
 			fftw_in[i][0] = 0;
 		}
 	}
-	// �o��
+	// 出力
 	for (i = 0;i < fftSize;i++) {
 		pOut[i] += (fftw_in[i][0] / fftSize);
 	}
@@ -3805,11 +3805,11 @@ if (ovInfo->log) {
 
 //---------------------------------------------------------------------------
 // Function   : anaOverToneHFA2
-// Description: �{�����
-//				window�����Ƃ�power�̕��ϒl���Ƃ�power���傫�����̂𒊏o����
+// Description: 倍音解析
+//				window幅ごとにpowerの平均値をとりpowerが大きいものを抽出する
 // ---
-//	ovInfo :�{�������p�\����
-//	param  :�p�����[�^
+//	ovInfo :倍音生成用構造体
+//	param  :パラメータ
 //
 void anaOverToneHFA2(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 {
@@ -3829,7 +3829,7 @@ void anaOverToneHFA2(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 	long skipCnt;
 	nSample = ovInfo->nSample;
 	//
-	// �v�Z�Ώۂ̃C���f�b�N�X�����߂�
+	// 計算対象のインデックスを求める
 	for (i = 1;i < ovInfo->nSample;i++) {
 		ovInfo->pw[i] = 0;
 	}
@@ -3840,7 +3840,7 @@ void anaOverToneHFA2(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 		lowHz = ovInfo->validSamplingRate - wid;
 	}
 	if (lowHz < 4000) {
-		// ����̏�񂪂Ȃ��̂ŉ�͂��Ȃ�
+		// 高域の情報がないので解析しない
 		return;
 	}
 
@@ -3852,7 +3852,7 @@ void anaOverToneHFA2(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 		swidth = 1;
 	}
 
-	// �p���[�̕��ς��v�Z����
+	// パワーの平均を計算する
 	//
 	avg = 0;
 	for (i = lowIndex,n = 0;i < highIndex;i++) {
@@ -3865,7 +3865,7 @@ void anaOverToneHFA2(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 	avgLine = avg;
 	ofs = lowIndex;
 	//
-	// power���������̂��̗p����(sig1)
+	// powerが強いものを採用する(sig1)
 	if (param->sig1Enb == 1) {
 		window = swidth;
 		maxOfs = ofs;
@@ -3915,7 +3915,7 @@ void anaOverToneHFA2(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 	}
 
 	//
-	// window�Ԋu�̑O���power�̍��̗ݐς����Ȃ����̂��̗p����(sig2)
+	// window間隔の前後のpowerの差の累積が少ないものを採用する(sig2)
 	if (param->sig2Enb == 1) {
 		for (ofs = lowIndex;ofs < lowIndex + width;ofs++) {
 			maxAvg = -1;
@@ -3983,7 +3983,7 @@ void anaOverToneHFA2(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 		}
 	}
 }
-#if 1	// 0.7 �� HFA3
+#if 1	// 0.7 の HFA3
 void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 {
 	DWORD ofs,window,width,swidth;
@@ -4001,7 +4001,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 	long skipCnt;
 	double tbl_hfaDiffMin[5] = {0.84,1.04,1.24,1.74,2.14};
 
-	// �\���Ƃ̍ŏ��p�����[�^�ۑ�
+	// 予測との最小パラメータ保存
 	int minWin;
 	int minType;
 	int max_i;
@@ -4023,7 +4023,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 	nSample = ovInfo->nSample;
 
 	//
-	// ������
+	// 初期化
 	for (i = 1;i < ovInfo->nSample;i++) {
 		ovInfo->pw[i] = 0;
 		ovInfo->diff[i] = -1;
@@ -4047,7 +4047,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 	}
 #endif
 	if (ovInfo->validSamplingRate < 8000) {
-		// ����̏�񂪂Ȃ��̂ŉ�͂��Ȃ�
+		// 高域の情報がないので解析しない
 		return;
 	}
 
@@ -4089,7 +4089,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 	avgLine = avg;
 
 	if (param->sig2Enb == 1) {
-		// �O���window�ŐU���̍������Ȃ������̕��
+		// 前後のwindowで振幅の差が少ない音声の補間
 		window = width;
 		minWin = window;
 		minType = 0;
@@ -4118,14 +4118,14 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					continue;
 				}
 
-				// �X�y�N�g�������̑J�ڂ𒲂ׂ�
+				// スペクトル成分の遷移を調べる
 				diff0 = diff1 = diff2 = diff3 = diff4 = diff5 = diffP = 0;
 				baseOfs = ofs - ((ofs / window) * window);
 				if (baseOfs == 0) {
 					baseOfs = window;
 				}
-				n = 1;		// ������{���ׂĂɔ{��������
-				odd = 1;	// ��{�̂ݔ{��������
+				n = 1;		// 奇数偶数倍すべてに倍音がある
+				odd = 1;	// 奇数倍のみ倍音がある
 				refPw[0] = -1;
 				refPw[1] = -1;
 				refPw[2] = -1;
@@ -4153,14 +4153,14 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						refPw[4] = ovInfo->power[i];
 						refPw[5] = ovInfo->power[i] * (odd * odd * odd);
 					}
-					// ���ς��傫���������A������������
+					// 平均より大きい音声か、小さい音声か
 					if (ovInfo->power[i] > ovInfo->base[i]) {
 						ovInfo->sign[baseOfs]++;
 					} else if (ovInfo->power[i] < ovInfo->base[i]) {
 						ovInfo->sign[baseOfs]--;
 					}
 					
-					// �O��̃p���[�̍��̌v�Z
+					// 前後のパワーの差の計算
 					if (i - window >= ofs) {
 						if (ovInfo->power[i - window] >= ovInfo->power[i]) {
 							diff = ovInfo->power[i - window] - ovInfo->power[i];
@@ -4181,7 +4181,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						avgPwNX3++;
 					}
 					
-					// 1/f(�U����1/f�ɂȂ��Ă������)
+					// 1/f(振幅が1/fになっているもの)
 					diff = refPw[0] / hz;
 					if (diff >= ovInfo->power[i]) {
 						diff = diff - ovInfo->power[i];
@@ -4190,7 +4190,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					}
 					diff0 += diff;
 
-					// ���g(n�̋t���ŏ������Ȃ�)
+					// 鋸波(nの逆数で小さくなる)
 					diff = refPw[1] / n;
 					if (diff >= ovInfo->power[i]) {
 						diff = diff - ovInfo->power[i];
@@ -4199,7 +4199,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					}
 					diff1 += diff;
 
-					// �Z�`�g(��{��,n�̋t���ŏ������Ȃ�)
+					// 短形波(奇数倍音,nの逆数で小さくなる)
 					diff = refPw[2] / odd;
 					if (diff >= ovInfo->power[i]) {
 						diff = diff - ovInfo->power[i];
@@ -4208,7 +4208,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					}
 					diff2 += diff;
 
-					// �O�p�g(��{��,n^2�̋t���ŏ������Ȃ�)
+					// 三角波(奇数倍音,n^2の逆数で小さくなる)
 					diff = refPw[3] / (odd * odd);
 					if (diff >= ovInfo->power[i]) {
 						diff = diff - ovInfo->power[i];
@@ -4217,7 +4217,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					}
 					diff3 += diff;
 
-					// �p���X(n�Ԗڂ̔{���ł��p���[�͓���)
+					// パルス(n番目の倍音でもパワーは同じ)
 					diff = refPw[4];
 					if (diff >= ovInfo->power[i]) {
 						diff = diff - ovInfo->power[i];
@@ -4226,7 +4226,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					}
 					diff4 += diff;
 
-					// ���̑�(�����ƃp���[���������Ȃ�p�^�[��)
+					// その他(もっとパワーが小さくなるパターン)
 					diff = refPw[5] / (odd * odd * odd);
 					if (diff >= ovInfo->power[i]) {
 						diff = diff - ovInfo->power[i];
@@ -4304,7 +4304,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 				}
 			}
 
-			// ��ԗ\���덷�����Ȃ��������̂��̗p����B
+			// 一番予測誤差が少なかったものを採用する。
 
 			baseOfs = ofs - ((ofs / minWin) * minWin);
 			if (baseOfs == 0) {
@@ -4312,7 +4312,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 			}
 
 			pha = ovInfo->phase[baseOfs];
-			n = 1;		// ������{���ׂĂɔ{��������
+			n = 1;		// 奇数偶数倍すべてに倍音がある
 			odd = 1;
 			refPw[0] = -1;
 			refPw[4] = -1;
@@ -4337,7 +4337,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 				}
 
 				if (minType == 0) {
-					// 1/f(�U����1/f�ɂȂ��Ă������)
+					// 1/f(振幅が1/fになっているもの)
 					tmpPw = refPw[0] / hz;
 					phaRand = 1;
 					pha += param->sig2Phase;
@@ -4374,7 +4374,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						}
 					}
 				} else if (minType == 1) {
-					// 1/f(�U����1/f�ɂȂ��Ă������)
+					// 1/f(振幅が1/fになっているもの)
 					tmpPw = refPw[1] / n;
 					phaRand = 1;
 					pha += param->sig2Phase;
@@ -4410,7 +4410,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						}
 					}
 				} else if (minType == 2) {
-					// �Z�`�g(��{��,n�̋t���ŏ������Ȃ�)
+					// 短形波(奇数倍音,nの逆数で小さくなる)
 					tmpPw = refPw[2] / odd;
 					phaRand = 1;
 					pha = ovInfo->phase[max_i];
@@ -4450,7 +4450,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						}
 					}
 				} else if (minType == 3) {
-					// �O�p�g(��{��,n^2�̋t���ŏ������Ȃ�)
+					// 三角波(奇数倍音,n^2の逆数で小さくなる)
 					tmpPw = refPw[3] / (odd * odd);
 					phaRand = 1;
 //					pha = ovInfo->phase[max_i];
@@ -4491,7 +4491,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						}
 					}
 				} else if (minType == 4) {
-					// �p���X(n�Ԗڂ̔{���ł��p���[�͓���)
+					// パルス(n番目の倍音でもパワーは同じ)
 					tmpPw = refPw[4];
 					phaRand = rand() * 6;
 					phaRand -= 3;
@@ -4528,7 +4528,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						}
 					}
 				} else if (minType == 5) {
-					// �O�p�g(��{��,n^2�̋t���ŏ������Ȃ�)
+					// 三角波(奇数倍音,n^2の逆数で小さくなる)
 					tmpPw = refPw[3] / (odd * odd * odd);
 					phaRand = 1;
 //					pha = ovInfo->phase[max_i];
@@ -4571,7 +4571,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 
 #if 1
 	if (param->sig1Enb == 1) {
-		// power���������̗D��ŕ�Ԃ���
+		// powerが強いもの優先で補間する
 		lowHz	= 9500;
 		wid		= 2500;
 		if (lowHz + wid  >= ovInfo->validSamplingRate) {
@@ -4626,13 +4626,13 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					continue;
 				}
 				//step = 1;
-				// �X�y�N�g�������̑J�ڂ𒲂ׂ�
+				// スペクトル成分の遷移を調べる
 				diff0 = 0;
 				baseOfs = ofs - ((ofs / window) * window);
 				if (baseOfs == 0) {
 					baseOfs = window;
 				}
-				n = 1;		// ������{���ׂĂɔ{��������
+				n = 1;		// 奇数偶数倍すべてに倍音がある
 				refPw[0] = -1;
 				avgPw  = 0;
 				avgPw2 = 0;
@@ -4647,7 +4647,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						continue;
 					}
 
-					// ���ς��傫���������A������������
+					// 平均より大きい音声か、小さい音声か
 					if (ovInfo->power[i] > ovInfo->base[i]) {
 						ovInfo->sign[baseOfs]++;
 					} else if (ovInfo->power[i] < ovInfo->base[i]) {
@@ -4690,7 +4690,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 				}
 			}
 
-			// ��ԗݐς̃p���[���������̂��̗p����B
+			// 一番累積のパワーが強いものを採用する。
 
 			baseOfs = ofs - ((ofs / minWin) * minWin);
 			if (baseOfs == 0) {
@@ -4698,7 +4698,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 			}
 
 			pha = ovInfo->phase[baseOfs];
-			n = 1;		// ������{���ׂĂɔ{��������
+			n = 1;		// 奇数偶数倍すべてに倍音がある
 			odd = 1;
 			refPw[0] = -1;
 			if (minWin == swidth || minWin == width - 1) {
@@ -4715,7 +4715,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					pha = ovInfo->phase[max_i];
 				}
 
-				// 1/f(�U����1/f�ɂȂ��Ă������)
+				// 1/f(振幅が1/fになっているもの)
 				tmpPw = refPw[0] / hz;
 				phaRand = 1;
 				pha += param->sig1Phase;
@@ -4737,7 +4737,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 
 	if (param->sig3Enb == 1) {
 //	if (0) {
-		// power���ア���̂��Ԃ���
+		// powerが弱いものを補間する
 		lowHz	= 8000;
 		wid		= 4000;
 		if (lowHz + wid  >= ovInfo->validSamplingRate) {
@@ -4781,13 +4781,13 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					continue;
 				}
 				step = 1;
-				// �X�y�N�g�������̑J�ڂ𒲂ׂ�
+				// スペクトル成分の遷移を調べる
 				diff0 = 0;
 				baseOfs = ofs - ((ofs / window) * window);
 				if (baseOfs == 0) {
 					baseOfs = window;
 				}
-				n = 1;		// ������{���ׂĂɔ{��������
+				n = 1;		// 奇数偶数倍すべてに倍音がある
 				refPw[0] = -1;
 				avgPw  = 0;
 				avgPw2 = 0;
@@ -4801,7 +4801,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					if (hz < lowHz) {
 						continue;
 					}
-					// ���ς��傫���������A������������
+					// 平均より大きい音声か、小さい音声か
 					if (ovInfo->power[i] > ovInfo->base[i]) {
 						ovInfo->sign[baseOfs]++;
 					} else if (ovInfo->power[i] < ovInfo->base[i]) {
@@ -4827,7 +4827,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 				}
 			}
 
-			// ��ԗݐς̃p���[���ア���̂��̗p����B
+			// 一番累積のパワーが弱いものを採用する。
 
 			baseOfs = ofs - ((ofs / minWin) * minWin);
 			if (baseOfs == 0) {
@@ -4835,7 +4835,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 			}
 
 			pha = ovInfo->phase[baseOfs];
-			n = 1;		// ������{���ׂĂɔ{��������
+			n = 1;		// 奇数偶数倍すべてに倍音がある
 			odd = 1;
 			refPw[0] = -1;
 			if (minWin == swidth || minWin == width - 1) {
@@ -4852,7 +4852,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					pha = ovInfo->phase[max_i];
 				}
 
-				// 1/f(�U����1/f�ɂȂ��Ă������)
+				// 1/f(振幅が1/fになっているもの)
 				tmpPw = refPw[0] / hz;
 				phaRand = 1;
 				pha += param->sig3Phase;
@@ -4891,7 +4891,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 			swidth = 1;
 		}
 
-		// �O���window�ŐU���̍������Ȃ������̕��
+		// 前後のwindowで振幅の差が少ない音声の補間
 		window = width;
 		minWin = window;
 		minType = 0;
@@ -4914,14 +4914,14 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					continue;
 				}
 
-				// �X�y�N�g�������̑J�ڂ𒲂ׂ�
+				// スペクトル成分の遷移を調べる
 				diff0 = diff1 = diff2 = diff3 = diff4 = diff5 = diffP = 0;
 				baseOfs = ofs - ((ofs / window) * window);
 				if (baseOfs == 0) {
 					baseOfs = window;
 				}
-				n = 1;		// ������{���ׂĂɔ{��������
-				odd = 1;	// ��{�̂ݔ{��������
+				n = 1;		// 奇数偶数倍すべてに倍音がある
+				odd = 1;	// 奇数倍のみ倍音がある
 				refPw[0] = -1;
 				refPw[1] = -1;
 				refPw[2] = -1;
@@ -4948,7 +4948,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						refPw[4] = ovInfo->power[i];
 						refPw[5] = ovInfo->power[i] * (odd * odd * odd);
 					}
-					// �O��̃p���[�̍��̌v�Z
+					// 前後のパワーの差の計算
 					if (i - window >= ofs) {
 						if (ovInfo->power[i - window] >= ovInfo->power[i]) {
 							diff = ovInfo->power[i - window] - ovInfo->power[i];
@@ -4969,7 +4969,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						avgPwNX3++;
 					}
 					
-					// 1/f(�U����1/f�ɂȂ��Ă������)
+					// 1/f(振幅が1/fになっているもの)
 					diff = refPw[0] / hz;
 					if (diff >= ovInfo->power[i]) {
 						diff = diff - ovInfo->power[i];
@@ -4978,7 +4978,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					}
 					diff0 += diff;
 
-					// ���g(n�̋t���ŏ������Ȃ�)
+					// 鋸波(nの逆数で小さくなる)
 					diff = refPw[1] / n;
 					if (diff >= ovInfo->power[i]) {
 						diff = diff - ovInfo->power[i];
@@ -4987,7 +4987,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					}
 					diff1 += diff;
 
-					// �Z�`�g(��{��,n�̋t���ŏ������Ȃ�)
+					// 短形波(奇数倍音,nの逆数で小さくなる)
 					diff = refPw[2] / odd;
 					if (diff >= ovInfo->power[i]) {
 						diff = diff - ovInfo->power[i];
@@ -4996,7 +4996,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					}
 					diff2 += diff;
 
-					// �O�p�g(��{��,n^2�̋t���ŏ������Ȃ�)
+					// 三角波(奇数倍音,n^2の逆数で小さくなる)
 					diff = refPw[3] / (odd * odd);
 					if (diff >= ovInfo->power[i]) {
 						diff = diff - ovInfo->power[i];
@@ -5005,7 +5005,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					}
 					diff3 += diff;
 
-					// �p���X(n�Ԗڂ̔{���ł��p���[�͓���)
+					// パルス(n番目の倍音でもパワーは同じ)
 					diff = refPw[4];
 					if (diff >= ovInfo->power[i]) {
 						diff = diff - ovInfo->power[i];
@@ -5014,7 +5014,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					}
 					diff4 += diff;
 
-					// ���̑�(�����ƃp���[���������Ȃ�p�^�[��)
+					// その他(もっとパワーが小さくなるパターン)
 					diff = refPw[5] / (odd * odd * odd);
 					if (diff >= ovInfo->power[i]) {
 						diff = diff - ovInfo->power[i];
@@ -5083,7 +5083,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 				}
 			}
 
-			// ��ԗ\���덷�����Ȃ��������̂��̗p����B
+			// 一番予測誤差が少なかったものを採用する。
 
 			baseOfs = ofs - ((ofs / minWin) * minWin);
 			if (baseOfs == 0) {
@@ -5091,7 +5091,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 			}
 
 			pha = ovInfo->phase[baseOfs];
-			n = 1;		// ������{���ׂĂɔ{��������
+			n = 1;		// 奇数偶数倍すべてに倍音がある
 			odd = 1;
 			refPw[0] = -1;
 			refPw[4] = -1;
@@ -5116,7 +5116,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 				}
 
 				if (minType == 0) {
-					// 1/f(�U����1/f�ɂȂ��Ă������)
+					// 1/f(振幅が1/fになっているもの)
 					tmpPw = refPw[0] / hz;
 					phaRand = 1;
 					pha += param->sig2Phase;
@@ -5133,7 +5133,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						ovInfo->diff[i] = minDiff;
 					}
 				} else if (minType == 1) {
-					// 1/f(�U����1/f�ɂȂ��Ă������)
+					// 1/f(振幅が1/fになっているもの)
 					tmpPw = refPw[1] / n;
 					phaRand = 1;
 					pha += param->sig2Phase;
@@ -5149,7 +5149,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						ovInfo->diff[i] = minDiff;
 					}
 				} else if (minType == 2) {
-					// �Z�`�g(��{��,n�̋t���ŏ������Ȃ�)
+					// 短形波(奇数倍音,nの逆数で小さくなる)
 					tmpPw = refPw[2] / odd;
 					phaRand = 1;
 					pha = ovInfo->phase[max_i];
@@ -5169,7 +5169,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						ovInfo->diff[i] = minDiff;
 					}
 				} else if (minType == 3) {
-					// �O�p�g(��{��,n^2�̋t���ŏ������Ȃ�)
+					// 三角波(奇数倍音,n^2の逆数で小さくなる)
 					tmpPw = refPw[3] / (odd * odd);
 					phaRand = 1;
 //					pha = ovInfo->phase[max_i];
@@ -5190,7 +5190,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						ovInfo->diff[i] = minDiff;
 					}
 				} else if (minType == 4) {
-					// �p���X(n�Ԗڂ̔{���ł��p���[�͓���)
+					// パルス(n番目の倍音でもパワーは同じ)
 					tmpPw = refPw[4];
 					phaRand = rand() * 6;
 					phaRand -= 3;
@@ -5207,7 +5207,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						ovInfo->diff[i] = minDiff;
 					}
 				} else if (minType == 5) {
-					// �O�p�g(��{��,n^2�̋t���ŏ������Ȃ�)
+					// 三角波(奇数倍音,n^2の逆数で小さくなる)
 					tmpPw = refPw[3] / (odd * odd * odd);
 					phaRand = 1;
 //					pha = ovInfo->phase[max_i];
@@ -5262,7 +5262,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 
 #if 0
 	//
-	// �ʑ��̒���
+	// 位相の調整
 	for (i = 1;i < validIndex;i++) {
 		ovInfo->diff[i] = -1;
 	}
@@ -5284,7 +5284,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 			if (param->hfaFast && (skipCnt % 8) != 0) {
 				continue;
 			}
-			// �ʑ��𒲂ׂ�
+			// 位相を調べる
 			diffP = 0;
 			baseOfs = ofs - ((ofs / window) * window);
 			if (baseOfs == 0) {
@@ -5301,7 +5301,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 				if (refPw[0] == -1) {
 					refPw[0] = ovInfo->phase[i];
 				}
-				// �O��̈ʑ��̍��̌v�Z
+				// 前後の位相の差の計算
 				if (i - window >= ofs) {
 					if (refPw[0] <= ovInfo->phase[i]) {
 						diff = ovInfo->phase[i] - refPw[0];
@@ -5323,7 +5323,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 			}
 		}
 
-		// ��ԗ\���덷�����Ȃ��������̂��̗p����B
+		// 一番予測誤差が少なかったものを採用する。
 
 		baseOfs = ofs - ((ofs / minWin) * minWin);
 		if (baseOfs == 0) {
@@ -5331,7 +5331,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 		}
 
 		pha = ovInfo->phase[baseOfs];
-		n = 1;		// ������{���ׂĂɔ{��������
+		n = 1;		// 奇数偶数倍すべてに倍音がある
 
 		refPw[0] = -1;
 
@@ -5361,7 +5361,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 		}
 	}
 #endif
-	// ��Ԃ���Ă��Ȃ��ӏ��̑Ή�
+	// 補間されていない箇所の対応
 	for (i = baseOfs;i + 1< nSample;i++) {
 		hz = ((ovInfo->samplingRate / 2) / (double)ovInfo->nSample) * i;
 		if (hz < lowHz) {
@@ -5452,7 +5452,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 		}
 	}
 	if (param->sig3Phase >= -6 || param->sig3Phase <= 6) {
-		// �ʑ��̏C��
+		// 位相の修正
 		window = width;
 		for (ofs = lowIndex;ofs < lowIndex + window;ofs++) {
 			minDiff = -1;
@@ -5472,13 +5472,13 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					continue;
 				}
 
-				// �X�y�N�g�������̑J�ڂ𒲂ׂ�
+				// スペクトル成分の遷移を調べる
 				diff0 = 0;
 				baseOfs = ofs - ((ofs / window) * window);
 				if (baseOfs == 0) {
 					baseOfs = window;
 				}
-				n = 1;		// ������{���ׂĂɔ{��������
+				n = 1;		// 奇数偶数倍すべてに倍音がある
 				refPw[0] = -1;
 				for (i = baseOfs,nn = 0;i < highIndex; i+= window,n++) {
 					hz = ((ovInfo->samplingRate / 2) / (double)ovInfo->nSample) * i;
@@ -5511,7 +5511,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 				}
 			}
 
-			// ��ԗ\���덷�����Ȃ��������̂��̗p����B
+			// 一番予測誤差が少なかったものを採用する。
 
 			baseOfs = ofs - ((ofs / minWin) * minWin);
 			if (baseOfs == 0) {
@@ -5519,7 +5519,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 			}
 
 			pha = ovInfo->phase[baseOfs];
-			n = 1;		// ������{���ׂĂɔ{��������
+			n = 1;		// 奇数偶数倍すべてに倍音がある
 
 			refPw[0] = -1;
 			if (minWin == swidth || minWin == width - 1) {
@@ -5611,7 +5611,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 
 #if 1
 	if (param->hfaWide) {
-		// ��͏��𕽋ω����A�}���ȕω���}����
+		// 解析情報を平均化し、急激な変化を抑える
 		for (i = baseOfs;i + 1< nSample;i++) {
 			hz = ((ovInfo->samplingRate / 2) / (double)ovInfo->nSample) * i;
 			if (hz < lowHz) {
@@ -5633,7 +5633,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 #endif
 	if (1) {
 		double nx;
-		// �t�������L��ŋ���������̂�����Ύ�߂�B
+		// 付加した広域で強すぎるものがあれば弱める。
 		lowIndex  = ((double)ovInfo->nSample / (ovInfo->samplingRate / 2)) * ovInfo->validSamplingRate;
 		highIndex = nSample;
 		swidth	  = ((double)ovInfo->nSample / (ovInfo->samplingRate / 2)) * 5000;
@@ -5690,7 +5690,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 	double maxPwAvg;
 	long skipCnt;
 
-	// �\���Ƃ̍ŏ��p�����[�^�ۑ�
+	// 予測との最小パラメータ保存
 	int minWin;
 	int minType;
 	int max_i;
@@ -5717,7 +5717,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 	nSample = ovInfo->nSample;
 
 	//
-	// ������
+	// 初期化
 	for (i = 1;i < ovInfo->nSample;i++) {
 		ovInfo->pw[i] = 0;
 		ovInfo->diff[i] = -1;
@@ -5750,7 +5750,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 	}
 
 	if (lowHz < 4000) {
-		// ����̏�񂪂Ȃ��̂ŉ�͂��Ȃ�
+		// 高域の情報がないので解析しない
 		return;
 	}
 
@@ -5778,7 +5778,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 	avgLine = avg;
 
 	if (param->sig2Enb == 1) {
-		// �O���window�ŐU���̍������Ȃ������̕��
+		// 前後のwindowで振幅の差が少ない音声の補間
 		window = width;
 		minWin = window;
 		minType = 0;
@@ -5800,14 +5800,14 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					continue;
 				}
 
-				// �X�y�N�g�������̑J�ڂ𒲂ׂ�
+				// スペクトル成分の遷移を調べる
 				diff0 = diff1 = diff2 = diff3 = diff4 = diff5 = diffP = 0;
 				baseOfs = ofs - ((ofs / window) * window);
 				if (baseOfs == 0) {
 					baseOfs = window;
 				}
-				n = 1;		// ������{���ׂĂɔ{��������
-				odd = 1;	// ��{�̂ݔ{��������
+				n = 1;		// 奇数偶数倍すべてに倍音がある
+				odd = 1;	// 奇数倍のみ倍音がある
 				refPw[0] = -1;
 				refPw[1] = -1;
 				refPw[2] = -1;
@@ -5834,7 +5834,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						refPw[4] = ovInfo->power[i];
 						refPw[5] = ovInfo->power[i] * (odd * odd * odd);
 					}
-					// �O��̃p���[�̍��̌v�Z
+					// 前後のパワーの差の計算
 					if (i - window >= ofs) {
 						if (ovInfo->power[i - window] >= ovInfo->power[i]) {
 							diff = ovInfo->power[i - window] - ovInfo->power[i];
@@ -5855,7 +5855,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						avgPwNX3++;
 					}
 					
-					// 1/f(�U����1/f�ɂȂ��Ă������)
+					// 1/f(振幅が1/fになっているもの)
 					diff = refPw[0] / hz;
 					if (diff >= ovInfo->power[i]) {
 						diff = diff - ovInfo->power[i];
@@ -5864,7 +5864,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					}
 					diff0 += diff;
 
-					// ���g(n�̋t���ŏ������Ȃ�)
+					// 鋸波(nの逆数で小さくなる)
 					diff = refPw[1] / n;
 					if (diff >= ovInfo->power[i]) {
 						diff = diff - ovInfo->power[i];
@@ -5873,7 +5873,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					}
 					diff1 += diff;
 
-					// �Z�`�g(��{��,n�̋t���ŏ������Ȃ�)
+					// 短形波(奇数倍音,nの逆数で小さくなる)
 					diff = refPw[2] / odd;
 					if (diff >= ovInfo->power[i]) {
 						diff = diff - ovInfo->power[i];
@@ -5882,7 +5882,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					}
 					diff2 += diff;
 
-					// �O�p�g(��{��,n^2�̋t���ŏ������Ȃ�)
+					// 三角波(奇数倍音,n^2の逆数で小さくなる)
 					diff = refPw[3] / (odd * odd);
 					if (diff >= ovInfo->power[i]) {
 						diff = diff - ovInfo->power[i];
@@ -5891,7 +5891,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					}
 					diff3 += diff;
 
-					// �p���X(n�Ԗڂ̔{���ł��p���[�͓���)
+					// パルス(n番目の倍音でもパワーは同じ)
 					diff = refPw[4];
 					if (diff >= ovInfo->power[i]) {
 						diff = diff - ovInfo->power[i];
@@ -5900,7 +5900,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					}
 					diff4 += diff;
 
-					// ���̑�(�����ƃp���[���������Ȃ�p�^�[��)
+					// その他(もっとパワーが小さくなるパターン)
 					diff = refPw[5] / (odd * odd * odd);
 					if (diff >= ovInfo->power[i]) {
 						diff = diff - ovInfo->power[i];
@@ -5962,7 +5962,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 				}
 			}
 
-			// ��ԗ\���덷�����Ȃ��������̂��̗p����B
+			// 一番予測誤差が少なかったものを採用する。
 
 			baseOfs = ofs - ((ofs / minWin) * minWin);
 			if (baseOfs == 0) {
@@ -5970,7 +5970,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 			}
 
 			pha = ovInfo->phase[baseOfs];
-			n = 1;		// ������{���ׂĂɔ{��������
+			n = 1;		// 奇数偶数倍すべてに倍音がある
 			odd = 1;
 			refPw[0] = -1;
 			refPw[4] = -1;
@@ -5994,7 +5994,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 				}
 
 				if (minType == 0) {
-					// 1/f(�U����1/f�ɂȂ��Ă������)
+					// 1/f(振幅が1/fになっているもの)
 					tmpPw = refPw[0] / hz;
 					phaRand = 1;
 					pha += param->sig2Phase;
@@ -6021,7 +6021,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						}
 					}
 				} else if (minType == 1) {
-					// 1/f(�U����1/f�ɂȂ��Ă������)
+					// 1/f(振幅が1/fになっているもの)
 					tmpPw = refPw[1] / n;
 					phaRand = 1;
 					pha = ovInfo->phase[max_i];
@@ -6049,7 +6049,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						}
 					}
 				} else if (minType == 2) {
-					// �Z�`�g(��{��,n�̋t���ŏ������Ȃ�)
+					// 短形波(奇数倍音,nの逆数で小さくなる)
 					tmpPw = refPw[2] / odd;
 					phaRand = 1;
 					pha = ovInfo->phase[max_i];
@@ -6080,7 +6080,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						}
 					}
 				} else if (minType == 3) {
-					// �O�p�g(��{��,n^2�̋t���ŏ������Ȃ�)
+					// 三角波(奇数倍音,n^2の逆数で小さくなる)
 					tmpPw = refPw[3] / (odd * odd);
 					phaRand = 1;
 //					pha = ovInfo->phase[max_i];
@@ -6111,7 +6111,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						}
 					}
 				} else if (minType == 4) {
-					// �p���X(n�Ԗڂ̔{���ł��p���[�͓���)
+					// パルス(n番目の倍音でもパワーは同じ)
 					tmpPw = refPw[4];
 					phaRand = rand() * 6;
 					phaRand -= 3;
@@ -6139,7 +6139,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 						}
 					}
 				} else if (minType == 5) {
-					// �O�p�g(��{��,n^2�̋t���ŏ������Ȃ�)
+					// 三角波(奇数倍音,n^2の逆数で小さくなる)
 					tmpPw = refPw[3] / (odd * odd * odd);
 					phaRand = 1;
 //					pha = ovInfo->phase[max_i];
@@ -6188,7 +6188,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 
 #if 0
 	if (param->sig3Enb == 1 && (param->sig3Phase < -6 || param->sig3Phase > 6)) {
-		// �ʑ��̏C��
+		// 位相の修正
 		window = width;
 		for (ofs = lowIndex;ofs < lowIndex + window;ofs++) {
 			minDiff = -1;
@@ -6208,13 +6208,13 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					continue;
 				}
 
-				// �X�y�N�g�������̑J�ڂ𒲂ׂ�
+				// スペクトル成分の遷移を調べる
 				diff0 = 0;
 				baseOfs = ofs - ((ofs / window) * window);
 				if (baseOfs == 0) {
 					baseOfs = window;
 				}
-				n = 1;		// ������{���ׂĂɔ{��������
+				n = 1;		// 奇数偶数倍すべてに倍音がある
 				refPw[0] = -1;
 				for (i = baseOfs,nn = 0;i < highIndex; i+= window,n++) {
 					hz = ((ovInfo->samplingRate / 2) / (double)ovInfo->nSample) * i;
@@ -6247,7 +6247,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 				}
 			}
 
-			// ��ԗ\���덷�����Ȃ��������̂��̗p����B
+			// 一番予測誤差が少なかったものを採用する。
 
 			baseOfs = ofs - ((ofs / minWin) * minWin);
 			if (baseOfs == 0) {
@@ -6255,7 +6255,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 			}
 
 			pha = ovInfo->phase[baseOfs];
-			n = 1;		// ������{���ׂĂɔ{��������
+			n = 1;		// 奇数偶数倍すべてに倍音がある
 
 			refPw[0] = -1;
 			if (minWin == swidth || minWin == width - 1) {
@@ -6290,7 +6290,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 	}
 #endif
 	if (param->sig1Enb == 1) {
-		// power���������̗D��ŕ�Ԃ���
+		// powerが強いもの優先で補間する
 
 		areaAvg = 0;
 		for (i = lowIndex,n = 0;n < width;i++,n++) {
@@ -6322,13 +6322,13 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 				if (param->hfaFast && (skipCnt % 8) != 0) {
 					continue;
 				}
-				// �X�y�N�g�������̑J�ڂ𒲂ׂ�
+				// スペクトル成分の遷移を調べる
 				diff0 = 0;
 				baseOfs = ofs - ((ofs / window) * window);
 				if (baseOfs == 0) {
 					baseOfs = window;
 				}
-				n = 1;		// ������{���ׂĂɔ{��������
+				n = 1;		// 奇数偶数倍すべてに倍音がある
 				refPw[0] = -1;
 				avgPw  = 0;
 				avgPw2 = 0;
@@ -6379,7 +6379,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 				}
 			}
 
-			// ��ԗݐς̃p���[���������̂��̗p����B
+			// 一番累積のパワーが強いものを採用する。
 
 			baseOfs = ofs - ((ofs / minWin) * minWin);
 			if (baseOfs == 0) {
@@ -6387,7 +6387,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 			}
 
 			pha = ovInfo->phase[baseOfs];
-			n = 1;		// ������{���ׂĂɔ{��������
+			n = 1;		// 奇数偶数倍すべてに倍音がある
 
 			refPw[0] = -1;
 			if (minWin == swidth || minWin == width - 1) {
@@ -6404,7 +6404,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					pha = ovInfo->phase[max_i];
 				}
 
-				// 1/f(�U����1/f�ɂȂ��Ă������)
+				// 1/f(振幅が1/fになっているもの)
 				tmpPw = refPw[0] / hz;
 				phaRand = 1;
 				pha += param->sig1Phase;
@@ -6439,7 +6439,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 //	}
 
 	if (param->sig3Enb == 1) {
-		// power���ア���̂ƕ�Ԓl���Ȃ����̂��Ԃ���
+		// powerが弱いものと補間値がないものを補間する
 
 		window = width;
 		for (ofs = lowIndex;ofs < lowIndex + window;ofs++) {
@@ -6459,13 +6459,13 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 				if (param->hfaFast && (skipCnt % 8) != 0) {
 					continue;
 				}
-				// �X�y�N�g�������̑J�ڂ𒲂ׂ�
+				// スペクトル成分の遷移を調べる
 				diff0 = 0;
 				baseOfs = ofs - ((ofs / window) * window);
 				if (baseOfs == 0) {
 					baseOfs = window;
 				}
-				n = 1;		// ������{���ׂĂɔ{��������
+				n = 1;		// 奇数偶数倍すべてに倍音がある
 				refPw[0] = -1;
 				avgPw  = 0;
 				avgPw2 = 0;
@@ -6498,7 +6498,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 				}
 			}
 
-			// ��ԗݐς̃p���[���ア���̂��̗p����B
+			// 一番累積のパワーが弱いものを採用する。
 
 			baseOfs = ofs - ((ofs / minWin) * minWin);
 			if (baseOfs == 0) {
@@ -6506,7 +6506,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 			}
 
 			pha = ovInfo->phase[baseOfs];
-			n = 1;		// ������{���ׂĂɔ{��������
+			n = 1;		// 奇数偶数倍すべてに倍音がある
 			odd = 1;
 			refPw[0] = -1;
 			if (minWin == swidth || minWin == width - 1) {
@@ -6523,7 +6523,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					pha = ovInfo->phase[max_i];
 				}
 
-				// 1/f(�U����1/f�ɂȂ��Ă������)
+				// 1/f(振幅が1/fになっているもの)
 				tmpPw = refPw[0] / hz;
 				phaRand = 1;
 				pha += param->sig3Phase;
@@ -6542,7 +6542,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 		}
 	}
 
-	// ��Ԃ���Ă��Ȃ��ӏ��̑Ή�
+	// 補間されていない箇所の対応
 	for (i = baseOfs;i + 1< nSample;i++) {
 		hz = ((ovInfo->samplingRate / 2) / (double)ovInfo->nSample) * i;
 		if (hz < lowHz) {
@@ -6600,7 +6600,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 		}
 	}
 	if (param->sig3Phase >= -6 || param->sig3Phase <= 6) {
-		// �ʑ��̏C��
+		// 位相の修正
 		window = width;
 		for (ofs = lowIndex;ofs < lowIndex + window;ofs++) {
 			minDiff = -1;
@@ -6620,13 +6620,13 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 					continue;
 				}
 
-				// �X�y�N�g�������̑J�ڂ𒲂ׂ�
+				// スペクトル成分の遷移を調べる
 				diff0 = 0;
 				baseOfs = ofs - ((ofs / window) * window);
 				if (baseOfs == 0) {
 					baseOfs = window;
 				}
-				n = 1;		// ������{���ׂĂɔ{��������
+				n = 1;		// 奇数偶数倍すべてに倍音がある
 				refPw[0] = -1;
 				for (i = baseOfs,nn = 0;i < highIndex; i+= window,n++) {
 					hz = ((ovInfo->samplingRate / 2) / (double)ovInfo->nSample) * i;
@@ -6659,7 +6659,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 				}
 			}
 
-			// ��ԗ\���덷�����Ȃ��������̂��̗p����B
+			// 一番予測誤差が少なかったものを採用する。
 
 			baseOfs = ofs - ((ofs / minWin) * minWin);
 			if (baseOfs == 0) {
@@ -6667,7 +6667,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 			}
 
 			pha = ovInfo->phase[baseOfs];
-			n = 1;		// ������{���ׂĂɔ{��������
+			n = 1;		// 奇数偶数倍すべてに倍音がある
 
 			refPw[0] = -1;
 			if (minWin == swidth || minWin == width - 1) {
@@ -6746,7 +6746,7 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 
 #if 1
 	if (param->hfaWide) {
-		// ��͏��𕽋ω����A�}���ȕω���}����
+		// 解析情報を平均化し、急激な変化を抑える
 		for (i = baseOfs;i + 1< nSample;i++) {
 			hz = ((ovInfo->samplingRate / 2) / (double)ovInfo->nSample) * i;
 			if (hz < lowHz) {
@@ -6784,13 +6784,13 @@ void anaOverToneHFA3(OVERTONE_INFO *ovInfo,PARAM_INFO *param)
 #endif
 //---------------------------------------------------------------------------
 // Function   : noiseCut
-// Description: �m�C�Y�J�b�g����
+// Description: ノイズカット処理
 // ---
-//	nfs		 	:�m�C�Y�J�b�g�I�t���g��(���̎��g���ȏ�̗̈�̃m�C�Y���J�b�g����)
-//	inSample 	:��������T���v����(ch��)
-//	fp_r		:���̓t�@�C��
-//	fp_w		:�o�̓t�@�C��
-//	param		:�ϊ��p�����[�^
+//	nfs		 	:ノイズカットオフ周波数(この周波数以上の領域のノイズをカットする)
+//	inSample 	:処理するサンプル数(ch毎)
+//	fp_r		:入力ファイル
+//	fp_w		:出力ファイル
+//	param		:変換パラメータ
 //
 void noiseCut(long nfs,SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 {
@@ -6964,12 +6964,12 @@ void noiseCut(long nfs,SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 
 		pIn = (SSIZE *)mem1;
 		for (n = 0;n < 12;n++) {
-			// FFT �����ݒ�
+			// FFT 初期設定
 			for (i = 0;i < fftSize;i++) {
 				fftw_in[i][0] = pIn[((fftSize / 2) * n) + i];
 				fftw_in[i][1] = 0;
 			}
-			// ���֐�
+			// 窓関数
 			for (i = 0;i < (fftSize - 1) / 2;i++) {
 				fftw_in[i][0] = fftw_in[i][0] * (2.0 * i / (double)fftSize);
 			}
@@ -6980,7 +6980,7 @@ void noiseCut(long nfs,SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 			// FFT
 			fftw_execute(fftw_p);
 
-			// ���M���̃p���[��ݐς���
+			// 元信号のパワーを累積する
 			for (i = 1;i < fftSize / 2;i++) {
 				p = fftw_out[i][0] * fftw_out[i][0] + fftw_out[i][1] * fftw_out[i][1];
 				if (p != 0) {
@@ -6995,7 +6995,7 @@ void noiseCut(long nfs,SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 		}
 #endif
 		for (i = 0,h = 0;h < hfc - 100;i++,h += 100) {
-			// 100hz �͈͂̃p���[�𒲂ׂ�
+			// 100hz 範囲のパワーを調べる
 			lowIndex  = ((double)fftSize / outSampleR) * h;
 			highIndex = ((double)fftSize / outSampleR) * (h + 100);
 			refPw[i] = 0;
@@ -7007,12 +7007,12 @@ void noiseCut(long nfs,SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 			}
 		}
 		for (n = 0;n < 3;n++) {
-			// FFT �����ݒ�
+			// FFT 初期設定
 			for (i = 0;i < fftSize;i++) {
 				fftw_in[i][0] = pIn[((fftSize / 2) * n) + i];
 				fftw_in[i][1] = 0;
 			}
-			// ���֐�
+			// 窓関数
 			for (i = 0;i < (fftSize - 1) / 2;i++) {
 				fftw_in[i][0] = fftw_in[i][0] * (2.0 * i / (double)fftSize);
 			}
@@ -7022,7 +7022,7 @@ void noiseCut(long nfs,SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 
 			// FFT
 			fftw_execute(fftw_p);
-			// 臒l���傫�����̓J�b�g����
+			// 閾値より大きい音はカットする
 			ignore_flag = 0;
 			for (i = 1;i < fftSize / 2;i++) {
 				hz = ((double)outSampleR / fftSize) * i;
@@ -7046,7 +7046,7 @@ void noiseCut(long nfs,SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 				}
 			}
 
-			// �����̃f�[�^�𕜌�
+			// 半分のデータを復元
 			for (i = 1;i < fftSize / 2;i++) {
 				fftw_out[fftSize - i][0] = fftw_out[i][0];
 				fftw_out[fftSize - i][1] = fftw_out[i][1] * -1;
@@ -7057,7 +7057,7 @@ void noiseCut(long nfs,SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 			// invert FFT
 			fftw_execute(fftw_ip);
 
-			// �o��
+			// 出力
 			pOut = (SSIZE *)mem2;
 			for (i = 0;i < fftSize;i++) {
 				pOut[((fftSize / 2) * n) + i] += fftw_in[i][0] / fftSize;
@@ -7079,11 +7079,11 @@ void noiseCut(long nfs,SSIZE inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 }
 //---------------------------------------------------------------------------
 // Function   : spAnalyze
-// Description: �X�s�[�J�[�̎��g�������ɉ����Ē����l�p�����[�^�[���o�͂���
+// Description: スピーカーの周波数特性に応じて調整値パラメーターを出力する
 // ---
-//	inSample 	:��������T���v����(ch��)
-//	fp_r		:���̓t�@�C��
-//	param		:�ϊ��p�����[�^
+//	inSample 	:処理するサンプル数(ch毎)
+//	fp_r		:入力ファイル
+//	param		:変換パラメータ
 //
 void spAnalyze(SSIZE inSample,FIO *fp_r,PARAM_INFO *param)
 {
@@ -7206,10 +7206,10 @@ void spAnalyze(SSIZE inSample,FIO *fp_r,PARAM_INFO *param)
 
 		pIn = (SSIZE *)mem1;
 		for (n = 0;n < 3;n++) {
-			// FFT �����ݒ�
+			// FFT 初期設定
 			copyToFFTW(fftw_in,&pIn[((fftSize / 2) * n)],fftSize);
 
-			// ���֐�
+			// 窓関数
 			windowFFTW(fftw_in,fftSize);
 
 			// FFT
@@ -7222,7 +7222,7 @@ void spAnalyze(SSIZE inSample,FIO *fp_r,PARAM_INFO *param)
 				}
 			}
 			
-			// 128 �T�C�Y�̈ړ�����
+			// 128 サイズの移動平均
 			for (i = 1;i + 128 < validIndex;i++) {
 				p = 0;
 				for (n = 0;n < 128;n++) {
@@ -7309,12 +7309,12 @@ void spAnalyze(SSIZE inSample,FIO *fp_r,PARAM_INFO *param)
 
 //---------------------------------------------------------------------------
 // Function   : outTempFile
-// Description: �f�[�^���e���|�����t�@�C���֏o�͂���
+// Description: データをテンポラリファイルへ出力する
 // ---
-//	fp_w	:�o�̓t�@�C��
-//	in		:�f�[�^�̃A�h���X
-//	size	:�f�[�^�[��
-//	param	:�p�����[�^�[
+//	fp_w	:出力ファイル
+//	in		:データのアドレス
+//	size	:データー数
+//	param	:パラメーター
 //
 void outTempFile(FIO *fp_w,void *in,SSIZE size,PARAM_INFO *param)
 {
@@ -7327,11 +7327,11 @@ void outTempFile(FIO *fp_w,void *in,SSIZE size,PARAM_INFO *param)
 }
 //---------------------------------------------------------------------------
 // Function   : normalNoise
-// Description: ���K��������
+// Description: 正規乱数生成
 //
 double normalNoise(void)
 /*
- * ���K����
+ * 正規乱数
  */
 {
 	double x1,x2;
@@ -7343,12 +7343,12 @@ double normalNoise(void)
 }
 //---------------------------------------------------------------------------
 // Function   : adjPinkFilter
-// Description: 1/f �����ɂ���t�B���^�[
+// Description: 1/f 特性にするフィルター
 // ---
-//	mode	  :���[�h(0,1,2,3)
-//	fftSizeOut:FFT��
-//	fftw_out2 :FFTW OUT �ϐ�
-//	param	  :�ϊ��p�����[�^
+//	mode	  :モード(0,1,2,3)
+//	fftSizeOut:FFT数
+//	fftw_out2 :FFTW OUT 変数
+//	param	  :変換パラメータ
 //
 void adjPinkFilter(int mode,long fftSizeOut,fftw_complex *fftw_out2,PARAM_INFO *param)
 {
@@ -7399,7 +7399,7 @@ void adjPinkFilter(int mode,long fftSizeOut,fftw_complex *fftw_out2,PARAM_INFO *
 	}
 
 	if (mode == 1) {
-		// 1/f �����ɂ���t�B���^�[(hfa1)
+		// 1/f 特性にするフィルター(hfa1)
 		for (i = 1;i < fftSizeOut / 2;i++) {
 			hz = (((double)(outSampleR / 2)) / (fftSizeOut / 2)) * i;
 			if (hz > 0) {
@@ -7409,7 +7409,7 @@ void adjPinkFilter(int mode,long fftSizeOut,fftw_complex *fftw_out2,PARAM_INFO *
 		}
 	}
 	if (mode != 3) {
-		// hfa1�Ahfa2�Ahfa3�p�̍����Ԏ��̎��g������
+		// hfa1、hfa2、hfa3用の高域補間時の周波数調整
 		if (param->hfa != 0 && param->hfc >= 8000 && param->hfc <= 23000) {
 //			if (param->hfc > 13000) {
 				startIdx = ((double)fftSizeOut / outSampleR) * 13000;
@@ -7691,7 +7691,7 @@ void adjPinkFilter(int mode,long fftSizeOut,fftw_complex *fftw_out2,PARAM_INFO *
 		}
 
 		if (mode == 2) {
-			// �Ǝ��̃��[�p�X�t�B���^�[
+			// 独自のローパスフィルター
 			cutOff = 40000;
 			if (param->lpf > 1 && cutOff > param->lpf) {
 				cutOff = param->lpf;
@@ -7718,7 +7718,7 @@ void adjPinkFilter(int mode,long fftSizeOut,fftw_complex *fftw_out2,PARAM_INFO *
 			}
 		}
 	} else {
-		// �f�G���t�@�V�X�p�̏���
+		// デエンファシス用の処理
 		if (param->deEmphasis == 1) {
 			startIdx = ((double)fftSizeOut / outSampleR) * 3180;
 			endIdx	 = ((double)fftSizeOut / outSampleR) * 10600;
@@ -7759,15 +7759,15 @@ void adjPinkFilter(int mode,long fftSizeOut,fftw_complex *fftw_out2,PARAM_INFO *
 }
 //---------------------------------------------------------------------------
 // Function   : merageTempFile
-// Description: �o�͌��ʂ̃t�@�C�����}�[�W����
+// Description: 出力結果のファイルをマージする
 // ---
-//	type	 :�}�[�W�̎��
-//	normFlag :�m�[�}���C�Y�p�ϐ��X�V�t���O
-//	fp_r 	 :���̓t�@�C��1
-//	fp_r2	 :���̓t�@�C��2
-//	fp_w	 :�o�̓t�@�C��
-//	inSample :�T���v����
-//	param	 :�p�����[�^�[
+//	type	 :マージの種類
+//	normFlag :ノーマライズ用変数更新フラグ
+//	fp_r 	 :入力ファイル1
+//	fp_r2	 :入力ファイル2
+//	fp_w	 :出力ファイル
+//	inSample :サンプル数
+//	param	 :パラメーター
 //
 void merageTempFile(char type,int normFlag,FIO *fp_r,FIO *fp_r2,FIO *fp_w,SSIZE inSample,PARAM_INFO *param)
 {
@@ -7931,7 +7931,7 @@ void merageTempFile(char type,int normFlag,FIO *fp_r,FIO *fp_r2,FIO *fp_w,SSIZE 
 
 	if (param->err) {
 		param->err = STATUS_FILE_READ_ERR;
-		// �G���[�I��
+		// エラー終了
 		return;
 	}
 	
@@ -7959,14 +7959,14 @@ void merageTempFile(char type,int normFlag,FIO *fp_r,FIO *fp_r2,FIO *fp_w,SSIZE 
 #if 0
 //---------------------------------------------------------------------------
 // Function   : bpFilter
-// Description: �w����g�����J�b�g����
+// Description: 指定周波数をカットする
 // ---
-//	lfc		 	:���̃J�b�g�I�t���g��(���̎��g���ȉ��̗̈���J�b�g����)
-//	hfc		 	:����̃J�b�g�I�t���g��(���̎��g���ȏ�̗̈���J�b�g����)
-//	inSample 	:��������T���v����(ch��)
-//	fp_r		:���̓t�@�C��
-//	fp_w		:�o�̓t�@�C��
-//	param		:�ϊ��p�����[�^
+//	lfc		 	:低域のカットオフ周波数(この周波数以下の領域をカットする)
+//	hfc		 	:高域のカットオフ周波数(この周波数以上の領域をカットする)
+//	inSample 	:処理するサンプル数(ch毎)
+//	fp_r		:入力ファイル
+//	fp_w		:出力ファイル
+//	param		:変換パラメータ
 //
 int bpFilter(long lfc,long hfc,DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *param)
 {
@@ -8171,9 +8171,9 @@ int bpFilter(long lfc,long hfc,DWORD inSample,FIO *fp_r,FIO *fp_w,PARAM_INFO *pa
 }
 //---------------------------------------------------------------------------
 // Function   : bpFilterSub
-// Description: �w����g�����J�b�g����
+// Description: 指定周波数をカットする
 // ---
-//	param		:�ϊ��p�����[�^
+//	param		:変換パラメータ
 //
 void bpFilterSub(SSIZE *pIn,SSIZE *pOut,fftw_complex *fftw_in,fftw_complex *fftw_out,fftw_plan fftw_p,fftw_plan fftw_ip,long lfc,long hfc,PARAM_INFO *param)
 {
@@ -8185,20 +8185,20 @@ void bpFilterSub(SSIZE *pIn,SSIZE *pOut,fftw_complex *fftw_in,fftw_complex *fftw
 	fftSize = param->outSampleR * 2;
 	outSampleR = param->outSampleR;
 	
-	// FFT �����ݒ�
+	// FFT 初期設定
 	copyToFFTW(fftw_in,pIn,fftSize);
 
-	// ���֐�
+	// 窓関数
 	windowFFTW(fftw_in,fftSize);
 
 	// FFT
 	fftw_execute(fftw_p);
 
-	// ���M���̍���̃p���[�𒲂ׂ�
+	// 元信号の高域のパワーを調べる
 	if (lfc != -1) {
 		lowIndex = ((double)fftSize / outSampleR) * (lfc);
 		
-		// ���J�b�g
+		// 低域カット
 		for (i = 1;i < lowIndex;i++) {
 			fftw_out[i][0] = 0;
 			fftw_out[i][1] = 0;
@@ -8211,7 +8211,7 @@ void bpFilterSub(SSIZE *pIn,SSIZE *pOut,fftw_complex *fftw_in,fftw_complex *fftw
 			fftw_out[i][1] = 0;
 		}
 	}
-	// �����̃f�[�^�𕜌�
+	// 半分のデータを復元
 	for (i = 1;i < fftSize / 2;i++) {
 		fftw_out[fftSize - i][0] = fftw_out[i][0];
 		fftw_out[fftSize - i][1] = fftw_out[i][1] * -1;
@@ -8220,7 +8220,7 @@ void bpFilterSub(SSIZE *pIn,SSIZE *pOut,fftw_complex *fftw_in,fftw_complex *fftw
 	// invert FFT
 	fftw_execute(fftw_ip);
 
-	// �o��
+	// 出力
 	for (i = 0;i < fftSize;i++) {
 		pOut[i] += fftw_in[i][0] / fftSize;
 	}

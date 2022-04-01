@@ -18,7 +18,7 @@
 #define FALSE		(0)
 #endif
 
-// ƒTƒ“ƒvƒ‹‚ğˆ—‚·‚éƒf[ƒ^Œ^
+// ã‚µãƒ³ãƒ—ãƒ«ã‚’å‡¦ç†ã™ã‚‹ãƒ‡ãƒ¼ã‚¿å‹
 #define SSIZE	signed long long int
 
 typedef struct {

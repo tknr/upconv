@@ -1,14 +1,14 @@
 /****************************************************************************/
 /* fileio (C) 2011-2012 By 59414d41											*/
-/* ƒtƒ@ƒCƒ‹“üo—ÍIO															*/
+/* ãƒ•ã‚¡ã‚¤ãƒ«å…¥å‡ºåŠ›IO															*/
 /*																			*/
 /****************************************************************************/
 
 /*--- Log ------------------------------------------------------------------
- * Ver 0.80 <11/07/24> - V‹Kì¬
- * Ver 1.20 <19/10/12> - •ÏX
+ * Ver 0.80 <11/07/24> - æ–°è¦ä½œæˆ
+ * Ver 1.20 <19/10/12> - å¤‰æ›´
  *
- * ŠeƒvƒƒOƒ‰ƒ€‚ÆƒŠƒ“ƒN‚µ‚Äg—p‚·‚é
+ * å„ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã¨ãƒªãƒ³ã‚¯ã—ã¦ä½¿ç”¨ã™ã‚‹
  */
 
 #define _LARGEFILE_SOURCE
@@ -53,11 +53,11 @@ static int fseek_local(FILE *fp,__int64 offset,int origin);
 
 //---------------------------------------------------------------------------
 // Function   : fio_open
-// Description: ƒtƒ@ƒCƒ‹ƒI[ƒvƒ“ˆ—
+// Description: ãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ¼ãƒ—ãƒ³å‡¦ç†
 // ---
-//	fio			: fileio \‘¢‘Ì
-//	filename	: ƒtƒ@ƒCƒ‹–¼
-//	mode		: ƒtƒ@ƒCƒ‹ƒI[ƒvƒ“ƒ‚[ƒh(R,W)
+//	fio			: fileio æ§‹é€ ä½“
+//	filename	: ãƒ•ã‚¡ã‚¤ãƒ«å
+//	mode		: ãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ¼ãƒ—ãƒ³ãƒ¢ãƒ¼ãƒ‰(R,W)
 //
 void fio_open(FIO *fio,char *filename,int mode)
 {
@@ -77,7 +77,7 @@ void fio_open(FIO *fio,char *filename,int mode)
 	}
 
 	if (strlen(filename) + 1 > _MAX_PATH) {
-		// ƒtƒ@ƒCƒ‹–¼‚ª’·‚·‚¬
+		// ãƒ•ã‚¡ã‚¤ãƒ«åãŒé•·ã™ã
 		fio->error = FIO_ERR_OTHER;
 		PRINT_LOG("ERROR");
 		return;
@@ -137,9 +137,9 @@ void fio_open(FIO *fio,char *filename,int mode)
 }
 //---------------------------------------------------------------------------
 // Function   : fio_close
-// Description: ƒtƒ@ƒCƒ‹ƒNƒ[ƒYˆ—
+// Description: ãƒ•ã‚¡ã‚¤ãƒ«ã‚¯ãƒ­ãƒ¼ã‚ºå‡¦ç†
 // ---
-//	fio			: fileio \‘¢‘Ì
+//	fio			: fileio æ§‹é€ ä½“
 //
 void fio_close(FIO *fio)
 {
@@ -167,7 +167,7 @@ void fio_close(FIO *fio)
 			PRINT_LOG("ERROR");
 			return;
 		}
-		// ƒoƒbƒtƒ@ƒŠƒ“ƒO‚³‚ê‚Ä‚¢‚éƒf[ƒ^‚ğ‘‚«‚İB
+		// ãƒãƒƒãƒ•ã‚¡ãƒªãƒ³ã‚°ã•ã‚Œã¦ã„ã‚‹ãƒ‡ãƒ¼ã‚¿ã‚’æ›¸ãè¾¼ã¿ã€‚
 PRINT_LOG("store:all");
 		fio_store_buffer(fio,NULL);
 		if (fio->error) {
@@ -194,10 +194,10 @@ PRINT_LOG("store:all");
 }
 //---------------------------------------------------------------------------
 // Function   : fio_get_filesize
-// Description: ƒtƒ@ƒCƒ‹ƒTƒCƒYæ“¾
+// Description: ãƒ•ã‚¡ã‚¤ãƒ«ã‚µã‚¤ã‚ºå–å¾—
 // ---
-//	fio			: fileio \‘¢‘Ì
-//	p_size		: ƒTƒCƒY‚ğ•Ô‚·‚½‚ß‚ÌƒAƒhƒŒƒX
+//	fio			: fileio æ§‹é€ ä½“
+//	p_size		: ã‚µã‚¤ã‚ºã‚’è¿”ã™ãŸã‚ã®ã‚¢ãƒ‰ãƒ¬ã‚¹
 //
 void fio_get_filesize(FIO *fio,fio_size *p_size)
 {
@@ -236,10 +236,10 @@ void fio_get_filesize(FIO *fio,fio_size *p_size)
 }
 //---------------------------------------------------------------------------
 // Function   : fio_get_datasize
-// Description: ƒf[ƒ^ƒTƒCƒYæ“¾
+// Description: ãƒ‡ãƒ¼ã‚¿ã‚µã‚¤ã‚ºå–å¾—
 // ---
-//	fio			: fileio \‘¢‘Ì
-//	p_size		: ƒTƒCƒY‚ğ•Ô‚·‚½‚ß‚ÌƒAƒhƒŒƒX
+//	fio			: fileio æ§‹é€ ä½“
+//	p_size		: ã‚µã‚¤ã‚ºã‚’è¿”ã™ãŸã‚ã®ã‚¢ãƒ‰ãƒ¬ã‚¹
 //
 void fio_get_datasize(FIO *fio,fio_size *p_size)
 {
@@ -265,11 +265,11 @@ void fio_get_datasize(FIO *fio,fio_size *p_size)
 }
 //---------------------------------------------------------------------------
 // Function   : fio_setmode_r
-// Description: ƒtƒ@ƒCƒ‹‚ğ‘‚«‚İ‚©‚ç“Ç‚İ‚İê—p‚Éİ’è
+// Description: ãƒ•ã‚¡ã‚¤ãƒ«ã‚’æ›¸ãè¾¼ã¿ã‹ã‚‰èª­ã¿è¾¼ã¿å°‚ç”¨ã«è¨­å®š
 // ---
-//	fio_w		: fileio \‘¢‘Ì(W)
-//	fio_r		: fileio \‘¢‘Ì(R)
-//	filename	: V‚µ‚¢ƒtƒ@ƒCƒ‹–¼
+//	fio_w		: fileio æ§‹é€ ä½“(W)
+//	fio_r		: fileio æ§‹é€ ä½“(R)
+//	filename	: æ–°ã—ã„ãƒ•ã‚¡ã‚¤ãƒ«å
 //
 void fio_setmode_r(FIO *fio_w,FIO *fio_r,char *filename)
 {
@@ -301,7 +301,7 @@ void fio_setmode_r(FIO *fio_w,FIO *fio_r,char *filename)
 
 	if (filename != NULL) {
 		if (strlen(filename) + 1 > _MAX_PATH) {
-			// ƒtƒ@ƒCƒ‹–¼‚ª’·‚·‚¬
+			// ãƒ•ã‚¡ã‚¤ãƒ«åãŒé•·ã™ã
 			fio_w->error = FIO_ERR_OTHER;
 			PRINT_LOG("ERROR");
 			return;
@@ -388,7 +388,7 @@ PRINT_LOG("store:all");
 	}
 
 
-	// ƒuƒƒbƒN‰Šú‰»
+	// ãƒ–ãƒ­ãƒƒã‚¯åˆæœŸåŒ–
 	p_data = fio_r->p_data;
 	for (i = 1;p_data != NULL;i++) {
 		if (i <= fio_r->block_count) {
@@ -415,10 +415,10 @@ PRINT_LOG("store:all");
 }
 //---------------------------------------------------------------------------
 // Function   : fio_set_maxsize
-// Description: ‘‚«‚İƒf[ƒ^ƒTƒCƒY‚ÌÅ‘å’l‚ğİ’è
+// Description: æ›¸ãè¾¼ã¿ãƒ‡ãƒ¼ã‚¿ã‚µã‚¤ã‚ºã®æœ€å¤§å€¤ã‚’è¨­å®š
 // ---
-//	fio			: fileio \‘¢‘Ì
-//	max			: Å‘å’l
+//	fio			: fileio æ§‹é€ ä½“
+//	max			: æœ€å¤§å€¤
 //
 void fio_set_maxsize(FIO *fio,fio_size max)
 {
@@ -443,11 +443,11 @@ void fio_set_maxsize(FIO *fio,fio_size max)
 }
 //---------------------------------------------------------------------------
 // Function   : fio_set_memory_limit
-// Description: ƒƒ‚ƒŠŠm•Û‚ÌÅ‘å’l‚ğİ’è
+// Description: ãƒ¡ãƒ¢ãƒªç¢ºä¿ã®æœ€å¤§å€¤ã‚’è¨­å®š
 // ---
-//	fio			: fileio \‘¢‘Ì
-//  block_sz	: ƒuƒƒbƒNƒTƒCƒY
-//	max			: Å‘å’l
+//	fio			: fileio æ§‹é€ ä½“
+//  block_sz	: ãƒ–ãƒ­ãƒƒã‚¯ã‚µã‚¤ã‚º
+//	max			: æœ€å¤§å€¤
 //
 void fio_set_memory_limit(FIO *fio,int block_sz,int max)
 {
@@ -503,11 +503,11 @@ void fio_set_memory_limit(FIO *fio,int block_sz,int max)
 }
 //---------------------------------------------------------------------------
 // Function   : fio_seek
-// Description: ƒtƒ@ƒCƒ‹ƒ|ƒCƒ“ƒ^İ’è
+// Description: ãƒ•ã‚¡ã‚¤ãƒ«ãƒã‚¤ãƒ³ã‚¿è¨­å®š
 // ---
-//	fio			: fileio \‘¢‘Ì
-//	offset		: ƒIƒtƒZƒbƒg
-//	orign		: ƒIƒtƒZƒbƒgw’èƒpƒ‰ƒ[ƒ^
+//	fio			: fileio æ§‹é€ ä½“
+//	offset		: ã‚ªãƒ•ã‚»ãƒƒãƒˆ
+//	orign		: ã‚ªãƒ•ã‚»ãƒƒãƒˆæŒ‡å®šãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿
 //
 void fio_seek(FIO *fio,fio_size offset,int orign)
 {
@@ -573,12 +573,12 @@ void fio_seek(FIO *fio,fio_size offset,int orign)
 }
 //---------------------------------------------------------------------------
 // Function   : fio_read
-// Description: ƒtƒ@ƒCƒ‹“Ç‚İ‚İ
+// Description: ãƒ•ã‚¡ã‚¤ãƒ«èª­ã¿è¾¼ã¿
 // ---
-//	buf			: “Ç‚İ‚İƒf[ƒ^Ši”[ƒAƒhƒŒƒX
-//	size		: “Ç‚İ‚İƒoƒCƒg”
-//	n			: “Ç‚İ‚İŒÂ”
-//	fio			: fileio\‘¢‘Ì
+//	buf			: èª­ã¿è¾¼ã¿ãƒ‡ãƒ¼ã‚¿æ ¼ç´ã‚¢ãƒ‰ãƒ¬ã‚¹
+//	size		: èª­ã¿è¾¼ã¿ãƒã‚¤ãƒˆæ•°
+//	n			: èª­ã¿è¾¼ã¿å€‹æ•°
+//	fio			: fileioæ§‹é€ ä½“
 //
 fio_size fio_read(void *buf,fio_size size,fio_size n,FIO *fio)
 {
@@ -626,7 +626,7 @@ fio_size fio_read(void *buf,fio_size size,fio_size n,FIO *fio)
 
 	read_size = 0;
 	for (;remain > 0;) {
-		// “Ç‚İ‚Şƒf[ƒ^‚ÌƒuƒƒbƒN‚ğ‹‚ß‚é
+		// èª­ã¿è¾¼ã‚€ãƒ‡ãƒ¼ã‚¿ã®ãƒ–ãƒ­ãƒƒã‚¯ã‚’æ±‚ã‚ã‚‹
 		block = fio->data_offset;
 		block /= fio->block_size;
 
@@ -652,15 +652,15 @@ PRINT_LOG("find block:none");
 		}
 
 		if (p_data->block_no != block) {
-			// ƒoƒbƒtƒ@‚É‚È‚¢
+			// ãƒãƒƒãƒ•ã‚¡ã«ãªã„
 			if (p_before != NULL) {
-				// V‚µ‚¢ƒf[ƒ^‚ğæ“ª‚É‚Á‚Ä‚­‚é
+				// æ–°ã—ã„ãƒ‡ãƒ¼ã‚¿ã‚’å…ˆé ­ã«æŒã£ã¦ãã‚‹
 				p_before->next = p_data->next;
 				p_data->next = fio->p_data;
 				fio->p_data = p_data;
 			}
 			if (fio->mode == FIO_MODE_R) {
-				// ƒoƒbƒtƒ@‚ğƒNƒŠƒA‚µ‚ÄV‚½‚É“Ç‚İ‚İ‚µ‚È‚¨‚·B
+				// ãƒãƒƒãƒ•ã‚¡ã‚’ã‚¯ãƒªã‚¢ã—ã¦æ–°ãŸã«èª­ã¿è¾¼ã¿ã—ãªãŠã™ã€‚
 				fio_clear_buffer(fio);
 				fio_fill_buffer(fio);
 			}
@@ -730,12 +730,12 @@ PRINT_LOG("find block:none");
 }
 //---------------------------------------------------------------------------
 // Function   : fio_write
-// Description: ƒtƒ@ƒCƒ‹“Ç‚İ‚İ
+// Description: ãƒ•ã‚¡ã‚¤ãƒ«èª­ã¿è¾¼ã¿
 // ---
-//	buf			: ‘‚«‚İƒf[ƒ^Ši”[ƒAƒhƒŒƒX
-//	size		: ‘‚«‚İƒoƒCƒg”
-//	n			: ‘‚«‚İŒÂ”
-//	fio			: fileio\‘¢‘Ì
+//	buf			: æ›¸ãè¾¼ã¿ãƒ‡ãƒ¼ã‚¿æ ¼ç´ã‚¢ãƒ‰ãƒ¬ã‚¹
+//	size		: æ›¸ãè¾¼ã¿ãƒã‚¤ãƒˆæ•°
+//	n			: æ›¸ãè¾¼ã¿å€‹æ•°
+//	fio			: fileioæ§‹é€ ä½“
 //
 fio_size fio_write(void *buf,fio_size size,fio_size n,FIO *fio)
 {
@@ -810,7 +810,7 @@ PRINT_LOG("find block:none");
 
 		if (p_data->block_no != block) {
 			if (p_before != NULL) {
-				// V‚µ‚¢ƒf[ƒ^‚ğæ“ª‚É‚Á‚Ä‚­‚é
+				// æ–°ã—ã„ãƒ‡ãƒ¼ã‚¿ã‚’å…ˆé ­ã«æŒã£ã¦ãã‚‹
 				p_before->next = p_data->next;
 				p_data->next = fio->p_data;
 				fio->p_data = p_data;
@@ -863,7 +863,7 @@ PRINT_LOG("block:read");
 					return 0;
 				}
 			} else {
-				// Å‘å‚Ì‘‚«‚İƒTƒCƒY‚ğ’´‚¦‚Ä‚¢‚éê‡‚Í‚±‚±‚Å³íI—¹‚·‚éB
+				// æœ€å¤§ã®æ›¸ãè¾¼ã¿ã‚µã‚¤ã‚ºã‚’è¶…ãˆã¦ã„ã‚‹å ´åˆã¯ã“ã“ã§æ­£å¸¸çµ‚äº†ã™ã‚‹ã€‚
 				if (fio->data_maxsize > 0 && fio->data_offset > fio->data_maxsize) {
 					return n;
 				}
@@ -890,9 +890,9 @@ PRINT_LOG("block:read");
 }
 //---------------------------------------------------------------------------
 // Function   : fio_flush
-// Description: ƒtƒ@ƒCƒ‹‘‚«‚İƒtƒ‰ƒbƒVƒ…
+// Description: ãƒ•ã‚¡ã‚¤ãƒ«æ›¸ãè¾¼ã¿ãƒ•ãƒ©ãƒƒã‚·ãƒ¥
 // ---
-//	fio			: fileio\‘¢‘Ì
+//	fio			: fileioæ§‹é€ ä½“
 //
 void fio_flush(FIO *fio)
 {
@@ -919,9 +919,9 @@ PRINT_LOG("store:all");
 }
 //---------------------------------------------------------------------------
 // Function   : fio_rewind
-// Description: ƒtƒ@ƒCƒ‹ƒ|ƒCƒ“ƒ^ƒ[ƒƒŠƒZƒbƒg
+// Description: ãƒ•ã‚¡ã‚¤ãƒ«ãƒã‚¤ãƒ³ã‚¿ã‚¼ãƒ­ãƒªã‚»ãƒƒãƒˆ
 // ---
-//	fio			: fileio\‘¢‘Ì
+//	fio			: fileioæ§‹é€ ä½“
 //
 void fio_rewind(FIO *fio)
 {
@@ -945,9 +945,9 @@ void fio_rewind(FIO *fio)
 }
 //---------------------------------------------------------------------------
 // Function   : fio_tell
-// Description: ƒtƒ@ƒCƒ‹ƒ|ƒCƒ“ƒ^æ“¾
+// Description: ãƒ•ã‚¡ã‚¤ãƒ«ãƒã‚¤ãƒ³ã‚¿å–å¾—
 // ---
-//	fio			: fileio\‘¢‘Ì
+//	fio			: fileioæ§‹é€ ä½“
 //
 fio_size fio_tell(FIO *fio)
 {
@@ -966,10 +966,10 @@ fio_size fio_tell(FIO *fio)
 }
 //---------------------------------------------------------------------------
 // Function   : fio_store_buffer
-// Description: ƒtƒ@ƒCƒ‹ƒoƒbƒtƒ@‘‚«‚İ
+// Description: ãƒ•ã‚¡ã‚¤ãƒ«ãƒãƒƒãƒ•ã‚¡æ›¸ãè¾¼ã¿
 // ---
-//	fio			: fileio\‘¢‘Ì
-//	p_data		: ‘‚«‚İƒf[ƒ^
+//	fio			: fileioæ§‹é€ ä½“
+//	p_data		: æ›¸ãè¾¼ã¿ãƒ‡ãƒ¼ã‚¿
 //
 void fio_store_buffer(FIO *fio,FIO_DATA *p_data)
 {
@@ -1116,9 +1116,9 @@ PRINT_LOG(s);
 }
 //---------------------------------------------------------------------------
 // Function   : fio_copy_file
-// Description: ƒtƒ@ƒCƒ‹ƒRƒs[
+// Description: ãƒ•ã‚¡ã‚¤ãƒ«ã‚³ãƒ”ãƒ¼
 // ---
-//	fio			: fileio\‘¢‘Ì
+//	fio			: fileioæ§‹é€ ä½“
 //
 void fio_copy_file(FIO *fio_r,FILE *ofp)
 {
@@ -1165,9 +1165,9 @@ void fio_copy_file(FIO *fio_r,FILE *ofp)
 }
 //---------------------------------------------------------------------------
 // Function   : fio_clear_buffer
-// Description: ƒoƒbƒtƒ@ƒNƒŠƒA
+// Description: ãƒãƒƒãƒ•ã‚¡ã‚¯ãƒªã‚¢
 // ---
-//	fio			: fileio\‘¢‘Ì
+//	fio			: fileioæ§‹é€ ä½“
 //
 void fio_clear_buffer(FIO *fio)
 {
@@ -1203,9 +1203,9 @@ void fio_clear_buffer(FIO *fio)
 }
 //---------------------------------------------------------------------------
 // Function   : fio_fill_buffer
-// Description: ƒoƒbƒtƒ@æ“Ç‚İ
+// Description: ãƒãƒƒãƒ•ã‚¡å…ˆèª­ã¿
 // ---
-//	fio			: fileio\‘¢‘Ì
+//	fio			: fileioæ§‹é€ ä½“
 //
 void fio_fill_buffer(FIO *fio)
 {
@@ -1278,9 +1278,9 @@ void fio_fill_buffer(FIO *fio)
 }
 //---------------------------------------------------------------------------
 // Function   : fio_alloc
-// Description: fio_data ƒƒ‚ƒŠŠm•Û
+// Description: fio_data ãƒ¡ãƒ¢ãƒªç¢ºä¿
 // ---
-//	fio_data  : fio_data\‘¢‘Ì
+//	fio_data  : fio_dataæ§‹é€ ä½“
 //
 FIO_DATA *fio_alloc(FIO *fio)
 {
@@ -1311,9 +1311,9 @@ FIO_DATA *fio_alloc(FIO *fio)
 
 //---------------------------------------------------------------------------
 // Function   : fio_free
-// Description: fio_data ƒƒ‚ƒŠŠJ•ú
+// Description: fio_data ãƒ¡ãƒ¢ãƒªé–‹æ”¾
 // ---
-//	fio_data  : fio_data\‘¢‘Ì
+//	fio_data  : fio_dataæ§‹é€ ä½“
 //
 FIO_DATA *fio_free(FIO *fio,FIO_DATA *p_data)
 {

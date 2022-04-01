@@ -6,10 +6,10 @@
 /****************************************************************************/
 
 /*--- Log ------------------------------------------------------------------
- * Ver 0.10 <10/12/05> - ì¬
- * Ver 0.20 <11/06/12> - ‚‘¬‰»‘Î‰
- * Ver 0.30 <12/06/30> - ‚‘¬‰»‘Î‰Afio‘Î‰,upconv ‚Ì GUI ‚©‚çŒÄ‚Ño‚·‚æ‚¤‚É‚µ‚½B
- * Ver 1.20 <19/11/03> - upconv.c ‚©‚çŒÄ‚Ño‚·‚æ‚¤‚ÉC³
+ * Ver 0.10 <10/12/05> - ä½œæˆ
+ * Ver 0.20 <11/06/12> - é«˜é€ŸåŒ–å¯¾å¿œ
+ * Ver 0.30 <12/06/30> - é«˜é€ŸåŒ–å¯¾å¿œã€fioå¯¾å¿œ,upconv ã® GUI ã‹ã‚‰å‘¼ã³å‡ºã™ã‚ˆã†ã«ã—ãŸã€‚
+ * Ver 1.20 <19/11/03> - upconv.c ã‹ã‚‰å‘¼ã³å‡ºã™ã‚ˆã†ã«ä¿®æ­£
  */
 
 #define STR_COPYRIGHT	"mconv.exe (c) 2019 Ver 1.20 By 59414d41\n\n"
@@ -55,7 +55,7 @@
 #define	PRINT_LOG(s)	//
 #endif
 
-// ƒTƒ“ƒvƒ‹‚ğˆ—‚·‚éƒf[ƒ^Œ^
+// ã‚µãƒ³ãƒ—ãƒ«ã‚’å‡¦ç†ã™ã‚‹ãƒ‡ãƒ¼ã‚¿å‹
 #define SSIZE	signed long long
 
 typedef struct {
@@ -121,7 +121,7 @@ extern void *al_free(void *ptr);
 
 //---------------------------------------------------------------------------
 // Function   : main
-// Description: ˆø”‚ğˆ—‚µ•ÏŠ·ŠÖ”‚ğŒÄ‚Ño‚·
+// Description: å¼•æ•°ã‚’å‡¦ç†ã—å¤‰æ›é–¢æ•°ã‚’å‘¼ã³å‡ºã™
 //
 //
 int mc_main(int argc, char *argv[])
@@ -186,7 +186,7 @@ PRINT_LOG("mc_main");
 				retCode = STATUS_FILE_READ_ERR;	errLine = __LINE__;
 				break;
 			}
-			// ƒpƒ‰ƒ[ƒ^[ì¬
+			// ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ¼ä½œæˆ
 			if (fgets(pparam,4000,fp) == NULL) {
 				retCode = STATUS_FILE_READ_ERR;errLine = __LINE__;
 				break;
@@ -206,17 +206,17 @@ PRINT_LOG("mc_main");
 #if 0
 			_splitpath(argv[2],drive,dir,fname,ext);
 			_makepath(tmppath,drive,dir,fname,"files");
-			// ƒtƒ@ƒCƒ‹ƒI[ƒvƒ“
+			// ãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ¼ãƒ—ãƒ³
 			fp_files = fopen(tmppath,"a");
 			if (fp_files == NULL) {
 				retCode = STATUS_FILE_READ_ERR;errLine = __LINE__;
 				break;
 			}
 #endif
-			// param ƒtƒ@ƒCƒ‹
+			// param ãƒ•ã‚¡ã‚¤ãƒ«
 			_splitpath(argv[2],drive,dir,fname,ext);
 			_makepath(tmppath,drive,dir,fname,"param");
-			// ƒtƒ@ƒCƒ‹ƒI[ƒvƒ“
+			// ãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ¼ãƒ—ãƒ³
 			fp = fopen(tmppath,"r");
 			if (fp == NULL) {
 				retCode = STATUS_FILE_READ_ERR;	errLine = __LINE__;
@@ -379,7 +379,7 @@ PRINT_LOG("before:MultiConvert");
 				}
 				_splitpath(argv[1],drive,dir,fname,ext);
 				_makepath(tmppath,drive,dir,fname,"param");
-				// ƒtƒ@ƒCƒ‹ƒI[ƒvƒ“
+				// ãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ¼ãƒ—ãƒ³
 				fp = fopen(tmppath,"wt");
 				if (fp == NULL) {
 					retCode = STATUS_FILE_WRITE_ERR;	errLine = __LINE__;
@@ -456,25 +456,25 @@ PRINT_LOG("before:MultiConvert");
 }
 //---------------------------------------------------------------------------
 // Function   : MultiConvert
-// Description: ƒXƒeƒŒƒIƒtƒ@ƒCƒ‹‚©‚çƒ}ƒ‹ƒ`ƒ`ƒƒƒ“ƒlƒ‹ƒtƒ@ƒCƒ‹‚ğì¬‚·‚é
+// Description: ã‚¹ãƒ†ãƒ¬ã‚ªãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ãƒãƒ«ãƒãƒãƒ£ãƒ³ãƒãƒ«ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä½œæˆã™ã‚‹
 // 
-// Šî€‚Ì‰¹‚©‚ç‰½ƒTƒ“ƒvƒ‹’x‚ê‚Ä‚¢‚é‚©‚ğŒvZ‚µAŠî€‚ÌLR‚Ì‰¹º‚É’x‚ê‚½ƒTƒ“ƒvƒ‹‚ğ‚½‚µ‚±‚ñ‚Å‚¢‚­B
-// L‚Ì‰¹‚É‚ÍL‚Ì‰¹‚ª’x‰„‚µ‚½‚à‚Ì‚ÆAR‚Ì‰¹‚ª’x‰„‚µ‚½‚à‚Ì‚Ì—¼•û‚ªŠÜ‚Ü‚ê‚é
-// R‚Ì‰¹‚É‚ÍR‚Ì‰¹‚ª’x‰„‚µ‚½‚à‚Ì‚ÆAL‚Ì‰¹‚ª’x‰„‚µ‚½‚à‚Ì‚Ì—¼•û‚ªŠÜ‚Ü‚ê‚é
-// C‚Ì‰¹‚ÍL‚ÆR‚Ì‹¤’Ê‚È‰¹‚ª‹­‚­ŠÜ‚Ü‚ê‚éA”ñ‹¤’Ê‚È‰¹‚Íã‚¢
-// LFE‚Í‚»‚ê‚¼‚ê‚Ì‰¹‚Ì’á‰¹‚Ì‚İŠÜ‚Ü‚ê‚é
+// åŸºæº–ã®éŸ³ã‹ã‚‰ä½•ã‚µãƒ³ãƒ—ãƒ«é…ã‚Œã¦ã„ã‚‹ã‹ã‚’è¨ˆç®—ã—ã€åŸºæº–ã®LRã®éŸ³å£°ã«é…ã‚ŒãŸã‚µãƒ³ãƒ—ãƒ«ã‚’ãŸã—ã“ã‚“ã§ã„ãã€‚
+// Lã®éŸ³ã«ã¯Lã®éŸ³ãŒé…å»¶ã—ãŸã‚‚ã®ã¨ã€Rã®éŸ³ãŒé…å»¶ã—ãŸã‚‚ã®ã®ä¸¡æ–¹ãŒå«ã¾ã‚Œã‚‹
+// Rã®éŸ³ã«ã¯Rã®éŸ³ãŒé…å»¶ã—ãŸã‚‚ã®ã¨ã€Lã®éŸ³ãŒé…å»¶ã—ãŸã‚‚ã®ã®ä¸¡æ–¹ãŒå«ã¾ã‚Œã‚‹
+// Cã®éŸ³ã¯Lã¨Rã®å…±é€šãªéŸ³ãŒå¼·ãå«ã¾ã‚Œã‚‹ã€éå…±é€šãªéŸ³ã¯å¼±ã„
+// LFEã¯ãã‚Œãã‚Œã®éŸ³ã®ä½éŸ³ã®ã¿å«ã¾ã‚Œã‚‹
 //
-// 1.Še‰¹‚ğ¶¬
-// 2.downmix‚È‚çƒ~ƒbƒNƒX‚·‚é
-// 3.ƒTƒ“ƒvƒŠƒ“ƒOƒŒ[ƒg‚ğ1/2‚·‚é
+// 1.å„éŸ³ã‚’ç”Ÿæˆ
+// 2.downmixãªã‚‰ãƒŸãƒƒã‚¯ã‚¹ã™ã‚‹
+// 3.ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ãƒ¬ãƒ¼ãƒˆã‚’1/2ã™ã‚‹
 //
 // ---
-//	paramFile	: paramƒtƒ@ƒCƒ‹–¼
-//	param	: •ÏŠ·ƒpƒ‰ƒ[ƒ^\‘¢‘Ì
+//	paramFile	: paramãƒ•ã‚¡ã‚¤ãƒ«å
+//	param	: å¤‰æ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿æ§‹é€ ä½“
 //
 void MultiConvert(char *paramFile,PARAM_INFO *param)
 /*
- *	ƒ}ƒ‹ƒ`ƒ`ƒƒƒ“ƒlƒ‹ƒtƒ@ƒCƒ‹ì¬
+ *	ãƒãƒ«ãƒãƒãƒ£ãƒ³ãƒãƒ«ãƒ•ã‚¡ã‚¤ãƒ«ä½œæˆ
  */
 {
 	char outFile[_MAX_PATH];
@@ -527,7 +527,7 @@ PRINT_LOG(outFile);
 		}
 		fio_set_memory_limit(&fp_l,20,param->fio);
 
-		// ƒtƒ@ƒCƒ‹ƒTƒCƒYæ“¾
+		// ãƒ•ã‚¡ã‚¤ãƒ«ã‚µã‚¤ã‚ºå–å¾—
 		fio_get_filesize(&fp_l,&size);
 		if (fp_l.error) {
 			param->err = STATUS_FILE_READ_ERR;param->error_line = __LINE__;
@@ -549,7 +549,7 @@ PRINT_LOG(outFile);
 		fio_set_memory_limit(&fp_r,20,param->fio);
 
 		inSample2 = 0;
-		// ƒtƒ@ƒCƒ‹ƒTƒCƒYæ“¾
+		// ãƒ•ã‚¡ã‚¤ãƒ«ã‚µã‚¤ã‚ºå–å¾—
 		fio_get_filesize(&fp_r,&size);
 		if (fp_r.error) {
 			param->err = STATUS_FILE_READ_ERR;param->error_line = __LINE__;
@@ -574,7 +574,7 @@ PRINT_LOG(outFile);
 				break;
 			}
 
-			// Center ‚ğ’Šo(ü”g”²‚ğŒ³‚É‹¤’Ê‚Ì‰¹‚ğ”²‚«o‚µ)
+			// Center ã‚’æŠ½å‡º(å‘¨æ³¢æ•°è»¸ã‚’å…ƒã«å…±é€šã®éŸ³ã‚’æŠœãå‡ºã—)
 			param->dis_downsample = 1;
 			fftFilter(3,inSample1,inSample2,&fp_l,&fp_r,&fp_w,param);
 			if (param->err) {
@@ -658,7 +658,7 @@ PRINT_LOG(outFile);
 					param->err = STATUS_FILE_READ_ERR;param->error_line = __LINE__;
 					break;
 				}
-				// ƒXƒeƒŒƒI‚Éƒ_ƒEƒ“ƒ~ƒbƒNƒX
+				// ã‚¹ãƒ†ãƒ¬ã‚ªã«ãƒ€ã‚¦ãƒ³ãƒŸãƒƒã‚¯ã‚¹
 				merageTempFile('+',0,&fp_l,&fp_tmp,&fp_w,inSample1,param);
 				if (param->err) {
 					break;
@@ -681,7 +681,7 @@ PRINT_LOG(outFile);
 					param->err = STATUS_FILE_READ_ERR;param->error_line = __LINE__;
 					break;
 				}
-				// ƒXƒeƒŒƒI‚Éƒ_ƒEƒ“ƒ~ƒbƒNƒX
+				// ã‚¹ãƒ†ãƒ¬ã‚ªã«ãƒ€ã‚¦ãƒ³ãƒŸãƒƒã‚¯ã‚¹
 				merageTempFile('+',0,&fp_r,&fp_tmp,&fp_w,inSample2,param);
 				if (param->err) {
 					break;
@@ -712,7 +712,7 @@ PRINT_LOG(outFile);
 					param->err = STATUS_FILE_READ_ERR;param->error_line = __LINE__;
 					break;
 				}
-				// ƒXƒeƒŒƒI‚Éƒ_ƒEƒ“ƒ~ƒbƒNƒX
+				// ã‚¹ãƒ†ãƒ¬ã‚ªã«ãƒ€ã‚¦ãƒ³ãƒŸãƒƒã‚¯ã‚¹
 				merageTempFile('+',0,&fp_l,&fp_tmp,&fp_w,inSample1,param);
 				if (param->err) {
 					break;
@@ -741,7 +741,7 @@ PRINT_LOG(outFile);
 					param->err = STATUS_FILE_READ_ERR;param->error_line = __LINE__;
 					break;
 				}
-				// ƒXƒeƒŒƒI‚Éƒ_ƒEƒ“ƒ~ƒbƒNƒX
+				// ã‚¹ãƒ†ãƒ¬ã‚ªã«ãƒ€ã‚¦ãƒ³ãƒŸãƒƒã‚¯ã‚¹
 				merageTempFile('+',0,&fp_r,&fp_tmp,&fp_w,inSample2,param);
 				if (param->err) {
 					break;
@@ -760,7 +760,7 @@ PRINT_LOG(outFile);
 				fio_close(&fp_tmp);
 			}
 		}
-		// Left ‚ğ–{—ˆ‚Ìo—ÍƒTƒ“ƒvƒŠƒ“ƒOƒŒ[ƒg‚É‚·‚éB
+		// Left ã‚’æœ¬æ¥ã®å‡ºåŠ›ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ãƒ¬ãƒ¼ãƒˆã«ã™ã‚‹ã€‚
 		memset(&NormInfo,0,sizeof (NORM_INFO));
 		_makepath(outFile,workdrive,workdir,workfname,"r1.tmp");
 		fio_open(&fp_w,outFile,FIO_MODE_W);
@@ -768,7 +768,7 @@ PRINT_LOG(outFile);
 			param->err = STATUS_FILE_WRITE_ERR;param->error_line = __LINE__;
 			break;
 		}
-		// ƒTƒ“ƒvƒŠƒ“ƒOƒŒ[ƒg‚ğ1/2‚É‚µ‚Äo—Í
+		// ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ãƒ¬ãƒ¼ãƒˆã‚’1/2ã«ã—ã¦å‡ºåŠ›
 		fftFilter(1,inSample1,inSample2,&fp_l,NULL,&fp_w,param);
 		if (param->err) {
 			break;
@@ -821,7 +821,7 @@ PRINT_LOG(outFile);
 		}
 		fclose(fp);
 
-		// Right ‚ğ–{—ˆ‚Ìo—ÍƒTƒ“ƒvƒŠƒ“ƒOƒŒ[ƒg‚É‚·‚éB
+		// Right ã‚’æœ¬æ¥ã®å‡ºåŠ›ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ãƒ¬ãƒ¼ãƒˆã«ã™ã‚‹ã€‚
 		memset(&NormInfo,0,sizeof (NORM_INFO));
 		_makepath(outFile,workdrive,workdir,workfname,"r2.tmp");
 		fio_open(&fp_w,outFile,FIO_MODE_W);
@@ -829,7 +829,7 @@ PRINT_LOG(outFile);
 			param->err = STATUS_FILE_WRITE_ERR;param->error_line = __LINE__;
 			break;
 		}
-		// ƒTƒ“ƒvƒŠƒ“ƒOƒŒ[ƒg‚ğ1/2‚É‚µ‚Äo—Í
+		// ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ãƒ¬ãƒ¼ãƒˆã‚’1/2ã«ã—ã¦å‡ºåŠ›
 		fftFilter(2,inSample1,inSample2,NULL,&fp_r,&fp_w,param);
 		if (param->err) {
 			break;
@@ -883,7 +883,7 @@ PRINT_LOG(outFile);
 		fclose(fp);
 
 		if (param->chC == 1) {
-			// Center ‚ğ–{—ˆ‚Ìo—ÍƒTƒ“ƒvƒŠƒ“ƒOƒŒ[ƒg‚É‚·‚éB
+			// Center ã‚’æœ¬æ¥ã®å‡ºåŠ›ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ãƒ¬ãƒ¼ãƒˆã«ã™ã‚‹ã€‚
 			memset(&NormInfo,0,sizeof (NORM_INFO));
 			_makepath(outFile,workdrive,workdir,workfname,"r3");
 			fio_open(&fp_tmp,outFile,FIO_MODE_R);
@@ -897,7 +897,7 @@ PRINT_LOG(outFile);
 				param->err = STATUS_FILE_WRITE_ERR;param->error_line = __LINE__;
 				break;
 			}
-			// ƒTƒ“ƒvƒŠƒ“ƒOƒŒ[ƒg‚ğ1/2‚É‚µ‚Äo—Í
+			// ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ãƒ¬ãƒ¼ãƒˆã‚’1/2ã«ã—ã¦å‡ºåŠ›
 			fftFilter(1,inSample1,inSample2,&fp_tmp,NULL,&fp_w,param);
 			if (param->err) {
 				break;
@@ -950,7 +950,7 @@ PRINT_LOG(outFile);
 			fclose(fp);
 		}
 		if (param->chS == 1) {
-			// Surround Left/Right ‚ğ–{—ˆ‚Ìo—ÍƒTƒ“ƒvƒŠƒ“ƒOƒŒ[ƒg‚É‚·‚éB
+			// Surround Left/Right ã‚’æœ¬æ¥ã®å‡ºåŠ›ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ãƒ¬ãƒ¼ãƒˆã«ã™ã‚‹ã€‚
 			memset(&NormInfo,0,sizeof (NORM_INFO));
 			_makepath(outFile,workdrive,workdir,workfname,"r4");
 			fio_open(&fp_tmp,outFile,FIO_MODE_R);
@@ -964,7 +964,7 @@ PRINT_LOG(outFile);
 				param->err = STATUS_FILE_WRITE_ERR;param->error_line = __LINE__;
 				break;
 			}
-			// ƒTƒ“ƒvƒŠƒ“ƒOƒŒ[ƒg‚ğ1/2‚É‚µ‚Äo—Í
+			// ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ãƒ¬ãƒ¼ãƒˆã‚’1/2ã«ã—ã¦å‡ºåŠ›
 			fftFilter(1,inSample1,inSample2,&fp_tmp,NULL,&fp_w,param);
 			if (param->err) {
 				break;
@@ -1015,7 +1015,7 @@ PRINT_LOG(outFile);
 				break;
 			}
 			fclose(fp);
-			// Surround Left/Right ‚ğ–{—ˆ‚Ìo—ÍƒTƒ“ƒvƒŠƒ“ƒOƒŒ[ƒg‚É‚·‚éB
+			// Surround Left/Right ã‚’æœ¬æ¥ã®å‡ºåŠ›ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ãƒ¬ãƒ¼ãƒˆã«ã™ã‚‹ã€‚
 			memset(&NormInfo,0,sizeof (NORM_INFO));
 			_makepath(outFile,workdrive,workdir,workfname,"r5");
 			fio_open(&fp_tmp,outFile,FIO_MODE_R);
@@ -1029,7 +1029,7 @@ PRINT_LOG(outFile);
 				param->err = STATUS_FILE_WRITE_ERR;param->error_line = __LINE__;
 				break;
 			}
-			// ƒTƒ“ƒvƒŠƒ“ƒOƒŒ[ƒg‚ğ1/2‚É‚µ‚Äo—Í
+			// ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ãƒ¬ãƒ¼ãƒˆã‚’1/2ã«ã—ã¦å‡ºåŠ›
 			fftFilter(2,inSample1,inSample2,NULL,&fp_tmp,&fp_w,param);
 			if (param->err) {
 				break;
@@ -1082,7 +1082,7 @@ PRINT_LOG(outFile);
 			fclose(fp);
 		}
 		if (param->chLFE == 1) {
-			// LFE ‚ğ–{—ˆ‚Ìo—ÍƒTƒ“ƒvƒŠƒ“ƒOƒŒ[ƒg‚É‚·‚éB
+			// LFE ã‚’æœ¬æ¥ã®å‡ºåŠ›ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ãƒ¬ãƒ¼ãƒˆã«ã™ã‚‹ã€‚
 			memset(&NormInfo,0,sizeof (NORM_INFO));
 			_makepath(outFile,workdrive,workdir,workfname,"r6");
 			fio_open(&fp_tmp,outFile,FIO_MODE_R);
@@ -1096,7 +1096,7 @@ PRINT_LOG(outFile);
 				param->err = STATUS_FILE_WRITE_ERR;param->error_line = __LINE__;
 				break;
 			}
-			// ƒTƒ“ƒvƒŠƒ“ƒOƒŒ[ƒg‚ğ1/2‚É‚µ‚Äo—Í
+			// ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ãƒ¬ãƒ¼ãƒˆã‚’1/2ã«ã—ã¦å‡ºåŠ›
 			fftFilter(1,inSample1,inSample2,&fp_tmp,NULL,&fp_w,param);
 			if (param->err) {
 				break;
@@ -1152,13 +1152,13 @@ PRINT_LOG(outFile);
 }
 //---------------------------------------------------------------------------
 // Function   : convolutionFile
-// Description: c‹¿‰¹¶¬(Surround Left/Right)
+// Description: æ®‹éŸ¿éŸ³ç”Ÿæˆ(Surround Left/Right)
 // ---
-//	inSample :ƒTƒ“ƒvƒ‹”
-//	fio_in1  :“ü—Íƒtƒ@ƒCƒ‹1
-//	fio_in2	 :“ü—Íƒtƒ@ƒCƒ‹2
-//	fio_out  :o—Íƒtƒ@ƒCƒ‹
-//	param	 :ƒpƒ‰ƒ[ƒ^[
+//	inSample :ã‚µãƒ³ãƒ—ãƒ«æ•°
+//	fio_in1  :å…¥åŠ›ãƒ•ã‚¡ã‚¤ãƒ«1
+//	fio_in2	 :å…¥åŠ›ãƒ•ã‚¡ã‚¤ãƒ«2
+//	fio_out  :å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«
+//	param	 :ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ¼
 //
 void convolutionFile(DWORD inSample,FIO *fio_in1,FIO *fio_in2,FIO *fio_out,PARAM_INFO *param)
 {
@@ -1174,13 +1174,13 @@ void convolutionFile(DWORD inSample,FIO *fio_in1,FIO *fio_in2,FIO *fio_out,PARAM
 	fio_rewind(fio_in1);
 	fio_rewind(fio_in2);
 
-	// 3 •b•ª‚ÌƒTƒ“ƒvƒ‹‚ğ•Û‘¶‚·‚é‚½‚ß‚Ìƒoƒbƒtƒ@‚ğ—pˆÓ‚·‚éB
+	// 3 ç§’åˆ†ã®ã‚µãƒ³ãƒ—ãƒ«ã‚’ä¿å­˜ã™ã‚‹ãŸã‚ã®ãƒãƒƒãƒ•ã‚¡ã‚’ç”¨æ„ã™ã‚‹ã€‚
 	pIn1 = (SSIZE *)al_malloc(param->inSampleR * sizeof (SSIZE) * 3);
 	if (pIn1 == NULL) {
 		param->err = STATUS_MEM_ALLOC_ERR;param->error_line = __LINE__;
 		return;
 	}
-	// 1 •b•ª‚ÌƒTƒ“ƒvƒ‹‚ğ•Û‘¶‚·‚é‚½‚ß‚Ìƒoƒbƒtƒ@‚ğ—pˆÓ‚·‚éB
+	// 1 ç§’åˆ†ã®ã‚µãƒ³ãƒ—ãƒ«ã‚’ä¿å­˜ã™ã‚‹ãŸã‚ã®ãƒãƒƒãƒ•ã‚¡ã‚’ç”¨æ„ã™ã‚‹ã€‚
 	pOut = (SSIZE *)al_malloc(param->inSampleR * sizeof (SSIZE));
 	if (pOut == NULL) {
 		param->err = STATUS_MEM_ALLOC_ERR;param->error_line = __LINE__;
@@ -1190,7 +1190,7 @@ void convolutionFile(DWORD inSample,FIO *fio_in1,FIO *fio_in2,FIO *fio_out,PARAM
 	per = -1;
 	for (startInSample = 0;startInSample < inSample;startInSample += param->inSampleR) {
 		rdStart = rdEnd = -1;
-		// ƒ[ƒƒNƒŠƒA
+		// ã‚¼ãƒ­ã‚¯ãƒªã‚¢
 		memset(pOut,0,param->inSampleR * sizeof (SSIZE));
 
 		if (startInSample >= 0 && startInSample < inSample) {
@@ -1204,25 +1204,25 @@ void convolutionFile(DWORD inSample,FIO *fio_in1,FIO *fio_in2,FIO *fio_out,PARAM
 			per = persent;
 		}
 
-		// L + L‚Ìc‹¿A‚Ü‚½‚ÍR + R‚Ìc‹¿
+		// L + Lã®æ®‹éŸ¿ã€ã¾ãŸã¯R + Rã®æ®‹éŸ¿
 		for (n = 0;;n++) {
-			// ƒ[ƒƒNƒŠƒA
+			// ã‚¼ãƒ­ã‚¯ãƒªã‚¢
 			memset(pIn1,0,param->inSampleR * sizeof (SSIZE));
 
-			// c‹¿“Á«‚Ìƒpƒ‰ƒ[ƒ^[ŒvZB
-			// delay ‚É‚Í‰½ƒTƒ“ƒvƒ‹’x‚ê‚Ä‰¹‚ª“’B‚·‚é‚©B
-			// per ‚Í’x‚ê‚Ä“’B‚µ‚½‰¹‚Ì‹­‚³B
+			// æ®‹éŸ¿ç‰¹æ€§ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ¼è¨ˆç®—ã€‚
+			// delay ã«ã¯ä½•ã‚µãƒ³ãƒ—ãƒ«é…ã‚Œã¦éŸ³ãŒåˆ°é”ã™ã‚‹ã‹ã€‚
+			// per ã¯é…ã‚Œã¦åˆ°é”ã—ãŸéŸ³ã®å¼·ã•ã€‚
 			if (DelayParam2[n].m == 0) {
 				break;
 			}
-			delay = (long)(((double)1000 / 330) * DelayParam2[n].m);	// 1ƒ[ƒgƒ‹i‚Ş‚Ì‚Éx msBx ms ~ ƒfƒBƒŒƒC(ƒ[ƒgƒ‹) = c‹¿‰¹‚ª x ms ’x‚ê‚Ä‰¹‚ª“’B
-			delay = (param->outSampleR / 1000) * delay;					// c‹¿‰¹‚ÌÅ‰‚ÌƒTƒ“ƒvƒ‹‚ªA‰½ƒTƒ“ƒvƒ‹’x‚ê‚Ä“’B‚·‚é‚©B
+			delay = (long)(((double)1000 / 330) * DelayParam2[n].m);	// 1ãƒ¡ãƒ¼ãƒˆãƒ«é€²ã‚€ã®ã«x msã€‚x ms Ã— ãƒ‡ã‚£ãƒ¬ã‚¤(ãƒ¡ãƒ¼ãƒˆãƒ«) = æ®‹éŸ¿éŸ³ãŒ x ms é…ã‚Œã¦éŸ³ãŒåˆ°é”
+			delay = (param->outSampleR / 1000) * delay;					// æ®‹éŸ¿éŸ³ã®æœ€åˆã®ã‚µãƒ³ãƒ—ãƒ«ãŒã€ä½•ã‚µãƒ³ãƒ—ãƒ«é…ã‚Œã¦åˆ°é”ã™ã‚‹ã‹ã€‚
 			dis   = (double)DelayParam2[n].m / DelayParam2[0].m;
 			if (DelayParam2[n].n > 0) {
-				pw	 = DelayParam2[n].n;									// c‹¿‰¹‚Ì‹­‚³
+				pw	 = DelayParam2[n].n;									// æ®‹éŸ¿éŸ³ã®å¼·ã•
 			} else {
 				if (param->adjust == 0) {
-					pw	 = DelayParam2[0].n / (dis * dis);						// c‹¿‰¹‚Ì‹­‚³
+					pw	 = DelayParam2[0].n / (dis * dis);						// æ®‹éŸ¿éŸ³ã®å¼·ã•
 				} else if (param->adjust == 1) {
 					pw	 = DelayParam2[0].n / ((dis * dis) / 3);
 				} else if (param->adjust == 2) {
@@ -1237,7 +1237,7 @@ void convolutionFile(DWORD inSample,FIO *fio_in1,FIO *fio_in2,FIO *fio_out,PARAM
 			if (rdSample >= 0 && rdSample + (param->inSampleR) < inSample && startInSample > param->inSampleR * 3) {
 				nSample = param->inSampleR;
 				if (rdStart != -1 && rdStart <= rdSample && (rdSample + param->inSampleR) < rdEnd) {
-					// ƒoƒbƒtƒ@‚Ö‚·‚Å‚É“Ç‚İ‚ñ‚Å‚¢‚é‚Ì‚Å“Ç‚Ü‚È‚¢
+					// ãƒãƒƒãƒ•ã‚¡ã¸ã™ã§ã«èª­ã¿è¾¼ã‚“ã§ã„ã‚‹ã®ã§èª­ã¾ãªã„
 					sprintf(s,"[%d] CACHE",n);
 					PRINT_LOG(s);
 				} else {
@@ -1311,26 +1311,26 @@ void convolutionFile(DWORD inSample,FIO *fio_in1,FIO *fio_in2,FIO *fio_out,PARAM
 			}
 		}
 
-		// L + R‚Ìc‹¿A‚Ü‚½‚ÍR + L‚Ìc‹¿
+		// L + Rã®æ®‹éŸ¿ã€ã¾ãŸã¯R + Lã®æ®‹éŸ¿
 		rdStart = rdEnd = -1;
 		for (n = 0;;n++) {
-			// ƒ[ƒƒNƒŠƒA
+			// ã‚¼ãƒ­ã‚¯ãƒªã‚¢
 			memset(pIn1,0,param->inSampleR * sizeof (SSIZE));
 
-			// c‹¿“Á«‚Ìƒpƒ‰ƒ[ƒ^[ŒvZB
-			// delay ‚É‚Í‰½ƒTƒ“ƒvƒ‹’x‚ê‚Ä‰¹‚ª“’B‚·‚é‚©B
-			// per ‚Í’x‚ê‚Ä“’B‚µ‚½‰¹‚Ì‹­‚³B
+			// æ®‹éŸ¿ç‰¹æ€§ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ¼è¨ˆç®—ã€‚
+			// delay ã«ã¯ä½•ã‚µãƒ³ãƒ—ãƒ«é…ã‚Œã¦éŸ³ãŒåˆ°é”ã™ã‚‹ã‹ã€‚
+			// per ã¯é…ã‚Œã¦åˆ°é”ã—ãŸéŸ³ã®å¼·ã•ã€‚
 			if (DelayParam3[n].m == 0) {
 				break;
 			}
-			delay = (long)(((double)1000 / 330) * DelayParam3[n].m);	// 1ƒ[ƒgƒ‹i‚Ş‚Ì‚Éx msBx ms ~ ƒfƒBƒŒƒC(ƒ[ƒgƒ‹) = c‹¿‰¹‚ª x ms ’x‚ê‚Ä‰¹‚ª“’B
-			delay = (param->outSampleR / 1000) * delay;					// c‹¿‰¹‚ÌÅ‰‚ÌƒTƒ“ƒvƒ‹‚ªA‰½ƒTƒ“ƒvƒ‹’x‚ê‚Ä“’B‚·‚é‚©B
+			delay = (long)(((double)1000 / 330) * DelayParam3[n].m);	// 1ãƒ¡ãƒ¼ãƒˆãƒ«é€²ã‚€ã®ã«x msã€‚x ms Ã— ãƒ‡ã‚£ãƒ¬ã‚¤(ãƒ¡ãƒ¼ãƒˆãƒ«) = æ®‹éŸ¿éŸ³ãŒ x ms é…ã‚Œã¦éŸ³ãŒåˆ°é”
+			delay = (param->outSampleR / 1000) * delay;					// æ®‹éŸ¿éŸ³ã®æœ€åˆã®ã‚µãƒ³ãƒ—ãƒ«ãŒã€ä½•ã‚µãƒ³ãƒ—ãƒ«é…ã‚Œã¦åˆ°é”ã™ã‚‹ã‹ã€‚
 			dis   = (double)DelayParam3[n].m / DelayParam3[0].m;
 			if (DelayParam3[n].n > 0) {
 				pw = DelayParam3[n].n;
 			} else {
 				if (param->adjust == 0) {
-					pw	 = DelayParam3[0].n / (dis * dis);						// c‹¿‰¹‚Ì‹­‚³
+					pw	 = DelayParam3[0].n / (dis * dis);						// æ®‹éŸ¿éŸ³ã®å¼·ã•
 				} else if (param->adjust == 1) {
 					pw	 = DelayParam3[0].n / ((dis * dis) * 3);
 				} else if (param->adjust == 2) {
@@ -1348,7 +1348,7 @@ void convolutionFile(DWORD inSample,FIO *fio_in1,FIO *fio_in2,FIO *fio_out,PARAM
 				if (rdStart != -1 && rdStart <= rdSample && (rdSample + param->inSampleR) < rdEnd) {
 					sprintf(s,"[%d] CACHE",n);
 					PRINT_LOG(s);
-					// ƒoƒbƒtƒ@‚Ö‚·‚Å‚É“Ç‚İ‚ñ‚Å‚¢‚é‚Ì‚Å“Ç‚Ü‚È‚¢
+					// ãƒãƒƒãƒ•ã‚¡ã¸ã™ã§ã«èª­ã¿è¾¼ã‚“ã§ã„ã‚‹ã®ã§èª­ã¾ãªã„
 				} else {
 					rdStart = rdSample - (param->inSampleR * 2);
 					rdEnd	= rdStart + (param->inSampleR * 3);
@@ -1422,22 +1422,22 @@ void convolutionFile(DWORD inSample,FIO *fio_in1,FIO *fio_in2,FIO *fio_out,PARAM
 		if (param->echo == 1) {
 			rdStart = rdEnd = -1;
 			for (n = 0;;n++) {
-				// ƒ[ƒƒNƒŠƒA
+				// ã‚¼ãƒ­ã‚¯ãƒªã‚¢
 				memset(pIn1,0,param->inSampleR * sizeof (SSIZE));
 
-				// c‹¿“Á«‚Ìƒpƒ‰ƒ[ƒ^[ŒvZB
-				// delay ‚É‚Í‰½ƒTƒ“ƒvƒ‹’x‚ê‚Ä‰¹‚ª“’B‚·‚é‚©B
-				// per ‚Í’x‚ê‚Ä“’B‚µ‚½‰¹‚Ì‹­‚³B
+				// æ®‹éŸ¿ç‰¹æ€§ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ¼è¨ˆç®—ã€‚
+				// delay ã«ã¯ä½•ã‚µãƒ³ãƒ—ãƒ«é…ã‚Œã¦éŸ³ãŒåˆ°é”ã™ã‚‹ã‹ã€‚
+				// per ã¯é…ã‚Œã¦åˆ°é”ã—ãŸéŸ³ã®å¼·ã•ã€‚
 				if (DelayParam4[n].m == 0) {
 					break;
 				}
-				delay = (long)(((double)1000 / 330) * DelayParam4[n].m);	// 1ƒ[ƒgƒ‹i‚Ş‚Ì‚Éx msBx ms ~ ƒfƒBƒŒƒC(ƒ[ƒgƒ‹) = c‹¿‰¹‚ª x ms ’x‚ê‚Ä‰¹‚ª“’B
-				delay = (param->outSampleR / 1000) * delay;					// c‹¿‰¹‚ÌÅ‰‚ÌƒTƒ“ƒvƒ‹‚ªA‰½ƒTƒ“ƒvƒ‹’x‚ê‚Ä“’B‚·‚é‚©B
+				delay = (long)(((double)1000 / 330) * DelayParam4[n].m);	// 1ãƒ¡ãƒ¼ãƒˆãƒ«é€²ã‚€ã®ã«x msã€‚x ms Ã— ãƒ‡ã‚£ãƒ¬ã‚¤(ãƒ¡ãƒ¼ãƒˆãƒ«) = æ®‹éŸ¿éŸ³ãŒ x ms é…ã‚Œã¦éŸ³ãŒåˆ°é”
+				delay = (param->outSampleR / 1000) * delay;					// æ®‹éŸ¿éŸ³ã®æœ€åˆã®ã‚µãƒ³ãƒ—ãƒ«ãŒã€ä½•ã‚µãƒ³ãƒ—ãƒ«é…ã‚Œã¦åˆ°é”ã™ã‚‹ã‹ã€‚
 				dis   = (double)DelayParam4[n].m / DelayParam4[0].m;
 				if (DelayParam4[n].n > 0) {
 					pw = DelayParam4[n].n;
 				} else {
-					pw = DelayParam4[0].n / (dis * dis);						// c‹¿‰¹‚Ì‹­‚³
+					pw = DelayParam4[0].n / (dis * dis);						// æ®‹éŸ¿éŸ³ã®å¼·ã•
 				}
 				rdSample = startInSample - delay;
 				if (rdSample >= 0 && rdSample + (param->inSampleR) < inSample && startInSample > param->inSampleR * 3) {
@@ -1445,7 +1445,7 @@ void convolutionFile(DWORD inSample,FIO *fio_in1,FIO *fio_in2,FIO *fio_out,PARAM
 					if (rdStart != -1 && rdStart <= rdSample && (rdSample + param->inSampleR) < rdEnd) {
 						sprintf(s,"[%d] CACHE",n);
 						PRINT_LOG(s);
-						// ƒoƒbƒtƒ@‚Ö‚·‚Å‚É“Ç‚İ‚ñ‚Å‚¢‚é‚Ì‚Å“Ç‚Ü‚È‚¢
+						// ãƒãƒƒãƒ•ã‚¡ã¸ã™ã§ã«èª­ã¿è¾¼ã‚“ã§ã„ã‚‹ã®ã§èª­ã¾ãªã„
 					} else {
 						rdStart = rdSample - (param->inSampleR * 2);
 						rdEnd	= rdStart + (param->inSampleR * 3);
@@ -1531,16 +1531,16 @@ void convolutionFile(DWORD inSample,FIO *fio_in1,FIO *fio_in2,FIO *fio_out,PARAM
 #if 0
 //---------------------------------------------------------------------------
 // Function   : merageTempFile
-// Description: o—ÍŒ‹‰Ê‚Ìƒtƒ@ƒCƒ‹‚ğƒ}[ƒW‚·‚é
+// Description: å‡ºåŠ›çµæœã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ãƒãƒ¼ã‚¸ã™ã‚‹
 // ---
-//	type	 :ƒ}[ƒW‚Ìí—Ş
-//	normFlag :ƒm[ƒ}ƒ‰ƒCƒY—p•Ï”XVƒtƒ‰ƒO
-//	in1 	 :“ü—Íƒtƒ@ƒCƒ‹1
-//	in2		 :“ü—Íƒtƒ@ƒCƒ‹2
-//	out		 :o—Íƒtƒ@ƒCƒ‹
-//	inSample :ƒTƒ“ƒvƒ‹”
-//	type	 :c‹¿ƒ^ƒCƒv
-//	count	 :‰ñ”
+//	type	 :ãƒãƒ¼ã‚¸ã®ç¨®é¡
+//	normFlag :ãƒãƒ¼ãƒãƒ©ã‚¤ã‚ºç”¨å¤‰æ•°æ›´æ–°ãƒ•ãƒ©ã‚°
+//	in1 	 :å…¥åŠ›ãƒ•ã‚¡ã‚¤ãƒ«1
+//	in2		 :å…¥åŠ›ãƒ•ã‚¡ã‚¤ãƒ«2
+//	out		 :å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«
+//	inSample :ã‚µãƒ³ãƒ—ãƒ«æ•°
+//	type	 :æ®‹éŸ¿ã‚¿ã‚¤ãƒ—
+//	count	 :å›æ•°
 //
 void merageTempFile(char type,int normFlag,FILE *in1,FILE *in2,DWORD inSample,int dtype,int count,PARAM_INFO *param)
 {
@@ -1752,15 +1752,15 @@ void merageTempFile(char type,int normFlag,FILE *in1,FILE *in2,DWORD inSample,in
 #endif
 //---------------------------------------------------------------------------
 // Function   : fftFilter
-// Description: FFT ‚É‚æ‚éƒtƒBƒ‹ƒ^ˆ—
+// Description: FFT ã«ã‚ˆã‚‹ãƒ•ã‚£ãƒ«ã‚¿å‡¦ç†
 // ---
-//	type		:•ÏŠ·ƒ^ƒCƒv
-//	inSample1	:“ü—Íƒf[ƒ^‚ÌƒTƒ“ƒvƒ‹”
-//	inSample2	:“ü—Íƒf[ƒ^‚ÌƒTƒ“ƒvƒ‹”
-//	fio1		:“ü—Íƒtƒ@ƒCƒ‹—p\‘¢‘Ì
-//	fio2		:“ü—Íƒtƒ@ƒCƒ‹—p\‘¢‘Ì
-//	fio3		:o—Íƒtƒ@ƒCƒ‹—p\‘¢‘Ì
-//	param		:•ÏŠ·ƒpƒ‰ƒ[ƒ^
+//	type		:å¤‰æ›ã‚¿ã‚¤ãƒ—
+//	inSample1	:å…¥åŠ›ãƒ‡ãƒ¼ã‚¿ã®ã‚µãƒ³ãƒ—ãƒ«æ•°
+//	inSample2	:å…¥åŠ›ãƒ‡ãƒ¼ã‚¿ã®ã‚µãƒ³ãƒ—ãƒ«æ•°
+//	fio1		:å…¥åŠ›ãƒ•ã‚¡ã‚¤ãƒ«ç”¨æ§‹é€ ä½“
+//	fio2		:å…¥åŠ›ãƒ•ã‚¡ã‚¤ãƒ«ç”¨æ§‹é€ ä½“
+//	fio3		:å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«ç”¨æ§‹é€ ä½“
+//	param		:å¤‰æ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿
 //
 static void fftFilter(int type,DWORD inSample1,DWORD inSample2,FIO *fio1,FIO *fio2,FIO *fio3,PARAM_INFO *param)
 {
@@ -1810,7 +1810,7 @@ static void fftFilter(int type,DWORD inSample1,DWORD inSample2,FIO *fio1,FIO *fi
 	}
 	wkMemSize *= 2;
 
-	// “ü—Í—p
+	// å…¥åŠ›ç”¨
 	mem1 = (SSIZE *)al_malloc(wkMemSize * sizeof (SSIZE));
 	if (mem1 == NULL) {
 		param->error_line = __LINE__;
@@ -1818,7 +1818,7 @@ static void fftFilter(int type,DWORD inSample1,DWORD inSample2,FIO *fio1,FIO *fi
 		return;
 	}
 
-	// o—Í—p
+	// å‡ºåŠ›ç”¨
 	mem2 = (SSIZE *)al_malloc(wkMemSize * sizeof (SSIZE));
 	if (mem2 == NULL) {
 		param->error_line = __LINE__;
@@ -1826,7 +1826,7 @@ static void fftFilter(int type,DWORD inSample1,DWORD inSample2,FIO *fio1,FIO *fi
 		return;
 	}
 
-	// ƒ[ƒN—p(•ÊƒXƒŒƒbƒh—p)
+	// ãƒ¯ãƒ¼ã‚¯ç”¨(åˆ¥ã‚¹ãƒ¬ãƒƒãƒ‰ç”¨)
 	mem3 = (SSIZE *)al_malloc(wkMemSize * sizeof (SSIZE));
 	if (mem3 == NULL) {
 		param->error_line = __LINE__;
@@ -1841,8 +1841,8 @@ static void fftFilter(int type,DWORD inSample1,DWORD inSample2,FIO *fio1,FIO *fi
 	}
 
 	if (type == 3 || type == 6) {
-		// center /LFE ¶¬—p
-		// “ü—Í—p
+		// center /LFE ç”Ÿæˆç”¨
+		// å…¥åŠ›ç”¨
 		c_mem1 = (SSIZE *)al_malloc(wkMemSize * sizeof (SSIZE));
 		if (c_mem1 == NULL) {
 			param->error_line = __LINE__;
@@ -1850,7 +1850,7 @@ static void fftFilter(int type,DWORD inSample1,DWORD inSample2,FIO *fio1,FIO *fi
 			return;
 		}
 
-		// o—Í—p
+		// å‡ºåŠ›ç”¨
 		c_mem2 = (SSIZE *)al_malloc(wkMemSize * sizeof (SSIZE));
 		if (c_mem2 == NULL) {
 			param->error_line = __LINE__;
@@ -1858,7 +1858,7 @@ static void fftFilter(int type,DWORD inSample1,DWORD inSample2,FIO *fio1,FIO *fi
 			return;
 		}
 
-		// ƒ[ƒN—p(•ÊƒXƒŒƒbƒh—p)
+		// ãƒ¯ãƒ¼ã‚¯ç”¨(åˆ¥ã‚¹ãƒ¬ãƒƒãƒ‰ç”¨)
 		c_mem3 = (SSIZE *)al_malloc(wkMemSize * sizeof (SSIZE));
 		if (c_mem3 == NULL) {
 			param->error_line = __LINE__;
@@ -2202,9 +2202,9 @@ static void fftFilter(int type,DWORD inSample1,DWORD inSample2,FIO *fio1,FIO *fi
 }
 //---------------------------------------------------------------------------
 // Function   : fftFilterSub
-// Description: FFT ‚É‚æ‚éƒtƒBƒ‹ƒ^ˆ—(ƒTƒuŠÖ”)
+// Description: FFT ã«ã‚ˆã‚‹ãƒ•ã‚£ãƒ«ã‚¿å‡¦ç†(ã‚µãƒ–é–¢æ•°)
 // ---
-//	param		:•ÏŠ·ƒpƒ‰ƒ[ƒ^
+//	param		:å¤‰æ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿
 //
 static void fftFilterSub(int type,SSIZE *pIn,SSIZE *pOut,fftw_complex *fftw_in,fftw_complex *fftw_out,fftw_plan fftw_p,fftw_plan fftw_ip,PARAM_INFO *param,int id)
 {
@@ -2229,7 +2229,7 @@ static void fftFilterSub(int type,SSIZE *pIn,SSIZE *pOut,fftw_complex *fftw_in,f
 	fftSizeIn = inSampleR * 2;
 	fftSizeOut = outSampleR * 2;
 
-	// FFT ‰Šúİ’è
+	// FFT åˆæœŸè¨­å®š
 	copyToFFTW(fftw_in,pIn,fftSizeIn);
 
 	windowFFTW(fftw_in,fftSizeIn);
@@ -2242,7 +2242,7 @@ static void fftFilterSub(int type,SSIZE *pIn,SSIZE *pOut,fftw_complex *fftw_in,f
 	// FFT
 	fftw_execute(fftw_p);
 
-	// ‚ˆæíœ
+	// é«˜åŸŸå‰Šé™¤
 	wkSampleR = inSampleR;
 	if (wkSampleR > outSampleR) {
 		wkSampleR = outSampleR;
@@ -2254,10 +2254,10 @@ static void fftFilterSub(int type,SSIZE *pIn,SSIZE *pOut,fftw_complex *fftw_in,f
 	if (type == 1 || type == 2) {
 #if 0
 		lowIndex = ((double)fftSizeOut / outSampleR) * 200;
-		// ‘æˆê‹­’²ü”g”
+		// ç¬¬ä¸€å¼·èª¿å‘¨æ³¢æ•°
 		f_s = ((double)fftSizeOut / outSampleR) * 800;
 		f_e = ((double)fftSizeOut / outSampleR) * 1600;
-		// ‘æ“ñ‹­’²ü”g”
+		// ç¬¬äºŒå¼·èª¿å‘¨æ³¢æ•°
 		s_s = ((double)fftSizeOut / outSampleR) * 10000;
 		s_e = ((double)fftSizeOut / outSampleR) * 12000;
 
@@ -2291,10 +2291,10 @@ static void fftFilterSub(int type,SSIZE *pIn,SSIZE *pOut,fftw_complex *fftw_in,f
 		}
 		lowIndex = ((double)fftSizeOut / outSampleR) * 50;
 		if (type == 3) {
-			// ‘æˆê‹­’²ü”g”
+			// ç¬¬ä¸€å¼·èª¿å‘¨æ³¢æ•°
 			f_s = ((double)fftSizeOut / outSampleR) * 300;
 			f_e = ((double)fftSizeOut / outSampleR) * 500;
-			// ‘æ“ñ‹­’²ü”g”
+			// ç¬¬äºŒå¼·èª¿å‘¨æ³¢æ•°
 			s_s = ((double)fftSizeOut / outSampleR) * 3000;
 			s_e = ((double)fftSizeOut / outSampleR) * 5000;
 			for (i = 0;i < fftSizeOut / 2;i++) {
@@ -2314,11 +2314,11 @@ static void fftFilterSub(int type,SSIZE *pIn,SSIZE *pOut,fftw_complex *fftw_in,f
 				fftw_out[i][1] *= 0.925;
 			}
 		} else {
-			// ‘æˆê‹­’²ü”g”
+			// ç¬¬ä¸€å¼·èª¿å‘¨æ³¢æ•°
 			f_s = ((double)fftSizeOut / outSampleR) * 30;
-			// ‘æˆê‹­’²ü”g”end
+			// ç¬¬ä¸€å¼·èª¿å‘¨æ³¢æ•°end
 			f_e = ((double)fftSizeOut / outSampleR) * 150;
-			// ƒJƒbƒgƒIƒtü”g”
+			// ã‚«ãƒƒãƒˆã‚ªãƒ•å‘¨æ³¢æ•°
 			s_s = ((double)fftSizeOut / outSampleR) * 4000;
 			for (i = 0;i < fftSizeOut / 2;i++) {
 				p = (fftw_out[i][0] * fftw_out[i][0]) + (fftw_out[i][1] * fftw_out[i][1]);
@@ -2341,10 +2341,10 @@ static void fftFilterSub(int type,SSIZE *pIn,SSIZE *pOut,fftw_complex *fftw_in,f
 			}
 		}
 	} else if (type == 4) {
-		// ‘æˆê‹­’²ü”g”
+		// ç¬¬ä¸€å¼·èª¿å‘¨æ³¢æ•°
 		f_s = ((double)fftSizeOut / outSampleR) * 800;
 		f_e = ((double)fftSizeOut / outSampleR) * 1600;
-		// ‘æ“ñ‹­’²ü”g”
+		// ç¬¬äºŒå¼·èª¿å‘¨æ³¢æ•°
 		s_s = ((double)fftSizeOut / outSampleR) * 10000;
 		s_e = ((double)fftSizeOut / outSampleR) * 12000;
 		for (i = 0;i < fftSizeOut / 2;i++) {
@@ -2371,10 +2371,10 @@ static void fftFilterSub(int type,SSIZE *pIn,SSIZE *pOut,fftw_complex *fftw_in,f
 	}
 
 
-	// ƒJƒbƒgƒIƒt
+	// ã‚«ãƒƒãƒˆã‚ªãƒ•
 	cutFFTW(fftw_out,cutOff,fftSizeOut);
 
-	// ”¼•ª‚Ìƒf[ƒ^‚ğ•œŒ³
+	// åŠåˆ†ã®ãƒ‡ãƒ¼ã‚¿ã‚’å¾©å…ƒ
 	for (i = 1;i < fftSizeOut / 2;i++) {
 		fftw_out[fftSizeOut - i][0] = fftw_out[i][0];
 		fftw_out[fftSizeOut - i][1] = fftw_out[i][1] * -1;
@@ -2383,7 +2383,7 @@ static void fftFilterSub(int type,SSIZE *pIn,SSIZE *pOut,fftw_complex *fftw_in,f
 	// invert FFT
 	fftw_execute(fftw_ip);
 
-	// o—Í
+	// å‡ºåŠ›
 	for (i = 0;i < fftSizeOut;i++) {
 		pOut[i] = (SSIZE)(fftw_in[i][0] / fftSizeOut);
 	}
@@ -2391,7 +2391,7 @@ static void fftFilterSub(int type,SSIZE *pIn,SSIZE *pOut,fftw_complex *fftw_in,f
 #if 0
 //---------------------------------------------------------------------------
 // Function   : copyToFFTW
-// Description: fftw—p”z—ñ‚É’l‚ğƒRƒs[‚·‚é
+// Description: fftwç”¨é…åˆ—ã«å€¤ã‚’ã‚³ãƒ”ãƒ¼ã™ã‚‹
 // ---
 //	
 //
@@ -2537,7 +2537,7 @@ void copyToFFTW(fftw_complex *fftw,SSIZE *buf,long size)
 }
 //---------------------------------------------------------------------------
 // Function   : windowFFTW
-// Description: FFTW—pWindowŠÖ”
+// Description: FFTWç”¨Windowé–¢æ•°
 // ---
 //	
 //
@@ -2545,7 +2545,7 @@ void windowFFTW(fftw_complex *fftw,long size)
 {
 	long i,j;
 
-	// ƒEƒCƒ“ƒhƒEƒTƒCƒY–ˆ‚É’è”‰»‚·‚é
+	// ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã‚µã‚¤ã‚ºæ¯ã«å®šæ•°åŒ–ã™ã‚‹
 	switch (size) {
 		case (4096 * 1):
 			#pragma omp parallel for
@@ -2723,7 +2723,7 @@ void windowFFTW(fftw_complex *fftw,long size)
 }
 //---------------------------------------------------------------------------
 // Function   : cutFFTW
-// Description: FFTW—pƒJƒbƒgƒIƒtŠÖ”
+// Description: FFTWç”¨ã‚«ãƒƒãƒˆã‚ªãƒ•é–¢æ•°
 // ---
 //	
 //
@@ -2731,7 +2731,7 @@ void cutFFTW(fftw_complex *fftw,long index,long size)
 {
 	long i;
 
-	// 64 ŒÂ‚¸‚Â
+	// 64 å€‹ãšã¤
 	for (i = index;i + 64 < size;i+= 64) {
 		fftw[i + 0][0] = 0;
 		fftw[i + 0][1] = 0;
@@ -2862,7 +2862,7 @@ void cutFFTW(fftw_complex *fftw,long index,long size)
 		fftw[i + 63][0] = 0;
 		fftw[i + 63][1] = 0;
 	}
-	// c‚è
+	// æ®‹ã‚Š
 	for (;i < size;i++) {
 		fftw[i + 0][0] = 0;
 		fftw[i + 0][1] = 0;
@@ -2871,15 +2871,15 @@ void cutFFTW(fftw_complex *fftw,long index,long size)
 #endif
 //---------------------------------------------------------------------------
 // Function   : merageTempFile
-// Description: o—ÍŒ‹‰Ê‚Ìƒtƒ@ƒCƒ‹‚ğƒ}[ƒW‚·‚é
+// Description: å‡ºåŠ›çµæœã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ãƒãƒ¼ã‚¸ã™ã‚‹
 // ---
-//	type	 :ƒ}[ƒW‚Ìí—Ş
-//	normFlag :ƒm[ƒ}ƒ‰ƒCƒY—p•Ï”XVƒtƒ‰ƒO
-//	fp_r 	 :“ü—Íƒtƒ@ƒCƒ‹1
-//	fp_r2	 :“ü—Íƒtƒ@ƒCƒ‹2
-//	fp_w	 :o—Íƒtƒ@ƒCƒ‹
-//	inSample :ƒTƒ“ƒvƒ‹”
-//	param	 :ƒpƒ‰ƒ[ƒ^[
+//	type	 :ãƒãƒ¼ã‚¸ã®ç¨®é¡
+//	normFlag :ãƒãƒ¼ãƒãƒ©ã‚¤ã‚ºç”¨å¤‰æ•°æ›´æ–°ãƒ•ãƒ©ã‚°
+//	fp_r 	 :å…¥åŠ›ãƒ•ã‚¡ã‚¤ãƒ«1
+//	fp_r2	 :å…¥åŠ›ãƒ•ã‚¡ã‚¤ãƒ«2
+//	fp_w	 :å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«
+//	inSample :ã‚µãƒ³ãƒ—ãƒ«æ•°
+//	param	 :ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ¼
 //
 void merageTempFile(char type,int normFlag,FIO *fp_r,FIO *fp_r2,FIO *fp_w,DWORD inSample,PARAM_INFO *param)
 {
@@ -3045,7 +3045,7 @@ void merageTempFile(char type,int normFlag,FIO *fp_r,FIO *fp_r2,FIO *fp_w,DWORD 
 	}
 
 	if (param->err) {
-		// ƒGƒ‰[I—¹
+		// ã‚¨ãƒ©ãƒ¼çµ‚äº†
 		return;
 	}
 	
@@ -3073,9 +3073,9 @@ void merageTempFile(char type,int normFlag,FIO *fp_r,FIO *fp_r2,FIO *fp_w,DWORD 
 #if 0
 //---------------------------------------------------------------------------
 // Function   : al_malloc
-// Description: 16ƒoƒCƒg‹«ŠE‘Î‰mallocŠÖ”
+// Description: 16ãƒã‚¤ãƒˆå¢ƒç•Œå¯¾å¿œmallocé–¢æ•°
 // ---
-// •Ô‚·ƒ|ƒCƒ“ƒ^‚Ì16ƒoƒCƒg‘O‚Émalloc‚ÅŠm•Û‚µ‚½ƒƒ‚ƒŠ—Ìˆæ‚ÌƒAƒhƒŒƒX‚ğ“ü‚ê‚é
+// è¿”ã™ãƒã‚¤ãƒ³ã‚¿ã®16ãƒã‚¤ãƒˆå‰ã«mallocã§ç¢ºä¿ã—ãŸãƒ¡ãƒ¢ãƒªé ˜åŸŸã®ã‚¢ãƒ‰ãƒ¬ã‚¹ã‚’å…¥ã‚Œã‚‹
 //
 void *al_malloc(long size)
 {
@@ -3101,7 +3101,7 @@ void *al_malloc(long size)
 }
 //---------------------------------------------------------------------------
 // Function   : al_free
-// Description: 16ƒoƒCƒg‹«ŠE‘Î‰freeŠÖ”
+// Description: 16ãƒã‚¤ãƒˆå¢ƒç•Œå¯¾å¿œfreeé–¢æ•°
 // ---
 // 
 //
